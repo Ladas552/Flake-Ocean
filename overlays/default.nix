@@ -4,6 +4,7 @@
   pkgs,
   meta,
   self,
+  system,
   ...
 }:
 
@@ -66,7 +67,12 @@ in
         (prev.custom or { })
         // (import ../pkgs {
           inherit (prev) pkgs;
-          inherit inputs meta self;
+          inherit
+            inputs
+            meta
+            self
+            system
+            ;
         });
     })
 
