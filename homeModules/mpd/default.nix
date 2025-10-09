@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  custom,
   ...
 }:
 
@@ -345,6 +346,6 @@
     };
 
     # persist for Impermanence
-    customhm.imp.home.cache.directories = [".local/share/mpd"];
+    customhm.imp.home.cache.directories = [ ".local/share/mpd" ];
   };
 }

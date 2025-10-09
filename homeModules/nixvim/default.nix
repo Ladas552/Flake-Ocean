@@ -3,6 +3,7 @@
   config,
   pkgs,
   meta,
+  custom,
   ...
 }:
 {
@@ -13,8 +14,8 @@
   config = lib.mkIf config.customhm.nixvim.enable {
     home.packages =
       [ ]
-      ++ lib.optionals (!meta.isTermux) [ pkgs.custom.nixvim ]
-      ++ lib.optionals meta.isTermux [ pkgs.custom.nixvim-minimal ];
+      ++ lib.optionals (!meta.isTermux) [ custom.nixvim ]
+      ++ lib.optionals meta.isTermux [ custom.nixvim-minimal ];
     home.sessionVariables = lib.mkDefault {
       EDITOR = "nvim";
       VISUAL = "nvim";

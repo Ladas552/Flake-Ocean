@@ -3,6 +3,7 @@
   pkgs,
   inputs,
   meta,
+  custom,
   ...
 }:
 
@@ -61,6 +62,7 @@
     extraSpecialArgs = {
       inherit inputs;
       inherit meta;
+      inherit custom;
     };
     users."${meta.user}" = import ./home.nix;
     useUserPackages = true;

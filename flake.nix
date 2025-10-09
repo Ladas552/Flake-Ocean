@@ -76,7 +76,7 @@
   outputs =
     {
       flake-parts,
-      nixpkgs,
+      self,
       ...
     }@inputs:
     flake-parts.lib.mkFlake { inherit inputs; } {
@@ -91,31 +91,25 @@
       ];
       flake =
         let
-          system = "x86_64-linux";
-          inherit (inputs.nixpkgs) lib;
-          pkgs = import inputs.nixpkgs {
-            inherit system;
-            config.allowUnfree = true;
-            overlays = [ (import ./overlays { inherit inputs system; }) ];
-          };
+          # my custom packages
+          custom = self.packages.x86_64-linux;
         in
         {
           nixosConfigurations = {
             # My Lenovo 50-70y laptop with nvidia 860M
             NixToks = inputs.nixpkgs.lib.nixosSystem {
               specialArgs = {
-                inherit inputs pkgs;
+                inherit inputs custom;
               };
 
               modules = [
                 ./hosts/NixToks
-                ./overlays
               ];
             };
             # My Acer Swift Go 14 with ryzen 7640U
             NixPort = inputs.nixpkgs.lib.nixosSystem {
               specialArgs = {
-                inherit inputs;
+                inherit inputs custom;
               };
 
               modules = [

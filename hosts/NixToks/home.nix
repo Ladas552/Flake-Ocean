@@ -1,6 +1,7 @@
 {
   pkgs,
   meta,
+  custom,
   ...
 }:
 

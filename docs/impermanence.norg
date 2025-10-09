@@ -63,7 +63,7 @@ So, create Boot Disk with gparted, idk. and /dev/sdaN for zpool too
   @end
 * Install the OS
   - Transfer keys
-    namely to `/mnt/home/${meta.user}/.ssh/` so sops could find ssh key and setup secrets
+    namely to `/mnt/persist/home/${meta.user}/.ssh/` so sops could find ssh key and setup secrets
 
   - install nixos without root-password because immutable user already has password set
   @code sh
