@@ -11,6 +11,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Hjem, another home-manager
+    hjem = {
+      url = "github:feel-co/hjem";
+      inputs.nixpkgs.follows = "nixpkgs";
+      # No SSG
+      inputs.ndg.follows = "";
+    };
+    # Modules for hjem
+    hjem-rum = {
+      url = "github:snugnug/hjem-rum";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.hjem.follows = "hjem";
+      # No SSG
+      inputs.ndg.follows = "";
+      inputs.treefmt-nix.follows = "";
+    };
+
     nix-on-droid = {
       url = "github:t184256/nix-on-droid";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,6 +36,7 @@
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
+      inputs.nixpkgs.follows = "nixpkgs";
       # No flake compat
       inputs.flake-compat.follows = "";
     };

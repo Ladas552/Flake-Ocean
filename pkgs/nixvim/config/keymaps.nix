@@ -104,13 +104,13 @@
       #Buffer Navigation Desktop
       {
         action = "<cmd>bprevious<CR>";
-        key = "<leader>.";
+        key = "<leader>,";
         mode = "n";
         options.desc = "Left Buffer";
       }
       {
         action = "<cmd>bnext<CR>";
-        key = "<leader>,";
+        key = "<leader>.";
         mode = "n";
         options.desc = "Right Buffer";
       }
@@ -119,13 +119,13 @@
       #Buffer Navigation Termux
       {
         action = "<cmd>bprevious<CR>";
-        key = "<leader>,";
+        key = "<leader>.";
         mode = "n";
         options.desc = "Left Buffer";
       }
       {
         action = "<cmd>bnext<CR>";
-        key = "<leader>.";
+        key = "<leader>,";
         mode = "n";
         options.desc = "Right Buffer";
       }

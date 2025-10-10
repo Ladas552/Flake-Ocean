@@ -14,6 +14,8 @@
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
     inputs.home-manager.nixosModules.default
+    inputs.hjem.nixosModules.default
+    ../../hjemModules
   ];
   _module.args = {
     meta = {
@@ -127,6 +129,19 @@
   # Testing nix-on-droid in waydroid
   # virtualisation.waydroid.enable = true;
   # programs.adb.enable = true;
+
+  # HJEM
+  hjem = {
+    extraModules = [
+      inputs.hjem-rum.hjemModules.default
+    ];
+    linker = inputs.hjem.packages.${meta.system}.smfh;
+    clobberByDefault = true;
+    users.${meta.user} = {
+      user = "${meta.user}";
+      directory = "/home/${meta.user}";
+    };
+  };
 
   # persist my home on nixport to not interfere with server's /home
   custom.imp.home.directories = [
