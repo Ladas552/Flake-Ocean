@@ -48,6 +48,8 @@
     stylix.url = "github:nix-community/stylix";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
+    import-tree.url = "github:vic/import-tree";
+
     # Neovim
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -90,115 +92,5 @@
     # };
 
   };
-
-  outputs =
-    {
-      flake-parts,
-      self,
-      ...
-    }@inputs:
-    flake-parts.lib.mkFlake { inherit inputs; } {
-      systems = [
-        "x86_64-linux"
-        "x86_64-darwin"
-        "aarch64-linux"
-        "aarch64-darwin"
-      ];
-      imports = [
-        ./pkgs
-      ];
-      flake =
-        let
-          # my custom packages
-          custom = self.packages.x86_64-linux;
-        in
-        {
-          nixosConfigurations = {
-            # My Lenovo 50-70y laptop with nvidia 860M
-            NixToks = inputs.nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit inputs custom;
-              };
-
-              modules = [
-                ./hosts/NixToks
-              ];
-            };
-            # My Acer Swift Go 14 with ryzen 7640U
-            NixPort = inputs.nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit inputs custom;
-              };
-
-              modules = [
-                ./hosts/NixPort
-              ];
-            };
-            # NixOS WSL setup
-            NixwsL = inputs.nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit inputs;
-              };
-
-              modules = [
-                ./hosts/NixwsL
-              ];
-            };
-            # Nix VM for testing major config changes
-            NixVM = inputs.nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit inputs;
-              };
-
-              modules = [
-                ./hosts/NixVM
-              ];
-            };
-            # Nix Iso for live cd
-            NixIso = inputs.nixpkgs.lib.nixosSystem {
-              specialArgs = {
-                inherit inputs;
-              };
-
-              modules = [
-                ./hosts/NixIso
-              ];
-            };
-          };
-          # My android phone/tablet for Termux
-          # nixOnDroidConfigurations =
-          # let
-          #   meta = {
-          #     isTermux = true;
-          #     host = "NixMux";
-          #      = "/data/data/com.termux.nix/files/home/Nix-Is-Unbreakable";
-          #     norg = "~/storage/downloads/Norg";
-          #     user = "ladas552";
-          #   };
-          # in
-          # {
-          #   NixMux = inputs.nix-on-droid.lib.nixOnDroidConfiguration {
-          #     extraSpecialArgs = {
-          #       inherit inputs;
-          #     };
-          #     pkgs = import nixpkgs {
-          #       system = "aarch64-linux";
-          #       overlays = [
-          #         (_: prev: {
-          #           custom =
-          #             (prev.custom or { })
-          #             // (import ./pkgs {
-          #               inherit (prev) pkgs;
-          #               inherit inputs meta ;
-          #             });
-          #         })
-          #       ];
-          #       config.allowUnfree = true;
-          #     };
-          #
-          #     modules = [
-          #       ./hosts/NixMux
-          # ];
-        };
-    };
+  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 }
