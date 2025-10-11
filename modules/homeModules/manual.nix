@@ -1,1 +1,1 @@
-{ flake.modules.HM.manual.manual.manpages.enable = false; }
+{ flake.modules.homeManager.manual.manual.manpages.enable = false; }

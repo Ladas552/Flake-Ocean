@@ -1,5 +1,5 @@
 {
-  flake.modules.HM.ranger = {
+  flake.modules.homeManager.ranger = {
     programs.ranger = {
       enable = true;
       extraConfig = ''

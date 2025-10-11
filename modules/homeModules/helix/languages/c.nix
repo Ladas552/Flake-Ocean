@@ -1,9 +1,9 @@
-{ pkgs, ... }:
-
 {
-  flakes.modules.HM.helix = {
-    programs.helix = {
-      extraPackages = [ pkgs.clang-tools ];
+  flake.modules.homeManager.helix =
+    { pkgs, ... }:
+    {
+      programs.helix = {
+        extraPackages = [ pkgs.clang-tools ];
+      };
     };
-  };
 }

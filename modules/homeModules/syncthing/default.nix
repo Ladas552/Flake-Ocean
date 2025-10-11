@@ -1,5 +1,5 @@
 {
-  flake.modules.HM.syncthing = {
+  flake.modules.homeManager.syncthing = {
     services.syncthing = {
       enable = true;
     };

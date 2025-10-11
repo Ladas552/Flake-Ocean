@@ -1,5 +1,5 @@
 {
-  flake.modules.HM.qutebrowser = {
+  flake.modules.homeManager.qutebrowser = {
     programs.qutebrowser = {
       enable = true;
     };

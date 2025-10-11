@@ -1,5 +1,5 @@
 {
-  flake.modules.HM.vim = {
+  flake.modules.homeManager.vim = {
     programs.vim = {
       enable = true;
       settings = {

@@ -1,5 +1,5 @@
 {
-  flakes.modules.HM.chawan = {
+  flake.modules.homeManager.chawan = {
     programs.chawan = {
       enable = true;
       settings = {

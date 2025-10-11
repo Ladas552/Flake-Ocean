@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  flakes.modules.HM.emacs = {
+  flake.modules.homeManager.emacs = {
     programs.emacs = {
       enable = true;
       # pure gtk GUI for Emacs

@@ -1,5 +1,5 @@
 {
-  flakes.modules.HM.fastfetch = {
+  flake.modules.homeManager.fastfetch = {
     programs.fastfetch = {
       enable = true;
       # modified 21st example from fastfetch in nix code

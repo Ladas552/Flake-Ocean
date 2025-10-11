@@ -4,6 +4,7 @@
   ...
 }:
 {
+  imports = [ ../../pkgs ];
   perSystem =
     { system, ... }:
     {
@@ -13,7 +14,6 @@
           allowUnfree = true;
         };
       };
-      pkgsDirectory = ../pkgs;
     };
 
   flake = {

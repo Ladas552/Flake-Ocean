@@ -1,5 +1,5 @@
 {
-  flake.modules.HM.neovide = {
+  flake.modules.homeManager.neovide = {
     programs.neovide = {
       enable = true;
       settings = {

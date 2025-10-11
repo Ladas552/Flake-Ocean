@@ -1,12 +1,12 @@
-{ pkgs, ... }:
-
 {
-  flakes.modules.HM.helix = {
-    programs.helix = {
-      extraPackages = [
-        pkgs.ruff
-        pkgs.basedpyright
-      ];
+  flake.modules.homeManager.helix =
+    { pkgs, ... }:
+    {
+      programs.helix = {
+        extraPackages = [
+          pkgs.ruff
+          pkgs.basedpyright
+        ];
+      };
     };
-  };
 }

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 {
-  flake.modules.HM.librewolf = {
+  flake.modules.homeManager.librewolf = {
 
     programs.librewolf = {
       enable = true;

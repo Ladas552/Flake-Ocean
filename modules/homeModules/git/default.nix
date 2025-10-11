@@ -1,5 +1,5 @@
 {
-  flakes.modules.HM.git = {
+  flake.modules.homeManager.git = {
     programs.git = {
       enable = true;
       userName = "Ladas552";

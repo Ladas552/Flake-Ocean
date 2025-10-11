@@ -1,6 +1,6 @@
 { lib, ... }:
 {
-  flakes.modules.HM.kitty = {
+  flake.modules.homeManager.kitty = {
     programs.kitty = {
       enable = true;
       font = lib.mkForce {

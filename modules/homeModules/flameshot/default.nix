@@ -1,5 +1,5 @@
 {
-  flakes.modules.HM.flameshot = {
+  flake.modules.homeManager.flameshot = {
     services.flameshot = {
       enable = true;
       settings = {

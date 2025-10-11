@@ -1,5 +1,5 @@
 {
-  flake.modules.HM.lf = {
+  flake.modules.homeManager.lf = {
     programs.lf = {
       enable = true;
     };

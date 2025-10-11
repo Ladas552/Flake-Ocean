@@ -1,5 +1,5 @@
 {
-  flakes.modules.HM.zathura = {
+  flake.modules.homeManager.zathura = {
     programs.zathura = {
       enable = true;
       mappings = {

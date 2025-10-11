@@ -1,5 +1,5 @@
 {
-  flakes.modules.HM.lf = {
+  flake.modules.homeManager.lf = {
     programs.lf.settings = {
       period = 1;
       dircounts = true;

@@ -38,7 +38,7 @@
     ./plugins/lsp/conform.nix
     ./plugins/lsp/friendly-snippets.nix
     ./plugins/lsp/lsp-config.nix
-    ./plugins/lsp/nil-ls.nix
+    ./plugins/lsp/nil_ls.nix
     ./plugins/lsp/tinymist.nix
     ./plugins/lsp/rustaceanvim.nix
   ];

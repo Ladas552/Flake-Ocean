@@ -1,5 +1,5 @@
 {
-  flake.modules.HM.nushell = {
+  flake.modules.homeManager.nushell = {
     programs.nushell = {
       enable = true;
       settings = {

@@ -1,5 +1,5 @@
 {
-  flakes.modules.HM.ghostty = {
+  flake.modules.homeManager.ghostty = {
     programs.ghostty = {
       enable = true;
       # Use ghostty master branch from Flake
