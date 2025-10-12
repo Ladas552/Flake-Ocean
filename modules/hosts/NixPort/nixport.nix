@@ -42,17 +42,6 @@
       # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
       system.stateVersion = "24.11"; # Did you read the comment?
       # HJEM
-      hjem = {
-        extraModules = [
-          inputs.hjem-rum.hjemModules.default
-        ];
-        linker = inputs.hjem.packages."x86_64-linux".smfh;
-        clobberByDefault = true;
-        users.ladas552 = {
-          user = "ladas552";
-          directory = "/home/ladas552";
-        };
-      };
 
       # persist my home on nixport to not interfere with server's /home
       custom.imp.home.directories = [

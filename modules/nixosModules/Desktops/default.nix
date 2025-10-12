@@ -8,7 +8,7 @@
         # initial session for autologin
         # https://wiki.archlinux.org/title/Greetd#Enabling_autologin
         initial_session = {
-          command = "niri";
+          command = "niri-session";
           user = "ladas552";
         };
         default_session = initial_session;

@@ -9,6 +9,9 @@
       NixPort
       NixPort-hardware
       # Modules
+      ## Games
+      games
+      emulators
       base
       bluetooth
       cache
@@ -16,7 +19,6 @@
       cups
       firewall
       fonts
-      games
       greetd
       imp
       kdeconnect
@@ -45,6 +47,7 @@
       {
         home-manager.users.ladas552.imports = with config.flake.modules.homeManager; [
           NixPort
+          wpaperd
           niri
           rofi
           catppuccin-mocha
