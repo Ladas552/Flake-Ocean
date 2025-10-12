@@ -26,8 +26,6 @@ in
           inherit specialArgs;
           modules = module.imports ++ [
             inputs.home-manager.nixosModules.home-manager
-            inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
-            inputs.hjem.nixosModules.default
             {
               home-manager.extraSpecialArgs = specialArgs;
             }

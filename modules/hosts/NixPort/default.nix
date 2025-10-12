@@ -12,7 +12,7 @@
       ## Games
       games
       emulators
-      base
+      general
       bluetooth
       cache
       catppuccin-mocha

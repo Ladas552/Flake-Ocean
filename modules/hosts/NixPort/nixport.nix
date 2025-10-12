@@ -2,6 +2,9 @@
   flake.modules.nixos.NixPort =
     { inputs, pkgs, ... }:
     {
+      imports = [
+        inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
+      ];
       home-manager = {
         useUserPackages = true;
         useGlobalPkgs = true;

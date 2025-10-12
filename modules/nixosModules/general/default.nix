@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.base = {
+  flake.modules.nixos.general = {
     # Updates firmware directly from vendors
     services.fwupd.enable = true;
     # clear out journalctl logs

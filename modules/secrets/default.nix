@@ -7,7 +7,7 @@
 
       environment.systemPackages = [ pkgs.sops ];
 
-      sops.defaultSopsFile = ../../../secrets/secrets.yaml;
+      sops.defaultSopsFile = ../../secrets/secrets.yaml;
       sops.defaultSopsFormat = "yaml";
 
       sops.age.sshKeyPaths = [ "/persist/home/ladas552/.ssh/NixToks" ];
