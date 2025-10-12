@@ -2,10 +2,12 @@
   flake.modules.nixos.NixPort =
     { inputs, pkgs, ... }:
     {
-      imports = [
-        inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
-        inputs.hjem.nixosModules.default
-      ];
+      home-manager = {
+        useUserPackages = true;
+        useGlobalPkgs = true;
+        backupFileExtension = "bk";
+        overwriteBackup = true;
+      };
       # ZFS needs it
       networking.hostId = "f6d40058";
       # Xanmod kernel
