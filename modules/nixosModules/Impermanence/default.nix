@@ -89,6 +89,17 @@
           ];
         };
 
+        services.sanoid = {
+          enable = true;
+          datasets = lib.mkForce {
+            "zroot/persist" = {
+              hourly = 50;
+              daily = 15;
+              weekly = 3;
+              monthly = 1;
+            };
+          };
+        };
         # clean /tmp
         boot.tmp.cleanOnBoot = true;
 

@@ -1,7 +1,7 @@
 {
   flake.modules = {
     nixos.zfs =
-      { config, ... }:
+      { config, lib, ... }:
       {
         # NOTE: zfs datasets are created manually
         # Stolen from @iynaix and @xarvex, like the whole thing
@@ -54,8 +54,8 @@
         };
         services.sanoid = {
           enable = true;
-          datasets = {
-            "zroot/persist" = {
+          datasets = lib.mkDefault {
+            "zroot/root" = {
               hourly = 50;
               daily = 15;
               weekly = 3;

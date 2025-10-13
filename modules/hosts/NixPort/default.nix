@@ -12,13 +12,13 @@
       ## Games
       games
       emulators
-      general
       bluetooth
       cache
       catppuccin-mocha
       cups
       firewall
       fonts
+      general
       greetd
       imp
       kdeconnect
@@ -47,9 +47,6 @@
       {
         home-manager.users.ladas552.imports = with config.flake.modules.homeManager; [
           NixPort
-          wpaperd
-          niri
-          rofi
           catppuccin-mocha
           chawan
           chromium
@@ -66,14 +63,18 @@
           manual
           mpd
           mpv
+          niri
           obs
+          rofi
           shell
           swaylock
           syncthing
           thunderbird
           vesktop
+          wpaperd
           yt-dlp
           zathura
+          zfs
         ];
       }
     ];
