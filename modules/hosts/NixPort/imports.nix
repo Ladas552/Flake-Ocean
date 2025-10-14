@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}:
+{ config, ... }:
 {
   flake.modules.nixos."hosts/NixPort".imports =
     with config.flake.modules.nixos;
