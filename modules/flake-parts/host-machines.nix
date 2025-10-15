@@ -26,7 +26,9 @@
           value = inputs.nixpkgs.lib.nixosSystem {
             inherit specialArgs;
             modules = module.imports ++ [
+              inputs.impermanence.nixosModules.impermanence
               inputs.home-manager.nixosModules.home-manager
+              inputs.hjem.nixosModules.default
               {
                 home-manager.extraSpecialArgs = specialArgs;
               }

@@ -11,13 +11,14 @@
       emulators
       bluetooth
       cache
-      catppuccin-mocha
+      cat-mocha
       cups
       firewall
       fonts
       general
       greetd
       imp
+      imp-options
       kdeconnect
       nh
       niri
@@ -44,7 +45,7 @@
       {
         home-manager.users.ladas552.imports = with config.flake.modules.homeManager; [
           NixPort
-          catppuccin-mocha
+          cat-mocha
           chawan
           chromium
           direnv
@@ -53,7 +54,7 @@
           gh
           ghostty
           git
-          imp
+          imp-options
           imv
           lf
           mako

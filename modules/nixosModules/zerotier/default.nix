@@ -13,7 +13,7 @@
       services.zerotierone = {
         enable = true;
         joinNetworks = [
-          "$(cat ${config.flake.modules.nixos.zerotier.sops.secrets."mystuff/zero_net_id".path})"
+          "$(cat ${config.sops.secrets."mystuff/zero_net_id".path})"
         ];
         localConf = {
           settings = {

@@ -1,11 +1,11 @@
 {
   flake.modules = {
-    nixos.catppuccin-mocha =
+    nixos.cat-mocha =
       { pkgs, ... }:
       {
         stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
       };
-    homeManager.catppuccin-mocha =
+    homeManager.cat-mocha =
       { pkgs, ... }:
       {
         stylix = {

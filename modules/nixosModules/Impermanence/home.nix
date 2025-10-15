@@ -2,7 +2,7 @@
 # note: this file exists just to define options for home-manager,
 # I don't use home-manager impermanence module
 {
-  flake.modules.homeManager.imp = {
+  flake.modules.homeManager.imp-options = {
     options.customhm = {
       imp = {
         home = {
