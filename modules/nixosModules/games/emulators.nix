@@ -8,7 +8,9 @@
         # Emulators
         blastem
         mgba
-        snes9x-gtk
+        # cmake issue waiting for:
+        # https://nixpk.gs/pr-tracker.html?pr=452494
+        # snes9x-gtk
         punes
         melonDS
         # doesn't work       retroarchFull
