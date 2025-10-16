@@ -4,7 +4,6 @@
     programs.nh = {
       enable = true;
       clean.enable = true;
-      clean.dates = "2 d";
     };
   };
 }

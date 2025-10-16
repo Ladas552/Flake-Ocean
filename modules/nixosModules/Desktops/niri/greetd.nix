@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.greetd = {
+  flake.modules.nixos.niri-greetd = {
     services.displayManager.autoLogin.enable = true;
     services.displayManager.autoLogin.user = "ladas552";
     services.greetd = {

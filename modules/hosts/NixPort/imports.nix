@@ -16,12 +16,12 @@
       firewall
       fonts
       general
-      greetd
       imp
       imp-options
       kdeconnect
       nh
       niri
+      niri-greetd
       nix
       openssh
       otd
