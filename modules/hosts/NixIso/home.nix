@@ -2,9 +2,6 @@
   flake.modules.homeManager.NixIso =
     { lib, pkgs, ... }:
     {
-      # Me
-      home.username = "ladas552";
-      home.homeDirectory = "/home/ladas552";
       # Don't change
       home.stateVersion = "25.05"; # Please read the comment before changing.
       # Standalone Packages for user
@@ -24,34 +21,10 @@
         xarchiver
       ];
 
-      # Environment and Dependencies
-      xdg = {
-        enable = true;
-        #    mime.enable = true;
-        #    mimeApps = {
-        #      enable = true;
-        #      associations.added = {
-        #        "text/plain" = ["neovim.desktop"];
-        #        "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
-        #        "image/*" = ["imv.desktop"];
-        #        "video/*" = ["mpv.desktop"];
-        #      };
-        #      defaultApplications = {
-        #        "text/plain" = [""];
-        #        "application/pdf" = ["org.pwmt.zathura-pdf-mupdf.desktop"];
-        #        "image/*" = ["imv.desktop"];
-        #        "video/*" = ["mpv.desktop"];
-        #      };
-        #    };
-      };
-
       # Environmental Variables
       home.sessionVariables = {
         BROWSER = "chromium";
       };
-
-      # Let Home Manager install and manage itself.
-      programs.home-manager.enable = true;
 
       # wget install script
 

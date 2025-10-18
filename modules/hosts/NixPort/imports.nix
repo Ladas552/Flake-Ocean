@@ -45,6 +45,7 @@
       {
         home-manager.users.ladas552.imports = with config.flake.modules.homeManager; [
           NixPort
+          base
           cat-mocha
           chawan
           chromium

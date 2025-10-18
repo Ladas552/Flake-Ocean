@@ -19,6 +19,7 @@
       {
         home-manager.users.ladas552.imports = with config.flake.modules.homeManager; [
           NixwsL
+          base
           git
           shell
           fish

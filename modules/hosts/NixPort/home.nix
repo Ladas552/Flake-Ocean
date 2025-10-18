@@ -6,9 +6,6 @@
       nixvim = self.packages.${pkgs.system}.nixvim;
     in
     {
-      # Me
-      home.username = "ladas552";
-      home.homeDirectory = "/home/ladas552";
       # Don't change
       home.stateVersion = "24.11"; # Please read the comment before changing.
       # Standalone Packages for user
@@ -36,20 +33,9 @@
         xarchiver
         zotero
       ];
-
-      # Environment and Dependencies
-      xdg = {
-        enable = true;
-      };
-
       # Environmental Variables
       home.sessionVariables = {
         BROWSER = "librewolf";
       };
-
-      # Let Home Manager install and manage itself.
-      programs.home-manager.enable = true;
-
-      programs.man.enable = false;
     };
 }

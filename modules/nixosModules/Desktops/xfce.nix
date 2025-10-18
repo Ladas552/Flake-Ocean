@@ -1,5 +1,5 @@
 {
-  flakes.modules.nixos.xfce =
+  flake.modules.nixos.xfce =
     { pkgs, lib, ... }:
     {
       services.xserver = {

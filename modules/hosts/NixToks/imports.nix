@@ -25,6 +25,7 @@
       {
         home-manager.users.ladas552.imports = with config.flake.modules.homeManager; [
           NixToks
+          base
           cat-mocha
           shell
           fish

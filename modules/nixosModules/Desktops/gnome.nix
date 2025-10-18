@@ -1,5 +1,5 @@
 {
-  modules.flake.nixos.gnome =
+  flake.modules.nixos.gnome =
     { pkgs }:
     {
       # enable DE and most of gnome services
