@@ -30,6 +30,8 @@
       plymouth
       stylix
       cat-mocha
+      pipewire
+      nh
       # Modules
       # Users
       users
@@ -54,6 +56,7 @@
           imp-options
           git
           manual
+          openssh
         ];
       }
     ];
