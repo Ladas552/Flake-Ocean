@@ -9,11 +9,27 @@
       imp-options
       tailscale
       sops
-      stylix
       zfs
       grub
       nix
       general
+      qbittorrent
+      dashboard
+      immich
+      jellyfin
+      kavita
+      miniflux
+      nextcloud
+      karakeep
+      xkb
+      openssh
+      fonts
+      tlp
+      distrobox
+      qemu
+      plymouth
+      stylix
+      cat-mocha
       # Modules
       # Users
       users

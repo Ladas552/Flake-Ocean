@@ -135,12 +135,11 @@
 
       powerManagement.powertop.enable = true;
 
-      ## Turn of screen and don't go to sleep
-
-      services.logind = {
-        lidSwitchExternalPower = "ignore";
-        lidSwitchDocked = "ignore";
-        lidSwitch = "ignore";
+      ## Turn off screen and don't go to sleep
+      services.logind.settings.Login = {
+        HandleLidSwitchExternalPower = "ignore";
+        HandleLidSwitchDocked = "ignore";
+        HandleLidSwitch = "ignore";
       };
 
       ## Stuff to make server operatable

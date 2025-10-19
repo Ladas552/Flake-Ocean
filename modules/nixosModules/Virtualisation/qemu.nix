@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.qemu =
-    { pkgs }:
+    { pkgs, ... }:
     {
       # Wayroid
       # Delete images in `/var/lib/waydroid` after removing the option
