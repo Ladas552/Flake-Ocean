@@ -1,7 +1,7 @@
 { self, ... }:
 {
   flake.modules.homeManager.NixToks =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     let
       nixvim = self.packages.${pkgs.system}.nixvim;
     in
@@ -24,5 +24,10 @@
         # custom.Subtitlenator
 
       ];
+
+      home.shellAliases = {
+        eh = lib.mkForce "nvim -c 'cd /home/ladas552/Nix-Is-Unbreakable' /home/ladas552/Nix-Is-Unbreakable/flake.nix";
+        yy = lib.mkForce "nh os switch /home/ladas552/Nix-Is-Unbreakable";
+      };
     };
 }

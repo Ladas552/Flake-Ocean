@@ -27,6 +27,7 @@
 
       services.postgresql = {
         enable = true;
+        package = pkgs.postgresql_16;
         ensureDatabases = [ "nextcloud" ];
         ensureUsers = [
           {

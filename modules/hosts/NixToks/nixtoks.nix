@@ -7,6 +7,11 @@
       ...
     }:
     {
+
+      sops.age.keyFile = "/home/ladas552/.config/sops/age/keys.txt";
+
+      # Define your hostname.
+      networking.hostName = "NixToks";
       imports = [
         # enable trimming
         inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
@@ -18,47 +23,6 @@
       #build machine for termux
       # Termux builder
       boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-      #modules
-      # custom = {
-      #   # I should make time to do it, but not right now
-      #   imp.enable = false;
-      #   # Services
-      #   qbittorrent.enable = true;
-      #   homepage-dashboard.enable = true;
-      #   immich.enable = true;
-      #   jellyfin.enable = true;
-      #   kavita.enable = true;
-      #   miniflux.enable = true;
-      #   nextcloud.enable = true;
-      #   radarr.enable = true;
-      #   sonarr.enable = true;
-      #   karakeep.enable = true;
-      #   # ncps.enable = true;
-      #   xkb.enable = true;
-      #   greetd.enable = false;
-      #   # nix-ld.enable = true;
-      #   # Network
-      #   openssh.enable = true;
-      #   # zerotier.enable = true;
-      #   tailscale.enable = true;
-      #   # Host services
-      #   fonts.enable = true;
-      #   tlp.enable = true;
-      #   # Virtualisation
-      #   # incus.enable = true;
-      #   distrobox.enable = true;
-      #   qemu.enable = true;
-      #   # Eye candy
-      #   plymouth.enable = true;
-      #   stylix = {
-      #     enable = true;
-      #     catppuccin = true;
-      #     oksolar-light = false;
-      #   };
-      #   # Essential for boot
-      #   grub.enable = true;
-      #   zfs.enable = true;
-      # };
 
       home-manager = {
         extraSpecialArgs = {
@@ -128,7 +92,7 @@
       # this value at the release version of the first install of this system.
       # Before changing this value read the documentation for this option
       # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-      system.stateVersion = "24.11"; # Did you read the comment?
+      system.stateVersion = "25.11"; # Did you read the comment?
 
       ## Powermanagment
       ## It disabled usb after some time of incativity, so not usable on desktop
@@ -167,4 +131,5 @@
         fsType = "zfs";
       };
     };
+
 }

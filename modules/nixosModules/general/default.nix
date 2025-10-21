@@ -13,8 +13,6 @@
     # Disable X11 prompt for Git. Changes work only after Reboot for some reason
     # Here is the issue: https://github.com/NixOS/nixpkgs/issues/24311
     programs.ssh.askPassword = "";
-    # Define your hostname.
-    networking.hostName = "NixPort";
     # something stolen from https://kokada.dev/blog/an-unordered-list-of-hidden-gems-inside-nixos/
     ## Faster wifi connection
     networking.networkmanager.wifi.backend = "iwd";

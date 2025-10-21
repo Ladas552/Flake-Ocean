@@ -6,32 +6,32 @@
       NixToks
       NixToks-hardware
       cat-mocha
-      imp-options
-      tailscale
-      sops
-      zfs
-      grub
-      nix
       general
-      qbittorrent
+      grub
+      imp-options
+      nix
+      sops
+      tailscale
+      zfs
       dashboard
       immich
       jellyfin
+      karakeep
       kavita
       miniflux
       nextcloud
-      karakeep
-      xkb
-      openssh
-      fonts
-      tlp
-      distrobox
-      qemu
-      plymouth
-      stylix
+      qbittorrent
       cat-mocha
-      pipewire
+      distrobox
+      fonts
       nh
+      openssh
+      pipewire
+      plymouth
+      qemu
+      stylix
+      tlp
+      xkb
       # Modules
       # Users
       users
@@ -45,18 +45,19 @@
           NixToks
           base
           cat-mocha
-          shell
-          fish
-          syncthing
-          mpd
-          lf
-          gh
-          fastfetch
           direnv
-          imp-options
+          fastfetch
+          fish
+          gh
           git
+          imp-options
+          lf
           manual
+          mpd
           openssh
+          shell
+          syncthing
+          yt-dlp
         ];
       }
     ];

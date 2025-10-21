@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   flake.modules.nixos.sops =
-    { pkgs, ... }:
+    { pkgs, lib, ... }:
     {
       imports = [ inputs.sops-nix.nixosModules.sops ];
 
@@ -10,8 +10,11 @@
       sops.defaultSopsFile = ../../secrets/secrets.yaml;
       sops.defaultSopsFormat = "yaml";
 
-      sops.age.sshKeyPaths = [ "/persist/home/ladas552/.ssh/NixToks" ];
-      sops.age.keyFile = "/persist/home/ladas552/.config/sops/age/keys.txt";
+      sops.age.sshKeyPaths = [
+        "/persist/home/ladas552/.ssh/NixToks"
+        "/home/ladas552/.ssh/NixToks"
+      ];
+      sops.age.keyFile = lib.mkDefault "/persist/home/ladas552/.config/sops/age/keys.txt";
 
       sops.secrets."mystuff/host_pwd".neededForUsers = true;
       sops.secrets."mystuff/host_pwd" = { };

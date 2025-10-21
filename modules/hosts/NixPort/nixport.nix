@@ -2,6 +2,8 @@
   flake.modules.nixos.NixPort =
     { inputs, pkgs, ... }:
     {
+      # Define your hostname.
+      networking.hostName = "NixPort";
       imports = [
         inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
       ];
