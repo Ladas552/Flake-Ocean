@@ -14,6 +14,7 @@
       tailscale
       zfs
       dashboard
+      ollama
       immich
       jellyfin
       karakeep
