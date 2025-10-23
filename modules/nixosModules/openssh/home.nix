@@ -2,7 +2,8 @@
   flake.modules.homeManager.openssh = {
     programs.ssh = {
       enable = true;
-
+      # shut that warning up god dammit
+      enableDefaultConfig = false;
       matchBlocks."*" = {
         compression = false;
         serverAliveInterval = 0;

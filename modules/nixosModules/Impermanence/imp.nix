@@ -12,6 +12,7 @@
     in
 
     {
+      imports = [ inputs.impermanence.nixosModules.impermanence ];
       # persist mount
       fileSystems."/persist" = {
         device = "zroot/persist";
