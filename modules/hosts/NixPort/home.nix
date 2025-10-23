@@ -6,6 +6,11 @@
       nixvim = self.packages.${pkgs.system}.nixvim;
     in
     {
+      home.shellAliases = {
+        # I don't want to compile rocm for them
+        shotcut = "nix run nixpkgs#shotcut";
+        alpaca = "nix run nixpkgs#alpaca";
+      };
       # Don't change
       home.stateVersion = "24.11"; # Please read the comment before changing.
       # Standalone Packages for user

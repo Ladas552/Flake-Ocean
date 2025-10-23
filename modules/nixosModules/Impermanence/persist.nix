@@ -14,6 +14,7 @@
           ".librewolf"
         ];
         cache = {
+          files = [ ".local/share/com.jeffser.Alpaca/alpaca.db" ];
           directories = [
             ".local/share/Trash"
             ".local/share/qalculate"
