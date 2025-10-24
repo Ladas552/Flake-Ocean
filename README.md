@@ -28,7 +28,7 @@ github:Ladas552/Flake-Ocean#app`, replace `app` with:
 I adopted [Dendritic layout](https://github.com/mightyiam/dendritic) for my config. 
 Making all files their own modules that I can import, and if module isn't imported, it doesn't exist. This way most of my config is fairy atomic and you can pop in and out modules as you wish.
 
-The downside is however having defined options per host, for example different font size on host with smaller display. But I am going to overcome it with custom meta options, that will work in any scope without extraArgs.
+The downside however is inability to define options per host, for example different font size on host with smaller display without writing a whole different import. But I am going to overcome it with custom meta options, that will work in any scope without extraArgs.
 
 ## Docs
 I write comments on things, that might explain certain ways of doing things, or leave not working options in comments for people to find. This is to not look up one thing twice, and just look at the nix file itself.
@@ -48,6 +48,6 @@ If you want to check every person that I stole things from, go to my [List of co
 
 Also for that [one guy](https://codeberg.org/Dich0tomy/snowstorm) who switched to codeberg
 
-Also [this post from drupol](https://not-a-number.io/2025/refactoring-my-infrastructure-as-code-configurations/) was huge help in migrating my config to dendritic.
+Also [this post from drupol](https://not-a-number.io/2025/refactoring-my-infrastructure-as-code-configurations/) was huge help in migrating my config to dendritic
 
 Also, thanks to everyone in nix-community for being so awesome, wouldn't be there without ya
