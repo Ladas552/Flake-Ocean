@@ -7,12 +7,6 @@
       imports = [
         inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
       ];
-      home-manager = {
-        useUserPackages = true;
-        useGlobalPkgs = true;
-        backupFileExtension = "bk";
-        overwriteBackup = true;
-      };
       # ZFS needs it
       networking.hostId = "f6d40058";
       # Xanmod kernel

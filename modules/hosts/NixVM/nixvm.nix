@@ -27,13 +27,6 @@ inputs: {
       # For ZFS
       networking.hostId = "cb82b8e4";
 
-      home-manager = {
-        extraSpecialArgs = {
-          inherit inputs;
-        };
-        useUserPackages = true;
-        useGlobalPkgs = true;
-      };
       # Latest kernel
       boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 

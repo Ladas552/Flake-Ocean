@@ -21,13 +21,6 @@
       nixpkgs.hostPlatform = "x86_64-linux";
       services.openssh.settings.PermitRootLogin = lib.mkForce "yes";
 
-      home-manager = {
-        extraSpecialArgs = {
-          inherit inputs;
-        };
-        useUserPackages = true;
-        useGlobalPkgs = true;
-      };
       # Xanmod kernel
       boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
 

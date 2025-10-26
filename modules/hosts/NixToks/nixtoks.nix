@@ -24,14 +24,6 @@
       # Termux builder
       boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
-      home-manager = {
-        extraSpecialArgs = {
-          inherit inputs;
-        };
-        useUserPackages = true;
-        useGlobalPkgs = true;
-      };
-
       # Xanmod kernel
       boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
 

@@ -26,8 +26,8 @@
           value = inputs.nixpkgs.lib.nixosSystem {
             inherit specialArgs;
             modules = module.imports ++ [
-              inputs.home-manager.nixosModules.home-manager
               inputs.hjem.nixosModules.default
+              config.flake.modules.nixos.homeManager
               {
                 home-manager.extraSpecialArgs = specialArgs;
               }
