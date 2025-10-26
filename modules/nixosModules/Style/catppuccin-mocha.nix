@@ -1,8 +1,13 @@
+{ config, ... }:
 {
   flake.modules = {
     nixos.cat-mocha =
       { pkgs, ... }:
       {
+        imports = [
+          config.flake.modules.nixos.stylix
+          config.flake.modules.nixos.fonts
+        ];
         stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
       };
     homeManager.cat-mocha =

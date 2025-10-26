@@ -14,6 +14,13 @@
             w: !(lib.hasInfix "If multiple of these password options are set at the same time" w)
           );
         };
+
+        # Username for my normal user
+        flake.meta.username = lib.options.mkOption {
+          default = "ladas552";
+          description = "Normal user in wheel group";
+          type = lib.types.str;
+        };
       };
 
       config.users.mutableUsers = false;
