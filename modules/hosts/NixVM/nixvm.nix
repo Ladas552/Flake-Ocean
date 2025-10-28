@@ -2,6 +2,7 @@ inputs: {
   flake.modules.nixos.NixVm =
     { pkgs, lib, ... }:
     {
+      networking.hostName = "NixVm";
       # Stolen from Iynaix's VM config
       # Installing the appropriate guest utilities on a virtualised system
       # enable clipboard and file sharing

@@ -12,7 +12,7 @@ pkgs.writeShellScriptBin "powermenu.sh" ''
 
   # Current Theme
   # hard code the theme for now, because flake-parts doesn't like "self"
-  dir="/persist/home/ladas552/Projects/my_repos/Nix-Is-Unbreakable/modules/homeModules/rofi"
+  dir="/persist/home/ladas552/Projects/my_repos/Flake-Ocean/modules/homeModules/rofi"
   theme='power-manager'
 
   # CMDs

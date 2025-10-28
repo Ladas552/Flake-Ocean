@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, config, ... }:
 {
   flake.modules = {
     nixos.niri-flake =
@@ -9,7 +9,10 @@
         ...
       }:
       {
-        imports = [ inputs.niri.nixosModules.niri ];
+        imports = [
+          inputs.niri.nixosModules.niri
+          config.flake.modules.nixos.niri-greetd
+        ];
         # Niri using flake
         # uncomment the niri inputs in flake.nix to use this
         programs.niri = {

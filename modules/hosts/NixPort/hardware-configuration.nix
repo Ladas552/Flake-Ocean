@@ -4,7 +4,7 @@
 }:
 
 {
-  flake.modules.nixos.NixPort-hardware =
+  flake.modules.nixos.NixPort =
     {
       lib,
       modulesPath,

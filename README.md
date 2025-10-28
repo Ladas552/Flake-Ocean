@@ -28,8 +28,9 @@ github:Ladas552/Flake-Ocean#app`, replace `app` with:
 I adopted [Dendritic layout](https://github.com/mightyiam/dendritic) for my config. 
 Making all files their own modules that I can import, and if module isn't imported, it doesn't exist. This way most of my config is fairy atomic and you can pop in and out modules as you wish.
 
-The downside however is inability to define options per host, for example different font size on host with smaller display without writing a whole different import. But I am going to overcome it with custom meta options, that will work in any scope without extraArgs.
+Also I made `custom.meta` options on every host, and depending on host, different variables are used. Options defined in `modules/flake-parts/options`. And host variables are defined at `imports.nix` of every host.
 
+I am still working on adding modularity to pkgs, probably make them all flake modules too
 ## Docs
 I write comments on things, that might explain certain ways of doing things, or leave not working options in comments for people to find. This is to not look up one thing twice, and just look at the nix file itself.
 

@@ -52,11 +52,11 @@
         # fastfetch = "fastfetch | ${lib.getExe pkgs.lolcat}";
         # Nix mantainense
         clean = "nh clean all";
-        yy = "nh os switch /persist/home/ladas552/Projects/my_repos/Nix-Is-Unbreakable";
-        yyy = "nh os switch -u /persist/home/ladas552/Projects/my_repos/Nix-Is-Unbreakable";
-        en = "nvim -c 'cd /persist/home/ladas552/Projects/my_repos/Nix-Is-Unbreakable' /persist/home/ladas552/Projects/my_repos/Nix-Is-Unbreakable/flake.nix";
-        enn = "nvim -c 'cd /persist/home/ladas552/Projects/my_repos/Nix-Is-Unbreakable' /persist/home/ladas552/Projects/my_repos/Nix-Is-Unbreakable/hosts/NixPort/default.nix";
-        eh = "nvim -c 'cd /persist/home/ladas552/Projects/my_repos/Nix-Is-Unbreakable' /persist/home/ladas552/Projects/my_repos/Nix-Is-Unbreakable/flake.nix";
+        yy = "nh os switch ${config.custom.meta.self}";
+        yyy = "nh os switch -u ${config.custom.meta.self}";
+        en = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}/flake.nix";
+        enn = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}/modules/hosts/${config.custom.meta.hostname}/imports.nix";
+        eh = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}/flake.nix";
         # eh = "hx ${meta.self}";
         # en = "hx ${meta.self}";
         n = "ssh-add ~/.ssh/NixToks";

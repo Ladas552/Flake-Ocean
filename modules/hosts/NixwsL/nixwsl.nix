@@ -5,6 +5,7 @@
       imports = [
         inputs.nixos-wsl.nixosModules.default
       ];
+      networking.hostName = "NixwsL";
       networking.hostId = "e6a70dac";
       boot.supportedFilesystems.zfs = true;
       wsl = {

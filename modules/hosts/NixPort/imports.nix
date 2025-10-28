@@ -1,10 +1,18 @@
 { config, ... }:
+let
+  custom.meta = {
+    hostname = "NixPort";
+    self = "/persist/home/ladas552/Projects/my_repos/Flake-Ocean";
+    isTermux = false;
+    norg = "~/Documents/Norg";
+  };
+in
 {
   flake.modules.nixos."hosts/NixPort".imports =
     with config.flake.modules.nixos;
     [
+      { inherit custom; }
       NixPort
-      NixPort-hardware
       # Modules
       ## Games
       games
@@ -14,67 +22,67 @@
       cat-mocha
       cups
       firewall
-      fonts
       general
       imp
       imp-options
       kdeconnect
       nh
       niri
-      niri-greetd
       nix
       openssh
       otd
       pipewire
       plymouth
       sops
-      stylix
       systemd-boot
       tailscale
       thunar
       tlp
       xkb
       zfs
+      base
+      network-manager
       # Users
-      users
       root
       ladas552
     ]
     # Specific Home-Manager modules
     ++ [
       {
-        home-manager.users.ladas552.imports = with config.flake.modules.homeManager; [
-          NixPort
-          base
-          cat-mocha
-          chawan
-          chromium
-          direnv
-          fastfetch
-          fish
-          gh
-          ghostty
-          git
-          imp-options
-          imv
-          lf
-          mako
-          manual
-          mpd
-          mpv
-          niri
-          obs
-          rofi
-          shell
-          swaylock
-          syncthing
-          thunderbird
-          vesktop
-          wpaperd
-          yt-dlp
-          zathura
-          zfs
-        ];
+        home-manager.users."${config.custom.meta.username}".imports =
+          with config.flake.modules.homeManager; [
+            { inherit custom; }
+            NixPort
+            base
+            cat-mocha
+            chawan
+            chromium
+            direnv
+            fastfetch
+            fish
+            gh
+            ghostty
+            git
+            imp-options
+            imv
+            lf
+            mako
+            manual
+            mpd
+            mpv
+            niri
+            obs
+            rofi
+            shell
+            swaylock
+            syncthing
+            thunderbird
+            vesktop
+            wpaperd
+            yt-dlp
+            zathura
+            zfs
+          ];
       }
     ];
 }

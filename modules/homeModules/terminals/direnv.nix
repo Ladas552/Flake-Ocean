@@ -1,3 +1,4 @@
+{ config, ... }:
 {
   flake.modules.homeManager.direnv = {
     programs.direnv = {
@@ -9,7 +10,7 @@
           warn_timeout = "0";
           hide_env_diff = true;
         };
-        whitelist.prefix = [ "/home/ladas552/Projects" ];
+        whitelist.prefix = [ "/home/${config.custom.meta.username}/Projects" ];
       };
     };
   };

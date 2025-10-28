@@ -1,9 +1,10 @@
-{ self, ... }:
+{ self, config, ... }:
 {
   flake.modules = {
     nixos.niri =
       { pkgs, lib, ... }:
       {
+        imports = [ config.flake.modules.nixos.niri-greetd ];
         # kdl config
         programs.niri.enable = true;
 

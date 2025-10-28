@@ -4,6 +4,7 @@
     {
       # Define your hostname.
       networking.hostName = "NixPort";
+      custom.meta.hostname = "NixwsL";
       imports = [
         inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
       ];
@@ -13,8 +14,6 @@
       boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
       # https://wiki.archlinux.org/title/Lenovo_ThinkPad_T14s_(AMD)_Gen_3#Display
       boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
-      # Enable networking
-      networking.networkmanager.enable = true;
       # Radeon
       # Enable OpenGL and hardware accelerated graphics drivers
       services.xserver.videoDrivers = [ "modesetting" ];
@@ -40,7 +39,6 @@
       # Before changing this value read the documentation for this option
       # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
       system.stateVersion = "24.11"; # Did you read the comment?
-      # HJEM
 
       # persist my home on nixport to not interfere with server's /home
       custom.imp.home.directories = [

@@ -111,7 +111,7 @@
           gh
           git
           helix
-          imp
+          imp-options
           lf
           shell
         ];
