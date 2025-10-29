@@ -2,7 +2,7 @@
 let
   custom.meta = {
     hostname = "NixToks";
-    self = "~/Flake-Ocean";
+    self = "/home/${config.custom.meta.user}/Flake-Ocean";
     isTermux = false;
     norg = "~/Documents/Norg";
   };
@@ -13,7 +13,6 @@ in
     [
       { inherit custom; }
       NixToks
-      NixToks-hardware
       cat-mocha
       general
       grub

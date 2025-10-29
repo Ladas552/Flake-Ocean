@@ -1,29 +1,27 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 {
-  flake.modules.nixos.NixwsL =
-    { config, ... }:
-    {
-      imports = [
-        inputs.nixos-wsl.nixosModules.default
-      ];
-      networking.hostName = "NixwsL";
-      wsl = {
-        enable = true;
-        defaultUser = "${config.custom.meta.user}";
-        startMenuLaunchers = true;
-        tarball.configPath = "${config.custom.meta.self}";
-        usbip.enable = true;
-        useWindowsDriver = true;
-      };
-
-      # This value determines the NixOS release from which the default
-      # settings for stateful data, like file locations and database versions
-      # on your system were taken. It‘s perfectly fine and recommended to leave
-      # this value at the release version of the first install of this system.
-      # Before changing this value read the documentation for this option
-      # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-      system.stateVersion = "24.05"; # Did you read the comment?
-
-      nixpkgs.hostPlatform = "x86_64-linux";
+  flake.modules.nixos.NixwsL = {
+    imports = [
+      inputs.nixos-wsl.nixosModules.default
+    ];
+    networking.hostName = "NixwsL";
+    wsl = {
+      enable = true;
+      defaultUser = "${config.custom.meta.user}";
+      startMenuLaunchers = true;
+      tarball.configPath = "${config.custom.meta.self}";
+      usbip.enable = true;
+      useWindowsDriver = true;
     };
+
+    # This value determines the NixOS release from which the default
+    # settings for stateful data, like file locations and database versions
+    # on your system were taken. It‘s perfectly fine and recommended to leave
+    # this value at the release version of the first install of this system.
+    # Before changing this value read the documentation for this option
+    # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
+    system.stateVersion = "24.05"; # Did you read the comment?
+
+    nixpkgs.hostPlatform = "x86_64-linux";
+  };
 }

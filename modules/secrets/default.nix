@@ -12,7 +12,6 @@
 
       sops.age.sshKeyPaths = [
         "/persist/home/ladas552/.ssh/NixToks"
-        "/home/ladas552/.ssh/NixToks"
       ];
       sops.age.keyFile = lib.mkDefault "/persist/home/ladas552/.config/sops/age/keys.txt";
 

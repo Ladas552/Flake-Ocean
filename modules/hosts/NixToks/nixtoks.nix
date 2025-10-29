@@ -9,6 +9,9 @@
     {
 
       sops.age.keyFile = "/home/ladas552/.config/sops/age/keys.txt";
+      sops.age.sshKeyPaths = [
+        "/home/ladas552/.ssh/NixToks"
+      ];
 
       # Define your hostname.
       networking.hostName = "NixToks";

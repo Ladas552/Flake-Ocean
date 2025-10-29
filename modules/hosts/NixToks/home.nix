@@ -25,10 +25,5 @@
 
       ];
 
-      home.shellAliases = {
-        eh = lib.mkForce "nvim -c 'cd /home/ladas552/Nix-Is-Unbreakable' /home/ladas552/Nix-Is-Unbreakable/flake.nix";
-        yy = lib.mkForce "nh os switch /home/ladas552/Nix-Is-Unbreakable";
-        yyy = lib.mkForce "nh os switch -u /home/ladas552/Nix-Is-Unbreakable";
-      };
     };
 }
