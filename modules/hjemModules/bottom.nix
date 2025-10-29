@@ -1,6 +1,6 @@
 {
-  flake.modules.hjem.bottomg = {
-    programs = {
+  flake.modules.hjem.bottom = {
+    rum.programs = {
       bottom = {
         enable = true;
       };

@@ -26,10 +26,11 @@
           value = inputs.nixpkgs.lib.nixosSystem {
             inherit specialArgs;
             modules = module.imports ++ [
-              inputs.hjem.nixosModules.default
+              config.flake.modules.nixos.hjem
               config.flake.modules.nixos.homeManager
               {
                 home-manager.extraSpecialArgs = specialArgs;
+                hjem.specialArgs = specialArgs;
               }
             ];
           };
