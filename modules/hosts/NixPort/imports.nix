@@ -81,6 +81,7 @@ in
           yt-dlp
           zathura
           zfs
+          openssh
         ];
       }
     ];
