@@ -11,7 +11,7 @@
         osu-lazer-bin
         # arx-libertatis
         # stepmania
-        openmw
+        # openmw
         daggerfall-unity
         # luanti
         # mindustry

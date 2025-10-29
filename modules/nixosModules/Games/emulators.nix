@@ -4,7 +4,7 @@
     {
       environment.systemPackages = with pkgs; [
         raze
-        vkquake
+        # vkquake
         # Emulators
         blastem
         mgba
