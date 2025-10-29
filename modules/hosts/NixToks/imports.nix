@@ -48,26 +48,25 @@ in
     # Specific Home-Manager modules
     ++ [
       {
-        home-manager.users."${config.custom.meta.username}".imports =
-          with config.flake.modules.homeManager; [
-            { inherit custom; }
-            NixToks
-            base
-            cat-mocha
-            direnv
-            fastfetch
-            fish
-            gh
-            git
-            imp-options
-            lf
-            manual
-            mpd
-            openssh
-            shell
-            syncthing
-            yt-dlp
-          ];
+        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
+          { inherit custom; }
+          NixToks
+          base
+          cat-mocha
+          direnv
+          fastfetch
+          fish
+          gh
+          git
+          imp-options
+          lf
+          manual
+          mpd
+          openssh
+          shell
+          syncthing
+          yt-dlp
+        ];
       }
     ];
 }

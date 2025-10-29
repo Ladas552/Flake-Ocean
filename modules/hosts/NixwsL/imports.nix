@@ -2,7 +2,7 @@
 let
   custom.meta = {
     hostname = "NixwsL";
-    self = "~/Flake-Ocean";
+    self = "/home/${config.custom.meta.user}/Flake-Ocean";
     isTermux = false;
     norg = "~/Documents/Norg";
   };
@@ -26,21 +26,20 @@ in
     # Specific Home-Manager modules
     ++ [
       {
-        home-manager.users."${config.custom.meta.username}".imports =
-          with config.flake.modules.homeManager; [
-            { inherit custom; }
-            NixwsL
-            base
-            git
-            shell
-            fish
-            lf
-            gh
-            direnv
-            fastfetch
-            foot
-            imp-options
-          ];
+        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
+          { inherit custom; }
+          NixwsL
+          base
+          git
+          shell
+          fish
+          lf
+          gh
+          direnv
+          fastfetch
+          foot
+          imp-options
+        ];
       }
     ];
 }

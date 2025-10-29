@@ -32,19 +32,18 @@ in
     # Specific Home-Manager modules
     ++ [
       {
-        home-manager.users."${config.custom.meta.username}".imports =
-          with config.flake.modules.homeManager; [
-            { inherit custom; }
-            NixVm
-            base
-            ghostty
-            direnv
-            imv
-            shell
-            git
-            fish
-            imp-options
-          ];
+        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
+          { inherit custom; }
+          NixVm
+          base
+          ghostty
+          direnv
+          imv
+          shell
+          git
+          fish
+          imp-options
+        ];
       }
     ];
 }

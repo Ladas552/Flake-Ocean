@@ -2,7 +2,7 @@
 {
   # setting user here because can't access it out of modules scope, eg in imports.nix
   # It means I can't set it per host, but at least I can change my username pretty easy if need be
-  options.custom.meta.username = lib.mkOption {
+  options.custom.meta.user = lib.mkOption {
     type = lib.types.str;
     default = "ladas552";
     description = "Normal user in wheel group";

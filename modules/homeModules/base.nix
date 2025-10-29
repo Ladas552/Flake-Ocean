@@ -1,8 +1,9 @@
+{ config, ... }:
 {
   flake.modules.homeManager.base = {
     # Me
-    home.username = "ladas552";
-    home.homeDirectory = "/home/ladas552";
+    home.username = "${config.custom.meta.user}";
+    home.homeDirectory = "/home/${config.custom.meta.user}";
     # Environment and Dependencies
     xdg = {
       enable = true;

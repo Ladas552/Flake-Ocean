@@ -49,40 +49,39 @@ in
     # Specific Home-Manager modules
     ++ [
       {
-        home-manager.users."${config.custom.meta.username}".imports =
-          with config.flake.modules.homeManager; [
-            { inherit custom; }
-            NixPort
-            base
-            cat-mocha
-            chawan
-            chromium
-            direnv
-            fastfetch
-            fish
-            gh
-            ghostty
-            git
-            imp-options
-            imv
-            lf
-            mako
-            manual
-            mpd
-            mpv
-            niri
-            obs
-            rofi
-            shell
-            swaylock
-            syncthing
-            thunderbird
-            vesktop
-            wpaperd
-            yt-dlp
-            zathura
-            zfs
-          ];
+        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
+          { inherit custom; }
+          NixPort
+          base
+          cat-mocha
+          chawan
+          chromium
+          direnv
+          fastfetch
+          fish
+          gh
+          ghostty
+          git
+          imp-options
+          imv
+          lf
+          mako
+          manual
+          mpd
+          mpv
+          niri
+          obs
+          rofi
+          shell
+          swaylock
+          syncthing
+          thunderbird
+          vesktop
+          wpaperd
+          yt-dlp
+          zathura
+          zfs
+        ];
       }
     ];
 }

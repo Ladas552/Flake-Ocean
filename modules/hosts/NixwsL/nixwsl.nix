@@ -1,18 +1,17 @@
+{ inputs, ... }:
 {
   flake.modules.nixos.NixwsL =
-    { inputs, ... }:
+    { config, ... }:
     {
       imports = [
         inputs.nixos-wsl.nixosModules.default
       ];
       networking.hostName = "NixwsL";
-      networking.hostId = "e6a70dac";
-      boot.supportedFilesystems.zfs = true;
       wsl = {
         enable = true;
-        defaultUser = "ladas552";
+        defaultUser = "${config.custom.meta.user}";
         startMenuLaunchers = true;
-        tarball.configPath = "/home/ladas552/Nix-Is-Unbreakable";
+        tarball.configPath = "${config.custom.meta.self}";
         usbip.enable = true;
         useWindowsDriver = true;
       };

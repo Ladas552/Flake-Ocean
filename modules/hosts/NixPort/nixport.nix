@@ -4,7 +4,6 @@
     {
       # Define your hostname.
       networking.hostName = "NixPort";
-      custom.meta.hostname = "NixwsL";
       imports = [
         inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
       ];

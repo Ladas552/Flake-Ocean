@@ -30,34 +30,33 @@ in
     # Specific Home-Manager modules
     ++ [
       {
-        home-manager.users."${config.custom.meta.username}".imports =
-          with config.flake.modules.homeManager; [
-            { inherit custom; }
-            NixIso
-            base
-            vim
-            chromium
-            direnv
-            fastfetch
-            gh
-            ghostty
-            helix
-            imv
-            lf
-            mpv
-            obs
-            vesktop
-            rofi
-            thunderbird
-            zathura
-            shell
-            fish
-            imp-options
-            manual
-            shell
-            cat-mocha
-            git
-          ];
+        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
+          { inherit custom; }
+          NixIso
+          base
+          vim
+          chromium
+          direnv
+          fastfetch
+          gh
+          ghostty
+          helix
+          imv
+          lf
+          mpv
+          obs
+          vesktop
+          rofi
+          thunderbird
+          zathura
+          shell
+          fish
+          imp-options
+          manual
+          shell
+          cat-mocha
+          git
+        ];
       }
     ];
 }
