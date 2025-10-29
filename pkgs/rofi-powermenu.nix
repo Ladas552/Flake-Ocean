@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  self,
 }:
 # Power Menu that uses Rofi. Can be modified to have multiple actions, for example stopping MPD before Suspend
 pkgs.writeShellScriptBin "powermenu.sh" ''
@@ -12,7 +13,7 @@ pkgs.writeShellScriptBin "powermenu.sh" ''
 
   # Current Theme
   # hard code the theme for now, because flake-parts doesn't like "self"
-  dir="/persist/home/ladas552/Projects/my_repos/Flake-Ocean/modules/homeModules/rofi"
+  dir="${self}/modules/homeModules/rofi"
   theme='power-manager'
 
   # CMDs
