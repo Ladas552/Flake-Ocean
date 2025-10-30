@@ -8,6 +8,7 @@
         extraModules = [
           inputs.hjem-rum.hjemModules.default
           config.flake.modules.hjem.imp-options
+          config.flake.modules.hjem.base
         ];
         linker = inputs.hjem.packages.${pkgs.system}.smfh;
         clobberByDefault = true;

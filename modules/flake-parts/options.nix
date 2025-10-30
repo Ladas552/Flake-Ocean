@@ -37,7 +37,6 @@
             norg
             ;
         };
-
       };
       homeManager.base = {
         # custom options, can be called as config.custom.meta.<option> in modules
@@ -49,7 +48,18 @@
             norg
             ;
         };
+      };
 
+      hjem.base = {
+        # custom options, can be called as config.custom.meta.<option> in modules
+        options.custom.meta = {
+          inherit
+            isTermux
+            hostname
+            self
+            norg
+            ;
+        };
       };
 
       nixOnDroid.base = {
@@ -62,7 +72,6 @@
             norg
             ;
         };
-
       };
     };
 }

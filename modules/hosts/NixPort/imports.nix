@@ -88,6 +88,7 @@ in
     ++ [
       {
         hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
+          { inherit custom; }
           fish
           direnv
         ];

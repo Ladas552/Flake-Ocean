@@ -1,6 +1,6 @@
 {
   flake.modules.hjem.fish =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       rum.programs.fish = {
         enable = true;
@@ -8,6 +8,18 @@
           ''
             set -gx pure_show_system_time true
             set -gx pure_color_system_time FF78C5
+            abbr --set-cursor --command nix rn run nixpkgs#%
+            abbr --set-cursor --command nix bn build nixpkgs#%
+            abbr --set-cursor --command nix sn shell nixpkgs#%
+            abbr --set-cursor --command nix rg run github:%
+            abbr --set-cursor --command nix bg build github:%
+            abbr --set-cursor --command nix sg shell github:%
+            abbr --set-cursor --command nix nr run nixpkgs#%
+            abbr --set-cursor --command nix nb build nixpkgs#%
+            abbr --set-cursor --command nix ns shell nixpkgs#%
+            abbr --set-cursor --command nix gr run github:%
+            abbr --set-cursor --command nix gb build github:%
+            abbr --set-cursor --command nix gs shell github:%
           '';
         plugins = {
           inherit (pkgs.fishPlugins)
@@ -19,6 +31,44 @@
             sponge
             ;
         };
+        abbrs = config.rum.programs.fish.aliases;
+        aliases = {
+          # Better app names
+          v = "nvim";
+          # h = "hx";
+          cd = "z";
+          wiki = "wiki-tui";
+          df = "duf";
+          copypaste = "wgetpaste";
+          cmatrix = "unimatrix -f -s 95";
+          # fastfetch = "fastfetch | ${lib.getExe pkgs.lolcat}";
+          # Nix mantainense
+          clean = "nh clean all";
+          yy = "nh os switch ${config.custom.meta.self}";
+          yyy = "nh os switch -u ${config.custom.meta.self}";
+          en = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}/flake.nix";
+          enn = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}/modules/hosts/${config.custom.meta.hostname}/imports.nix";
+          eh = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}/flake.nix";
+          # eh = "hx ${meta.self}";
+          # en = "hx ${meta.self}";
+          n = "ssh-add ~/.ssh/NixToks";
+          # Git
+          g = "git";
+          gal = "git add ./*";
+          gcm = "git commit -m";
+          gpr = "git pull --rebase";
+          gpu = "git push";
+          # Neorg
+          j = ''nvim -c "Neorg journal today"'';
+          # directories
+          mc = "lf";
+          # replaced config.xdg.userDirs. with hard paths
+          mcv = "lf ~/Videos/";
+          mcm = "lf ~/Music/";
+          mcc = "lf ~/.config/";
+          mcp = "lf ~/Pictures/";
+        };
+        # Doesn't work in hjem because it doesn't support submodules, but only concatinated strings
         # abbrs =
         #   let
         #     # a little function to not write boilerplate
