@@ -8,7 +8,8 @@
     }:
     let
       cfg = config.custom.imp;
-      cfghm = config.home-manager.users."ladas552".customhm.imp;
+      cfghm = config.home-manager.users."ladas552".custom.imp;
+      cfghj = config.hjem.users."ladas552".custom.imp;
     in
 
     {
@@ -63,8 +64,10 @@
             ++ cfg.root.directories
           );
           users."ladas552" = {
-            files = lib.unique cfghm.home.files;
-            directories = lib.unique ([ ] ++ cfg.home.directories ++ cfghm.home.directories);
+            files = lib.unique ([ ] ++ cfghm.home.files ++ cfghj.home.files);
+            directories = lib.unique (
+              [ ] ++ cfg.home.directories ++ cfghm.home.directories ++ cfghj.home.directories
+            );
           };
         };
         "/cache" = {
@@ -72,8 +75,10 @@
           files = lib.unique cfg.root.cache.files;
           directories = lib.unique cfg.root.cache.directories;
           users."ladas552" = {
-            files = lib.unique (cfg.home.cache.files ++ cfghm.home.cache.files);
-            directories = lib.unique (cfg.home.cache.directories ++ cfghm.home.cache.directories);
+            files = lib.unique (cfg.home.cache.files ++ cfghm.home.cache.files ++ cfghj.home.cache.files);
+            directories = lib.unique (
+              cfg.home.cache.directories ++ cfghm.home.cache.directories ++ cfghj.home.cache.directories
+            );
           };
         };
       };

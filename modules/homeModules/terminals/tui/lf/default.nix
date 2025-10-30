@@ -5,6 +5,6 @@
     };
 
     # persist for Impermanence
-    customhm.imp.home.cache.directories = [ ".local/share/lf" ];
+    custom.imp.home.cache.directories = [ ".local/share/lf" ];
   };
 }

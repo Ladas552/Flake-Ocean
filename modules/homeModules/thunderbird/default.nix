@@ -35,7 +35,7 @@
     };
 
     # persist for Impermanence
-    customhm.imp.home = {
+    custom.imp.home = {
       directories = [ ".thunderbird" ];
       cache.directories = [ ".cache/thunderbird" ];
     };

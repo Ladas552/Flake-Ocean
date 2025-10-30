@@ -77,7 +77,7 @@
       };
 
       # persist for Impermanence
-      customhm.imp.home.cache = {
+      custom.imp.home.cache = {
         files = [ ".bash_history" ];
         directories = [
           ".local/share/zoxide"

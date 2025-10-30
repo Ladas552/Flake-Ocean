@@ -8,6 +8,6 @@
     };
 
     # persist for Impermanence
-    customhm.imp.home.cache.directories = [ ".local/share/zathura" ];
+    custom.imp.home.cache.directories = [ ".local/share/zathura" ];
   };
 }

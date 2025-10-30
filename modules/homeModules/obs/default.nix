@@ -14,6 +14,6 @@
       };
 
       # persist for Impermanence
-      customhm.imp.home.cache.directories = [ ".config/obs-studio" ];
+      custom.imp.home.cache.directories = [ ".config/obs-studio" ];
     };
 }

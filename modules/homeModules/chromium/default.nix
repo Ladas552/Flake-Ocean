@@ -10,7 +10,7 @@
       };
 
       # persist for Impermanence
-      customhm.imp.home.cache.directories = [
+      custom.imp.home.cache.directories = [
         ".cache/chromium"
         ".config/chromium"
       ];

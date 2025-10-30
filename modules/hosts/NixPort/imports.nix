@@ -56,9 +56,9 @@ in
           cat-mocha
           chawan
           chromium
-          direnv
+          # direnv
           fastfetch
-          fish
+          # fish
           gh
           ghostty
           git
@@ -88,7 +88,8 @@ in
     ++ [
       {
         hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
-          bottom
+          fish
+          direnv
         ];
       }
     ];

@@ -18,6 +18,6 @@
     };
 
     # persist for Impermanence
-    customhm.imp.home.cache.files = [ ".config/nushell/history.txt" ];
+    custom.imp.home.cache.files = [ ".config/nushell/history.txt" ];
   };
 }

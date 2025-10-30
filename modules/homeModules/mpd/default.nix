@@ -336,6 +336,6 @@
       };
 
       # persist for Impermanence
-      customhm.imp.home.cache.directories = [ ".local/share/mpd" ];
+      custom.imp.home.cache.directories = [ ".local/share/mpd" ];
     };
 }

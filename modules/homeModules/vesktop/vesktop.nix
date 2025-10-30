@@ -424,7 +424,7 @@
     };
 
     # persist for Impermanence
-    customhm.imp.home.cache = {
+    custom.imp.home.cache = {
       directories = [ ".config/vesktop/sessionData" ];
       files = [ ".config/vesktop/state.json" ];
     };

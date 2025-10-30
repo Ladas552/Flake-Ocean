@@ -37,7 +37,7 @@
     };
 
     # persist for Impermanence
-    customhm.imp.home.cache.files = [
+    custom.imp.home.cache.files = [
       ".config/chawan/bookmark.md"
       ".config/chawan/history.uri"
     ];

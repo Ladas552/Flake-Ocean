@@ -68,6 +68,6 @@
       };
 
       # persist for Impermanence
-      customhm.imp.home.cache.directories = [ ".local/state/mpv/watch_later" ];
+      custom.imp.home.cache.directories = [ ".local/state/mpv/watch_later" ];
     };
 }
