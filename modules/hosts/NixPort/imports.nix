@@ -81,6 +81,7 @@ in
           zathura
           zfs
           openssh
+          neovide
         ];
       }
     ]

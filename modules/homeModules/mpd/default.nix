@@ -3,7 +3,7 @@
     { pkgs, config, ... }:
     {
       home.packages = with pkgs; [
-        mpc-cli
+        mpc
         # custom.musnow
       ];
       programs.ncmpcpp = {

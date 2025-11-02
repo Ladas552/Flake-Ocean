@@ -10,7 +10,6 @@
         vsync = false;
         srgb = true;
         wsl = false;
-
       };
     };
   };
