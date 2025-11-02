@@ -80,7 +80,6 @@ in
           zathura
           zfs
           openssh
-          neovide
         ];
       }
     ]
@@ -92,6 +91,7 @@ in
           # direnv
           obs
           git
+          neovide
         ];
       }
     ];
