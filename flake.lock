@@ -232,17 +232,14 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1761322149,
-        "narHash": "sha256-eTcrmAj2taajqY6MYvMVBRGI1vWxAKz7TOHoE96MFQ4=",
-        "owner": "snugnug",
-        "repo": "hjem-rum",
-        "rev": "e47b2448451291803c019b797279a14c7639c37f",
-        "type": "github"
+        "lastModified": 1762071767,
+        "narHash": "sha256-mlD3lwpGGKVXsDjZ7ASRVkFXxzRcct/KaBiSUTT5Vz4=",
+        "path": "/home/ladas552/Projects/forks/hjem-rum",
+        "type": "path"
       },
       "original": {
-        "owner": "snugnug",
-        "repo": "hjem-rum",
-        "type": "github"
+        "path": "/home/ladas552/Projects/forks/hjem-rum",
+        "type": "path"
       }
     },
     "home-manager": {

@@ -56,9 +56,9 @@ in
           cat-mocha
           chawan
           chromium
-          # direnv
+          direnv
           fastfetch
-          # fish
+          fish
           gh
           ghostty
           git
@@ -70,7 +70,6 @@ in
           mpd
           mpv
           niri
-          obs
           rofi
           shell
           swaylock
@@ -89,8 +88,9 @@ in
       {
         hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
           { inherit custom; }
-          fish
-          direnv
+          # fish
+          # direnv
+          obs
         ];
       }
     ];

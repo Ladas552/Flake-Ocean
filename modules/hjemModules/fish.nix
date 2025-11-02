@@ -22,6 +22,7 @@
             abbr --set-cursor --command nix gs shell github:%
           '';
         plugins = {
+          # TODO Doesn't work, idk why https://github.com/snugnug/hjem-rum/discussions/154
           inherit (pkgs.fishPlugins)
             pisces
             bass
@@ -62,12 +63,14 @@
           j = ''nvim -c "Neorg journal today"'';
           # directories
           mc = "lf";
+          # TODO
           # replaced config.xdg.userDirs. with hard paths
           mcv = "lf ~/Videos/";
           mcm = "lf ~/Music/";
           mcc = "lf ~/.config/";
           mcp = "lf ~/Pictures/";
         };
+        # TODO
         # Doesn't work in hjem because it doesn't support submodules, but only concatinated strings
         # abbrs =
         #   let
