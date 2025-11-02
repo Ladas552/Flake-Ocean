@@ -61,7 +61,6 @@ in
           fish
           gh
           ghostty
-          git
           imp-options
           imv
           lf
@@ -92,6 +91,7 @@ in
           # fish
           # direnv
           obs
+          git
         ];
       }
     ];
