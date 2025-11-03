@@ -60,7 +60,6 @@ in
           fastfetch
           fish
           gh
-          ghostty
           imp-options
           imv
           lf
@@ -92,6 +91,8 @@ in
           obs
           git
           neovide
+          ghostty
+          cat-mocha
         ];
       }
     ];

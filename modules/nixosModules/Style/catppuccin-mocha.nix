@@ -10,6 +10,14 @@
         ];
         stylix.base16Scheme = "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml";
       };
+    hjem.cat-mocha = {
+      rum.programs.helix.settings.theme = "catppuccin_macchiato";
+      rum.programs.ghostty.settings = {
+        theme = "dracata";
+        font-size = 13;
+        font-family = "JetBrainsMono NFM SemiBold";
+      };
+    };
     homeManager.cat-mocha =
       { pkgs, ... }:
       {
