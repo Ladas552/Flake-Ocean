@@ -84,7 +84,7 @@ in
         buildInputs = oldAttrs.buildInputs ++ [ super.tree-sitter ];
       })) fullConfig;
       neovim-nightly = pkgs.wrapNeovimUnstable (
-        inputs.neovim-nightly-overlay.packages.${pkgs.system}.default.overrideAttrs
+        inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideAttrs
         (oldAttrs: {
           buildInputs = oldAttrs.buildInputs ++ [ super.tree-sitter ];
         })

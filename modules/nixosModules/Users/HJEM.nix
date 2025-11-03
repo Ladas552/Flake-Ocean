@@ -10,7 +10,7 @@
           config.flake.modules.hjem.imp-options
           config.flake.modules.hjem.base
         ];
-        linker = inputs.hjem.packages.${pkgs.system}.smfh;
+        linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
         clobberByDefault = true;
         users.${config.custom.meta.user} = {
           user = "${config.custom.meta.user}";

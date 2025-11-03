@@ -10,7 +10,7 @@
       ...
     }:
     let
-      restore = self.packages.${pkgs.system}.restore;
+      restore = self.packages.${pkgs.stdenv.hostPlatform.system}.restore;
     in
     {
       imports = [

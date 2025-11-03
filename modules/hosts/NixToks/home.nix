@@ -3,7 +3,7 @@
   flake.modules.homeManager.NixToks =
     { pkgs, lib, ... }:
     let
-      nixvim = self.packages.${pkgs.system}.nixvim;
+      nixvim = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim;
     in
 
     {

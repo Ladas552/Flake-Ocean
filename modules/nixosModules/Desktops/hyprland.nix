@@ -33,8 +33,8 @@
         environment.systemPackages = with pkgs; [
           brightnessctl
           xfce.xfce4-power-manager
-          self.packages.${pkgs.system}.rofi-powermenu
-          self.packages.${pkgs.system}.wpick
+          self.packages.${pkgs.stdenv.hostPlatform.system}.rofi-powermenu
+          self.packages.${pkgs.stdenv.hostPlatform.system}.wpick
         ];
 
         environment.variables = {
