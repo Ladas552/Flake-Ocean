@@ -8,7 +8,7 @@
       ...
     }:
     let
-      nixvim = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim;
+      nixvim = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim-minimal;
     in
     {
       home.stateVersion = "24.05";
