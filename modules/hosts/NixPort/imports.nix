@@ -61,7 +61,6 @@ in
           fish
           gh
           imp-options
-          imv
           lf
           mako
           manual
@@ -90,9 +89,10 @@ in
           # direnv
           obs
           git
-          neovide
+          # neovide
           ghostty
           cat-mocha
+          imv
         ];
       }
     ];

@@ -1,0 +1,62 @@
+{
+  flake.modules.hjem.imv = {
+    rum.programs.imv = {
+      enable = true;
+      settings = {
+        options.suppress_default_binds = true;
+        aliases = {
+          x = "close";
+        };
+        binds = {
+          # Define some key bindings
+          "q" = "quit";
+          "y" = "exec echo working!";
+
+          # Image navigation
+          "<Left>" = "prev";
+          "<bracketleft>" = "prev";
+          "<Right>" = "next";
+          "<bracketright>" = "next";
+          "gg" = "goto 1";
+          "<Shift+G>" = "goto -1";
+
+          # Panning
+          "<Ctrl+Down>" = "pan 0 -50";
+          "<Ctrl+Up>" = "pan 0 50";
+          "<Ctrl+Left>" = "pan 50 0";
+          "<Ctrl+Right>" = "pan -50 0";
+
+          # Zooming
+          "<Up>" = "zoom 1";
+          "<Shift+plus>" = "zoom 1";
+          "i" = "zoom 1";
+          "<Down>" = "zoom -1";
+          "<minus>" = "zoom -1";
+          "o" = "zoom -1";
+
+          # Rotate Clockwise by 90 degrees
+          "<Ctrl+r>" = "rotate by 90";
+
+          # Other commands
+          "x" = "close";
+          "f" = "fullscreen";
+          "d" = "overlay";
+          "p" = "exec echo $imv_current_file";
+          "c" = "center";
+          "s" = "scaling next";
+          "<Shift+S>" = "upscaling next";
+          "a" = "zoom actual";
+          "r" = "reset";
+
+          # Gif playback
+          "<period>" = "next_frame";
+          "<space>" = "toggle_playing";
+
+          # Slideshow control
+          "t" = "slideshow +1";
+          "<Shift+T>" = "slideshow -1";
+        };
+      };
+    };
+  };
+}

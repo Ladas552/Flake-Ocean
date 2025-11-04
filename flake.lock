@@ -232,15 +232,16 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1762083360,
-        "narHash": "sha256-6h8ESC2EE0RrDqnRPE4u4cmfVdN++YkSJFSV8pUajcc=",
+        "lastModified": 1762236438,
+        "narHash": "sha256-XPPg0fcA9O85gC+Y66zjXeXJMI6SPzZmGxpVUBUGXcg=",
         "owner": "ladas552",
         "repo": "hjem-rum",
-        "rev": "437d9b7bb9a1e7b0c5730df204be9292ba72aaa9",
+        "rev": "b0a08679b36173d8a2ccf667641ae6436053fc83",
         "type": "github"
       },
       "original": {
         "owner": "ladas552",
+        "ref": "imv",
         "repo": "hjem-rum",
         "type": "github"
       }

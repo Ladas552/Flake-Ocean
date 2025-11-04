@@ -21,7 +21,7 @@
     # Modules for hjem
     hjem-rum = {
       # url = "path:/home/ladas552/Projects/forks/hjem-rum";
-      url = "github:ladas552/hjem-rum";
+      url = "github:ladas552/hjem-rum/imv";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.hjem.follows = "hjem";
       # No SSG
