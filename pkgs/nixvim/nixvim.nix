@@ -27,6 +27,7 @@
     ./plugins/workflow/treesitter.nix
     ./plugins/workflow/typst-preview.nix
     ./plugins/workflow/vim-nix.nix
+    ./plugins/workflow/nvim-surround.nix
     ./plugins/ui/colorizer.nix
     ./plugins/ui/dashboard.nix
     ./plugins/ui/heirline.nix
