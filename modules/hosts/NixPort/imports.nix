@@ -8,6 +8,8 @@ let
   };
 in
 {
+  flake.modules.nixvim.full.imports = [ { inherit custom; } ];
+  flake.modules.nixvim.nixvim-minimal.imports = [ { inherit custom; } ];
   flake.modules.nixos."hosts/NixPort".imports =
     with config.flake.modules.nixos;
     [
@@ -93,6 +95,7 @@ in
           ghostty
           cat-mocha
           imv
+          nixvim
         ];
       }
     ];

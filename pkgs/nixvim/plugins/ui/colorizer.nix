@@ -1,4 +1,0 @@
-{ ... }:
-{
-  plugins.colorizer.enable = true;
-}

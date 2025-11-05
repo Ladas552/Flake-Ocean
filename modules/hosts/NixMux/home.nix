@@ -1,4 +1,3 @@
-{ self, ... }:
 {
   flake.modules.homeManager.NixMux =
     {
@@ -7,14 +6,10 @@
       config,
       ...
     }:
-    let
-      nixvim = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim-minimal;
-    in
     {
       home.stateVersion = "24.05";
       programs.home-manager.enable = true;
       home.packages = with pkgs; [
-        nixvim
         ffmpeg
         libqalculate
         manix

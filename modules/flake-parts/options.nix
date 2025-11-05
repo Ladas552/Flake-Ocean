@@ -62,6 +62,30 @@
         };
       };
 
+      nixvim.full = {
+        # custom options, can be called as config.custom.meta.<option> in modules
+        options.custom.meta = {
+          inherit
+            isTermux
+            hostname
+            self
+            norg
+            ;
+        };
+      };
+
+      nixvim.nixvim-minimal = {
+        # custom options, can be called as config.custom.meta.<option> in modules
+        options.custom.meta = {
+          inherit
+            isTermux
+            hostname
+            self
+            norg
+            ;
+        };
+      };
+
       nixOnDroid.base = {
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {

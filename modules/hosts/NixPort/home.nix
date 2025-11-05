@@ -1,10 +1,6 @@
-{ self, ... }:
 {
   flake.modules.homeManager.NixPort =
     { pkgs, ... }:
-    let
-      nixvim = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim;
-    in
     {
       home.shellAliases = {
         # I don't want to compile rocm for them
@@ -15,7 +11,6 @@
       home.stateVersion = "24.11"; # Please read the comment before changing.
       # Standalone Packages for user
       home.packages = with pkgs; [
-        nixvim
         blender
         libreoffice-fresh
         # shotcut

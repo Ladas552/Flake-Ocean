@@ -8,6 +8,8 @@ let
   };
 in
 {
+  # flake.modules.nixvim.full.imports = [ { inherit custom; } ];
+  # flake.modules.nixvim.nixvim-minimal.imports = [ { inherit custom; } ];
   flake.modules.nixOnDroid."nixOnDroidConfigurations/NixMux".imports =
     with config.flake.modules.nixOnDroid; [
       { inherit custom; }

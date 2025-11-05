@@ -26,25 +26,6 @@ in
               inherit meta;
             };
           }).neovim;
-        # my nixvim config
-        nixvim = (
-          inputs'.nixvim.legacyPackages.makeNixvimWithModule {
-            inherit pkgs;
-            module = import ./nixvim/nixvim.nix;
-            extraSpecialArgs = {
-              inherit inputs' meta;
-            };
-          }
-        );
-        nixvim-minimal = (
-          inputs'.nixvim.legacyPackages.makeNixvimWithModule {
-            inherit pkgs;
-            module = import ./nixvim/nixvim-minimal.nix;
-            extraSpecialArgs = {
-              inherit inputs' meta;
-            };
-          }
-        );
         default = pkgs.writeShellScriptBin "hello" ''echo "Hello World"'';
         restore = pkgs.callPackage ./restore.nix { };
         gcp = pkgs.callPackage ./addcommitpush.nix { };
