@@ -44,7 +44,8 @@
         c.conform
         c.friendly-snippets
         c.lsp-config
-        c.nil_ls
+        # c.nil_ls
+        c.nixd
         c.tinymist
         c.rustaceanvim
       ];
