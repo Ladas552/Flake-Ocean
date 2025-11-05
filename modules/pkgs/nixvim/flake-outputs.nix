@@ -8,14 +8,14 @@
   perSystem =
     { inputs', pkgs, ... }:
     {
-      packages.nixvim = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
+      packages.nixvim-NixPort = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
         inherit pkgs;
-        module = config.flake.modules.nixvim.full;
+        module = config.flake.modules.nixvim.NixPort;
       };
 
-      packages.nixvim-minimal = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
+      packages.nixvim-NixMux = inputs'.nixvim.legacyPackages.makeNixvimWithModule {
         inherit pkgs;
-        module = config.flake.modules.nixvim.minimal;
+        module = config.flake.modules.nixvim.NixMux;
       };
     };
 }

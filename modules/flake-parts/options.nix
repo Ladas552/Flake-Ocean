@@ -62,7 +62,7 @@
         };
       };
 
-      nixvim.full = {
+      nixvim.NixPort = {
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
@@ -74,7 +74,7 @@
         };
       };
 
-      nixvim.nixvim-minimal = {
+      nixvim.NixMux = {
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit

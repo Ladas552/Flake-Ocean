@@ -17,6 +17,7 @@
           directory = "/home/${config.custom.meta.user}";
           # Only because systemd of hjem is readonly, while home-manager it's a writable directory
           systemd.enable = false;
+          rum.environment.hideWarning = true;
         };
 
       };

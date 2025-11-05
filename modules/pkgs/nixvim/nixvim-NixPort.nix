@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  flake.modules.nixvim.full =
+  flake.modules.nixvim.NixPort =
     let
       c = config.flake.modules.nixvim;
     in

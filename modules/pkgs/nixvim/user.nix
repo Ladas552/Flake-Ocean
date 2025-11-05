@@ -13,14 +13,14 @@
         ...
       }:
       let
-        nixvim = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim;
-        nixvim-minimal = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim-minimal;
+        nixvim-NixPort = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim-NixPort;
+        nixvim-NixMux = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim-NixMux;
       in
       {
         home.packages =
           [ ]
-          ++ lib.optionals (!config.custom.meta.isTermux) [ nixvim ]
-          ++ lib.optionals config.custom.meta.isTermux [ nixvim-minimal ];
+          ++ lib.optionals (!config.custom.meta.isTermux) [ nixvim-NixPort ]
+          ++ lib.optionals config.custom.meta.isTermux [ nixvim-NixMux ];
         home.sessionVariables.EDITOR = "neovim";
       };
     hjem.nixvim =
@@ -30,14 +30,14 @@
         ...
       }:
       let
-        nixvim = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim;
-        nixvim-minimal = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim-minimal;
+        nixvim-NixPort = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim-NixPort;
+        nixvim-NixMux = self.packages.${pkgs.stdenv.hostPlatform.system}.nixvim-NixMux;
       in
       {
         packages =
           [ ]
-          ++ lib.optionals (!config.custom.meta.isTermux) [ nixvim ]
-          ++ lib.optionals config.custom.meta.isTermux [ nixvim-minimal ];
+          ++ lib.optionals (!config.custom.meta.isTermux) [ nixvim-NixPort ]
+          ++ lib.optionals config.custom.meta.isTermux [ nixvim-NixMux ];
         environment.sessionVariables.EDITOR = "neovim";
       };
   };

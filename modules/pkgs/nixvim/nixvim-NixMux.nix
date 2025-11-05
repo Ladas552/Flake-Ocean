@@ -1,6 +1,6 @@
 { config, ... }:
 {
-  flake.modules.nixvim.nixvim-minimal =
+  flake.modules.nixvim.NixMux =
     let
       c = config.flake.modules.nixvim;
     in
