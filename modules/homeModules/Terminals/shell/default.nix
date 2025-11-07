@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   flake.modules.homeManager.shell =
     { pkgs, config, ... }:
@@ -8,7 +9,7 @@
         duf
         unimatrix
         wgetpaste
-        # custom.gcp
+        self.packages.${pkgs.stdenv.hostPlatform.system}.gcp
       ];
       programs = {
         ripgrep.enable = true;

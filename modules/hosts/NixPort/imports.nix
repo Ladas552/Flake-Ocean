@@ -80,6 +80,7 @@ in
             zathura
             zfs
             openssh
+            bluetooth
           ];
         }
       ]

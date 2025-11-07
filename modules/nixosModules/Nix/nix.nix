@@ -30,6 +30,8 @@
         registry = (lib.mapAttrs (_: flake: { inherit flake; }) inputs);
         nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
         settings = {
+          # error on IFD, last time I tried it Stylix was causing it
+          # allow-import-from-derivation = false;
           # Optimize nix experience by removing cache and store garbage
           auto-optimise-store = true;
           warn-dirty = false;

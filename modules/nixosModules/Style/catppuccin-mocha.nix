@@ -23,7 +23,7 @@
       {
         stylix = {
           targets = {
-            librewolf.profileNames = [ "ladas552" ];
+            librewolf.profileNames = [ "${config.custom.meta.user}" ];
             bspwm.enable = false;
             kitty.enable = false;
             xfce.enable = false;

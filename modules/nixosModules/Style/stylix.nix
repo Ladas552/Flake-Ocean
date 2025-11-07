@@ -1,6 +1,9 @@
 {
   flake.modules.nixos.stylix =
     { inputs, pkgs, ... }:
+    let
+      font = "JetBrainsMono NFM SemiBold";
+    in
     {
       imports = [
         inputs.stylix.nixosModules.stylix
@@ -14,11 +17,11 @@
         fonts = {
           serif = {
             package = pkgs.nerd-fonts.jetbrains-mono;
-            name = "JetBrainsMono NFM SemiBold";
+            name = font;
           };
           sansSerif = {
             package = pkgs.nerd-fonts.jetbrains-mono;
-            name = "JetBrainsMono NFM SemiBold";
+            name = font;
           };
           emoji = {
             package = pkgs.noto-fonts-color-emoji;
@@ -26,7 +29,7 @@
           };
           monospace = {
             package = pkgs.nerd-fonts.jetbrains-mono;
-            name = "JetBrainsMono NFM SemiBold";
+            name = font;
           };
           sizes = {
             terminal = 11;

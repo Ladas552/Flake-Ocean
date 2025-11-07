@@ -1,6 +1,6 @@
 {
   flake.modules.nixos.qemu =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       # Wayroid
       # Delete images in `/var/lib/waydroid` after removing the option
@@ -37,7 +37,7 @@
           # };
         };
       };
-      users.users."ladas552".extraGroups = [ "libvirtd" ];
+      users.users."${config.custom.meta.user}".extraGroups = [ "libvirtd" ];
 
       # persist for Impermanence
       custom.imp.root.cache.directories = [ "/var/lib/libvirt" ];

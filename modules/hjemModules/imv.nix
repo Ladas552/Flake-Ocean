@@ -4,9 +4,9 @@
       enable = true;
       settings = {
         options.suppress_default_binds = true;
-        aliases = {
-          x = "close";
-        };
+        # aliases = {
+        #   x = "close";
+        # };
         binds = {
           # Define some key bindings
           "q" = "quit";

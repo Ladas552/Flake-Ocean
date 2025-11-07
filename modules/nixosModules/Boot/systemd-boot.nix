@@ -1,6 +1,11 @@
 {
   flake.modules.nixos.systemd-boot =
-    { lib, pkgs, ... }:
+    {
+      lib,
+      pkgs,
+      config,
+      ...
+    }:
     {
       boot = {
         initrd.systemd.enable = true;
@@ -13,7 +18,7 @@
               enable = true;
               sortKey = "x_edk2-uefi-shell";
             };
-            windows = {
+            windows = lib.mkIf (config.custom.meta.hostname == "NixPort") {
               "11-home" = {
                 title = "Windows 11 Home";
                 efiDeviceHandle = "HD0b";

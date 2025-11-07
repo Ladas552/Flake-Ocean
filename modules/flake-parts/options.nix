@@ -1,7 +1,6 @@
-{ lib, ... }:
+{ lib, config, ... }:
 {
   # setting user here because can't access it out of modules scope, eg in imports.nix
-  # It means I can't set it per host, but at least I can change my username pretty easy if need be
   options.custom.meta.user = lib.mkOption {
     type = lib.types.str;
     default = "ladas552";
@@ -9,6 +8,10 @@
   };
   config.flake.modules =
     let
+      user = lib.mkOption {
+        type = lib.types.str;
+        default = config.custom.meta.user;
+      };
       isTermux = lib.mkOption {
         type = lib.types.bool;
         description = "Is host nixOnDroid";
@@ -31,6 +34,7 @@
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
+            user
             isTermux
             hostname
             self
@@ -42,6 +46,7 @@
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
+            user
             isTermux
             hostname
             self
@@ -54,6 +59,7 @@
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
+            user
             isTermux
             hostname
             self
@@ -66,6 +72,7 @@
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
+            user
             isTermux
             hostname
             self
@@ -78,6 +85,7 @@
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
+            user
             isTermux
             hostname
             self
@@ -90,6 +98,7 @@
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
+            user
             isTermux
             hostname
             self

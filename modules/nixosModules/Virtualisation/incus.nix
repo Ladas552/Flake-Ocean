@@ -4,7 +4,7 @@
 # So it will stay here, not used
 {
   flake.modules.nixos.incus =
-    { pkgs, ... }:
+    { pkgs, config, ... }:
     {
       # outputs error without this
       networking.nftables.enable = true;
@@ -17,7 +17,7 @@
         ui.enable = true;
       };
       # Stolen from @saygo and @Michael-C-Buckley
-      users.users.ladas552.extraGroups = [ "incus-admin" ];
+      users.users."${config.custom.meta.user}".extraGroups = [ "incus-admin" ];
       environment.systemPackages = [ pkgs.virtiofsd ];
       # Incus is bested used with these modules available
       boot.kernelModules = [

@@ -1,12 +1,12 @@
 {
-  flake.modules.homeManager.vesktop = {
+  flake.modules.homeManager.vesktop = args: {
     services.arrpc.enable = false;
     programs.vesktop = {
       enable = true;
       settings = {
         discordBranch = "stable";
         minimizeToTray = true;
-        arRPC = false;
+        arRPC = args.config.services.arrpc;
         splashColor = "rgb(218, 219, 222)";
         splashBackground = "rgb(11, 12, 13)";
         spellCheckLanguages = [
@@ -415,7 +415,7 @@
               enabled = true;
             };
             "WebRichPresence (arRPC)" = {
-              enabled = false;
+              enabled = args.config.services.arrpc;
             };
           };
         };

@@ -24,6 +24,7 @@
         c.neogit
         c.neorg
         c.nvim-autopairs
+        c.rainbow
         c.oil
         c.orgmode
         c.otter
