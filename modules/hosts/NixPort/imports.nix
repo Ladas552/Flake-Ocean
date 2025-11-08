@@ -36,6 +36,7 @@ in
         pipewire
         plymouth
         sops
+        adb
         systemd-boot
         tailscale
         thunar
