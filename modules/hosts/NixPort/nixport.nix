@@ -1,12 +1,9 @@
 {
   flake.modules.nixos.NixPort =
-    { inputs, pkgs, ... }:
+    { pkgs, ... }:
     {
       # Define your hostname.
       networking.hostName = "NixPort";
-      imports = [
-        inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
-      ];
       # ZFS needs it
       networking.hostId = "f6d40058";
       # Xanmod kernel

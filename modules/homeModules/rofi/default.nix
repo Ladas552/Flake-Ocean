@@ -10,5 +10,11 @@
         # terminal = "foot";
         theme = ./theme.rasi;
       };
+
+      # persist for Impermanence
+      custom.imp.home.cache.files = [
+        ".cache/rofi3.druncache"
+        ".cache/rofi-entry-history.txt"
+      ];
     };
 }

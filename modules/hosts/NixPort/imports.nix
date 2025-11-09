@@ -68,7 +68,6 @@ in
             mako
             manual
             mpd
-            mpv
             rofi
             shell
             swaylock
@@ -99,6 +98,7 @@ in
             cat-mocha
             imv
             nixvim
+            mpv
           ];
         }
       ];
