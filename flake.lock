@@ -232,8 +232,8 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1762509833,
-        "narHash": "sha256-/T0sWhA6nnLJ4Fx1Qt21ivjL+mr8Py4hu4TcncrHUPE=",
+        "lastModified": 1762684984,
+        "narHash": "sha256-0ykqYXCQKqISGtgZEE0X0fdJDZaJVY5ZzIxLjiRHG0A=",
         "path": "/home/ladas552/Projects/forks/hjem-rum",
         "type": "path"
       },

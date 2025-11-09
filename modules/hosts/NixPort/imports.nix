@@ -57,7 +57,7 @@ in
             NixPort
             base
             cat-mocha
-            chawan
+            # chawan
             chromium
             direnv
             fastfetch
@@ -96,7 +96,8 @@ in
             # neovide
             ghostty
             cat-mocha
-            imv
+            # imv
+            chawan
             nixvim
             mpv
           ];
