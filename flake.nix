@@ -15,8 +15,6 @@
     hjem = {
       url = "github:feel-co/hjem";
       inputs.nixpkgs.follows = "nixpkgs";
-      # No SSG
-      inputs.ndg.follows = "";
     };
     # Modules for hjem
     hjem-rum = {
