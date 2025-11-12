@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Nix</title>
+    <link>https://nix.ladas552.me</link>
+    <description>Latest posts</description>
+    <generator>Norgolith</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 12 Nov 2025 04:26:36 +0000</lastBuildDate>
+    <ttl>60</ttl>
+    <atom:link href="https:&#x2F;&#x2F;nix.ladas552.me/rss.xml" rel="self" type="application/rss+xml" />
+
+    <image>
+      <url>https://nix.ladas552.me&#x2F;assets&#x2F;favicon.png</url>
+      <title>Nix</title>
+      <link>https://nix.ladas552.me</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
+
+    
+  </channel>
+</rss>
