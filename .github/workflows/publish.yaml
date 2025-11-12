@@ -1,0 +1,23 @@
+name: Publish to GH Pages
+permissions:
+  contents: write
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - public/**
+    branches:
+      - docs
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout docs branch
+        uses: actions/checkout@v4
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: public

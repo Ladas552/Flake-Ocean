@@ -1,0 +1,16 @@
+rootUrl = 'https://nix.ladas552.me'
+language = 'en-US'
+title = 'Nix'
+author = 'ladas552'
+
+# Code blocks highlighting
+[highlighter]
+enable = false
+# engine = 'prism' # Can be 'prism' or 'hljs'. Defaults to 'prism'
+
+# RSS feed
+[rss]
+enable = true
+description = 'Latest posts'
+ttl = 60
+image = '/assets/favicon.png'
