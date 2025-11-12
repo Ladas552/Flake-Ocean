@@ -55,9 +55,9 @@
         clean = "nh clean all";
         yy = "nh os switch ${config.custom.meta.self}";
         yyy = "nh os switch -u ${config.custom.meta.self}";
-        en = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}/flake.nix";
+        en = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}";
         enn = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}/modules/hosts/${config.custom.meta.hostname}/imports.nix";
-        eh = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}/flake.nix";
+        eh = "nvim -c 'cd ${config.custom.meta.self}' ${config.custom.meta.self}";
         # eh = "hx ${meta.self}";
         # en = "hx ${meta.self}";
         n = "ssh-add ~/.ssh/NixToks";
