@@ -23,7 +23,7 @@
         ];
       };
       # Enable rocm
-      nixpkgs.config.rocmSupport = true;
+      # nixpkgs.config.rocmSupport = true;
       hardware.amdgpu = {
         opencl.enable = true;
         initrd.enable = true;
