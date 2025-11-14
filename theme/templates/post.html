@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}{{ metadata.title | title }}{% endblock title %}
+{% block content %}
+<!-- define toc_html function -->
+{% set toc_html = generate_toc(toc=metadata.toc, list_type="ul") %}
+<!-- Usage example -->
+{% if metadata.toc %}
+<div>
+  <input type="checkbox" id="toc-toggle">
+  <!-- TOC Toggle Button -->
+  <label for="toc-toggle" class="toc-button" aria-label="Toggle Table of Contents"></label>
+  <nav class="toc-panel">
+    <div class="toc-content">
+    {{ toc_html | safe }}
+    </div>
+  </nav>
+</div>
+{% endif %}
+<div>
+  {{ content | safe }}
+</div>
+
+{% endblock content %}

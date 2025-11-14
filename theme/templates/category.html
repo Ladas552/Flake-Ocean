@@ -7,12 +7,12 @@
   <hr />
   <ul>
     {% for post in posts %}
-      {% if category in post.categories %}
-        <li>
-          <a href="{{ post.permalink }}">{{ post.title }}</a>
-          <time>{{ post.created | date(format="%B %e, %Y") }}</time>
-        </li>
-      {% endif %}
+    {% if category in post.categories %}
+    <li>
+      <a href="{{ post.permalink }}">{{ post.title }}</a>
+      <time>{{ post.created | date(format="%B %e, %Y") }}</time>
+    </li>
+    {% endif %}
     {% endfor %}
   </ul>
 </div>

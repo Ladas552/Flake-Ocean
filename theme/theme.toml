@@ -1,0 +1,5 @@
+name = "Nix"
+author = "ladas552"
+description = "Norgolith theme for Nix docs"
+version = "0.1.0"
+license = "MIT"

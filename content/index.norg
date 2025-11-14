@@ -6,8 +6,8 @@ authors: [
 ]
 categories: []
 created: 2025-11-12T09:25:31+05:00
-updated: 2025-11-12T09:29:52
-layout: default
+updated: 2025-11-12T15:13:19
+layout: home
 version: 1.1.1
 @end
 
@@ -18,7 +18,7 @@ version: 1.1.1
   @end
   +html.width 120
   +html.height 120
-  .image /assets/norgolith.svg
+  .image /assets/icon.svg
 
   +html.class px-4 font-mono
   +html.id desc
