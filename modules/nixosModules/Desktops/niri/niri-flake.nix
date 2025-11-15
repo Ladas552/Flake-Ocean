@@ -13,11 +13,22 @@
           inputs.niri.nixosModules.niri
           config.flake.modules.nixos.niri-greetd
         ];
+
+        # To use master branch niri without building rust
+        nix.settings = {
+          extra-substituters = [
+            "https://niri.cachix.org"
+          ];
+          extra-trusted-public-keys = [
+            "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
+          ];
+        };
+        nixpkgs.overlays = [ inputs.niri.overlays.niri ];
         # Niri using flake
         # uncomment the niri inputs in flake.nix to use this
         programs.niri = {
           enable = true;
-          package = pkgs.niri;
+          package = pkgs.niri-unstable;
         };
 
         environment.systemPackages = with pkgs; [
@@ -50,7 +61,7 @@
         };
       };
     homeManager.niri-flake =
-      { config, lib, ... }:
+      { config, ... }:
       {
         stylix.targets.niri.enable = false;
         programs.niri = {
@@ -395,9 +406,9 @@
               #   "-c"
               #   "${lib.getExe pkgs.slurp} | ${lib.getExe pkgs.grim} -g -"
               # ];
-              "Print".action = screenshot;
+              "Print".action.screenshot = [ ];
               "Shift+Print".action.screenshot-screen = [ ];
-              "Alt+Print".action = screenshot-window;
+              "Alt+Print".action.screenshot-window = [ ];
               # Window Management
               "Super+Q".action = close-window;
               # Floating Windows

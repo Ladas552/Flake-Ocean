@@ -90,7 +90,6 @@ in
             { inherit custom; }
             # fish
             # direnv
-            niri
             obs
             # git
             # neovide
@@ -100,6 +99,7 @@ in
             chawan
             nixvim
             mpv
+            niri
           ];
         }
       ];
