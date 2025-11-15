@@ -6,7 +6,7 @@
       settings = {
         discordBranch = "stable";
         minimizeToTray = true;
-        arRPC = args.config.services.arrpc;
+        arRPC = args.config.services.arrpc.enable;
         splashColor = "rgb(218, 219, 222)";
         splashBackground = "rgb(11, 12, 13)";
         spellCheckLanguages = [
@@ -415,7 +415,7 @@
               enabled = true;
             };
             "WebRichPresence (arRPC)" = {
-              enabled = args.config.services.arrpc;
+              enabled = args.config.services.arrpc.enable;
             };
           };
         };
