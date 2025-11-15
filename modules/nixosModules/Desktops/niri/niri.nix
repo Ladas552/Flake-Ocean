@@ -7,6 +7,7 @@
         imports = [ config.flake.modules.nixos.niri-greetd ];
         # kdl config
         programs.niri.enable = true;
+        programs.niri.package = pkgs.callPackage ./_niri-alt.nix { };
 
         environment.systemPackages = with pkgs; [
           xwayland-satellite
