@@ -124,6 +124,8 @@
               TERMINAL = "ghostty";
               __NV_PRIME_RENDER_OFFLOAD = "1";
               __GLX_VENDOR_LIBRARY_NAME = "nvidia";
+              # make flameshot scale with 1.5 niri scale
+              QT_SCALE_FACTOR="0.667";
             };
             # Looks & UI
             layout = {
@@ -183,6 +185,14 @@
                 default-floating-position.relative-to = "bottom-right";
                 open-focused = false;
                 open-floating = true;
+              }
+              # flameshot
+              # thanks @saygo for window rule
+              {
+                matches = [ { app-id = ''r#"flameshot"#''; } ];
+                open-focused = true;
+                open-floating = true;
+                open-fullscreen = true;
               }
               # Full screen/size apps
               {
@@ -406,7 +416,12 @@
               #   "-c"
               #   "${lib.getExe pkgs.slurp} | ${lib.getExe pkgs.grim} -g -"
               # ];
-              "Print".action.screenshot = [ ];
+              # "Print".action.screenshot = [ ];
+              "Print".action = spawn [
+                "flameshot"
+                "gui"
+              ];
+              "Shift+Alt+Print".action = spawn [ "flameshot-ocr" ];
               "Shift+Print".action.screenshot-screen = [ ];
               "Alt+Print".action.screenshot-window = [ ];
               # Window Management

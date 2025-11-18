@@ -7,7 +7,6 @@
         imports = [ config.flake.modules.nixos.niri-greetd ];
         # kdl config
         programs.niri.enable = true;
-        programs.niri.package = pkgs.callPackage ./_niri-alt.nix { };
 
         environment.systemPackages = with pkgs; [
           xwayland-satellite
@@ -339,7 +338,7 @@
               Shift+Alt+M { spawn "musnow.sh"; }
 
               // Screenshots
-
+              // replaced with flameshot in niri-flake config
               Print { screenshot; }
               Shift+Print { screenshot-screen; }
               Alt+Print { screenshot-window; }
