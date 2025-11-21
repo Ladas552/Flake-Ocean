@@ -9,6 +9,7 @@
         commands = {
           trash = ''%${lib.getExe' pkgs.trash-cli "trash-put"} "$fx"'';
           open-nvim = ''$nvim $f'';
+          open-helix = ''$hx $f'';
           q = ''quit'';
           touch = # bash
             ''
@@ -39,6 +40,7 @@
         keybindings = {
           # Open text editor
           e = "open-nvim";
+          E = "open-helix";
           # Ranger muscle memory
           Dd = "trash";
           DD = "delete";
