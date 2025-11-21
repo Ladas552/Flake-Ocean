@@ -30,6 +30,7 @@ in
         kdeconnect
         nh
         niri-flake
+        nuphy
         nix
         openssh
         otd
