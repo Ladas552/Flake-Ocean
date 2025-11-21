@@ -16,6 +16,7 @@
         c.luasnip
         c.blink-cmp
         c.auto-save
+        c.cyrillic
         c.img-clip
         c.neogit
         c.nvim-autopairs
