@@ -1,25 +1,45 @@
 {% extends "base.html" %}
+{% block seo_tags %}
+<meta property="og:title" content="{{ config.title | title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ metadata.permalink }}" />
+<meta property="og:description" content="{{ metadata.description }}" />
+<meta property="og:site_name" content="{{ config.title }}" />
+<meta property="og:locale" content="{{ config.language }}" />
+{# TODO: add support for og:image using metadata #}
+<link rel="canonical" href="{{ config.rootUrl }}" />
+<meta name="robots" content="index, follow" />
+{% endblock seo_tags %}
+
 {% block title %}{{ metadata.title | title }}{% endblock title %}
 {% block content %}
 {{ content | safe }}
+
+{# Latest 5 non-draft blog posts, ordered automatically by date #}
+{% if posts | filter(attribute="draft", value=false) | length > 0 %}
 <section>
-  <div class="flex-container">
-    {% for post in posts %}
-    <div class="flex-box" onclick="location.href='{{ post.permalink }}';" style="cursor: pointer;">
-      <h3>{{ post.title }}</h3>
-      <div id=description>
-        <description>
-        <span>{{ post.description }}</span>
-        <p>Tags:
-        {% for category in post.categories %}
-        <a href="/categories/{{ category }}">{{ category | capitalize }}</a>
-        {% endfor %}</p>
-        <p><span>Released: {{ post.created }}</span></p>
-        </description>
+  <h2>Recent posts</h2>
+  {% for post in posts | filter(attribute="draft", value=false) | sort(attribute="created") | reverse | slice(end=5) %}
+    <div class="bg-surface p-4 mt-4 border-2 border-base-alt rounded-md shadow-lg">
+      <div class="flex flex-col">
+        <h3 class="mt-0! text-text-alt"><a class="no-underline! hover:underline! hover:decoration-dashed" href="{{ post.permalink }}">{{ post.title }}</a></h3>
+        <time class="text-dark-grey dark:text-grey" datetime="{{ post.created }}">{{ post.created | date(format="%B %e, %Y") }}</time>
+        <span class="text-sm text-grey italic">{{ post.description }}</span>
+      </div>
+      <div class="flex flex-col">
+        <p>
+          {% if post.truncate_char and post.truncate_char is matching("^nil$") %}
+            {% set truncate_char = "" %}
+          {% else %}
+            {% set truncate_char = "…" %}
+          {% endif %}
+          {{ post.raw | striptags | truncate(length=post.truncate | default(value=100), end=truncate_char) | safe }}
+        </p>
+        <a class="no-underline! text-dark-grey font-semibold" href="{{ post.permalink }}">Read more …</a>
       </div>
     </div>
-    {% endfor %}
-  </div>
+  {% endfor %}
 </section>
+{% endif %}
 
 {% endblock content %}

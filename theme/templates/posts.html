@@ -1,9 +1,21 @@
 {% extends "base.html" %}
+{% block seo_tags %}
+<meta property="og:title" content="{{ metadata.title | title }} - {{ config.title | title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ metadata.permalink }}" />
+<meta property="og:description" content="Posts on {{ config.title | title }}" />
+<meta property="og:site_name" content="{{ config.title }}" />
+<meta property="og:locale" content="{{ config.language }}" />
+{# TODO: add support for og:image using metadata #}
+<link rel="canonical" href="{{ metadata.permalink }}" />
+<meta name="robots" content="index, follow" />
+{% endblock seo_tags %}
+
 {% block title %}{{ metadata.title | title }}{% endblock title %}
 {% block content %}
 <h1 class="text-center">Posts</h1>
-<div class="mt-6 lg:mt-8 break-keep">
-  {% for post in posts | slice(end=5) %}
+<div class="mt-6 pt-6 border-t border-t-base-alt dark:border-t-[#39394b] break-keep">
+  {% for post in posts | filter(attribute="draft", value=false) | sort(attribute="created") | reverse %}
   <div class="bg-surface p-4 mt-4 border-2 border-base-alt rounded-md shadow-lg">
     <div class="flex flex-col">
       <h3 class="mt-0! text-text-alt"><a class="no-underline! hover:underline! hover:decoration-dashed" href="{{ post.permalink }}">{{ post.title }}</a></h3>
@@ -11,7 +23,14 @@
       <span class="text-sm text-grey italic">{{ post.description }}</span>
     </div>
     <div class="flex flex-col">
-      <p>{{ post.raw | striptags | truncate(length=100) | safe }}</p>
+      <p>
+        {% if post.truncate_char is defined and post.truncate_char is matching("^nil$") %}
+          {% set truncate_char = "" %}
+        {% else %}
+          {% set truncate_char = "…" %}
+        {% endif %}
+        {{ post.raw | striptags | truncate(length=post.truncate | default(value=100), end=truncate_char) | safe }}
+      </p>
       <a class="no-underline! text-dark-grey font-semibold" href="{{ post.permalink }}">Read more …</a>
     </div>
   </div>

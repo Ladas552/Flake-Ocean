@@ -24,7 +24,13 @@
         in
         {
           default = pkgs.mkShell {
-            packages = [
+            packages = with pkgs; [
+              rustywind # Organize Tailwind CSS classes
+              watchman # required by tailwindcss CLI for watch functionality
+              tailwindcss_4
+              tailwindcss-language-server
+              mprocs # Run multiple commands in parallel
+
               self.packages.x86_64-linux.default
               (pk "serve" ''lith dev --drafts'')
               (pk "serveh" # bash

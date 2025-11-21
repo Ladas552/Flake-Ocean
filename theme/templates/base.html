@@ -1,51 +1,155 @@
 <!DOCTYPE html>
 <html lang="{{ config.language }}">
-  <head>
-    {% block head %}
-    <meta charset="UTF-8" />
-    {% if metadata.description and not metadata.description == "nil" %}
-    <meta name="description" content="{{ metadata.description }}" />
+<head>
+  {% block head %}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="generator" content="Norgolith" />
+
+  {# Dynamic meta tags #}
+  {% if metadata.description and not metadata.description == "nil" %}
+  <meta name="description" content="{{ metadata.description }}" />
+  {% endif %}
+  {% if metadata.authors %}
+  <meta name="author" content="{{ metadata.authors | join(sep=", ") }}" />
+  {% endif %}
+  {% if metadata.categories %}
+  <meta name="keywords" content="{{ metadata.categories | join(sep=", ") }}" />
+  {% endif %}
+
+  {# SEO Meta Tags #}
+  {% block seo_tags %}{% endblock seo_tags %}
+
+  {# Syntax highlighter #}
+  {% if config.highlighter is defined and config.highlighter.enable %}
+    {# If highlighter is enabled but the engine is not defined then fallback to prismjs #}
+    {% if config.highlighter.engine is not string or config.highlighter.engine == "prism" %}
+      {# PrismJS #}
+      {# Themes from automadcms:
+      <link
+          rel="stylesheet"
+          href="https://unpkg.com/automad-prism-themes@0.3.1/dist/prism-catppuccin-frappe.light-dark.css"
+      />
+      #}
+      <link rel="stylesheet" href="/assets/css/prism-sweetie.min.css" />
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+    {% elif config.highlighter.engine is defined
+        and config.highlighter.engine == "hljs" %}
+      {# Highlight.js #}
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+      <script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> #}
+      {# Enable this one instead if you want all the `<code>` tags to be highlighted
+      <script>
+        document.addEventListener("DOMContentLoaded", (event) => {
+          document.querySelectorAll("code").forEach((block) => {
+            hljs.highlightBlock(block);
+          });
+        });
+      </script>
+      #}
+    {% elif config.highlighter.engine is string
+        and config.highlighter.engine not in ["prism", "hljs"] %}
+      <script>
+        window.alert("Warning: highlighter is enabled in the site configuration but its engine is not 'prism' nor 'hljs'");
+      </script>
     {% endif %}
-    {% if metadata.authors %}
-    <meta name="author" content="{{ config.author }}" />
-    {% endif %}
-    {% if metadata.categories %}
-    <meta name="keywords" content="{{ metadata.categories | join(sep=", ") }}" />
-    {% endif %}
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {# PrismJS #}
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-one-dark.min.css" /> -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism-themes/1.9.0/prism-night-owl.min.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
-    {# User-defined styling #}
-    {# Font, idk how to get it in css #}
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kosugi+Maru&display=swap" rel="stylesheet">
-    {# css and icons #}
-    <link rel="stylesheet" href="/assets/css/style.css" />
-    <!-- <link rel="stylesheet" href="https://www.nerdfonts.com/assets/css/webfont.css"> -->
-    <link rel="icon" href="/assets/icon.svg" />
-    <meta property="og:image" content="/assets/images/nix.png"/>
-    <title>{% block title %}{% endblock title %} - {{ config.title | title }}</title>
-    {% endblock head %}
-  </head>
-  <body class="body">
-    {# nav bar #}
-    <header>
+  {% endif %}
+
+  {# AlpineJS #}
+  <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/collapse@3.x.x/dist/cdn.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+  <script>
+      document.addEventListener("alpine:init", () => {
+          Alpine.data("menu", () => ({
+              currentPage: window.location.pathname,
+
+              openMobile: false,
+
+              toggleMobile() {
+                  this.openMobile = !this.openMobile;
+              }
+          }));
+
+          Alpine.data("toc", () => ({
+            open: false,
+
+            toggle() {
+              this.open = !this.open;
+              document.querySelector("#toc-toggle-icon").classList.toggle("rotate-90");
+            }
+          }));
+
+          Alpine.data("theme", () => ({
+              // Defaults to dark theme
+              current: "dark",
+
+              init() {
+                  const storedTheme = localStorage.getItem("theme");
+                  if (storedTheme === "dark") {
+                      this.current = "dark";
+                  } else if (storedTheme === "light") {
+                      this.current = "light";
+                  } else if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+                      this.current = "dark";
+                  }
+                  localStorage.setItem("theme", this.current);
+                  if (this.current === "dark") {
+                      document.documentElement.classList.add("dark");
+                  }
+              },
+
+              toggle() {
+                  this.current = this.current === "dark" ? "light" : "dark";
+                  document.documentElement.classList.toggle("dark", this.current === "dark");
+                  localStorage.setItem("theme", this.current);
+              }
+          }));
+      });
+  </script>
+
+  {# MermaidJS #}
+  {% if config.extra.enable_mermaid %}
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/11.9.0/mermaid.min.js"></script>
+  {% endif %}
+
+  {# Goatcounter #}
+  <script>
+      // Only load on production environment
+      if (window.location.host !== 'amartin.beer')
+          window.goatcounter = {no_onload: true}
+  </script>
+  <script data-goatcounter="https://stats.amartin.beer/count" async src="//stats.amartin.beer/count.js"></script>
+
+  {# Icons #}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.28.1/tabler-icons.min.css">
+
+  {# Styling and favicon #}
+  <link rel="stylesheet" href="/assets/css/styles.min.css" />
+  {% if config.extra.favicon_path is defined and config.extra.favicon_path is string %}
+  <link rel="icon" href={{ config.extra.favicon_path }} />
+  {% else %}
+  <link rel="icon" href="/assets/norgolith.svg" />
+  {% endif %}
+
+  <title>{% block title %}{% endblock title %} - {{ config.title | title }}</title>
+  {% endblock head %}
+</head>
+<body>
+  <div class="transition-colors duration-150 ease-linear">
+    <header class="relative shadow-sm">
       {% include "partials/nav.html" %}
     </header>
-    {# post content #}
-    <main>
-      <div id="content" class="content">{% block content %}{% endblock content %}</div>
+
+    <main class="container mx-auto min-h-screen pt-8 px-4 md:px-0">
+      {% block content %}{% endblock content %}
     </main>
-    {% if metadata.title %}
-    {# footer bar #}
-    <footer class="footer">
+
+    <footer class="mt-8 py-4 px-6 w-full font-mono">
       {% include "partials/footer.html" %}
     </footer>
-    {% endif %}
-  </body>
+  </div>
+</body>
 </html>

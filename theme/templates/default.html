@@ -1,7 +1,17 @@
 {% extends "base.html" %}
+{% block seo_tags %}
+<meta property="og:title" content="{{ metadata.title | title }} - {{ config.title | title }}" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ metadata.permalink }}" />
+<meta property="og:description" content="{{ metadata.description }}" />
+<meta property="og:site_name" content="{{ config.title }}" />
+<meta property="og:locale" content="{{ config.language }}" />
+{# TODO: add support for og:image using metadata #}
+<link rel="canonical" href="{{ metadata.permalink }}" />
+<meta name="robots" content="index, follow" />
+{% endblock seo_tags %}
+
 {% block title %}{{ metadata.title | title }}{% endblock title %}
 {% block content %}
-<div class="container mx-auto min-h-screen mt-12">
 {{ content | safe }}
-</div>
 {% endblock content %}

@@ -14,3 +14,20 @@ enable = true
 description = 'Latest posts'
 ttl = 60
 image = '/assets/favicon.png'
+
+# Extras
+[extra]
+license = "GPLv3"
+favicon_path = '/assets/favicon.png'
+footer_author_link = "https://codeberg.org/amartin"
+enable_mermaid = true
+
+[extra.nav]
+About = '/about'
+Posts = '/posts'
+Tags = '/categories'
+RSS = '/rss.xml'
+
+[extra.footer]
+GitHub = 'https://github.com/NTBBloodbath'
+Codeberg = 'https://codeberg.org/amartin'
