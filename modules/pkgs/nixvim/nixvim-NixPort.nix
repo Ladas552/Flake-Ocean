@@ -28,6 +28,7 @@
         c.oil
         c.orgmode
         c.otter
+        c.cyrillic
         # c.parinfer-rust
         c.snacks
         c.treesitter
