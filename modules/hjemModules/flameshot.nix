@@ -30,6 +30,8 @@
           General = {
             showHelp = false;
             showDesktopNotification = false;
+            # make flameshot work on Niri
+            useGrimAdapter = true;
           };
         };
       };

@@ -125,7 +125,7 @@
               __NV_PRIME_RENDER_OFFLOAD = "1";
               __GLX_VENDOR_LIBRARY_NAME = "nvidia";
               # make flameshot scale with 1.5 niri scale
-              QT_SCALE_FACTOR="0.667";
+              QT_SCALE_FACTOR = "0.667";
             };
             # Looks & UI
             layout = {
@@ -275,7 +275,7 @@
                 "-e"
                 "nvim"
                 "-c"
-                "'Neorg journal today'"
+                "Neorg journal today"
               ];
               "Super+M".action = spawn [
                 "ghostty"

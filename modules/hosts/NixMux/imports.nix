@@ -8,10 +8,28 @@ let
   };
 in
 {
-  flake.modules.nixvim.nixvim-NixMux.imports = [ { inherit custom; } ];
+  flake.modules.nixvim.NixMux.imports = [ { inherit custom; } ];
   flake.modules.nixOnDroid."nixOnDroidConfigurations/NixMux".imports =
-    with config.flake.modules.nixOnDroid; [
+    with config.flake.modules.nixOnDroid;
+    [
       { inherit custom; }
       base
+    ]
+    ++ [
+      {
+        home-manager.config.imports = with config.flake.modules.homeManager; [
+          { inherit custom; }
+          NixMux
+          nixvim
+          chawan
+          fastfetch
+          gh
+          git
+          helix
+          imp-options
+          lf
+          shell
+        ];
+      }
     ];
 }

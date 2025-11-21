@@ -100,17 +100,6 @@
         backupFileExtension = "hm-bak";
         config = {
           home.stateVersion = "24.05";
-          imports = with config.flake.modules.homeManager; [
-            NixMux
-            chawan
-            fastfetch
-            gh
-            git
-            helix
-            imp-options
-            lf
-            shell
-          ];
         };
         useUserPackages = true;
         useGlobalPkgs = true;

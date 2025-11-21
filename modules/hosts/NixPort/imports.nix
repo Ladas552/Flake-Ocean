@@ -29,7 +29,7 @@ in
         imp-options
         kdeconnect
         nh
-        niri
+        niri-flake
         nix
         openssh
         otd
@@ -81,6 +81,7 @@ in
             zfs
             openssh
             bluetooth
+            niri-flake
           ];
         }
       ]
@@ -92,14 +93,14 @@ in
             # direnv
             obs
             # git
-            # neovide
+            neovide
             ghostty
             cat-mocha
             # imv
             chawan
             nixvim
             mpv
-            niri
+            flameshot
           ];
         }
       ];

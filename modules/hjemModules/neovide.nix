@@ -11,7 +11,7 @@
           };
           vsync = false;
           srgb = true;
-          wsl = if config.custom.meta.host == "NixwsL" then true else false;
+          wsl = if config.custom.meta.hostname == "NixwsL" then true else false;
         };
       };
     };
