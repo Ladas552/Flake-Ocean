@@ -13,6 +13,7 @@
         c.cat-mocha
         c.diagnostics
         # Plugins
+        c.neorg
         c.luasnip
         c.blink-cmp
         c.auto-save

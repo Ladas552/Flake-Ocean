@@ -101,10 +101,10 @@
         mc = "lf";
         h = "hx";
         # System Mantaining
-        en = "hx /data/data/com.termux.nix/files/home/Nix-Is-Unbreakable";
-        eh = "hx /data/data/com.termux.nix/files/home/Nix-Is-Unbreakable";
+        en = "hx /data/data/com.termux.nix/files/home/git/Flake-Ocean";
+        eh = "hx /data/data/com.termux.nix/files/home/git/Flake-Ocean";
         clean = "nix-collect-garbage";
-        yy = "nix-on-droid switch -F /data/data/com.termux.nix/files/home/Nix-Is-Unbreakable#NixMux";
+        yy = "nix-on-droid switch -F /data/data/com.termux.nix/files/home/git/Flake-Ocean#NixMux";
         # Git
         g = "git";
         gal = "git add ./*";
