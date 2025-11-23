@@ -63,7 +63,6 @@
     homeManager.niri-flake =
       { config, ... }:
       {
-        stylix.targets.niri.enable = false;
         programs.niri = {
           settings = {
             #one liners

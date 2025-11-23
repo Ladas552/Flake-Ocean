@@ -44,8 +44,6 @@
 
     impermanence.url = "github:nix-community/impermanence";
 
-    stylix.url = "github:nix-community/stylix";
-
     flake-parts.url = "github:hercules-ci/flake-parts";
     import-tree.url = "github:vic/import-tree";
 
