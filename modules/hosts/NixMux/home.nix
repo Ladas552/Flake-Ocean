@@ -101,10 +101,12 @@
         mc = "lf";
         h = "hx";
         # System Mantaining
-        en = "hx /data/data/com.termux.nix/files/home/git/Flake-Ocean";
-        eh = "hx /data/data/com.termux.nix/files/home/git/Flake-Ocean";
+        en = "hx ${config.custom.meta.self}";
+        eh = "hx ${config.custom.meta.self}";
+        enn = "nvim -c 'cd ${config.custom.meta.self}' -c 'Neogit'";
         clean = "nix-collect-garbage";
-        yy = "nix-on-droid switch -F /data/data/com.termux.nix/files/home/git/Flake-Ocean#NixMux";
+        yy = "nix-on-droid switch -F ${config.custom.meta.self}#${config.custom.meta.hostname}";
+        yyy = "nix flake update --flake ${config.custom.meta.self}";
         # Git
         g = "git";
         gal = "git add ./*";

@@ -103,6 +103,9 @@
         };
         useUserPackages = true;
         useGlobalPkgs = true;
+        # aren't in nix-on-droid home-manager module
+        # minimal = true;
+        # overwriteBackup = true;
       };
       user.shell = "${pkgs.fish}/bin/fish";
     };

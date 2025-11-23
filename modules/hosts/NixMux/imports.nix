@@ -2,7 +2,7 @@
 let
   custom.meta = {
     hostname = "NixMux";
-    self = "/data/data/com.termux.nix/files/home/Flake-Ocean";
+    self = "/data/data/com.termux.nix/files/home/git/Flake-Ocean";
     isTermux = true;
     norg = "~/storage/downloads/Norg";
   };
