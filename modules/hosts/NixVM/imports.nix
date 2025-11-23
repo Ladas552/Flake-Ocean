@@ -22,7 +22,6 @@ in
       zerotier
       systemd-boot
       imp-options
-      base
       nix
       general
       # Users
@@ -35,7 +34,6 @@ in
         home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
           { inherit custom; }
           NixVm
-          base
           ghostty
           direnv
           imv

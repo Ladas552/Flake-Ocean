@@ -44,7 +44,6 @@ in
         tlp
         xkb
         zfs
-        base
         network-manager
         # Users
         root
@@ -56,7 +55,6 @@ in
           home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
             { inherit custom; }
             NixPort
-            base
             cat-mocha
             # chawan
             chromium

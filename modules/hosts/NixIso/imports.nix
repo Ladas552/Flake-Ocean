@@ -22,7 +22,6 @@ in
       xkb
       imp-options
       sops
-      base
       # Users
       root
       ladas552
@@ -33,7 +32,6 @@ in
         home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
           { inherit custom; }
           NixIso
-          base
           vim
           chromium
           direnv

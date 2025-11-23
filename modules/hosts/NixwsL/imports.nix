@@ -18,7 +18,6 @@ in
       sops
       nix
       general
-      base
       # Users
       root
       ladas552
@@ -29,7 +28,6 @@ in
         home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
           { inherit custom; }
           NixwsL
-          base
           git
           shell
           fish

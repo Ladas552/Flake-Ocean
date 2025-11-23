@@ -28,8 +28,15 @@
             modules = module.imports ++ [
               config.flake.modules.nixos.hjem
               config.flake.modules.nixos.homeManager
+              config.flake.modules.nixos.options
               {
-                home-manager.extraSpecialArgs = specialArgs;
+                home-manager = {
+                  sharedModules = [
+                    config.flake.modules.homeManager.options
+                    config.flake.modules.homeManager.base
+                  ];
+                  extraSpecialArgs = specialArgs;
+                };
                 hjem.specialArgs = specialArgs;
               }
             ];
@@ -53,7 +60,10 @@
           name = droidName;
           value = inputs.nix-on-droid.lib.nixOnDroidConfiguration {
             pkgs = import inputs.nixpkgs { system = "aarch64-linux"; };
-            modules = [ module ];
+            modules = [
+              module
+              config.flake.modules.nixOnDroid.options
+            ];
           };
         }
       ))

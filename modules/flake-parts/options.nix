@@ -30,7 +30,7 @@
       };
     in
     {
-      nixos.base = {
+      nixos.options = {
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
@@ -42,7 +42,7 @@
             ;
         };
       };
-      homeManager.base = {
+      homeManager.options = {
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
@@ -55,7 +55,7 @@
         };
       };
 
-      hjem.base = {
+      hjem.options = {
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
@@ -94,7 +94,7 @@
         };
       };
 
-      nixOnDroid.base = {
+      nixOnDroid.options = {
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
           inherit
@@ -106,18 +106,5 @@
             ;
         };
       };
-      homeManager.NixMux = {
-        # custom options, can be called as config.custom.meta.<option> in modules
-        options.custom.meta = {
-          inherit
-            user
-            isTermux
-            hostname
-            self
-            norg
-            ;
-        };
-      };
-
     };
 }

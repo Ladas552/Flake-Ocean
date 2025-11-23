@@ -19,6 +19,7 @@ in
       {
         home-manager.config.imports = with config.flake.modules.homeManager; [
           { inherit custom; }
+          options
           NixMux
           nixvim
           chawan

@@ -37,7 +37,6 @@ in
       plymouth
       qemu
       tlp
-      base
       xkb
       # Modules
       # Users
@@ -50,7 +49,6 @@ in
         home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
           { inherit custom; }
           NixToks
-          base
           cat-mocha
           direnv
           fastfetch
