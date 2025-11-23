@@ -123,3 +123,13 @@ I start to have a life other than computers so I kinda begin to forget what I di
 
 *** Overlays
     I defined overlays, but need to add the Helix overlay in there
+*** Colors
+    I am thinking of swithing to hjem fully one day, but stylix isn't hjem compatable. So I devised an idea. generate files using hjem.files or home.file, in the corresponding config directories. And define the base colorscheme in options. So basically `color16 = ${config.custom.pink}`. And the colors are added with different `import ./colors`, a reference to generated files in, for example kitty config.
+
+    Similar to how Matugen modules works, It generates colors and then you can put them in different files to reference them in your config, it provides runtime based colorscheme solution.
+
+    Nix Colors solution is how you would make colors stateful. Basically every color is defined in options, so it only changes on rebuilds.
+
+    My approach will most similarly look like Nix Colors, while taking the different files approach.
+
+    The only problem I can think of, a lot of manual working involving reading configuration docs. Also some programs may not allow to have imports for colorschemes. So maybe I will just settle with options. 

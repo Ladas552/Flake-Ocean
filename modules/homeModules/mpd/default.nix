@@ -299,7 +299,7 @@
       };
       # Enable if discord is pressent on the system
       services.mpd-discord-rpc = {
-        enable = false;
+        enable = config.services.arrpc.enable;
         settings = {
           format = {
             details = "$title";
