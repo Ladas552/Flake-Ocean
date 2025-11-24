@@ -18,6 +18,7 @@ in
       sops
       nix
       general
+      cat-mocha
       # Users
       root
       ladas552
@@ -30,6 +31,7 @@ in
           NixwsL
           git
           shell
+          cat-mocha
           fish
           lf
           gh

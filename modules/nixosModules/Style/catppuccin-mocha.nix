@@ -8,6 +8,9 @@
           name = "JetBrainsMono Nerd Font Mono";
           font-family = "JetBrainsMono NFM SemiBold";
         };
+        colors = {
+          helix-theme = "catppuccin_macchiato";
+        };
       };
     in
     {
@@ -23,7 +26,6 @@
         { config, ... }:
         {
           inherit custom;
-          rum.programs.helix.settings.theme = "catppuccin_macchiato";
           rum.programs.ghostty.settings = {
             theme = "dracata";
             font-size = 13;
@@ -31,16 +33,19 @@
           };
         };
       homeManager.cat-mocha =
-        { config, ... }:
+        { config, pkgs, ... }:
         {
           inherit custom;
-          # Other modules
-          programs.helix.settings.theme = "catppuccin_macchiato";
           # Enable custom pallet
           programs.ghostty.settings = {
             theme = "dracata";
             font-size = 13;
             font-family = config.custom.style.font.font-family;
+          };
+          # icons in home-manager
+          gtk.iconTheme = {
+            name = "dark";
+            package = pkgs.candy-icons;
           };
         };
     };

@@ -21,6 +21,7 @@ in
       sops
       zerotier
       systemd-boot
+      cat-mocha
       imp-options
       nix
       general
@@ -36,6 +37,7 @@ in
           NixVm
           ghostty
           direnv
+          cat-mocha
           imv
           shell
           git

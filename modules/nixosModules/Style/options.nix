@@ -4,7 +4,6 @@
   flake.modules =
     let
       font = {
-        package = lib.mkPackageOption { description = "Package for font to install"; };
         name = lib.mkOption {
           type = lib.types.str;
           description = "Name for the font it install";
@@ -14,16 +13,22 @@
           description = "Name for the font it install";
         };
       };
+      colors = {
+        helix-theme = lib.mkOption {
+          type = lib.types.str;
+          description = "helix theme to use";
+        };
+      };
     in
     {
       nixos.options = {
-        options.custom.style = { inherit font; };
+        options.custom.style = { inherit font colors; };
       };
       homeManager.options = {
-        options.custom.style = { inherit font; };
+        options.custom.style = { inherit font colors; };
       };
       hjem.options = {
-        options.custom.style = { inherit font; };
+        options.custom.style = { inherit font colors; };
       };
     };
 }

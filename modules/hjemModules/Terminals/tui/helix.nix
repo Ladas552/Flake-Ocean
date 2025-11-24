@@ -1,6 +1,11 @@
 {
   flake.modules.hjem.helix =
-    { pkgs, lib, ... }:
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
     {
       packages = with pkgs; [
         nixd
@@ -14,9 +19,14 @@
       rum.programs.helix = {
         enable = true;
 
+        # options
         settings = {
-          # options
-          theme = lib.mkDefault "adwaita-dark";
+          # set theme from global theme or adwaita-dark if NixMux
+          theme =
+            if config.custom.meta.hostname == "NixMux" then
+              "adwaita-dark"
+            else
+              config.custom.style.colors.helix-theme;
           editor = {
             # LSP
             lsp = {
