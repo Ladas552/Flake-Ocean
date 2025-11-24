@@ -3,13 +3,13 @@
     { config, ... }:
     {
       programs.helix.settings = {
-        editor = {
           # set theme from global theme or adwaita-dark if NixMux
           theme =
             if config.custom.meta.hostname == "NixMux" then
               "adwaita-dark"
             else
               config.custom.style.colors.helix-theme;
+        editor = {
           # LSP
           lsp = {
             display-inlay-hints = true;
