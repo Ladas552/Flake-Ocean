@@ -1,18 +1,15 @@
 {
   flake.modules.nixos.fonts =
-    { pkgs, ... }:
-    let
-      font = "JetBrainsMono Nerd Font Mono";
-    in
+    { pkgs, config, ... }:
     {
       # stolen from saygo
       fonts = {
         fontconfig = {
           enable = true;
           defaultFonts = {
-            serif = [ font ];
-            sansSerif = [ font ];
-            monospace = [ font ];
+            serif = [ config.custom.style.font.name ];
+            sansSerif = [ config.custom.style.font.name ];
+            monospace = [ config.custom.style.font.name ];
           };
           antialias = true;
           hinting = {
@@ -30,7 +27,6 @@
         noto-fonts
         noto-fonts-cjk-sans
         noto-fonts-color-emoji
-        nerd-fonts.jetbrains-mono
         # Enable nerd fonts for every font
         #(lib.filter lib.isDerivation (lib.attrValues pkgs.nerd-fonts))
       ];
