@@ -14,21 +14,32 @@
         };
       };
       colors = {
+        # single line helix theme to use
         helix-theme = lib.mkOption {
           type = lib.types.str;
-          description = "helix theme to use";
+          description = "Helix theme to use";
+        };
+        # define custom colors
+        palette = lib.mkOption {
+          type = lib.types.attrsOf lib.types.str;
+          default = { };
+          description = "Colors for theme";
         };
       };
+      alias = lib.mkAliasOptionModule [ "color" ] [ "custom" "style" "colors" "palette" ];
     in
     {
       nixos.options = {
         options.custom.style = { inherit font colors; };
+        imports = [ alias ];
       };
       homeManager.options = {
         options.custom.style = { inherit font colors; };
+        imports = [ alias ];
       };
       hjem.options = {
         options.custom.style = { inherit font colors; };
+        imports = [ alias ];
       };
     };
 }

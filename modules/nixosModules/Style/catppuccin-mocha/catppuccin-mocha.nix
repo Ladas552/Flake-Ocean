@@ -10,6 +10,8 @@
         };
         colors = {
           helix-theme = "catppuccin_macchiato";
+          palette = {
+          };
         };
       };
     in
