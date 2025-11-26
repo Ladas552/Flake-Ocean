@@ -35,7 +35,7 @@
           xwayland-satellite
           brightnessctl
           xfce.xfce4-power-manager
-          self.packages.${pkgs.stdenv.hostPlatform.system}.rofi-powermenu
+          # self.packages.${pkgs.stdenv.hostPlatform.system}.rofi-powermenu
           self.packages.${pkgs.stdenv.hostPlatform.system}.wpick
         ];
 
@@ -76,13 +76,13 @@
             gestures.hot-corners.enable = false;
             # Autostart
             spawn-at-startup = [
-              {
-                command = [
-                  "xfce4-power-manager"
-                  "--daemon"
-                ];
-              }
-              { command = [ "wpaperd" ]; }
+              # {
+              #   command = [
+              #     "xfce4-power-manager"
+              #     "--daemon"
+              #   ];
+              # }
+              # { command = [ "wpaperd" ]; }
               {
                 command = [
                   "thunar"
@@ -124,11 +124,11 @@
               __NV_PRIME_RENDER_OFFLOAD = "1";
               __GLX_VENDOR_LIBRARY_NAME = "nvidia";
               # make flameshot scale with 1.5 niri scale
-              QT_SCALE_FACTOR = "0.667";
+              # QT_SCALE_FACTOR = "0.667";
             };
             # Looks & UI
             layout = {
-              gaps = 4;
+              gaps = 8;
               center-focused-column = "never";
               default-column-width.proportion = 0.5;
               border.enable = false;
@@ -187,12 +187,12 @@
               }
               # flameshot
               # thanks @saygo for window rule
-              {
-                matches = [ { app-id = ''r#"flameshot"#''; } ];
-                open-focused = true;
-                open-floating = true;
-                open-fullscreen = true;
-              }
+              # {
+              #   matches = [ { app-id = ''r#"flameshot"#''; } ];
+              #   open-focused = true;
+              #   open-floating = true;
+              #   open-fullscreen = true;
+              # }
               # Full screen/size apps
               {
                 matches = [ { app-id = "steam_proton"; } ];
@@ -201,8 +201,6 @@
               {
                 matches = [
                   { app-id = ".qemu-system-x86_64-wrapped"; }
-                  { app-id = "vesktop"; }
-                  { app-id = "legcord"; }
                   { app-id = "steam_app_0"; }
                   { app-id = "darksoulsii.exe"; }
                   { app-id = "steam-"; }
@@ -218,6 +216,8 @@
                 matches = [
                   { app-id = "librewolf"; }
                   { app-id = "thunderbird"; }
+                  { app-id = "vesktop"; }
+                  { app-id = "legcord"; }
                 ];
                 open-maximized = true;
               }
@@ -258,11 +258,11 @@
             binds = with config.lib.niri.actions; {
               # Apps
               "Super+T".action = spawn "ghostty";
-              "Super+Space".action = spawn [
-                "rofi"
-                "-show"
-              ];
-              "Super+L".action = spawn "swaylock";
+              # "Super+Space".action = spawn [
+              #   "rofi"
+              #   "-show"
+              # ];
+              # "Super+L".action = spawn "swaylock";
               # "Super+E".action = spawn "emacs";
               "Super+N".action = spawn [
                 "ghostty"
@@ -286,11 +286,11 @@
                 "-e"
                 "btop"
               ];
-              "Super+G".action = spawn [
-                "ghostty"
-                "-e"
-                "qalc"
-              ];
+              # "Super+G".action = spawn [
+              #   "ghostty"
+              #   "-e"
+              #   "qalc"
+              # ];
               # GUI apps
               "Super+F".action = spawn "thunar";
               "Super+W".action = spawn "librewolf";
@@ -340,7 +340,7 @@
 
               # Scripts
               "Super+C".action = spawn [ "word-lookup.sh" ];
-              "Super+X".action = spawn [ "powermenu.sh" ];
+              # "Super+X".action = spawn [ "powermenu.sh" ];
               #Example volume keys mappings for PipeWire & WirePlumber.
               #The allow-when-locked=true property makes them work even when the session is locked.
               "XF86AudioRaiseVolume" = {
@@ -415,12 +415,12 @@
               #   "-c"
               #   "${lib.getExe pkgs.slurp} | ${lib.getExe pkgs.grim} -g -"
               # ];
-              # "Print".action.screenshot = [ ];
-              "Print".action = spawn [
-                "flameshot"
-                "gui"
-              ];
-              "Shift+Alt+Print".action = spawn [ "flameshot-ocr" ];
+              "Print".action.screenshot = [ ];
+              # "Print".action = spawn [
+              #   "flameshot"
+              #   "gui"
+              # ];
+              # "Shift+Alt+Print".action = spawn [ "flameshot-ocr" ];
               "Shift+Print".action.screenshot-screen = [ ];
               "Alt+Print".action.screenshot-window = [ ];
               # Window Management

@@ -41,6 +41,7 @@ in
         tailscale
         thunar
         tlp
+        noct
         xkb
         zfs
         network-manager
@@ -55,23 +56,18 @@ in
             { inherit custom; }
             NixPort
             cat-mocha
-            # chawan
             chromium
             direnv
             fastfetch
             fish
             gh
             lf
-            mako
             manual
             mpd
-            rofi
             shell
-            swaylock
             syncthing
             thunderbird
             vesktop
-            wpaperd
             yt-dlp
             git
             zathura
@@ -79,6 +75,7 @@ in
             openssh
             bluetooth
             niri-flake
+            noct
           ];
         }
       ]
@@ -97,7 +94,7 @@ in
             chawan
             nixvim
             mpv
-            flameshot
+            # flameshot
           ];
         }
       ];
