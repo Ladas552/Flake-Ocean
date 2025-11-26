@@ -1,7 +1,13 @@
 {
   flake.modules.homeManager.rofi =
-    { pkgs, lib, ... }:
     {
+      pkgs,
+      lib,
+      modulesPath,
+      ...
+    }:
+    {
+      imports = [ "${modulesPath}/programs/rofi.nix" ];
       programs.rofi = {
         enable = true;
         font = "JetBrains Mono Nerd Font 11";

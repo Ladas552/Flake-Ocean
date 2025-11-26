@@ -1,8 +1,25 @@
 { self, ... }:
 {
   flake.modules.homeManager.shell =
-    { pkgs, config, ... }:
     {
+      pkgs,
+      config,
+      modulesPath,
+      ...
+    }:
+    {
+      imports = [
+        "${modulesPath}/programs/bat.nix"
+        "${modulesPath}/programs/btop.nix"
+        "${modulesPath}/programs/eza.nix"
+        "${modulesPath}/programs/fd.nix"
+        "${modulesPath}/programs/fzf.nix"
+        "${modulesPath}/programs/ripgrep.nix"
+        "${modulesPath}/programs/zoxide.nix"
+        # "${modulesPath}/programs/.nix"
+        # "${modulesPath}/programs/.nix"
+        # "${modulesPath}/programs/.nix"
+      ];
       # Shell programs
       home.packages = with pkgs; [
         wiki-tui

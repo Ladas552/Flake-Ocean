@@ -1,7 +1,11 @@
 {
   flake.modules.homeManager.ghostty =
-    { config, ... }:
+    { config, modulesPath, ... }:
     {
+      imports = [
+        "${modulesPath}/programs/ghostty.nix"
+        "${modulesPath}/programs/vim.nix" # one of defined syntax in module
+      ];
       programs.ghostty = {
         enable = true;
         # Use ghostty master branch from Flake
@@ -44,6 +48,11 @@
           };
         };
         settings = {
+          # Enable custom pallet
+          theme = "dracata";
+          font-size = 13;
+          font-family = config.custom.style.font.font-family;
+
           # To look at docs for settings use:
           # ghostty +show-config --docs --default | nvim
           # Windows

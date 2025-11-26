@@ -14,7 +14,6 @@ in
       { inherit custom; }
       NixwsL
       fonts
-      imp-options
       sops
       nix
       general
@@ -38,7 +37,6 @@ in
           direnv
           fastfetch
           foot
-          imp-options
         ];
       }
     ];

@@ -22,7 +22,6 @@ in
       zerotier
       systemd-boot
       cat-mocha
-      imp-options
       nix
       general
       # Users
@@ -42,7 +41,6 @@ in
           shell
           git
           fish
-          imp-options
         ];
       }
     ];

@@ -16,7 +16,6 @@ in
       cat-mocha
       general
       grub
-      imp-options
       nix
       sops
       tailscale
@@ -55,7 +54,6 @@ in
           fish
           gh
           git
-          imp-options
           lf
           manual
           mpd

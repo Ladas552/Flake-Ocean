@@ -20,7 +20,5 @@
         VISUAL = "nvim";
         SUDO_EDITOR = "nvim";
       };
-
-      programs.ghostty.settings.gtk-titlebar = lib.mkForce true;
     };
 }

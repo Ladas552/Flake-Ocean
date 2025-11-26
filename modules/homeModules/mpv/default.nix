@@ -1,7 +1,8 @@
 {
   flake.modules.homeManager.mpv =
-    { pkgs, ... }:
+    { pkgs, modulesPath, ... }:
     {
+      imports = [ "${modulesPath}/programs/mpv.nix" ];
       home.packages = with pkgs; [
         ff2mpv
       ];

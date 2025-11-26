@@ -20,7 +20,6 @@ in
       tlp
       cat-mocha
       xkb
-      imp-options
       sops
       # Users
       root
@@ -49,7 +48,6 @@ in
           zathura
           shell
           fish
-          imp-options
           manual
           shell
           cat-mocha

@@ -27,7 +27,6 @@ in
           gh
           git
           helix
-          imp-options
           lf
           shell
         ];

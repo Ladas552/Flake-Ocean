@@ -1,7 +1,13 @@
 {
   flake.modules.homeManager.fish =
-    { pkgs, config, ... }:
     {
+      pkgs,
+      config,
+      modulesPath,
+      ...
+    }:
+    {
+      imports = [ "${modulesPath}/programs/fish.nix" ];
       programs.fish = {
         enable = true;
         shellInit = # fish

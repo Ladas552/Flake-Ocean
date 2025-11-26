@@ -26,7 +26,6 @@ in
         firewall
         general
         imp
-        imp-options
         kdeconnect
         nh
         niri-flake
@@ -62,7 +61,6 @@ in
             fastfetch
             fish
             gh
-            imp-options
             lf
             mako
             manual

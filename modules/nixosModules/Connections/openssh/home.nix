@@ -1,7 +1,8 @@
 {
   flake.modules.homeManager.openssh =
-    { config, ... }:
+    { config, modulesPath, ... }:
     {
+      imports = [ "${modulesPath}/programs/ssh.nix" ];
       programs.ssh = {
         enable = true;
         # shut that warning up god dammit

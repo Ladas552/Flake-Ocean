@@ -1,7 +1,19 @@
 {
   flake.modules.homeManager.mpd =
-    { pkgs, config, ... }:
     {
+      pkgs,
+      config,
+      modulesPath,
+      ...
+    }:
+    {
+      imports = [
+        "${modulesPath}/programs/ncmpcpp.nix"
+        "${modulesPath}/programs/rmpc.nix"
+        "${modulesPath}/services/mpd.nix"
+        "${modulesPath}/services/mpdris2.nix"
+        "${modulesPath}/services/mpris-proxy.nix" # for mpdris2
+      ];
       home.packages = with pkgs; [
         mpc
         # custom.musnow
@@ -296,19 +308,6 @@
                 ],
             )
           '';
-      };
-      # Enable if discord is pressent on the system
-      services.mpd-discord-rpc = {
-        enable = config.services.arrpc.enable;
-        settings = {
-          format = {
-            details = "$title";
-            state = "By $artist";
-            large_image = ":nerd:";
-            large_text = "WW91IGhhdmUgbm8gbGlmZQ==";
-            small_text = "WW91IGhhdmUgbm8gbGlmZQ==";
-          };
-        };
       };
       services.mpdris2 = {
         # enable = true;

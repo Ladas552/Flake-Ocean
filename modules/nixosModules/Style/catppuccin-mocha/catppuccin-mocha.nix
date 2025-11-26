@@ -35,15 +35,9 @@
           };
         };
       homeManager.cat-mocha =
-        { config, pkgs, ... }:
+        { pkgs, ... }:
         {
           inherit custom;
-          # Enable custom pallet
-          programs.ghostty.settings = {
-            theme = "dracata";
-            font-size = 13;
-            font-family = config.custom.style.font.font-family;
-          };
           # icons in home-manager
           gtk.iconTheme = {
             name = "dark";

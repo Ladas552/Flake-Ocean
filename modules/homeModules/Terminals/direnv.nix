@@ -1,7 +1,8 @@
 {
   flake.modules.homeManager.direnv =
-    { config, ... }:
+    { config, modulesPath, ... }:
     {
+      imports = [ "${modulesPath}/programs/direnv.nix" ];
       programs.direnv = {
         enable = true;
         silent = true;

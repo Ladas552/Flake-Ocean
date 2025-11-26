@@ -10,6 +10,7 @@
         useGlobalPkgs = true;
         backupFileExtension = "bk";
         overwriteBackup = true;
+        minimal = true;
       };
     };
 }
