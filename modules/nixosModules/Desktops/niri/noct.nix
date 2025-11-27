@@ -92,6 +92,8 @@
             ];
           };
         };
+        # persist for Impermanence
+        custom.imp.home.cache.directories = [ ".cache/noctalia/" ];
       };
   };
 }
