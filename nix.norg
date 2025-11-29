@@ -121,8 +121,6 @@ I start to have a life other than computers so I kinda begin to forget what I di
 *** Sessions
     - I want to make wm independent variables for applications. So that I can have For example, 2 configured Launcher applications, but I only want one. Then I just change the variable, and every other module that uses variable `isLauncher` also follows. Basically to have a dozen of WM configs, but if I one day want to switch rofi for dmenu, keybinds would stay the same.
 
-*** Overlays
-    I defined overlays, but need to add the Helix overlay in there
 *** Colors
     I am thinking of swithing to hjem fully one day, but stylix isn't hjem compatable. So I devised an idea. generate files using hjem.files or home.file, in the corresponding config directories. And define the base colorscheme in options. So basically `color16 = ${config.custom.pink}`. And the colors are added with different `import ./colors`, a reference to generated files in, for example kitty config.
 
