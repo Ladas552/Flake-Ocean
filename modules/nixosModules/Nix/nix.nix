@@ -7,13 +7,14 @@
       ...
     }:
     {
-      # I don't use channels
+      # I don't use channels, and I don' care to setup nix-index
       programs.command-not-found.enable = false;
       # Less building text
       documentation = {
         enable = true;
         doc.enable = false;
         man.enable = true;
+        nixos.enable = false;
         dev.enable = false;
       };
       # Nix options

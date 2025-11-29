@@ -4,7 +4,8 @@
     services.fwupd.enable = true;
     # clear out journalctl logs
     services.journald.extraConfig = "MaxRetentionSec=14day";
-    # Allow core dumps
+    # Allow core dumps, idk why it isn't a default
+    # https://github.com/curtbushko/nixos-config/blob/fa15644a47c6c937841ae2943370ad7228ed3e2e/systems/x86_64-linux/gamingrig/default.nix#L60
     systemd.coredump.enable = true;
     # Disable nano
     programs.nano.enable = false;
