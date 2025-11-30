@@ -1,9 +1,10 @@
+{ self, ... }:
 {
   flake.modules.homeManager.mpd =
     {
-      pkgs,
       config,
       modulesPath,
+      pkgs,
       ...
     }:
     {
@@ -16,7 +17,7 @@
       ];
       home.packages = with pkgs; [
         mpc
-        # custom.musnow
+        self.packages.${pkgs.stdenv.hostPlatform.system}.musnow
       ];
       programs.ncmpcpp = {
         enable = false;
