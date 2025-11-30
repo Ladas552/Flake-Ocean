@@ -1,8 +1,7 @@
 {
   flake.modules.homeManager.chromium =
-    { pkgs, modulesPath, ... }:
+    { pkgs, ... }:
     {
-      imports = [ "${modulesPath}/programs/chromium.nix" ];
       programs.chromium = {
         enable = true;
         commandLineArgs = [ "--no-default-browser-check" ];

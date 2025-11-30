@@ -1,19 +1,9 @@
 { self, ... }:
 {
   flake.modules.homeManager.mpd =
-    {
-      config,
-      modulesPath,
-      pkgs,
-      ...
-    }:
+    { config, pkgs, ... }:
     {
       imports = [
-        "${modulesPath}/programs/ncmpcpp.nix"
-        "${modulesPath}/programs/rmpc.nix"
-        "${modulesPath}/services/mpd.nix"
-        "${modulesPath}/services/mpdris2.nix"
-        "${modulesPath}/services/mpris-proxy.nix" # for mpdris2
       ];
       home.packages = with pkgs; [
         mpc

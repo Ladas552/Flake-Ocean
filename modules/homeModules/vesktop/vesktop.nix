@@ -1,12 +1,7 @@
 {
   flake.modules.homeManager.vesktop =
-    { config, modulesPath, ... }:
+    { config, ... }:
     {
-      imports = [
-        "${modulesPath}/services/arrpc.nix"
-        "${modulesPath}/programs/vesktop.nix"
-        "${modulesPath}/services/mpd-discord-rpc.nix"
-      ];
       # Enable if discord is pressent on the system
       services.mpd-discord-rpc = {
         enable = config.services.arrpc.enable;

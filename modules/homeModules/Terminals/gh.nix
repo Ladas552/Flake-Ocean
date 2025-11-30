@@ -1,11 +1,8 @@
 {
-  flake.modules.homeManager.gh =
-    { modulesPath, ... }:
-    {
-      imports = [ "${modulesPath}/programs/gh.nix" ];
-      programs.gh = {
-        enable = true;
-        gitCredentialHelper.enable = true;
-      };
+  flake.modules.homeManager.gh = {
+    programs.gh = {
+      enable = true;
+      gitCredentialHelper.enable = true;
     };
+  };
 }

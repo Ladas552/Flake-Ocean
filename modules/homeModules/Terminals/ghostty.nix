@@ -1,11 +1,7 @@
 {
   flake.modules.homeManager.ghostty =
-    { config, modulesPath, ... }:
+    { config, ... }:
     {
-      imports = [
-        "${modulesPath}/programs/ghostty.nix"
-        "${modulesPath}/programs/vim.nix" # one of defined syntax in module
-      ];
       programs.ghostty = {
         enable = true;
         # Use ghostty master branch from Flake

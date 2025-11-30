@@ -1,8 +1,7 @@
 {
   flake.modules.homeManager.obs =
-    { pkgs, modulesPath, ... }:
+    { pkgs, ... }:
     {
-      imports = [ "${modulesPath}/programs/obs-studio.nix" ];
       programs.obs-studio = {
         enable = true;
         plugins = with pkgs.obs-studio-plugins; [

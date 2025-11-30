@@ -1,8 +1,1 @@
-{
-  flake.modules.homeManager.swaylock =
-    { modulesPath, ... }:
-    {
-      imports = [ "${modulesPath}/programs/swaylock.nix" ];
-      programs.swaylock.enable = true;
-    };
-}
+{ flake.modules.homeManager.swaylock.programs.swaylock.enable = true; }

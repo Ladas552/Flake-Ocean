@@ -1,11 +1,8 @@
 {
   flake.modules.homeManager.yt-dlp =
-    { config, modulesPath, ... }:
+    { config, ... }:
     {
-      imports = [ "${modulesPath}/programs/yt-dlp.nix" ];
-      programs.yt-dlp = {
-        enable = true;
-      };
+      programs.yt-dlp.enable = true;
       home.shellAliases = {
         dl-video = "yt-dlp --embed-thumbnail -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4 --output '%(title)s.%(ext)s'";
         dl-clips = "yt-dlp --embed-thumbnail -f bestvideo[ext=mp4]+bestaudio[ext=m4a]/mp4 --ignore-errors --output '${config.xdg.userDirs.videos}/clips/%(playlist)s/%(playlist_index)s-%(title)s.%(ext)s' --yes-playlist";
