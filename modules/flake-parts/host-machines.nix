@@ -28,14 +28,14 @@
             modules = module.imports ++ [
               config.flake.modules.nixos.hjem
               config.flake.modules.nixos.homeManager
-              # minimal as different module only exists because I am not bothered to add minimal = true; to nix-on-droid
-              config.flake.modules.nixos.homeManager-minimal
               config.flake.modules.nixos.options
               {
                 home-manager = {
                   sharedModules = [
                     config.flake.modules.homeManager.options
                     config.flake.modules.homeManager.base
+                    # minimal as different module only exists because I am not bothered to add minimal = true; to nix-on-droid
+                    config.flake.modules.homeManager.homeManager-minimal
                   ];
                   extraSpecialArgs = specialArgs;
                 };

@@ -3,7 +3,12 @@
   # special defined scripts and keybinds will be in there
   # scaling doesn't work btw
   flake.modules.nixos.cage-ghostty =
-    { pkgs, lib, ... }:
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
     {
       environment.systemPackages = with pkgs; [
         brightnessctl
@@ -16,7 +21,7 @@
           "-m"
           "extend"
         ];
-        user = "ladas552";
+        user = "${config.custom.meta.user}";
         environment = {
           XKB_DEFAULT_LAYOUT = "us,kz";
           XKB_DEFAULT_OPTIONS = "grp:caps_toggle";

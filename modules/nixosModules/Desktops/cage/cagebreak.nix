@@ -3,7 +3,12 @@
   flake.modules = {
     nixos.cagebreak =
       # init cagebreak session
-      { pkgs, lib, ... }:
+      {
+        pkgs,
+        lib,
+        config,
+        ...
+      }:
       {
         environment.systemPackages = with pkgs; [
           brightnessctl
@@ -11,7 +16,7 @@
         ];
 
         services.displayManager.autoLogin.enable = true;
-        services.displayManager.autoLogin.user = "ladas552";
+        services.displayManager.autoLogin.user = "${config.custom.meta.user}";
         services.greetd = {
           enable = true;
           settings = rec {
@@ -19,7 +24,7 @@
             # https://wiki.archlinux.org/title/Greetd#Enabling_autologin
             initial_session = {
               command = "${lib.meta.getExe' pkgs.cagebreak "cagebreak"}";
-              user = "ladas552";
+              user = "${config.custom.meta.user}";
             };
             default_session = initial_session;
           };

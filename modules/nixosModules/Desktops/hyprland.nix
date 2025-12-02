@@ -4,10 +4,10 @@
   flake.modules = {
     # autologin into hyprland
     nixos.hyprland-greetd =
-      { pkgs, ... }:
+      { pkgs, config, ... }:
       {
         services.displayManager.autoLogin.enable = true;
-        services.displayManager.autoLogin.user = "ladas552";
+        services.displayManager.autoLogin.user = "${config.custom.meta.user}";
         services.greetd = {
           enable = true;
           settings = rec {
@@ -15,7 +15,7 @@
             # https://wiki.archlinux.org/title/Greetd#Enabling_autologin
             initial_session = {
               command = "uwsm start ${pkgs.hyprland}/share/wayland-sessions/hyprland.desktop";
-              user = "ladas552";
+              user = "${config.custom.meta.user}";
             };
             default_session = initial_session;
           };

@@ -1,4 +1,3 @@
-{ config, ... }:
 {
   flake.modules = {
     nixos.homeManager =
@@ -10,18 +9,10 @@
           useGlobalPkgs = true;
           backupFileExtension = "bk";
           overwriteBackup = true;
+          minimal = true;
         };
       };
-    nixos.homeManager-minimal = {
-      home-manager.minimal = true;
-      imports = [
-        {
-          home-manager.users."${config.custom.meta.user}".imports = [
-            config.flake.modules.homeManager.homeManager-minimal
-          ];
-        }
-      ];
-    };
+    # I hate nix-on-droid for this, but I am too lazy to add the option into it so I probably should hate myself
     homeManager.homeManager-minimal =
       { modulesPath, ... }:
       {
