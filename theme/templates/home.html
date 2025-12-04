@@ -15,29 +15,34 @@
 {% block content %}
 {{ content | safe }}
 
-{# Recent Posts #}
+{# Documentation Cards #}
 {% if posts | filter(attribute="draft", value=false) | length > 0 %}
-<h2>Recent Posts</h2>
-{% for post in posts | filter(attribute="draft", value=false) | sort(attribute="created") | reverse | slice(end=5) %}
-<div style="margin: 1.5em 0; padding-bottom: 1em; border-bottom: 1px solid var(--border);">
-  <h3 style="margin-top: 0;">
-    <a href="{{ post.permalink }}">{{ post.title }}</a>
-  </h3>
-  <p style="color: var(--text-muted); margin: 0.5em 0;">
-    <time datetime="{{ post.created }}">{{ post.created | date(format="%B %e, %Y") }}</time>
-  </p>
-  {% if post.description %}
-  <p style="font-style: italic;">{{ post.description }}</p>
-  {% endif %}
-  <p>
-    {% if post.truncate_char and post.truncate_char is matching("^nil$") %}
-    {% set truncate_char = "" %}
-    {% else %}
-    {% set truncate_char = "…" %}
-    {% endif %}
-    {{ post.raw | striptags | truncate(length=150, end=truncate_char) | safe }}
-  </p>
+<div style="margin-top: 3em;">
+    <h2>Documentation</h2>
+    <div
+        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5em; margin-top: 1.5em;">
+        {% for post in posts | filter(attribute="draft", value=false) | sort(attribute="created") %}
+        <a href="{{ post.permalink }}"
+            style="display: block; padding: 1.5em; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;"
+            onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)';"
+            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
+            <h3 style="margin: 0 0 0.5em 0; color: var(--link); font-size: 1.1em;">{{ post.title }}</h3>
+            {% if post.description %}
+            <p style="margin: 0; color: var(--text-muted); font-size: 0.9em; line-height: 1.5;">{{ post.description }}
+            </p>
+            {% endif %}
+            {% if post.categories and post.categories | length > 0 %}
+            <div style="margin-top: 1em; display: flex; flex-wrap: wrap; gap: 0.5em;">
+                {% for category in post.categories %}
+                <span
+                    style="font-size: 0.75em; padding: 0.25em 0.75em; background: var(--code-bg); border-radius: 12px; color: var(--text-muted);">{{
+                    category }}</span>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </a>
+        {% endfor %}
+    </div>
 </div>
-{% endfor %}
 {% endif %}
 {% endblock content %}
