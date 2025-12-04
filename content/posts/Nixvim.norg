@@ -1,0 +1,16 @@
+@document.meta
+title: Nixvim
+description: How to configure NixOS declaratively
+authors: ladas552
+categories: [
+  nixos
+  configuration
+]
+created: 2025-12-03T10:00:00+05:00
+updated: 2025-12-04T23:37:36
+layout: post
+draft: false
+version: 1.1.1
+@end
+
+* Nixvim

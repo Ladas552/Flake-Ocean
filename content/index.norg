@@ -1,79 +1,26 @@
 @document.meta
-title: Welcome to Norgolith
+title: Welcome to Flake-Ocean
 description: This is a static site made using norgolith.
 authors: [
   ladas552
 ]
 categories: []
-created: 2025-11-12T09:25:31+05:00
-updated: 2025-11-12T15:13:19
+created: 2025-11-12
 layout: home
 version: 1.1.1
 @end
 
-+html.class text-3xl font-bold
-* Welcome to your new Norgolith site!
-  @embed html
-  <div class="flex items-center mt-2">
-  @end
-  +html.width 120
-  +html.height 120
-  .image /assets/icon.svg
+* Nix
+  Hi, this is Ladas552 speaking
 
-  +html.class px-4 font-mono
-  +html.id desc
-  Norgolith is a monolithic static site generator for {https://github.com/nvim-neorg/neorg}[Neorg]
-  built with Rust. It caters to both developers and content creators seeking a powerful and
-  user-friendly solution for creating static websites from Norg content.
-  @embed html
-  </div>
-  @end
+  You are reading beta version of docs for my NixOS config, It will explain how it works and why it works!
 
-+html.class text-2xl font-bold mt-4
-** Getting Started
-   +html.class list-disc mx-4
-   - Create assets and content using `lith new`.
-   +html.class list-disc mx-4
-   - Use `lith serve` to start the development server.
-   +html.class list-disc mx-4
-   - Run `lith build` for building your production-ready site.
+  Not because it's complicated, but for people to learn and grow with me.
 
-+html.class text-2xl font-bold mt-4
-** Features
-   +html.class list-disc mx-4
-   - Native `.norg` file support.
-   +html.class list-disc mx-4
-   - Fully async build system.
-   +html.class list-disc mx-4
-   - Live reload development server.
-   +html.class list-disc mx-4
-   - Flexible template system with Tera.
+  Have fun reading nothing, because there is nothing to read.
 
-+html.class text-2xl font-bold mt-4
-** Documentation
-   TBD...
+  The site is build using norgolith and tailwind css. But keep in mind, the front end was vibecoded, so don't go looking for that source code - it's pure ass. 
 
-+html.class text-2xl font-bold mt-4
-** Support
-   +html.class list-disc mx-4
-   +html.id discord-link
-   - Need help? {https://discord.gg/T6EgTAX7ht}[Join our Discord]!
-   +html.class list-disc mx-4
-   +html.id github-issues
-   - Found an issue? {https://github.com/NTBBloodbath/norgolith/issues/new}[Report it on GitHub].
+  If you don't wanna read the whole thing just because it was build using an llm that actively destroys out planet. I can't blame you.
 
-+html.class text-2xl font-bold mt-4
-** Next steps
-   +html.class list-disc mx-4
-   - Edit this file at `content/index.norg`.
-   +html.class list-disc mx-4
-   - Add your first post: `lith new posts/hello-world.norg`.
-   +html.class list-disc mx-4
-   - Customize CSS in the `assets` directory.
-   +html.class list-disc mx-4
-   - Customize templates in the `templates` directory.
-   +html.class list-disc mx-4
-   - Build your site for production: `lith build`.
-   +html.class list-disc mx-4
-   +html.id github-pages
-   - Deploy the produced `public/` directory to {https://pages.github.com}[GitHub Pages].
+  But if you have some tailwind CSS or web knowledge please let me know to improve this site with human hands. Because I don't wanna maintain 2 different sites at the same time.

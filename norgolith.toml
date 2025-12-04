@@ -1,4 +1,4 @@
-rootUrl = 'https://nix.ladas552.me'
+rootUrl = 'https://ladas552.me/Flake-Ocean'
 language = 'en-US'
 title = 'Nix'
 author = 'ladas552'
@@ -19,12 +19,10 @@ image = '/assets/favicon.png'
 [extra]
 license = "GPLv3"
 favicon_path = '/assets/favicon.png'
-footer_author_link = "https://codeberg.org/amartin"
 enable_mermaid = true
 
 [extra.nav]
 Tags = '/categories'
 
 [extra.footer]
-GitHub = 'https://github.com/NTBBloodbath'
-Codeberg = 'https://codeberg.org/amartin'
+GitHub = 'https://github.com/Ladas552/Flake-Ocean'

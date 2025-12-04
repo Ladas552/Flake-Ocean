@@ -14,35 +14,35 @@
 }
 
 /* ============================================
-   COLOR SCHEME - Simple and Clean
+   COLOR SCHEME - Catppuccin Macchiato
    ============================================ */
 
 :root {
-  /* Light Mode - Clean */
-  --bg: #ffffff;
-  --bg-secondary: #fafafa;
-  --text: #333333;
-  --text-muted: #888888;
-  --border: #e0e0e0;
-  --link: #4183c4;
-  --link-hover: #1e70bf;
-  --code-bg: #f6f7f6;
-  --sidebar-bg: #fafafa;
-  --sidebar-active: #4183c4;
+  /* Light Mode - Nord Light */
+  --bg: #eceff4;
+  --bg-secondary: #e5e9f0;
+  --text: #2e3440;
+  --text-muted: #4c566a;
+  --border: #d8dee9;
+  --link: #5e81ac;
+  --link-hover: #81a1c1;
+  --code-bg: #e5e9f0;
+  --sidebar-bg: #e5e9f0;
+  --sidebar-active: #5e81ac;
 }
 
 :root.dark {
-  /* Dark Mode - mdBook style */
-  --bg: #1f1f1f;
-  --bg-secondary: #252525;
-  --text: #c9c9c9;
-  --text-muted: #7d7d7d;
-  --border: #404040;
-  --link: #4183c4;
-  --link-hover: #6ba4e7;
-  --code-bg: #2d2d2d;
-  --sidebar-bg: #262626;
-  --sidebar-active: #4183c4;
+  /* Dark Mode - Catppuccin Macchiato */
+  --bg: #24273a;
+  --bg-secondary: #1e2030;
+  --text: #cad3f5;
+  --text-muted: #a5adcb;
+  --border: #363a4f;
+  --link: #8aadf4;
+  --link-hover: #7dc4e4;
+  --code-bg: #1e2030;
+  --sidebar-bg: #1e2030;
+  --sidebar-active: #8aadf4;
 }
 
 /* ============================================

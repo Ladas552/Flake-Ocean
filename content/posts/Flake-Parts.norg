@@ -1,0 +1,15 @@
+@document.meta
+title: Flake Parts
+description: Deep dive into Nix Flakes
+authors: ladas552
+categories: [
+  tutorial
+  flakes
+]
+created: 2025-12-02
+layout: post
+draft: true
+version: 1.1.1
+@end
+
+* Flake Parts
