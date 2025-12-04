@@ -16,6 +16,7 @@
         # luanti
         # mindustry
         steam-run
+        antimatter-dimensions
       ];
       # persist games
       custom.imp.home = {
@@ -24,6 +25,7 @@
           ".config/arx"
           ".config/openmw"
           ".config/unity3d"
+          ".config/Antimatter Dimensions"
           ".local/share/Mindustry"
           ".local/share/PrismLauncher"
           ".local/share/arx"
