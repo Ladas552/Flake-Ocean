@@ -1,143 +1,71 @@
 @import "tailwindcss";
-/* User content */
-@source "../../../content";
-/* User templates */
-@source "../../../templates";
-/* Theme templates */
-@source "../../templates";
 
-/* Custom fonts */
-@font-face {
-  font-family: "Geist Sans";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 900;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/geist:vf@latest/latin-wght-normal.woff2) format('woff2-variations');
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
+/* ============================================
+   mdBook-Style Theme - Clean & Minimal
+   ============================================ */
 
-@font-face {
-  font-family: "Martian Mono";
-  font-style: normal;
-  font-display: swap;
-  font-weight: 100 800;
-  font-stretch: 75% 112.5%;
-  src: url(https://cdn.jsdelivr.net/fontsource/fonts/martian-mono:vf@latest/latin-wdth-normal.woff2) format('woff2-variations');
-  unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD;
-}
-
-/* Use dark class for dark theme */
-@custom-variant dark (&:where(.dark, .dark *));
-
-@layer base {
-  /* Buttons use pointer cursor */
-  button:not(:disabled),
-  [role="button"]:not(:disabled) {
-    cursor: pointer;
-  }
-}
-
-/*
- * Fix some code rendering bugs with PrismJS
- * See https://github.com/PrismJS/prism/issues/2443
- */
-@layer utilities {
-  .table {
-    display: initial;
-  }
-}
-
-/* Colorscheme, using sweetie palette */
-:root {
-  --base: #dddde7;
-  --base-alt: #bbbbce;
-  --surface: #ccccda;
-  --text: #202023;
-  --text-alt: #18181a;
-  --grey: #8989a9;
-  --dark-grey: #78789d;
-  --red: #b31919;
-  --orange: #ae580e;
-  --green: #287f0d;
-  --teal: #47948a;
-  --yellow: #957d09;
-  --blue: #0c5090;
-  --magenta: #a00c79;
-  --violet: #9437ff;
-  --cyan: #0b658e;
-}
-:root.dark {
-  --base: #2a2a3a;
-  --base-alt: #303040;
-  --surface: #25252f;
-  --text: #d3d7de;
-  --text-alt: #bdbdbd;
-  --grey: #798399;
-  --dark-grey: #707b87;
-  --red: #d75f4a;
-  --orange: #e7a06a;
-  --green: #89c252;
-  --teal: #92d3c5;
-  --yellow: #e7d482;
-  --blue: #73a3f3;
-  --magenta: #d087e8;
-  --violet: #b094e2;
-  --cyan: #a2c4ff;
-}
-
-@theme static {
-  --font-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+@theme {
+  /* Typography */
+  --font-sans: "Geist Sans", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "Martian Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
-  --color-base: var(--base);
-  --color-base-alt: var(--base-alt);
-  --color-surface: var(--surface);
-  --color-text: var(--text);
-  --color-text-alt: var(--text-alt);
-  --color-grey: var(--grey);
-  --color-dark-grey: var(--dark-grey);
-  --color-red: var(--red);
-  --color-orange: var(--orange);
-  --color-green: var(--green);
-  --color-teal: var(--teal);
-  --color-yellow: var(--yellow);
-  --color-blue: var(--blue);
-  --color-magenta: var(--magenta);
-  --color-violet: var(--violet);
-  --color-cyan: var(--cyan);
+  /* Simple spacing */
+  --spacing: 0.25rem;
 }
 
-/* Overall design */
+/* ============================================
+   COLOR SCHEME - Simple and Clean
+   ============================================ */
+
+:root {
+  /* Light Mode - Clean */
+  --bg: #ffffff;
+  --bg-secondary: #fafafa;
+  --text: #333333;
+  --text-muted: #888888;
+  --border: #e0e0e0;
+  --link: #4183c4;
+  --link-hover: #1e70bf;
+  --code-bg: #f6f7f6;
+  --sidebar-bg: #fafafa;
+  --sidebar-active: #4183c4;
+}
+
+:root.dark {
+  /* Dark Mode - mdBook style */
+  --bg: #1f1f1f;
+  --bg-secondary: #252525;
+  --text: #c9c9c9;
+  --text-muted: #7d7d7d;
+  --border: #404040;
+  --link: #4183c4;
+  --link-hover: #6ba4e7;
+  --code-bg: #2d2d2d;
+  --sidebar-bg: #262626;
+  --sidebar-active: #4183c4;
+}
+
+/* ============================================
+   BASE STYLES
+   ============================================ */
+
 html {
-  scrollbar-color: var(--blue) var(--surface);
-  @apply scroll-smooth tabular-nums font-sans;
+  scroll-behavior: smooth;
+  font-family: var(--font-sans);
 }
 
 body {
-  @apply bg-base text-text antialiased font-medium;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-main a {
-  @apply underline hover:text-blue;
-}
-
-a.icon {
-  @apply no-underline;
-}
-
-a {
-  @apply transition-colors duration-200 ease-in-out;
-}
-
-hr {
-  /* brightness-120 = #39394b */
-  @apply text-base-alt dark:brightness-120;
-}
-
-header,
-footer {
-  @apply bg-surface text-text-alt;
-}
+/* ============================================
+   TYPOGRAPHY - mdBook Style
+   ============================================ */
 
 h1,
 h2,
@@ -145,203 +73,429 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-bold;
+  font-weight: 600;
+  line-height: 1.3;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--text);
 }
 
 h1 {
-  @apply text-3xl;
+  font-size: 2em;
+  margin-top: 0;
 }
 
 h2 {
-  @apply text-2xl;
-  counter-increment: h2;
-  counter-reset: h3;
+  font-size: 1.5em;
 }
 
 h3 {
-  @apply text-xl;
-  counter-increment: h3;
-  counter-reset: h4;
+  font-size: 1.25em;
 }
 
 h4 {
-  @apply text-lg;
-  counter-increment: h4;
+  font-size: 1.1em;
 }
 
 h5 {
-  counter-increment: h5;
+  font-size: 1em;
+  font-weight: 600;
 }
 
 h6 {
-  @apply font-semibold;
-  counter-increment: h6;
+  font-size: 1em;
+  font-weight: 500;
 }
 
 p {
-  @apply leading-relaxed py-2;
+  margin: 1em 0;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
 }
 
 strong {
-  @apply font-semibold;
+  font-weight: 600;
 }
 
-ul {
-  @apply list-disc;
+/* ============================================
+   LAYOUT - mdBook inspired
+   ============================================ */
+
+.page-wrapper {
+  display: flex;
+  min-height: 100vh;
 }
 
-ol {
-  @apply list-decimal;
+.sidebar {
+  width: 300px;
+  background: var(--sidebar-bg);
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: fixed;
+  top: 50px;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s ease, transform 0.3s ease;
 }
+
+.sidebar.collapsed {
+  width: 50px;
+}
+
+.content-wrapper {
+  margin-left: 300px;
+  flex: 1;
+  padding-top: 50px;
+  transition: margin-left 0.3s ease;
+}
+
+.content-wrapper.sidebar-collapsed {
+  margin-left: 50px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    width: 300px !important;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .sidebar.collapsed {
+    width: 300px !important;
+  }
+
+  .content-wrapper {
+    margin-left: 0 !important;
+  }
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  z-index: 100;
+}
+
+.header-title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: var(--text);
+  margin-left: 10px;
+}
+
+.header-title:hover {
+  text-decoration: none;
+}
+
+/* Header Navigation Links */
+.nav-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 0.95em;
+  transition: color 0.15s ease;
+}
+
+.nav-link:hover {
+  color: var(--link);
+  text-decoration: none;
+}
+
+.nav-link.active-nav {
+  color: var(--link);
+  font-weight: 600;
+}
+
+/* Mobile Menu Dropdown */
+.mobile-menu {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 10px 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 8px 10px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.mobile-menu a:hover {
+  background: var(--bg-secondary);
+}
+
+.mobile-menu a.active {
+  color: var(--link);
+  font-weight: 600;
+}
+
+.menu-btn {
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--text);
+  background: none;
+  border: none;
+}
+
+.theme-toggle {
+  margin-left: auto;
+  width: 30px;
+  height: 30px;
+  padding: 6px;
+  cursor: pointer;
+  color: var(--text);
+  background: none;
+  border: none;
+}
+
+/* ============================================
+   CODE BLOCKS - Clean mdBook style
+   ============================================ */
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  background: var(--code-bg);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+pre {
+  background: var(--code-bg);
+  padding: 1em;
+  border-radius: 3px;
+  overflow-x: auto;
+  margin: 1.5em 0;
+  border: 1px solid var(--border);
+}
+
+pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875em;
+  line-height: 1.5;
+}
+
+/* ============================================
+   BLOCKQUOTES
+   ============================================ */
+
+blockquote {
+  margin: 1.5em 0;
+  padding: 0.5em 1em;
+  border-left: 4px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--text-muted);
+}
+
+blockquote p {
+  margin: 0.5em 0;
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
 
 ul,
 ol {
-  @apply leading-relaxed;
+  margin: 1em 0;
+  padding-left: 2em;
 }
 
-nav ul,
-nav ol {
-  @apply mx-2 space-y-0 list-none;
+li {
+  margin: 0.5em 0;
 }
 
-main ul {
-  @apply pl-4;
+/* ============================================
+   TABLES
+   ============================================ */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5em 0;
 }
 
-/* Margins */
-main h2, article h2, section h2 {
-  @apply mt-10;
-}
-main h3, article h3, section h3 {
-  @apply mt-8;
-}
-main h4, article h4, section h4 {
-  @apply mt-6;
-}
-main h5, article h5, section h5 {
-  @apply mt-4;
-}
-main h6, article h6, section h6 {
-  @apply mt-2;
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 8px 12px;
+  text-align: left;
 }
 
-/* Visual flair */
-main div#content h2:not(:first-child) {
-  @apply border-t border-t-base-alt dark:border-t-[#39394b] pt-5;
-}
-main div#content h3:not(:first-child) {
-  @apply border-t border-t-base-alt dark:border-t-[#39394b] pt-4;
-}
-main div#content h4:not(:first-child) {
-  @apply border-t border-t-base-alt dark:border-t-[#39394b] pt-3;
-}
-main div#content h5:not(:first-child) {
-  @apply border-t border-t-base-alt dark:border-t-[#39394b] pt-2;
-}
-main div#content h6:not(:first-child) {
-  @apply border-t border-t-base-alt dark:border-t-[#39394b] pt-1;
+th {
+  background: var(--bg-secondary);
+  font-weight: 600;
 }
 
-blockquote {
-  @apply p-4 my-4 border-s-4 rounded-r-sm border-base-alt bg-surface dark:border-surface dark:bg-base-alt;
+/* ============================================
+   NAVIGATION (Sidebar)
+   ============================================ */
+
+.sidebar nav {
+  padding: 15px;
 }
 
-blockquote.tip {
-  @apply border-green bg-green/30;
-}
-blockquote.note {
-  @apply border-blue bg-blue/30;
-}
-blockquote.important {
-  @apply border-violet bg-violet/30;
-}
-blockquote.warning {
-  @apply border-yellow bg-yellow/30;
-}
-blockquote.error {
-  @apply border-red bg-red/30;
+.nav-section {
+  margin-bottom: 1.5em;
 }
 
-blockquote > p {
-  @apply leading-relaxed;
+.nav-section h3 {
+  font-size: 0.75em;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  margin: 0 0 0.5em 0;
+  padding: 0 12px;
+  font-weight: 600;
 }
 
-/* Inline verbatim `` */
-code:not([class*="language-"]) {
-  @apply px-1 py-px font-mono text-sm rounded-md bg-base-alt dark:bg-surface dark:brightness-80;
+.sidebar.collapsed .nav-section h3 {
+  opacity: 0;
+  visibility: hidden;
 }
 
-/* Table of Contents */
-nav.toc {
-  @apply h-3/4 pt-4 pb-4 font-mono bg-surface border-2 border-base-alt rounded-md;
+.sidebar nav a {
+  display: block;
+  padding: 8px 12px;
+  color: var(--text);
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background 0.15s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-nav.toc ol {
-  @apply pl-4 list-decimal list-inside;
+.sidebar.collapsed nav a {
+  padding: 8px;
+  text-indent: -9999px;
 }
 
-nav.toc ul {
-  @apply pl-4 list-disc list-inside;
+.sidebar nav a:hover {
+  background: var(--bg);
 }
 
-nav.toc ol li,
-nav.toc ul li {
-    @apply mt-0 pb-0;
+.sidebar nav a.active {
+  color: var(--sidebar-active);
+  font-weight: 600;
+  background: var(--bg);
 }
 
-nav.toc ol li a,
-nav.toc ul li a {
-    @apply no-underline hover:text-blue;
+/* Sidebar Toggle Button */
+.sidebar-toggle {
+  position: absolute;
+  right: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background: var(--sidebar-bg);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text);
+  transition: background 0.15s ease;
+  z-index: 10;
 }
 
-nav.toc ol li::marker,
-nav.toc ul li::marker {
-    @apply hover:text-blue;
+.sidebar-toggle:hover {
+  background: var(--bg);
 }
 
-nav.toc ol li ol,
-nav.toc ul li ul {
-    @apply pb-2;
+.sidebar-toggle svg {
+  width: 16px;
+  height: 16px;
 }
 
-/* PrismJS specific css */
-pre[class*="language-"],
-code[class*="language-"] {
-  font-variant-ligatures: common-ligatures !important;
-  @apply bg-surface! dark:bg-base-alt font-mono! text-shadow-none!;
+/* Content Area */
+.content {
+  max-width: 750px;
+  margin: 0 auto;
+  padding: 20px 15px;
 }
 
-/* PrismJS line-numbers plugin */
-pre[class*="language-"].line-numbers {
-  counter-reset: linenumber;
-  @apply relative pl-13;
+/* ============================================
+   HORIZONTAL RULE
+   ============================================ */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 2em 0;
 }
 
-pre[class*="language-"].line-numbers > code {
-  white-space: inherit;
-  @apply relative;
+/* ============================================
+   SCROLLBAR
+   ============================================ */
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.line-numbers .line-numbers-rows {
-  @apply absolute flex flex-col top-[-1.5px] -left-12 w-10 pointer-events-none select-none border-r! border-r-grey!;
+::-webkit-scrollbar-track {
+  background: transparent;
 }
 
-.line-numbers-rows > span {
-  counter-increment: linenumber;
-  @apply block leading-[1.5];
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
 }
 
-.line-numbers-rows > span:before {
-  content: counter(linenumber);
-  @apply text-grey! text-right pr-2 block;
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
 }
 
-/* Center MermaidJS charts and diagrams */
-pre.mermaid {
-  @apply flex justify-center;
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 15px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9em;
+  background: var(--bg);
 }
 
-/* Automatic dark theme for MermaidJS */
-.dark .mermaid {
-  filter: invert(0.9) hue-rotate(180deg);
+footer a {
+  color: var(--link);
 }

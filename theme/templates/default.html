@@ -6,12 +6,12 @@
 <meta property="og:description" content="{{ metadata.description }}" />
 <meta property="og:site_name" content="{{ config.title }}" />
 <meta property="og:locale" content="{{ config.language }}" />
-{# TODO: add support for og:image using metadata #}
 <link rel="canonical" href="{{ metadata.permalink }}" />
 <meta name="robots" content="index, follow" />
 {% endblock seo_tags %}
 
 {% block title %}{{ metadata.title | title }}{% endblock title %}
+
 {% block content %}
 {{ content | safe }}
 {% endblock content %}

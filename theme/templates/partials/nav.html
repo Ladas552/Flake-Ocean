@@ -1,72 +1,39 @@
-<nav x-data="menu" class="container mx-auto px-4 md:px-0 font-mono">
-  <div class="flex items-center justify-between h-16">
-    <!-- Logo and dark mode -->
-    <div x-data="theme" class="flex items-center shrink-0 space-x-2">
-      <a href="/" class="flex items-center space-x-2">
-        <!-- <img src="{{ config.rootUrl }}/assets/norgolith.svg" alt="Norgolith Logo" class="h-8 w-8"> -->
-        <span class="text-lg md:text-xl font-bold text-text">{{ config.title | title }}</span>
-      </a>
-      <button
-        @click="toggle()"
-        type="button"
-        class="rounded-lg flex items-center"
-        :aria-label="current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'"
-      >
-        <i
-          :class="current === 'dark' ? 'ti-sun hover:text-yellow' : 'ti-moon hover:text-blue'"
-          class="ti text-xl md:text-2xl text-grey transition-colors duration-200 ease-in-out"
-        ></i>
-      </button>
-    </div>
+<nav class="flex items-center h-full px-4">
+  <!-- Menu Button (Mobile) -->
+  <button @click="toggleMobile" class="menu-btn md:hidden" aria-label="Toggle Menu">
+    <svg x-show="!openMobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+    </svg>
+    <svg x-show="openMobile" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
 
-    <!-- Desktop Menu -->
-    <div class="hidden md:flex md:items-center md:space-x-8">
-      {% for name, link in config.extra.nav %}
-      <a
-        :class="{ 'text-blue!': currentPage.startsWith('{{ link }}') }"
-        class="text-text-alt hover:text-blue px-3 py-2 rounded-md text-sm font-medium"
-        href="{{ link }}"
-      >{{ name | title }}</a>
-      {% endfor %}
-    </div>
+  <!-- Title -->
+  <a href="/" class="header-title">{{ config.title | title }}</a>
 
-    <!-- Mobile Menu Button -->
-    <div class="md:hidden">
-      <button @click="toggleMobile" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-dark-grey hover:text-text-alt focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-        <span class="sr-only">Open main menu</span>
-        <!-- Hamburger Icon -->
-        <svg x-show="!openMobile" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-        <!-- Close Icon -->
-        <svg x-show="openMobile" class="h-5 w-5 text-red" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-        </svg>
-      </button>
-    </div>
+  <!-- Desktop Navigation Links -->
+  <div class="hidden md:flex md:items-center md:gap-6 md:ml-8">
+    <a :class="{ 'active-nav': currentPage.startsWith('/categories') }" class="nav-link" href="/categories">Tags</a>
   </div>
 
-  <!-- Mobile Menu -->
-  <div
-    x-show="openMobile"
-    x-transition:enter="transition ease-out duration-300"
-    x-transition:enter-start="opacity-0"
-    x-transition:enter-end="opacity-100"
-    x-transition:leave="transition ease-in duration-300"
-    x-transition:leave-start="opacity-100"
-    x-transition:leave-end="opacity-0"
-    @click.outside="openMobile = false"
-    class="md:hidden"
-    id="mobile-menu"
-  >
-    <div class="flex flex-row items-center justify-between pt-2 pb-4">
-      {% for name, link in config.extra.nav %}
-      <a
-        :class="{ 'text-blue!': currentPage.startsWith('{{ link }}') }"
-        class="text-text-alt hover:text-blue px-3 py-2 rounded-md text-sm font-medium"
-        href="{{ link }}"
-      >{{ name | title }}</a>
-      {% endfor %}
-    </div>
+  <!-- Theme Toggle -->
+  <div x-data="theme">
+    <button @click="toggle()" class="theme-toggle"
+      :aria-label="current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
+      <svg x-show="current === 'dark'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+      </svg>
+      <svg x-show="current === 'light'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+      </svg>
+    </button>
   </div>
 </nav>
+
+<!-- Mobile Menu -->
+<div x-show="openMobile" @click.outside="openMobile = false" class="mobile-menu md:hidden" style="display: none;">
+  <a :class="{ 'active': currentPage.startsWith('/categories') }" href="/categories">Tags</a>
+</div>

@@ -1,0 +1,76 @@
+@document.meta
+title: NixOS Configuration
+description: How to configure NixOS declaratively
+authors: ladas552
+categories: [
+  nixos
+  configuration
+]
+created: 2025-12-03T10:00:00+05:00
+updated: 2025-12-03T10:00:00+05:00
+layout: post
+draft: false
+version: 1.1.1
+@end
+
+* NixOS Configuration
+
+  NixOS allows you to configure your entire system declaratively in `/etc/nixos/configuration.nix`.
+
+** Basic Configuration
+
+   @code nix
+   { config, pkgs, ... }:
+
+   {
+     # System packages
+     environment.systemPackages = with pkgs; [
+       vim
+       git
+       htop
+     ];
+
+     # Enable services
+     services.openssh.enable = true;
+
+     # User configuration
+     users.users.myuser = {
+       isNormalUser = true;
+       extraGroups = [ "wheel" "networkmanager" ];
+     };
+   }
+   @end
+
+** Managing Services
+
+   NixOS makes service management simple:
+
+   @code nix
+   services = {
+     nginx.enable = true;
+     postgresql.enable = true;
+     docker.enable = true;
+   };
+   @end
+
+** Applying Changes
+
+   @code bash
+   # Test configuration
+   nixos-rebuild test
+
+   # Apply and make permanent
+   nixos-rebuild switch
+   @end
+
+** Rollbacks
+
+   If something breaks, just rollback:
+
+   @code bash
+   # List generations
+   nixos-rebuild list-generations
+
+   # Rollback to previous
+   nixos-rebuild switch --rollback
+   @end
