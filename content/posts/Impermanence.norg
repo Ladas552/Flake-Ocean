@@ -1,17 +1,156 @@
 @document.meta
-title: Impermanence
-description: Introduction to Nix package manager
-authors: ladas552
-categories: [
-  basics
+title: Impermanence on NixOS with ZFS and tmpfs
+description: Guide for my impermanence setup
+authors: [
+  ladas552
 ]
-created: 2025-11-12T09:29:23+05:00
-updated: 2025-12-04T23:38:32
+categories: [
+  Nix
+]
+created: 2025-09-27
+draft: true
 layout: post
-draft: false
 version: 1.1.1
 @end
-
 * Impermanence
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-  labore et dolore magna aliqua. Lobortis scelerisque fermentum dui faucibus in ornare.
+** What is Impermanence
+   It wipes your `/root` on reboot and your startup is a blank canvas, but you can persist mounts and bind mount directories from it in your normal root to save stuff like cache and tokens. So you wipe all the junk and save actually useful stuff. 
+
+   For example you can install full KDE Plasma session, run it, and if you get bored. Just disable it and no KDE junk left.
+
+   *Important to note*: That impermanence of my setup uses tmpfs, so it writes `/root` to RAM, so nothing actually gets erased on the Disk. Meaning no continuous I/O rewrites wearing out your Drive. But the state isn't saved between reboots, as with anything on RAM
+
+   Also when I refer to `/root`, it's actually the whole `/`, not just root user directory.
+*** Why did you set it up
+    I was bored. I don't find benefits of impermanence so crucial to completely overhaul how your system behaves and I don't trust myself to maintain it.
+
+    But there are some benefits to it:
+    - I only backup important files, no cache, no states, only files and media;
+    - I always know what's on my system because it's declared in the config;
+    - It opens up possibilities to experiment more with my system, because if I could setup impermanence and not loose all my files, I am unstoppable;
+*** What's the meaning of writing this page?
+    It's not that hard to setup impermanence, but to requires reading a lot of stuff, and if you don't use ZFS or BTRFS even full reinstall for rearranging partitions. I have read several articles, watched videos, and stole code from many GitHub repos.
+
+    Plus most guides just go to the wipe stage right away, without saying how to persist, or how it practically works for the user to not loose their files. I will try to compete in these aspects.
+
+*** What is your current setup?
+    I got ZFS with tmpfs, with 2 persistence datasets. /cache and /persist. 
+
+    `/cache` is for rust targets, everything in `~/.cache`, .local states, etc.
+
+    `/persist` is for Media, browser profiles, Projects, etc. This is the only datasets that get's backed up by `sanoid`.
+
+    tmpfs is erased on reboot, so `/` and everything below it, including `/home` is gone, unless put into `/cache` or `/persist` datasets.
+    tmpfs is on RAM, so it can overload if exceeds certain size, to prevent that I got several more zfs datasets, that aren't persisted, meaning they don't have connection to files in other datasets, but aren't erased by default.
+
+    `/nix` for /nix/store. I am not about to redownload all of my system on every reboot, and it also stores the generations. All the files that aren't persisted, but appear on my system are symlinked from `/nix`. That includes config files and services.
+
+    `/tmp` for /tmp. yeah, anyways it's to not overload tmpfs when downloading something on browser. with `boot.tmp.cleanOnBoot = true;` it is cleared on boot anyways. 
+
+** What we need?
+*** Partitions
+    A new way to manage your system. NixOS.
+
+    Tho you probably already use NixOS if you are reading this, if you don't then get out while you can.
+
+    On a more serious note, you need ZFS setup, with 2 particular datasets.
+    @code nix
+    fileSystems = {
+      "/nix" = {
+        device = "zroot/nix";
+        fsType = "zfs";
+      };
+      "/tmp" = {
+        device = "zroot/tmp";
+        fsType = "zfs";
+      };
+    };
+    @end
+
+    If you don't have them, but have ZFS installed, just create them using commands
+    @code sh
+    sudo zfs create -o mountpoint=legacy zroot/tmp
+    sudo zfs create -o mountpoint=legacy zroot/nix
+    @end
+
+    This will insure that you won't delete your `/nix/store` and it stays intact between reboots. And for this particular setup the `tmp` dataset will be used so out `tmpfs` *root* will insure that it won't randomly overload.
+
+    This is a starting point, unless you have *ZFS setup* on your *NixOS* with separate datasets like that, you can kiss this Guide goodbye.
+
+*** Impermanence module
+    The [Impermanence module]{https://github.com/nix-community/impermanence} is a NixOS flake that creates `mount binds`. I still don't understand how they work, but it isn't a big idea here. The main purpose of it is to just put stuff in special `/persist` dataset, and still be able to access it from `/root` and `/home`.
+
+    Basically you define certain directories names in it, and it creates them, then binds them to specific relevant locations, like `".config/nvim"` will be located in `~/.config/nvim`. And if you put your Neovim config there, neovim will still follow the config, but it will be located on different dataset, and won't be wiped on boot. 
+
+    Neat right? Not really, because if directory already exists, Impermanence will override that old directory with new empty one. *Don't panic*. Data isn't lost, it was just reallocated, you can delete the directory from impermanence module and it will comeback. 
+
+    That's the main reason why most people reinstall their OS if they want to use Impermanence, because it's a pain in the glands to move the files from directories before persisting it and moving things back. There are projects that circumvent that, but I didn't use them. For example: [Persist-retro]{https://github.com/Geometer1729/persist-retro}.
+
+    Also to persist an individual file, you need to move the file, and manually copy it to persist directory. 
+
+**** You forgot to tell installation instructions
+     It's nix so here is just a snippet of code. Works for flakes.
+     @code nix
+     #flake.nix
+     {
+       inputs.impermanence.url = "github:nix-community/impermanence";
+     }
+     @end
+     And then just import the module, like:
+     @code nix
+     imports = [
+       inputs.impermanence.nixosModules.impermanence
+     ];
+     @end
+*** Immutable users
+    As we delete everything in `/root`, it means passwords for users, and most importantly `root` user will be deleted. 
+
+    So just make them immutable. You can store the password file in sops, or just provide raw path from `/persist` directory.
+
+    @code nix
+    # setup immutable users for impermanence
+
+    # silence warning about setting multiple user password options
+    # https://github.com/NixOS/nixpkgs/pull/287506#issuecomment-1950958990
+    # Stolen from Iynaix https://github.com/iynaix/dotfiles/blob/4880969e7797451f4adc3475cf33f33cc3ceb86e/nixos/users.nix#L18-L24
+    options = {
+      warnings = lib.mkOption {
+        apply = lib.filter (
+          w: !(lib.hasInfix "If multiple of these password options are set at the same time" w)
+        );
+      };
+    };
+
+    config = {
+      users.mutableUsers = false;
+      users.users.ladas552 = {
+        isNormalUser = true;
+        description = "Ladas552";
+        extraGroups = [
+          "networkmanager"
+          "wheel"
+        ];
+        initialPassword = "pass";
+        hashedPasswordFile = config.sops.secrets."mystuff/host_pwd".path;
+      };
+      nix.settings.trusted-users = [ "ladas552" ];
+
+      users.users.root = {
+        initialPassword = "pass";
+        hashedPasswordFile = config.sops.secrets."mystuff/host_pwd".path;
+      };
+
+
+    };
+
+    @end
+
+    Other features for immutable users:
+    - Can use `--no-root-password` flag in `nixos-install` command. Meaning you don't ever have to monitor it, it will install password automatically.
+    - Can't use `passwd <user>` command. So if you mess up your password path the first time, you have to reboot to previous generation to set it correctly.
+
+*** When do we start deleting stuff?
+    Not so fast bakaru, we first need to save our stuff.
+
+    So you need to create persist directories
+
