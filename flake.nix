@@ -48,11 +48,8 @@
     import-tree.url = "github:vic/import-tree";
 
     # Neovim
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      # No SSG
-      inputs.nuschtosSearch.follows = "";
-    };
+    nixvim.url = "github:nix-community/nixvim";
+
     neovim-rocks = {
       url = "github:Ladas552/nvim-rocks-config";
       flake = false;

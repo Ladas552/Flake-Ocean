@@ -22,7 +22,7 @@ in
       zfs
       dashboard
       ollama
-      immich
+      # immich
       jellyfin
       karakeep
       kavita
@@ -56,6 +56,7 @@ in
           git
           lf
           manual
+          helix
           mpd
           openssh
           shell
