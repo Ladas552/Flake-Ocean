@@ -49,7 +49,8 @@
         extraPackages = with pkgs; [
           libva-vdpau-driver
           intel-media-driver
-          intel-ocl
+          # Mirrors are down for the whole month. Intel should die
+          # intel-ocl
           vpl-gpu-rt
         ];
       };
