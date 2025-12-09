@@ -19,7 +19,7 @@
 
   <!-- Theme Toggle -->
   <div x-data="theme">
-    <button @click="toggle()" class="theme-toggle"
+    <button @click="toggle($event)" class="theme-toggle"
       :aria-label="current === 'dark' ? 'Switch to light mode' : 'Switch to dark mode'">
       <svg x-show="current === 'dark'" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
