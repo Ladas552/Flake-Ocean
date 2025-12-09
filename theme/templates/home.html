@@ -16,12 +16,12 @@
 {{ content | safe }}
 
 {# Documentation Cards #}
-{% if posts | filter(attribute="draft", value=false) | length > 0 %}
+{% if posts | length > 0 %}
 <div style="margin-top: 3em;">
     <h2>Documentation</h2>
     <div
         style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5em; margin-top: 1.5em;">
-        {% for post in posts | filter(attribute="draft", value=false) | sort(attribute="created") %}
+        {% for post in posts | sort(attribute="created") %}
         <a href="{{ post.permalink }}"
             style="display: block; padding: 1.5em; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;"
             onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)';"

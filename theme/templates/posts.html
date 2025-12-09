@@ -15,7 +15,7 @@
 {% block content %}
 <h1>Posts</h1>
 
-{% for post in posts | filter(attribute="draft", value=false) | sort(attribute="created") | reverse %}
+{% for post in posts | sort(attribute="created") | reverse %}
 <div style="margin: 1.5em 0; padding-bottom: 1em; border-bottom: 1px solid var(--border);">
   <h2 style="margin-top: 0;">
     <a href="{{ post.permalink }}">{{ post.title }}</a>

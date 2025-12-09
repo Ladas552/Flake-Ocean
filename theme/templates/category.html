@@ -17,7 +17,7 @@
 <p style="font-style: italic; color: var(--text-muted);">All the posts with the category "{{ category }}"</p>
 
 <ul>
-  {% for post in posts | filter(attribute="draft", value=false) | sort(attribute="created") | reverse %}
+  {% for post in posts | sort(attribute="created") | reverse %}
   {% if category in post.categories %}
   <li style="margin: 1em 0;">
     <a href="{{ post.permalink }}">{{ post.title }}</a>

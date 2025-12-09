@@ -74,11 +74,11 @@
           // Get button position for radial expansion
           const x = event.clientX;
           const y = event.clientY;
-          
+
           // Set CSS custom properties for animation origin
           document.documentElement.style.setProperty('--x', `${x}px`);
           document.documentElement.style.setProperty('--y', `${y}px`);
-          
+
           // Check if View Transitions API is supported
           if (!document.startViewTransition) {
             // Fallback for browsers without View Transitions API
@@ -87,7 +87,7 @@
             localStorage.setItem("theme", this.current);
             return;
           }
-          
+
           // Use View Transitions API for smooth radial expansion
           const transition = document.startViewTransition(() => {
             this.current = this.current === "dark" ? "light" : "dark";
@@ -137,10 +137,10 @@
 
       <nav>
         <!-- Documentation Posts Only -->
-        {% if posts | filter(attribute="draft", value=false) | length > 0 %}
+        {% if posts | length > 0 %}
         <div class="nav-section">
           <h3>Documentation</h3>
-          {% for post in posts | filter(attribute="draft", value=false) | sort(attribute="created") %}
+          {% for post in posts | sort(attribute="created") %}
           <a :class="{ 'active': currentPage === '{{ post.permalink }}' }" href="{{ post.permalink }}"
             title="{{ post.description }}">{{ post.title }}</a>
           {% endfor %}

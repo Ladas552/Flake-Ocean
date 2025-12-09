@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 {% block seo_tags %}
+{% if metadata.title is defined %}
 <meta property="og:title" content="{{ metadata.title | title }} - {{ config.title | title }}" />
+{% else %}
+<meta property="og:title" content="{{ config.title | title }}" />
+{% endif %}
 <meta property="og:type" content="website" />
+{% if metadata.permalink is defined %}
 <meta property="og:url" content="{{ metadata.permalink }}" />
+<link rel="canonical" href="{{ metadata.permalink }}" />
+{% endif %}
+{% if metadata.description is defined %}
 <meta property="og:description" content="{{ metadata.description }}" />
+{% endif %}
 <meta property="og:site_name" content="{{ config.title }}" />
 <meta property="og:locale" content="{{ config.language }}" />
-<link rel="canonical" href="{{ metadata.permalink }}" />
 <meta name="robots" content="index, follow" />
 {% endblock seo_tags %}
 
-{% block title %}{{ metadata.title | title }}{% endblock title %}
+{% block title %}{% if metadata.title is defined %}{{ metadata.title | title }}{% else %}{{ config.title | title }}{%
+endif %}{% endblock title %}
 
 {% block content %}
 {{ content | safe }}

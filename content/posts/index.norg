@@ -1,0 +1,5 @@
+@document.meta
+title: Posts
+description: All posts on this site
+layout: posts
+@end
