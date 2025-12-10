@@ -5,8 +5,8 @@ author = 'ladas552'
 
 # Code blocks highlighting
 [highlighter]
-enable = false
-# engine = 'prism' # Can be 'prism' or 'hljs'. Defaults to 'prism'
+enable = true
+engine = 'prism' # Can be 'prism' or 'hljs'. Defaults to 'prism'
 
 # RSS feed
 [rss]

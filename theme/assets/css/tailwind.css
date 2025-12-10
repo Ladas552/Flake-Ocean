@@ -270,6 +270,7 @@ header {
   border-bottom: 1px solid var(--border);
   padding: 10px 15px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 60;
 }
 
 .mobile-menu a {
@@ -473,11 +474,43 @@ th {
   height: 16px;
 }
 
-/* Content Area */
+/* Content Area - Responsive by default */
 .content {
-  max-width: 750px;
+  max-width: min(750px, 100vw - 40px);
   margin: 0 auto;
   padding: 20px 15px;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Apply sensible defaults to all content children */
+.content * {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Responsive media */
+.content img,
+.content video,
+.content iframe {
+  height: auto;
+}
+
+/* Horizontal scroll for wide elements */
+.content table,
+.content pre {
+  display: block;
+  overflow-x: auto;
+}
+
+/* Aggressive word breaking on mobile only */
+@media (max-width: 768px) {
+  .content {
+    padding: 15px 10px;
+    word-break: break-word;
+    hyphens: auto;
+  }
 }
 
 /* ============================================

@@ -32,8 +32,3 @@
     </button>
   </div>
 </nav>
-
-<!-- Mobile Menu -->
-<div x-show="openMobile" @click.outside="openMobile = false" class="mobile-menu md:hidden" style="display: none;">
-  <a :class="{ 'active': currentPage.startsWith('/categories') }" href="/categories">Tags</a>
-</div>
