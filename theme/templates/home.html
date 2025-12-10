@@ -17,26 +17,19 @@
 
 {# Documentation Cards #}
 {% if posts | length > 0 %}
-<div style="margin-top: 3em;">
+<div class="section-top">
     <h2>Documentation</h2>
-    <div
-        style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5em; margin-top: 1.5em;">
+    <div class="doc-grid">
         {% for post in posts | sort(attribute="created") %}
-        <a href="{{ post.permalink }}"
-            style="display: block; padding: 1.5em; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 8px; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s;"
-            onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.1)';"
-            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='none';">
-            <h3 style="margin: 0 0 0.5em 0; color: var(--link); font-size: 1.1em;">{{ post.title }}</h3>
+        <a href="{{ post.permalink }}" class="doc-card">
+            <h3>{{ post.title }}</h3>
             {% if post.description %}
-            <p style="margin: 0; color: var(--text-muted); font-size: 0.9em; line-height: 1.5;">{{ post.description }}
-            </p>
+            <p>{{ post.description }}</p>
             {% endif %}
             {% if post.categories and post.categories | length > 0 %}
-            <div style="margin-top: 1em; display: flex; flex-wrap: wrap; gap: 0.5em;">
+            <div class="doc-tags">
                 {% for category in post.categories %}
-                <span
-                    style="font-size: 0.75em; padding: 0.25em 0.75em; background: var(--code-bg); border-radius: 12px; color: var(--text-muted);">{{
-                    category }}</span>
+                <span class="doc-tag">{{ category }}</span>
                 {% endfor %}
             </div>
             {% endif %}

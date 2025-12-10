@@ -15,12 +15,12 @@
 {% block content %}
 <h1>{{ metadata.title }}</h1>
 
-<p style="color: var(--text-muted); font-size: 0.9em;">
+<p class="post-meta">
   {% set created = metadata.created | date(format="%B %e, %Y") %}
   <time datetime="{{ metadata.created }}">{{ created }}</time>
 
   {% if metadata.categories | length > 0 %}
-  <span style="margin-left: 1em;">
+  <span class="tag-spacing">
     Tags:
     {% for category in metadata.categories %}
     <a href="/categories/{{ category }}">{{ category }}</a>{% if not loop.last %}, {% endif %}

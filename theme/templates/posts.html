@@ -16,15 +16,15 @@
 <h1>Posts</h1>
 
 {% for post in posts | sort(attribute="created") | reverse %}
-<div style="margin: 1.5em 0; padding-bottom: 1em; border-bottom: 1px solid var(--border);">
-  <h2 style="margin-top: 0;">
+<div class="post-separator">
+  <h2 class="post-title-inline">
     <a href="{{ post.permalink }}">{{ post.title }}</a>
   </h2>
-  <p style="color: var(--text-muted); margin: 0.5em 0;">
+  <p class="text-muted post-date">
     <time datetime="{{ post.created }}">{{ post.created | date(format="%B %e, %Y") }}</time>
   </p>
   {% if post.description %}
-  <p style="font-style: italic;">{{ post.description }}</p>
+  <p class="page-description">{{ post.description }}</p>
   {% endif %}
   <p>
     {% if post.truncate_char is defined and post.truncate_char is matching("^nil$") %}

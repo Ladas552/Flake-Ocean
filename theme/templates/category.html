@@ -14,14 +14,14 @@
 
 {% block content %}
 <h1>Posts in {{ category }}</h1>
-<p style="font-style: italic; color: var(--text-muted);">All the posts with the category "{{ category }}"</p>
+<p class="page-description">All the posts with the category "{{ category }}"</p>
 
 <ul>
   {% for post in posts | sort(attribute="created") | reverse %}
   {% if category in post.categories %}
-  <li style="margin: 1em 0;">
+  <li class="post-list-item">
     <a href="{{ post.permalink }}">{{ post.title }}</a>
-    <span style="color: var(--text-muted); font-size: 0.9em;">
+    <span class="text-muted-sm">
       — {{ post.created | date(format="%B %e, %Y") }}
     </span>
   </li>

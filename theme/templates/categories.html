@@ -14,7 +14,7 @@
 
 {% block content %}
 <h1>Categories</h1>
-<p style="font-style: italic; color: var(--text-muted);">All the categories used in posts.</p>
+<p class="page-description">All the categories used in posts.</p>
 
 <ul>
   {% for category in categories | sort %}
@@ -26,7 +26,7 @@
   {% endfor %}
   <li>
     <a href="/categories/{{ category }}">{{ category }}</a>
-    <span style="color: var(--text-muted);">({{ cat_posts }} post{{ cat_posts | pluralize }})</span>
+    <span class="text-muted">({{ cat_posts }} post{{ cat_posts | pluralize }})</span>
   </li>
   {% endfor %}
 </ul>
