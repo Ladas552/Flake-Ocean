@@ -6,7 +6,7 @@
     <description>Latest posts</description>
     <generator>Norgolith</generator>
     <language>en-US</language>
-    <lastBuildDate>Fri, 05 Dec 2025 09:22:26 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 10 Dec 2025 07:02:54 +0000</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https:&#x2F;&#x2F;ladas552.me&#x2F;Flake-Ocean/rss.xml" rel="self" type="application/rss+xml" />
 
@@ -18,6 +18,16 @@
       <height>144</height>
     </image>
 
+    
+    <item>
+      <title>Rust Devshells</title>
+      <link>https://ladas552.me/Flake-Ocean/posts/Rust-devshells/</link>
+      <guid>https://ladas552.me/Flake-Ocean/posts/Rust-devshells/</guid>
+      <description>Managing packages with Nix</description>
+      <author>ladas552</author>
+      <pubDate>Thu, 04 Dec 2025 00:00:00 +0000</pubDate>
+      <category>packages</category><category>nix</category>
+    </item>
     
     <item>
       <title>Hjem-rum</title>
@@ -37,16 +47,6 @@
       <author>ladas552</author>
       <pubDate>Wed, 03 Dec 2025 10:00:00 +0500</pubDate>
       <category>nixos</category><category>configuration</category>
-    </item>
-    
-    <item>
-      <title>Rust Devshells</title>
-      <link>https://ladas552.me/Flake-Ocean/posts/Rust-devshells/</link>
-      <guid>https://ladas552.me/Flake-Ocean/posts/Rust-devshells/</guid>
-      <description>Managing packages with Nix</description>
-      <author>ladas552</author>
-      <pubDate>Thu, 04 Dec 2025 00:00:00 +0000</pubDate>
-      <category>packages</category><category>nix</category>
     </item>
     
   </channel>
