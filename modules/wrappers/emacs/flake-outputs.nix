@@ -1,0 +1,110 @@
+# wrapping stolen from https://github.com/nezia1/emacs-config
+# @nezia1
+{ self, ... }:
+{
+  # modules to enable emacs service
+  flake.modules = {
+    nixos.emacs =
+      { pkgs, ... }:
+      {
+        services.emacs = {
+          enable = true;
+          package = self.packages.${pkgs.stdenv.hostplatform.system}.emacs;
+        };
+      };
+    homeManager.emacs =
+      { pkgs, ... }:
+      {
+        programs.emacs = {
+          enable = true;
+          package = self.packages.${pkgs.stdenv.hostPlatform.system}.emacs;
+        };
+        services.emacs.enable = true;
+      };
+    hjem.emacs =
+      { pkgs, ... }:
+      {
+        packages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.emacs ];
+      };
+  };
+
+  # define emacs package for `nix run`
+  perSystem =
+    { pkgs, ... }:
+    {
+      packages.emacs =
+        let
+          # plugins
+          emacsWithPackages = (pkgs.emacsPackagesFor pkgs.emacs-pgtk).emacsWithPackages (
+            epkgs: with epkgs; [
+              # Note Taking
+              org # Org-mode
+              zk # Zettlekasten for org
+              # UI
+              catppuccin-theme # colorscheme
+              doom-themes # more colorchemes
+              solaire-mode # color unreal bufferst darker
+              all-the-icons # Icons like nerdfonts
+              # Dashboard
+              dashboard # new Start up buffer
+              page-break-lines # pretty horizontal lines
+              # Utilities
+              eat # Better emacs Terminal
+              magit # git client
+              pretty-sha-path # shorten nix/store paths
+
+              # modes
+              nix-ts-mode
+              (epkgs.treesit-grammars.with-grammars (
+                grammars: with grammars; [
+                  tree-sitter-nix
+                  tree-sitter-c
+                  tree-sitter-cpp
+                  tree-sitter-python
+                ]
+              ))
+            ]
+          );
+
+          # add binaries to PATH
+          emacsDeps = pkgs.symlinkJoin {
+            name = "emacs-deps";
+            paths = with pkgs; [
+              # fonts
+              jetbrains-mono
+              nerd-fonts.symbols-only
+              # lsp, formatters
+              emacs-lsp-booster
+              nixfmt
+              nixd
+              clang-tools
+              basedpyright
+
+              unzip
+              gzip
+              bzip2
+              xz
+              zstd
+              p7zip
+              gnutar
+
+              pandoc
+            ];
+          };
+
+          # wrap emacs into a derivation
+          emacsWrapped = pkgs.symlinkJoin {
+            name = "emacs";
+            paths = [ emacsWithPackages ];
+            nativeBuildInputs = [ pkgs.makeWrapper ];
+            postBuild = ''
+              wrapProgram $out/bin/emacs \
+                --prefix PATH : ${emacsDeps}/bin \
+                --prefix INFOPATH : $out/share/info \
+                --add-flags --init-directory="${./config}"
+            '';
+          };
+        in
+        emacsWrapped;
+    };
+}

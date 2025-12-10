@@ -69,6 +69,8 @@
           "${modulesPath}/programs/ripgrep.nix"
           "${modulesPath}/programs/zoxide.nix"
           "${modulesPath}/programs/foot.nix"
+          "${modulesPath}/programs/emacs.nix"
+          "${modulesPath}/services/emacs.nix"
         ];
       };
   };

@@ -1,15 +1,11 @@
-{ pkgs, ... }:
+;; Update user-emacs-directory to use a non store location, so that packages may write there
+;; thanks https://github.com/jordanisaacs/emacs-config/blob/3854525333a886c53a1dc966e0b4bb09a088e9fb/init.org?plain=1#L39-L48          
+;; stolen from https://nezia.dev/
+(setq user-emacs-directory (expand-file-name "emacs/" (getenv "XDG_STATE_HOME")))
+(setq custom-file (locate-user-emacs-file "custom.el"))
 
-{
-  flake.modules.homeManager.emacs = {
-    programs.emacs = {
-      enable = true;
-      # pure gtk GUI for Emacs
-      package = pkgs.emacs30-pgtk;
-      # Settings defined in init.el file
-      extraConfig = # commonlisp
-        ''
-          ;; default theme
+
+;; default theme
           ;; (load-theme 'catppuccin :no-confirm)
           ;; (setq catppuccin-flavor 'macchiato)
           ;; (catppuccin-reload)
@@ -63,27 +59,4 @@
           ;; Add solaire integration
           (solaire-global-mode +1)
           (add-hook 'dashboard-before-initialize-hook #'solaire-mode)
-        '';
-      extraPackages =
-        epkgs: with pkgs.emacsPackages; [
-          # Note Taking
-          org # Org-mode
-          zk # Zettlekasten for org
-          # UI
-          catppuccin-theme # colorscheme
-          doom-themes # more colorchemes
-          solaire-mode # color unreal bufferst darker
-          all-the-icons # Icons like nerdfonts
-          # Dashboard
-          dashboard # new Start up buffer
-          page-break-lines # pretty horizontal lines
-          # Utilities
-          eat # Better emacs Terminal
-          magit # git client
-          pretty-sha-path # shorten nix/store paths
-        ];
-    };
-    # emacs on startup eats 10% cpu on cold start
-    # services.emacs.enable = true;
-  };
-}
+
