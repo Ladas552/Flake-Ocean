@@ -7,7 +7,7 @@
         neorg
         plugins
         options
-        # autocmd
+        autocmd
       ];
     in
     {
