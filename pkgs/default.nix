@@ -1,31 +1,9 @@
-{ inputs, self, ... }:
-let
-  meta = {
-    isTermux = false;
-    host = "";
-    norg = null;
-    self = "";
-    user = "ladas552";
-  };
-in
+{ self, ... }:
 {
   perSystem =
-    {
-      pkgs,
-      inputs',
-      ...
-    }:
+    { pkgs, ... }:
     {
       packages = {
-        # my nvf config
-        nvf =
-          (inputs.nvf.lib.neovimConfiguration {
-            inherit pkgs;
-            modules = [ ./nvf ];
-            extraSpecialArgs = {
-              inherit meta;
-            };
-          }).neovim;
         default = pkgs.writeShellScriptBin "hello" ''echo "Hello World"'';
         restore = pkgs.callPackage ./restore.nix { };
         gcp = pkgs.callPackage ./addcommitpush.nix { };

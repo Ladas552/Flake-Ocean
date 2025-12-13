@@ -5,7 +5,7 @@
 
       # Steam
       programs.steam = {
-        enable = false;
+        enable = true;
         remotePlay.openFirewall = true;
         # gamescopeSession.enable = true;
         extraCompatPackages = [ pkgs.proton-ge-bin.steamcompattool ];

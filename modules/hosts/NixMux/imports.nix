@@ -9,6 +9,7 @@ let
 in
 {
   flake.modules.nixvim.NixMux.imports = [ { inherit custom; } ];
+  flake.modules.nvf.NixMux.imports = [ { inherit custom; } ];
   flake.modules.nixOnDroid."nixOnDroidConfigurations/NixMux".imports =
     with config.flake.modules.nixOnDroid;
     [

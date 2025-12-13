@@ -1,47 +1,12 @@
 {
-  flake.modules.nixvim.neorg =
+  flake.modules.nvf.neorg =
     {
-      pkgs,
       lib,
       config,
+      pkgs,
       ...
     }:
     let
-      #Norg meta treesitter-parser
-
-      treesitter-norg-meta = pkgs.tree-sitter.buildGrammar {
-        language = "norg-meta";
-        version = "0.1.0";
-
-        src = pkgs.fetchFromGitHub {
-          owner = "nvim-neorg";
-          repo = "tree-sitter-norg-meta";
-          rev = "refs/tags/v0.1.0";
-          hash = "sha256-8qSdwHlfnjFuQF4zNdLtU2/tzDRhDZbo9K54Xxgn5+8=";
-        };
-
-        fixupPhase = ''
-          mkdir -p $out/queries/norg-meta
-          mv $out/queries/*.scm $out/queries/norg-meta/
-        '';
-
-        meta.homepage = "https://github.com/nvim-neorg/tree-sitter-norg-meta";
-      };
-
-      norg = pkgs.tree-sitter.buildGrammar {
-        language = "norg";
-        version = "0.0.0+rev=d89d95a";
-
-        src = pkgs.fetchFromGitHub {
-          owner = "nvim-neorg";
-          repo = "tree-sitter-norg";
-          rev = "d89d95af13d409f30a6c7676387bde311ec4a2c8";
-          hash = "sha256-z3h5qMuNKnpQgV62xZ02F5vWEq4VEnm5lxwEnIFu+Rw=";
-        };
-
-        meta.homepage = "https://github.com/nvim-neorg/tree-sitter-norg";
-
-      };
       # Neorg Plugins
       src = pkgs.fetchFromGitHub {
         owner = "benlubas";
@@ -103,28 +68,17 @@
       };
     in
     {
-      extraPlugins = [
-        neorg-conceal-wrap
-        neorg-interim-ls
-      ]
-      ++ lib.optionals (!config.custom.meta.isTermux) [ neorg-query ];
-      performance.combinePlugins.pathsToLink = [ "/lib" ];
-      performance.combinePlugins.standalonePlugins = [
-        "neorg"
-        "neorg-query"
-      ];
-      plugins = {
-        treesitter = {
-          grammarPackages = with config.plugins.treesitter.package.builtGrammars; [
-            treesitter-norg-meta
-            norg
-          ];
+      vim = {
+        extraPlugins = {
+          "neorg-telescope".package = lib.mkIf config.vim.telescope.enable "neorg-telescope";
+          "neorg-interim-ls".package = neorg-interim-ls;
+          "neorg-conceal-wrap".package = neorg-conceal-wrap;
+          "neorg_query".package = lib.mkIf (!config.custom.meta.isTermux) neorg-query;
         };
-        # Neorg
-        neorg = {
+        notes.neorg = {
           enable = true;
-          telescopeIntegration.enable = config.plugins.telescope.enable;
-          settings.load = {
+          treesitter.enable = true;
+          setupOpts.load = {
             # Extra modules
             "external.query" = lib.mkIf (!config.custom.meta.isTermux) {
               config = {
@@ -134,7 +88,7 @@
             };
             "external.interim-ls".config.completion_provider.categories = true;
             # Core
-            "core.defaults".__empty = null;
+            "core.defaults".enable = true;
             "core.concealer".config.icon_preset = "diamond";
             "core.esupports.metagen" = lib.mkIf (lib.isString config.custom.meta.norg) {
               config = {
@@ -172,41 +126,41 @@
                 default_workspace = "general";
               };
             };
-            "core.summary" = lib.mkIf (lib.isString config.custom.meta.norg) { __empty = null; };
+            "core.summary" = lib.mkIf (lib.isString config.custom.meta.norg) { };
             "core.integrations.telescope" = lib.mkIf (
-              lib.isString config.custom.meta.norg && config.plugins.telescope.enable
-            ) { __empty = null; };
+              lib.isString config.custom.meta.norg && config.vim.telescope.enable
+            ) { };
           };
         };
+        globals.maploalleader = "  ";
+        options = {
+          foldlevel = 99;
+          conceallevel = 2;
+        };
+        keymaps = [
+          #Neorg Journal
+          {
+            action = "<cmd>Neorg journal today<CR>";
+            key = "<leader>j";
+            mode = "n";
+            desc = "Journal today";
+          }
+        ]
+        ++ lib.optionals (config.vim.telescope.enable) [
+          # Telescope Neorg Integration
+          {
+            action = "<cmd>Telescope neorg find_norg_files<CR>";
+            key = "<leader>fn";
+            mode = "n";
+            desc = "Find Norg File";
+          }
+          {
+            action = "<cmd>Telescope neorg switch_workspace<CR>";
+            key = "<leader>n";
+            mode = "n";
+            desc = "Change Neorg Workspace";
+          }
+        ];
       };
-      globals.maploalleader = "  ";
-      opts = {
-        foldlevel = 99;
-        conceallevel = 2;
-      };
-      keymaps = [
-        #Neorg Journal
-        {
-          action = "<cmd>Neorg journal today<CR>";
-          key = "<leader>j";
-          mode = "n";
-          options.desc = "Journal today";
-        }
-      ]
-      ++ lib.optionals (config.plugins.telescope.enable) [
-        # Telescope Neorg Integration
-        {
-          action = "<cmd>Telescope neorg find_norg_files<CR>";
-          key = "<leader>fn";
-          mode = "n";
-          options.desc = "Find Norg File";
-        }
-        {
-          action = "<cmd>Telescope neorg switch_workspace<CR>";
-          key = "<leader>n";
-          mode = "n";
-          options.desc = "Change Neorg Workspace";
-        }
-      ];
     };
 }

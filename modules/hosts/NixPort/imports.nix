@@ -9,6 +9,7 @@ let
 in
 {
   flake.modules.nixvim.NixPort.imports = [ { inherit custom; } ];
+  flake.modules.nvf.NixPort.imports = [ { inherit custom; } ];
   flake.modules.nixos."hosts/NixPort" = {
     imports =
       with config.flake.modules.nixos;
@@ -19,6 +20,7 @@ in
         ## Games
         games
         emulators
+        steam
         bluetooth
         cache
         cat-mocha

@@ -94,6 +94,32 @@
         };
       };
 
+      nvf.NixPort = {
+        # custom options, can be called as config.custom.meta.<option> in modules
+        options.custom.meta = {
+          inherit
+            user
+            isTermux
+            hostname
+            self
+            norg
+            ;
+        };
+      };
+
+      nvf.NixMux = {
+        # custom options, can be called as config.custom.meta.<option> in modules
+        options.custom.meta = {
+          inherit
+            user
+            isTermux
+            hostname
+            self
+            norg
+            ;
+        };
+      };
+
       nixOnDroid.options = {
         # custom options, can be called as config.custom.meta.<option> in modules
         options.custom.meta = {
