@@ -1,24 +1,29 @@
 {
-  flake.modules.nixvim.nixd =
+  flake.modules.nvf.nix =
     {
-      pkgs,
       lib,
       # config,
+      pkgs,
       ...
     }:
     {
-      plugins.lsp.servers.nixd = {
-        enable = true;
-        # neovim trows  an error with semantic tokens
-        cmd = [
-          "nixd"
-          "--semantic-tokens=false"
-        ];
-        settings = {
-          nixpkgs.expr = "import <nixpkgs> { }";
+      vim = {
+        languages.nix = {
+          enable = true;
+          format.type = [ "nixfmt" ];
+          lsp.servers = [ "nixd" ];
+          treesitter.enable = true;
+        };
+        lsp.servers."nixd" = {
+          # neovim trows  an error with semantic tokens
+          cmd = lib.mkForce [
+            "${lib.getExe' pkgs.nixd "nixd"}"
+            "--semantic-tokens=false"
+          ];
+          settings.nixpkgs.expr = "import <nixpkgs> { }";
           # Completions don't work anyways because flake parts makes config funky
 
-          # options = {
+          # init_options = {
           #   nixos.expr = "(builtins.getFlake ''${config.custom.meta.self}'').nixosConfigurations.NixPort.options";
           #   home-manager.expr = "(builtins.getFlake ''${config.custom.meta.self}'').nixosConfigurations.NixPort.options.home-manager.users.type.getSubOptions []";
           #   nix-on-droid.expr = "(builtins.getFlake ''${config.custom.meta.self}'').nixOnDroidConfigurations.NixMux.options";
@@ -26,10 +31,6 @@
           #   nvf.expr = "(builtins.getFlake ''${config.custom.meta.self}'').packages.x86_64-linux.nvf.neovimConfig";
           # };
         };
-      };
-      plugins.conform-nvim.settings = {
-        formatters_by_ft.nix = [ "nixfmt" ];
-        formatters.nixfmt.command = lib.getExe' pkgs.nixfmt "nixfmt";
       };
     };
 }

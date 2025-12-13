@@ -8,6 +8,9 @@
         plugins
         options
         autocmd
+        cat-mocha
+        diagnostics
+        blink-cmp
       ];
     in
     {
@@ -21,6 +24,9 @@
               base
               ++ [
                 NixPort
+                lsp-config
+                otter
+                nix
               ];
           }).neovim;
 

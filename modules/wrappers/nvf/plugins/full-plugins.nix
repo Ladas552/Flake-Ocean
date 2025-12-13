@@ -3,11 +3,6 @@
 
     vim = {
       # UI
-      theme = {
-        enable = true;
-        name = "catppuccin";
-        style = "macchiato";
-      };
       ui = {
         colorizer = {
           enable = true;
