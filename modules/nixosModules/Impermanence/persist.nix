@@ -22,6 +22,7 @@
             ".local/share/nvim"
             ".local/state/nvim"
             ".local/state/nvf"
+            ".local/share/nvf"
             ".config/libreoffice"
             ".cache/librewolf"
             ".cache/keepassxc"
