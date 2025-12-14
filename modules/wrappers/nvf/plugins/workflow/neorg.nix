@@ -72,7 +72,9 @@
         extraPlugins = {
           "neorg-interim-ls".package = neorg-interim-ls;
           "neorg-conceal-wrap".package = neorg-conceal-wrap;
-          "neorg_query".package = (lib.mkIf (!config.custom.meta.isTermux)) neorg-query;
+        }
+        // lib.optionalAttrs (!config.custom.meta.isTermux) {
+          "neorg_query".package = neorg-query;
         };
         notes.neorg = {
           enable = true;
