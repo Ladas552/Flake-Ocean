@@ -95,7 +95,7 @@ in
             cat-mocha
             # imv
             chawan
-            nixvim
+            nvf
             mpv
             # flameshot
           ];
