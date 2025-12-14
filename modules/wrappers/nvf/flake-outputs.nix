@@ -1,16 +1,38 @@
 { config, inputs, ... }:
+# plugins to add
+# - autosave plugin
+# - cord.nvim
+# - parinfer-rust
+# - module for numb.nvim
 {
   perSystem =
     { pkgs, ... }:
     let
       base = with config.flake.modules.nvf; [
         neorg
-        plugins
         options
         autocmd
+        keymaps
         cat-mocha
         diagnostics
         blink-cmp
+        luasnip
+        colorizer
+        dashboard
+        heirline
+        numb
+        which-key
+        web-devicons
+        rainbow
+        cyrillic
+        neogit
+        nvim-autopairs
+        nvim-surround
+        oil
+        snacks
+        nix
+        lsp-config
+        otter
       ];
     in
     {
@@ -24,9 +46,13 @@
               base
               ++ [
                 NixPort
-                lsp-config
-                otter
-                nix
+                python
+                clang
+                rust
+                typst
+                direnv
+                img-clip
+                orgmode
               ];
           }).neovim;
 

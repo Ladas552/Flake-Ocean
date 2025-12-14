@@ -70,10 +70,9 @@
     {
       vim = {
         extraPlugins = {
-          "neorg-telescope".package = lib.mkIf config.vim.telescope.enable "neorg-telescope";
           "neorg-interim-ls".package = neorg-interim-ls;
           "neorg-conceal-wrap".package = neorg-conceal-wrap;
-          "neorg_query".package = lib.mkIf (!config.custom.meta.isTermux) neorg-query;
+          "neorg_query".package = (lib.mkIf (!config.custom.meta.isTermux)) neorg-query;
         };
         notes.neorg = {
           enable = true;
@@ -127,9 +126,6 @@
               };
             };
             "core.summary" = lib.mkIf (lib.isString config.custom.meta.norg) { };
-            "core.integrations.telescope" = lib.mkIf (
-              lib.isString config.custom.meta.norg && config.vim.telescope.enable
-            ) { };
           };
         };
         globals.maploalleader = "  ";
@@ -144,21 +140,6 @@
             key = "<leader>j";
             mode = "n";
             desc = "Journal today";
-          }
-        ]
-        ++ lib.optionals (config.vim.telescope.enable) [
-          # Telescope Neorg Integration
-          {
-            action = "<cmd>Telescope neorg find_norg_files<CR>";
-            key = "<leader>fn";
-            mode = "n";
-            desc = "Find Norg File";
-          }
-          {
-            action = "<cmd>Telescope neorg switch_workspace<CR>";
-            key = "<leader>n";
-            mode = "n";
-            desc = "Change Neorg Workspace";
           }
         ];
       };
