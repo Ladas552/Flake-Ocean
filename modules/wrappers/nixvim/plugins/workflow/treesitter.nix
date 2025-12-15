@@ -15,6 +15,7 @@
             fish
             markdown
             markdown_inline
+            nix
           ]
           ++ lib.optionals (!config.custom.meta.isTermux) [
             bibtex
@@ -41,7 +42,6 @@
             kotlin
             luadoc
             make
-            nix
             python
             rasi
             requirements

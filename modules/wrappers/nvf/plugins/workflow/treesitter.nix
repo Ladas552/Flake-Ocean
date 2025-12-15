@@ -1,13 +1,17 @@
 {
-  flake.modules.nixvim.treesitter =
-    { lib, config, ... }:
+  flake.modules.nvf.treesitter =
     {
-      plugins.treesitter = {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
+    {
+      vim.treesitter = {
         enable = true;
-        folding = true;
-        nixvimInjections = true;
-        grammarPackages =
-          with config.plugins.treesitter.package.builtGrammars;
+        fold = true;
+        grammars =
+          with pkgs.vimPlugins.nvim-treesitter.builtGrammars;
           [
             lua
             rust
@@ -15,6 +19,7 @@
             fish
             markdown
             markdown_inline
+            nix
           ]
           ++ lib.optionals (!config.custom.meta.isTermux) [
             bibtex
@@ -41,7 +46,6 @@
             kotlin
             luadoc
             make
-            nix
             python
             rasi
             requirements
@@ -57,19 +61,7 @@
             yaml
             zathurarc
           ];
-        settings = {
-          indent.enable = true;
-          highlight.enable = true;
-          incremental_selection = {
-            enable = false;
-            keymaps = {
-              init_selection = "<C-space>";
-              node_incremental = "<C-space>";
-              scope_incremental = false;
-              node_decremental = "<bs>";
-            };
-          };
-        };
+        incrementalSelection.enable = false;
       };
     };
 }

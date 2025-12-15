@@ -1,6 +1,14 @@
 {
   flake.modules.nvf.neogit.vim = {
-    git.neogit.enable = true;
+    git.neogit = {
+      enable = true;
+      mappings = {
+        commit = null;
+        open = null;
+        pull = null;
+        push = null;
+      };
+    };
     keymaps = [
       # NeoGit
       {

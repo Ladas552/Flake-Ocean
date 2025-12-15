@@ -6,8 +6,6 @@
       extraConfigLua = # lua
         ''
           -- peek into `:42` move
-          -- has a bug with `:+n` commands
-          -- https://github.com/nacro90/numb.nvim/issues/33
           require('numb').setup{
             show_numbers = true, -- Enable 'number' for the window while peeking
             show_cursorline = false, -- Enable 'cursorline' for the window while peeking
