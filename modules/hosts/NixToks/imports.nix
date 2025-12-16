@@ -8,6 +8,7 @@ let
   };
 in
 {
+  flake.modules.nvf.NixToks.imports = [ { inherit custom; } ];
   flake.modules.nixos."hosts/NixToks".imports =
     with config.flake.modules.nixos;
     [
@@ -62,6 +63,7 @@ in
           shell
           syncthing
           yt-dlp
+          nvf
         ];
       }
     ];

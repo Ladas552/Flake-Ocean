@@ -34,6 +34,18 @@
         web-devicons
         which-key
       ];
+
+      heavy = with config.flake.modules.nvf; [
+        clang
+        direnv
+        img-clip
+        orgmode
+        python
+        rust
+        typst
+        otter
+        nix
+      ];
     in
     {
       # my nvf config
@@ -44,20 +56,23 @@
             modules =
               with config.flake.modules.nvf;
               base
+              ++ heavy
               ++ [
                 NixPort
-                clang
-                direnv
-                img-clip
-                orgmode
-                python
-                rust
-                typst
-                otter
-                nix
               ];
           }).neovim;
 
+        nvf-NixToks =
+          (inputs.nvf.lib.neovimConfiguration {
+            inherit pkgs;
+            modules =
+              with config.flake.modules.nvf;
+              base
+              ++ heavy
+              ++ [
+                NixToks
+              ];
+          }).neovim;
         nvf-NixMux =
           (inputs.nvf.lib.neovimConfiguration {
             inherit pkgs;
