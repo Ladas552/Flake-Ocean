@@ -71,6 +71,9 @@
           "${modulesPath}/programs/foot.nix"
           "${modulesPath}/programs/emacs.nix"
           "${modulesPath}/services/emacs.nix"
+          "${modulesPath}/services/sxhkd.nix"
+          "${modulesPath}/services/flameshot.nix"
+          "${modulesPath}/services/window-managers/bspwm/default.nix"
         ];
       };
   };

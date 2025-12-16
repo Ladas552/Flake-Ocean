@@ -1,14 +1,21 @@
+{ config, ... }:
 {
   flake.modules = {
     nixos.bspwm =
       { pkgs, lib, ... }:
       {
+        imports = with config.flake.modules.nixos; [
+          lightdm
+          libinput
+          xkb
+        ];
         # better to enable xfce with this modules, works like a charm
         services.displayManager.defaultSession = "xfce+bspwm";
         services.xserver = {
           enable = true;
           windowManager.bspwm.enable = true;
           desktopManager.xfce = {
+            enable = true;
             enableXfwm = false;
           };
         };
@@ -21,6 +28,11 @@
     homeManager.bspwm =
       { lib, ... }:
       {
+        imports = with config.flake.modules.homeManager; [
+          flameshot
+          rofi
+        ];
+
         xsession.windowManager.bspwm = {
           enable = true;
           monitors = {
@@ -84,9 +96,9 @@
             "super + space" = "rofi -show";
             "super + x" = "xfce4-session-logout";
             # Gui apps
-            "super + {w,f}" = "{floorp,thunar}";
+            "super + {w,f}" = "{librewolf,thunar}";
             # Tuu apps
-            "super + {g,m,h,n}" = "ghostty -e {qalc,ncmpcpp,btop,nvim}";
+            "super + {g,m,h,n}" = "ghostty -e {qalc,rmpc,btop,nvim}";
             # Screenshot
             "Print" = "flameshot gui";
             # MPD
