@@ -52,7 +52,7 @@
     let
       prefix = "nixOnDroidConfigurations/";
     in
-    lib.pipe config.flake.modules.nixos [
+    lib.pipe config.flake.modules.nixOnDroid [
       (lib.filterAttrs (name: _: lib.hasPrefix prefix name))
       (lib.mapAttrs' (
         name: module: {
