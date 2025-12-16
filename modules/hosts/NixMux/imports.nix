@@ -22,7 +22,7 @@ in
           { inherit custom; }
           options
           NixMux
-          nixvim
+          nvf
           chawan
           fastfetch
           gh

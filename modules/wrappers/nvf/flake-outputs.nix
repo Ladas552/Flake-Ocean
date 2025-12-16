@@ -23,13 +23,11 @@
         luasnip
         neogit
         neorg
-        nix
         numb
         nvim-autopairs
         nvim-surround
         oil
         options
-        otter
         rainbow
         snacks
         treesitter
@@ -55,6 +53,8 @@
                 python
                 rust
                 typst
+                otter
+                nix
               ];
           }).neovim;
 
