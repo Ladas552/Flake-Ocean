@@ -60,7 +60,6 @@ in
             cat-mocha
             chromium
             direnv
-            emacs
             fastfetch
             fish
             gh

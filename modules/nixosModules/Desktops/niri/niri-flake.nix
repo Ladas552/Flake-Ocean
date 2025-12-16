@@ -28,7 +28,7 @@
         # uncomment the niri inputs in flake.nix to use this
         programs.niri = {
           enable = true;
-          package = pkgs.niri-unstable;
+          package = pkgs.niri;
         };
 
         environment.systemPackages = with pkgs; [

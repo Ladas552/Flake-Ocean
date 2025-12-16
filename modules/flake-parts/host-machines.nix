@@ -8,9 +8,9 @@
   flake.nixosConfigurations =
     let
       prefix = "hosts/";
-      collectHostsModules = modules: lib.filterAttrs (name: _: lib.hasPrefix prefix name) modules;
     in
-    lib.pipe (collectHostsModules config.flake.modules.nixos) [
+    lib.pipe config.flake.modules.nixos [
+      (lib.filterAttrs (name: _: lib.hasPrefix prefix name))
       (lib.mapAttrs' (
         name: module:
         let
@@ -25,7 +25,8 @@
           name = lib.removePrefix prefix name;
           value = inputs.nixpkgs.lib.nixosSystem {
             inherit specialArgs;
-            modules = module.imports ++ [
+            modules = [
+              module
               config.flake.modules.nixos.hjem
               config.flake.modules.nixos.homeManager
               config.flake.modules.nixos.options
@@ -50,16 +51,12 @@
   flake.nixOnDroidConfigurations =
     let
       prefix = "nixOnDroidConfigurations/";
-      collectHostsModules = modules: lib.filterAttrs (name: _: lib.hasPrefix prefix name) modules;
     in
-    lib.pipe (collectHostsModules config.flake.modules.nixOnDroid) [
+    lib.pipe config.flake.modules.nixos [
+      (lib.filterAttrs (name: _: lib.hasPrefix prefix name))
       (lib.mapAttrs' (
-        name: module:
-        let
-          droidName = lib.removePrefix prefix name;
-        in
-        {
-          name = droidName;
+        name: module: {
+          name = lib.removePrefix prefix name;
           value = inputs.nix-on-droid.lib.nixOnDroidConfiguration {
             pkgs = import inputs.nixpkgs { system = "aarch64-linux"; };
             modules = [
