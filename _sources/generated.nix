@@ -40,4 +40,46 @@
     };
     date = "2025-12-16";
   };
+  neorg-conceal-wrap = {
+    pname = "neorg-conceal-wrap";
+    version = "447a76e4abf07ccc5eeb8cc3ee5fae241b434f5a";
+    src = fetchFromGitHub {
+      owner = "benlubas";
+      repo = "neorg-conceal-wrap";
+      rev = "447a76e4abf07ccc5eeb8cc3ee5fae241b434f5a";
+      fetchSubmodules = false;
+      sha256 = "sha256-nEYuC5bM+VLSvBscpOC3EWwyVWzTPWDvv1o4tAzHzVU=";
+    };
+    date = "2025-10-17";
+  };
+  neorg-interim-ls = {
+    pname = "neorg-interim-ls";
+    version = "e2f86982ba5857ed5581ff5814edd57b5c2c67e0";
+    src = fetchFromGitHub {
+      owner = "benlubas";
+      repo = "neorg-interim-ls";
+      rev = "e2f86982ba5857ed5581ff5814edd57b5c2c67e0";
+      fetchSubmodules = false;
+      sha256 = "sha256-EdKEaxdme4tODtoJv8Yw/x3YtQoDLK0pmTT7xgE1LYQ=";
+    };
+    date = "2025-10-16";
+  };
+  neorg-query = {
+    pname = "neorg-query";
+    version = "e32b2dec08ec5a3ac3c7b0b4a500343886816e85";
+    src = fetchFromGitHub {
+      owner = "benlubas";
+      repo = "neorg-query";
+      rev = "e32b2dec08ec5a3ac3c7b0b4a500343886816e85";
+      fetchSubmodules = false;
+      sha256 = "sha256-jL5oMviGGKo9WgIPSFY3bBNmGuTjpUp+TPO4qW5NGlw=";
+    };
+    cargoLock."Cargo.lock" = {
+      lockFile = ./. + "/sha256-jL5oMviGGKo9WgIPSFY3bBNmGuTjpUp+TPO4qW5NGlw=/Cargo.lock";
+      outputHashes = {
+        "rust-norg-0.1.0" = "sha256-44IbqOhHG1PQ5rPKVKZyMUeHhi/shl+zjK5L+tnwgLI=";
+      };
+    };
+    date = "2025-07-12";
+  };
 }

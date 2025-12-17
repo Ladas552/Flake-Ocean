@@ -1,3 +1,4 @@
+# helium
 [helium]
 src.github_tag = "imputnet/helium-linux"
 fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64.AppImage"
@@ -9,3 +10,17 @@ fetch.github = "Michael-C-Buckley/nixos"
 [jail-nix]
 src.git = "https://git.sr.ht/~alexdavid/jail.nix"
 fetch.git = "https://git.sr.ht/~alexdavid/jail.nix"
+
+# neorg
+[neorg-interim-ls]
+src.git = "https://github.com/benlubas/neorg-interim-ls"
+fetch.github = "benlubas/neorg-interim-ls"
+
+[neorg-conceal-wrap]
+src.git = "https://github.com/benlubas/neorg-conceal-wrap"
+fetch.github = "benlubas/neorg-conceal-wrap"
+
+[neorg-query]
+src.git = "https://github.com/benlubas/neorg-query"
+fetch.github = "benlubas/neorg-query"
+cargo_lock = ["Cargo.lock"]

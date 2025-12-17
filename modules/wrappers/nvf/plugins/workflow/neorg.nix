@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   flake.modules.nvf.neorg =
     {
@@ -7,22 +8,19 @@
       ...
     }:
     let
+      # nvfetcher pins
+      sources = pkgs.callPackage "${self}/_sources/generated.nix" { };
       # Neorg Plugins
-      src = pkgs.fetchFromGitHub {
-        owner = "benlubas";
-        repo = "neorg-query";
-        rev = "3b1e0cf87725a5d341cf55e22e1193f57a8f6ddd";
-        hash = "sha256-AWB2p9dizeVq5ieLJHU1eL0TjoNIEUwKazVNnFNwO9s=";
-      };
       lib-neorg_query = pkgs.rustPlatform.buildRustPackage {
-        inherit src;
+        src = sources.neorg-query.src;
         name = "neorg_query";
+        # change this to cargoLock somehow
         cargoHash = "sha256-m/QhtE6e2wmTRBQ8xrWfgsmvDaaR1s9z/BLoFgFz/Do=";
         nativeBuildInputs = [ pkgs.gitMinimal ];
       };
       neorg-query = pkgs.vimUtils.buildVimPlugin {
         name = "neorg-query";
-        inherit src;
+        src = sources.neorg-query.src;
         preInstall =
           let
             ext = pkgs.stdenv.hostPlatform.extensions.sharedLibrary;
@@ -40,12 +38,7 @@
       };
       neorg-interim-ls = pkgs.vimUtils.buildVimPlugin {
         name = "neorg-interim-ls";
-        src = pkgs.fetchFromGitHub {
-          owner = "benlubas";
-          repo = "neorg-interim-ls";
-          rev = "348cd121d8b872248e9b0e48e3611c54dfad83f0";
-          sha256 = "1vszvmsy27n68ivi6bmk1hifi00dg33mc9iz66nv2gfmwcfwbsfz";
-        };
+        src = sources.neorg-interim-ls.src;
         nvimSkipModules = [
           # skip checks
           "neorg.modules.external.lsp-completion.module"
@@ -55,12 +48,7 @@
       };
       neorg-conceal-wrap = pkgs.vimUtils.buildVimPlugin {
         name = "neorg-conceal-wrap";
-        src = pkgs.fetchFromGitHub {
-          owner = "benlubas";
-          repo = "neorg-conceal-wrap";
-          rev = "e08b06042b175355496d3b5b033658021b90cd82";
-          sha256 = "1jy40wrmv7fdglglzcaasayh9hn8k99ccz35ssjgmmxnk76n5gnz";
-        };
+        src = sources.neorg-conceal-wrap.src;
         nvimSkipModules = [
           # skip checks
           "neorg.modules.external.conceal-wrap.module"

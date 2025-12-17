@@ -54,5 +54,75 @@
             "url": "https://git.sr.ht/~alexdavid/jail.nix"
         },
         "version": "bf9f49c8118e7a77b68a675dbe26e93e91412066"
+    },
+    "neorg-conceal-wrap": {
+        "cargoLock": null,
+        "date": "2025-10-17",
+        "extract": null,
+        "name": "neorg-conceal-wrap",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "benlubas",
+            "repo": "neorg-conceal-wrap",
+            "rev": "447a76e4abf07ccc5eeb8cc3ee5fae241b434f5a",
+            "sha256": "sha256-nEYuC5bM+VLSvBscpOC3EWwyVWzTPWDvv1o4tAzHzVU=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "447a76e4abf07ccc5eeb8cc3ee5fae241b434f5a"
+    },
+    "neorg-interim-ls": {
+        "cargoLock": null,
+        "date": "2025-10-16",
+        "extract": null,
+        "name": "neorg-interim-ls",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "benlubas",
+            "repo": "neorg-interim-ls",
+            "rev": "e2f86982ba5857ed5581ff5814edd57b5c2c67e0",
+            "sha256": "sha256-EdKEaxdme4tODtoJv8Yw/x3YtQoDLK0pmTT7xgE1LYQ=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "e2f86982ba5857ed5581ff5814edd57b5c2c67e0"
+    },
+    "neorg-query": {
+        "cargoLock": {
+            "Cargo.lock": [
+                "sha256-jL5oMviGGKo9WgIPSFY3bBNmGuTjpUp+TPO4qW5NGlw=/Cargo.lock",
+                {
+                    "rust-norg-0.1.0": "sha256-44IbqOhHG1PQ5rPKVKZyMUeHhi/shl+zjK5L+tnwgLI="
+                }
+            ]
+        },
+        "date": "2025-07-12",
+        "extract": null,
+        "name": "neorg-query",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "benlubas",
+            "repo": "neorg-query",
+            "rev": "e32b2dec08ec5a3ac3c7b0b4a500343886816e85",
+            "sha256": "sha256-jL5oMviGGKo9WgIPSFY3bBNmGuTjpUp+TPO4qW5NGlw=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "e32b2dec08ec5a3ac3c7b0b4a500343886816e85"
     }
 }
