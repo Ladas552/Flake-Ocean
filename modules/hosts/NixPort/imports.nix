@@ -58,7 +58,6 @@ in
             { inherit custom; }
             NixPort
             cat-mocha
-            chromium
             direnv
             fastfetch
             fish
@@ -97,6 +96,7 @@ in
             nvf
             mpv
             # flameshot
+            helium
           ];
         }
       ];

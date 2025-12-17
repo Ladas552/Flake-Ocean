@@ -294,6 +294,7 @@
               # GUI apps
               "Super+F".action = spawn "thunar";
               "Super+W".action = spawn "librewolf";
+              "Shift+Super+W".action = spawn "helium";
               # MPD
               "Shift+Alt+P" = {
                 action = spawn [

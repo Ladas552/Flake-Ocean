@@ -5,7 +5,7 @@
       enable = true;
       setupOpts = {
         follow_cursor = true;
-        open_cmd = "chromium %s";
+        open_cmd = "helium %s";
       };
     };
   };

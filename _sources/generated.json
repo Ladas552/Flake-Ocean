@@ -1,0 +1,58 @@
+{
+    "helium": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "helium",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-SUpXcyQXUjZR57pNabVR/cSrGOMKvgzW0PSCLdB8d+E=",
+            "type": "url",
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.7.6.1/helium-0.7.6.1-x86_64.AppImage"
+        },
+        "version": "0.7.6.1"
+    },
+    "helium-wrapped": {
+        "cargoLock": null,
+        "date": "2025-12-17",
+        "extract": null,
+        "name": "helium-wrapped",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Michael-C-Buckley",
+            "repo": "nixos",
+            "rev": "cc571bdb4dfaa62629a62ba2f5e1cf9f1cee83fc",
+            "sha256": "sha256-H1xQZiGg70XEQLBwiLN6pDAXPSQ4L8qXmphUFHqrGDg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "cc571bdb4dfaa62629a62ba2f5e1cf9f1cee83fc"
+    },
+    "jail-nix": {
+        "cargoLock": null,
+        "date": "2025-12-16",
+        "extract": null,
+        "name": "jail-nix",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "bf9f49c8118e7a77b68a675dbe26e93e91412066",
+            "sha256": "sha256-buoPpx7moJzAXbLuHAImn6x9fGRdk3x0T57goPv1vnc=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://git.sr.ht/~alexdavid/jail.nix"
+        },
+        "version": "bf9f49c8118e7a77b68a675dbe26e93e91412066"
+    }
+}

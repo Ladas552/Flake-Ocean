@@ -36,7 +36,11 @@ I write comments on things, that might explain certain ways of doing things, or 
 
 Also, I have [Norg document](./nix.norg), containing notes and TODO for the config, and folder `/docs` for containing more specific instructions.
 
-I also plan on writing some [blog posts about Nix](https://ladas552.me/categories/nix/), so stay tuned!
+I also plan on writing some [blog posts about Nix](https://ladas552.me/Flake-Ocean/), so stay tuned!
+
+## Nvfetcher
+
+I also have inputs in `./_sources/`, they are generated with `nvfetcher` after editing the `./nvfetcher.toml` file. Instead of `nix flake update`, I update them with `nix run github:berberman/nvfetcher`.
 
 ## Name
 

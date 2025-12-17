@@ -9,7 +9,7 @@
       {
         services.emacs = {
           enable = true;
-          package = self.packages.${pkgs.stdenv.hostplatform.system}.emacs;
+          package = self.packages.${pkgs.stdenv.hostPlatform.system}.emacs;
         };
       };
     homeManager.emacs =

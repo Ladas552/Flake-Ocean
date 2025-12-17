@@ -32,7 +32,8 @@
         nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
         settings = {
           # error on IFD, It errors on using modules like Stylix tho
-          allow-import-from-derivation = false;
+          # right now it's true because I IFD a helium wrapper
+          allow-import-from-derivation = true;
           # Optimize nix experience by removing cache and store garbage
           auto-optimise-store = true;
           warn-dirty = false;
@@ -45,8 +46,6 @@
         };
       };
       # nixpkgs options
-      nixpkgs.config = {
-        allowUnfree = true;
-      };
+      nixpkgs.config.allowUnfree = true;
     };
 }

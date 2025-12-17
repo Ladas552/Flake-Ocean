@@ -1,0 +1,11 @@
+[helium]
+src.github_tag = "imputnet/helium-linux"
+fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64.AppImage"
+
+[helium-wrapped]
+src.git = "https://github.com/Michael-C-Buckley/nixos"
+fetch.github = "Michael-C-Buckley/nixos"
+
+[jail-nix]
+src.git = "https://git.sr.ht/~alexdavid/jail.nix"
+fetch.git = "https://git.sr.ht/~alexdavid/jail.nix"
