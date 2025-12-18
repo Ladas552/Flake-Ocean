@@ -1,4 +1,46 @@
 {
+    "cyrillic": {
+        "cargoLock": null,
+        "date": "2023-07-07",
+        "extract": null,
+        "name": "cyrillic",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "nativerv",
+            "repo": "cyrillic.nvim",
+            "rev": "86186af29eed2af1a069f9e36140d116a2765c80",
+            "sha256": "sha256-B2NjvaKJbkih8HLgFAYVqmTuSKAj7XrCBPVoVpYCXXE=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "86186af29eed2af1a069f9e36140d116a2765c80"
+    },
+    "heirline-components": {
+        "cargoLock": null,
+        "date": "2025-11-17",
+        "extract": null,
+        "name": "heirline-components",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Zeioth",
+            "repo": "heirline-components.nvim",
+            "rev": "65ff6844a6d911bd8977a106b761649d7df9a5e1",
+            "sha256": "sha256-1HwAQ8TRVHMGz92Nta3948RrN0hIuRFIBk5lVpAHy+s=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "65ff6844a6d911bd8977a106b761649d7df9a5e1"
+    },
     "helium": {
         "cargoLock": null,
         "date": null,
@@ -28,12 +70,12 @@
             "name": null,
             "owner": "Michael-C-Buckley",
             "repo": "nixos",
-            "rev": "cc571bdb4dfaa62629a62ba2f5e1cf9f1cee83fc",
-            "sha256": "sha256-H1xQZiGg70XEQLBwiLN6pDAXPSQ4L8qXmphUFHqrGDg=",
+            "rev": "539b82d5a5a0fc9068eaffd9bc11c94868617b83",
+            "sha256": "sha256-fculvfIv0Ygs1450i9qu7IQY/1uZA4mRnWJCJrTc9qA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "cc571bdb4dfaa62629a62ba2f5e1cf9f1cee83fc"
+        "version": "539b82d5a5a0fc9068eaffd9bc11c94868617b83"
     },
     "jail-nix": {
         "cargoLock": null,
@@ -98,14 +140,7 @@
         "version": "e2f86982ba5857ed5581ff5814edd57b5c2c67e0"
     },
     "neorg-query": {
-        "cargoLock": {
-            "Cargo.lock": [
-                "sha256-jL5oMviGGKo9WgIPSFY3bBNmGuTjpUp+TPO4qW5NGlw=/Cargo.lock",
-                {
-                    "rust-norg-0.1.0": "sha256-44IbqOhHG1PQ5rPKVKZyMUeHhi/shl+zjK5L+tnwgLI="
-                }
-            ]
-        },
+        "cargoLock": null,
         "date": "2025-07-12",
         "extract": null,
         "name": "neorg-query",

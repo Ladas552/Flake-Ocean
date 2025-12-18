@@ -6,6 +6,30 @@
   dockerTools,
 }:
 {
+  cyrillic = {
+    pname = "cyrillic";
+    version = "86186af29eed2af1a069f9e36140d116a2765c80";
+    src = fetchFromGitHub {
+      owner = "nativerv";
+      repo = "cyrillic.nvim";
+      rev = "86186af29eed2af1a069f9e36140d116a2765c80";
+      fetchSubmodules = false;
+      sha256 = "sha256-B2NjvaKJbkih8HLgFAYVqmTuSKAj7XrCBPVoVpYCXXE=";
+    };
+    date = "2023-07-07";
+  };
+  heirline-components = {
+    pname = "heirline-components";
+    version = "65ff6844a6d911bd8977a106b761649d7df9a5e1";
+    src = fetchFromGitHub {
+      owner = "Zeioth";
+      repo = "heirline-components.nvim";
+      rev = "65ff6844a6d911bd8977a106b761649d7df9a5e1";
+      fetchSubmodules = false;
+      sha256 = "sha256-1HwAQ8TRVHMGz92Nta3948RrN0hIuRFIBk5lVpAHy+s=";
+    };
+    date = "2025-11-17";
+  };
   helium = {
     pname = "helium";
     version = "0.7.6.1";
@@ -16,13 +40,13 @@
   };
   helium-wrapped = {
     pname = "helium-wrapped";
-    version = "cc571bdb4dfaa62629a62ba2f5e1cf9f1cee83fc";
+    version = "539b82d5a5a0fc9068eaffd9bc11c94868617b83";
     src = fetchFromGitHub {
       owner = "Michael-C-Buckley";
       repo = "nixos";
-      rev = "cc571bdb4dfaa62629a62ba2f5e1cf9f1cee83fc";
+      rev = "539b82d5a5a0fc9068eaffd9bc11c94868617b83";
       fetchSubmodules = false;
-      sha256 = "sha256-H1xQZiGg70XEQLBwiLN6pDAXPSQ4L8qXmphUFHqrGDg=";
+      sha256 = "sha256-fculvfIv0Ygs1450i9qu7IQY/1uZA4mRnWJCJrTc9qA=";
     };
     date = "2025-12-17";
   };
@@ -73,12 +97,6 @@
       rev = "e32b2dec08ec5a3ac3c7b0b4a500343886816e85";
       fetchSubmodules = false;
       sha256 = "sha256-jL5oMviGGKo9WgIPSFY3bBNmGuTjpUp+TPO4qW5NGlw=";
-    };
-    cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-jL5oMviGGKo9WgIPSFY3bBNmGuTjpUp+TPO4qW5NGlw=/Cargo.lock";
-      outputHashes = {
-        "rust-norg-0.1.0" = "sha256-44IbqOhHG1PQ5rPKVKZyMUeHhi/shl+zjK5L+tnwgLI=";
-      };
     };
     date = "2025-07-12";
   };

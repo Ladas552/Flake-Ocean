@@ -1,16 +1,14 @@
+{ self, ... }:
 {
   flake.modules.nixvim.heirline =
     { pkgs, ... }:
     let
+      # nvfetcher pins
+      sources = pkgs.callPackage "${self}/_sources/generated.nix" { };
       heirline-components = pkgs.vimUtils.buildVimPlugin {
         name = "heirline-components.nvim";
         doCheck = false;
-        src = pkgs.fetchFromGitHub {
-          owner = "Zeioth";
-          repo = "heirline-components.nvim";
-          rev = "935f29dabd86f2669e0b3c8dd283b2d3b1cfaee7";
-          sha256 = "sha256-M2muEW4RFQxdaJjZaXMXosy0M7Zj4MlbITRpRWpinwo=";
-        };
+        src = sources.heirline-components.src;
       };
 
     in
