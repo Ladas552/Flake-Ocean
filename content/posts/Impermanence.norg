@@ -13,6 +13,10 @@ layout: post
 version: 1.1.1
 @end
 * Impermanence
+** Who this post is for
+   I am writing this for people interested in my Impermanence+ZFS+tmpFS configuration. But you can also read it as geenral Impermanence guide because I wrote it the way for you to write as your read.
+
+   If you have any questions, ping me on discord or send an issue on github for this site, I will try to address relevant information here.
 ** What is Impermanence
    It wipes your `/root` on reboot and your startup is a blank canvas, but you can persist mounts and bind mount directories from it in your normal root to save stuff like cache and tokens. So you wipe all the junk and save actually useful stuff. 
 
@@ -34,7 +38,10 @@ version: 1.1.1
     Plus most guides just go to the wipe stage right away, without saying how to persist, or how it practically works for the user to not loose their files. I will try to compete in these aspects.
 
 *** What is your current setup?
+
     I got ZFS with tmpfs, with 2 persistence datasets. /cache and /persist. 
+
+    Most people assume you gotta have 64Gb or RAM for tmpfs to be convenient, but actually you just need a well structured disk layout.
 
     `/cache` is for rust targets, everything in `~/.cache`, .local states, etc.
 
@@ -75,7 +82,7 @@ version: 1.1.1
 
     This will insure that you won't delete your `/nix/store` and it stays intact between reboots. And for this particular setup the `tmp` dataset will be used so out `tmpfs` *root* will insure that it won't randomly overload.
 
-    This is a starting point, unless you have *ZFS setup* on your *NixOS* with separate datasets like that, you can kiss this Guide goodbye.
+    This is a starting point, unless you have *ZFS setup* on your *NixOS* with separate datasets for `/nix` and `/tmp`, you can kiss this Guide goodbye.
 
 *** Impermanence module
     The [Impermanence module]{https://github.com/nix-community/impermanence} is a NixOS flake that creates `mount binds`. I still don't understand how they work, but it isn't a big idea here. The main purpose of it is to just put stuff in special `/persist` dataset, and still be able to access it from `/root` and `/home`.
@@ -86,7 +93,7 @@ version: 1.1.1
 
     That's the main reason why most people reinstall their OS if they want to use Impermanence, because it's a pain in the glands to move the files from directories before persisting it and moving things back. There are projects that circumvent that, but I didn't use them. For example: [Persist-retro]{https://github.com/Geometer1729/persist-retro}.
 
-    Also to persist an individual file, you need to move the file, and manually copy it to persist directory. 
+    Also to persist an individual file, you need to move the file, and manually copy it to persist directory. Otherwise it complains about the original file being in the way of a mount bind.
 
 **** You forgot to tell installation instructions
      It's nix so here is just a snippet of code. Works for flakes.
@@ -122,7 +129,10 @@ version: 1.1.1
     };
 
     config = {
+      # disabling user mutability
       users.mutableUsers = false;
+
+      # defining regular user, ME!
       users.users.ladas552 = {
         isNormalUser = true;
         description = "Ladas552";
@@ -131,15 +141,17 @@ version: 1.1.1
           "wheel"
         ];
         initialPassword = "pass";
+        # Use a path or your  encryption method here
         hashedPasswordFile = config.sops.secrets."mystuff/host_pwd".path;
       };
+
       nix.settings.trusted-users = [ "ladas552" ];
 
+      # Setting root user
       users.users.root = {
         initialPassword = "pass";
         hashedPasswordFile = config.sops.secrets."mystuff/host_pwd".path;
       };
-
 
     };
 
@@ -149,8 +161,17 @@ version: 1.1.1
     - Can use `--no-root-password` flag in `nixos-install` command. Meaning you don't ever have to monitor it, it will install password automatically.
     - Can't use `passwd <user>` command. So if you mess up your password path the first time, you have to reboot to previous generation to set it correctly.
 
+    The `initialPassword` is set as plain text because it suppose to be a backup if sops decryption failed, so you won't leave with useless system state. Otherwise, it's unused and won't have security implications for your host.
+
 *** When do we start deleting stuff?
     Not so fast bakaru, we first need to save our stuff.
 
-    So you need to create persist directories
+    So you need to create persisted directories
+    @code sh
+    sudo zfs create -o mountpoint=legacy zroot/persist
+    sudo zfs create -o mountpoint=legacy zroot/cache
+    @end
 
+    And now we add them to be mounted on boot
+    @code nix
+    @end
