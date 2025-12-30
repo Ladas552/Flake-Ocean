@@ -2,7 +2,6 @@
   flake.modules.nixos.steam =
     { pkgs, ... }:
     {
-
       # Steam
       programs.steam = {
         enable = true;
@@ -13,6 +12,7 @@
       hardware.steam-hardware.enable = true;
       environment.sessionVariables.STEAM_EXTRA_COMPAT_TOOLS_PATHS = "\${HOME}/.steam/root/compatibilitytools.d";
       programs.gamemode.enable = true; # huge battery drains on my laptop
+      environment.systemPackages = [ pkgs.gamescope ];
       # persist steam
       custom.imp.home = {
         cache.directories = [

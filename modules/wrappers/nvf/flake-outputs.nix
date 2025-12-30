@@ -39,7 +39,7 @@
         clang
         direnv
         img-clip
-        orgmode
+        # orgmode
         python
         rust
         typst
