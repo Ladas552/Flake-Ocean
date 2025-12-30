@@ -219,17 +219,16 @@
                   { match._props.app-id = "vesktop"; }
                   { match._props.app-id = "legcord"; }
                 ];
-                open-maximized = true;
+                open-maximized-to-edges = true;
               }
               # Screencast
-              # niri-flake from nikita wraps it in additional `""` breaking the reges, will be fixed soon
-              # {
-              #   _children = [
-              #     { match._props.app-id = ''r#"^org\.keepassxc\.KeePassXC$"#''; }
-              #     { match._props.app-id = ''r#"^org\.gnome\.World\.Secrets$"#''; }
-              #   ];
-              #   block-out-from = "screencast";
-              # }
+              {
+                _children = [
+                  { match._props.app-id._raw = ''r#"^org\.keepassxc\.KeePassXC$"#''; }
+                  { match._props.app-id._raw = ''r#"^org\.gnome\.World\.Secrets$"#''; }
+                ];
+                block-out-from = "screencast";
+              }
               {
                 _children = [
                   { match._props.is-window-cast-target = true; }
