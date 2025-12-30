@@ -47,43 +47,43 @@
           settings = ./settings.json;
           colors = ./colors.json;
         };
-        programs.niri.settings = {
-          layer-rules = [
+        wayland.windowManager.niri.settings = {
+          layer-rule = [
             {
-              matches = [ { namespace = "^noctalia-overview*"; } ];
+              _children = [ { match._props.namespace = "^noctalia-overview*"; } ];
               place-within-backdrop = true;
             }
           ];
-          binds = with config.lib.niri.actions; {
-            "Super+Space".action = spawn [
+          binds = {
+            "Super+Space".spawn = [
               "noctalia-shell"
               "ipc"
               "call"
               "launcher"
               "toggle"
             ];
-            "Super+X".action = spawn [
+            "Super+X".spawn = [
               "noctalia-shell"
               "ipc"
               "call"
               "sessionMenu"
               "toggle"
             ];
-            "Super+L".action = spawn [
+            "Super+L".spawn = [
               "noctalia-shell"
               "ipc"
               "call"
               "lockScreen"
               "lock"
             ];
-            "Super+G".action = spawn [
+            "Super+G".spawn = [
               "noctalia-shell"
               "ipc"
               "call"
               "launcher"
               "calculator"
             ];
-            "Super+D".action = spawn [
+            "Super+D".spawn = [
               "noctalia-shell"
               "ipc"
               "call"
