@@ -6,7 +6,7 @@
     <description>Latest posts</description>
     <generator>Norgolith</generator>
     <language>en-US</language>
-    <lastBuildDate>Wed, 10 Dec 2025 07:02:54 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 01 Jan 2026 23:07:49 +0000</lastBuildDate>
     <ttl>60</ttl>
     <atom:link href="https:&#x2F;&#x2F;ladas552.me&#x2F;Flake-Ocean/rss.xml" rel="self" type="application/rss+xml" />
 
@@ -20,33 +20,13 @@
 
     
     <item>
-      <title>Rust Devshells</title>
-      <link>https://ladas552.me/Flake-Ocean/posts/Rust-devshells/</link>
-      <guid>https://ladas552.me/Flake-Ocean/posts/Rust-devshells/</guid>
-      <description>Managing packages with Nix</description>
-      <author>ladas552</author>
-      <pubDate>Thu, 04 Dec 2025 00:00:00 +0000</pubDate>
-      <category>packages</category><category>nix</category>
-    </item>
-    
-    <item>
-      <title>Hjem-rum</title>
-      <link>https://ladas552.me/Flake-Ocean/posts/Hjem-rum/</link>
-      <guid>https://ladas552.me/Flake-Ocean/posts/Hjem-rum/</guid>
-      <description>Introduction to Nix and NixOS</description>
-      <author>ladas552</author>
-      <pubDate>Mon, 01 Dec 2025 10:00:00 +0500</pubDate>
-      <category>tutorial</category><category>basics</category>
-    </item>
-    
-    <item>
-      <title>Nixvim</title>
-      <link>https://ladas552.me/Flake-Ocean/posts/Nixvim/</link>
-      <guid>https://ladas552.me/Flake-Ocean/posts/Nixvim/</guid>
-      <description>How to configure NixOS declaratively</description>
-      <author>ladas552</author>
-      <pubDate>Wed, 03 Dec 2025 10:00:00 +0500</pubDate>
-      <category>nixos</category><category>configuration</category>
+      <title>Impermanence on NixOS with ZFS and tmpfs</title>
+      <link>https://ladas552.me/Flake-Ocean/posts/Impermanence/</link>
+      <guid>https://ladas552.me/Flake-Ocean/posts/Impermanence/</guid>
+      <description>Guide for my impermanence setup</description>
+      <author>[ladas552]</author>
+      <pubDate>Fri, 02 Jan 2026 00:00:00 +0000</pubDate>
+      <category>Nix</category>
     </item>
     
   </channel>
