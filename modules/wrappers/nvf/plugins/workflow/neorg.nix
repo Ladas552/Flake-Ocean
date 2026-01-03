@@ -17,6 +17,7 @@
         # change this to cargoLock somehow
         cargoHash = "sha256-m/QhtE6e2wmTRBQ8xrWfgsmvDaaR1s9z/BLoFgFz/Do=";
         nativeBuildInputs = [ pkgs.gitMinimal ];
+        doCheck = false;
       };
       neorg-query = pkgs.vimUtils.buildVimPlugin {
         name = "neorg-query";

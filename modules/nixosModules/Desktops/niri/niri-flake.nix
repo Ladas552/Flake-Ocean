@@ -5,7 +5,6 @@
       {
         pkgs,
         inputs,
-        lib,
         ...
       }:
       {
@@ -29,7 +28,7 @@
         programs.niri = {
           enable = true;
           useNautilus = false;
-          package = pkgs.niri-unstable;
+          # package = pkgs.niri-unstable;
           # I use my own portal settings
           withXDG = false;
         };
@@ -48,7 +47,7 @@
           ELECTRON_LAUNCH_FLAGS = "--enable-wayland-ime --wayland-text-input-version=3 --enable-features=WaylandLinuxDrmSyncobj";
         };
 
-        xdg.portal = lib.mkForce {
+        xdg.portal = {
           enable = true;
           xdgOpenUsePortal = true;
           extraPortals = [

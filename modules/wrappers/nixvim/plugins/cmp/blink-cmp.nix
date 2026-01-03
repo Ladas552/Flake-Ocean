@@ -27,7 +27,7 @@
             window.border = "rounded";
           };
           list.selection = {
-            preselect = false;
+            preselect = true;
             auto_insert = true;
           };
           menu = {

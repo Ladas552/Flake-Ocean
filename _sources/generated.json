@@ -50,15 +50,15 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-qEHUFzCwsCyFNLFCC62wo2x1lr/boAI/UDsaaNP1vrc=",
+            "sha256": "sha256-69y8dNJPJk+HgnLzkyYLMdps1Med65yeN+77Nk6jbyM=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.7.7.1/helium-0.7.7.1-x86_64.AppImage"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.7.9.1/helium-0.7.9.1-x86_64.AppImage"
         },
-        "version": "0.7.7.1"
+        "version": "0.7.9.1"
     },
     "helium-wrapped": {
         "cargoLock": null,
-        "date": "2025-12-29",
+        "date": "2026-01-03",
         "extract": null,
         "name": "helium-wrapped",
         "passthru": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "Michael-C-Buckley",
             "repo": "nixos",
-            "rev": "075b6edff875c1cd217d16ee7b05caf7d0cc4e9d",
-            "sha256": "sha256-tpt4Qyb88x6gi9kxkDP4/MRJELCL7zAzDTvkN++2o1E=",
+            "rev": "603e326ba869d4f809722b55acf94d1f5aa13dbc",
+            "sha256": "sha256-zlKFrBcxaHF2Vjyeegd1DrsaWQ9YQ06ptrzbS/hBVzw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "075b6edff875c1cd217d16ee7b05caf7d0cc4e9d"
+        "version": "603e326ba869d4f809722b55acf94d1f5aa13dbc"
     },
     "jail-nix": {
         "cargoLock": null,
