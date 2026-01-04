@@ -12,19 +12,9 @@
     lib.pipe config.flake.modules.nixos [
       (lib.filterAttrs (name: _: lib.hasPrefix prefix name))
       (lib.mapAttrs' (
-        name: module:
-        let
-          specialArgs = {
-            inherit inputs;
-            hostConfig = module // {
-              name = lib.removePrefix prefix name;
-            };
-          };
-        in
-        {
+        name: module: {
           name = lib.removePrefix prefix name;
           value = inputs.nixpkgs.lib.nixosSystem {
-            inherit specialArgs;
             modules = [
               module
               config.flake.modules.nixos.hjem
@@ -38,9 +28,7 @@
                     # minimal as different module only exists because I am not bothered to add minimal = true; to nix-on-droid
                     config.flake.modules.homeManager.homeManager-minimal
                   ];
-                  extraSpecialArgs = specialArgs;
                 };
-                hjem.specialArgs = specialArgs;
               }
             ];
           };

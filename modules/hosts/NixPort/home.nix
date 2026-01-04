@@ -1,6 +1,10 @@
+{ self, ... }:
 {
   flake.modules.homeManager.NixPort =
     { pkgs, ... }:
+    let
+      sources = pkgs.callPackage "${self}/_sources/generated.nix" { };
+    in
     {
       home.shellAliases = {
         # I don't want to compile rocm for them
@@ -11,6 +15,9 @@
       home.stateVersion = "24.11"; # Please read the comment before changing.
       # Standalone Packages for user
       home.packages = with pkgs; [
+        (pkgs.haskell.lib.dontCheck (
+          pkgs.haskellPackages.callCabal2nix "nvfetcher" sources.nvfetcher.src { }
+        ))
         blender
         libreoffice-fresh
         # shotcut

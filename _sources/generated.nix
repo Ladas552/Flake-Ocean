@@ -40,15 +40,15 @@
   };
   helium-wrapped = {
     pname = "helium-wrapped";
-    version = "603e326ba869d4f809722b55acf94d1f5aa13dbc";
+    version = "0abd7bd02a750749b2466661c846b49a0f5fecee";
     src = fetchFromGitHub {
       owner = "Michael-C-Buckley";
       repo = "nixos";
-      rev = "603e326ba869d4f809722b55acf94d1f5aa13dbc";
+      rev = "0abd7bd02a750749b2466661c846b49a0f5fecee";
       fetchSubmodules = false;
-      sha256 = "sha256-zlKFrBcxaHF2Vjyeegd1DrsaWQ9YQ06ptrzbS/hBVzw=";
+      sha256 = "sha256-9vrodKDyY5QQfVcEP7gTuM4Imr8FyO5g4Pri8AktRLc=";
     };
-    date = "2026-01-03";
+    date = "2026-01-04";
   };
   jail-nix = {
     pname = "jail-nix";
@@ -99,5 +99,17 @@
       sha256 = "sha256-jL5oMviGGKo9WgIPSFY3bBNmGuTjpUp+TPO4qW5NGlw=";
     };
     date = "2025-07-12";
+  };
+  nvfetcher = {
+    pname = "nvfetcher";
+    version = "dbae9626c46b93d9fd6b85c8b292939ae569c4fc";
+    src = fetchFromGitHub {
+      owner = "berberman";
+      repo = "nvfetcher";
+      rev = "dbae9626c46b93d9fd6b85c8b292939ae569c4fc";
+      fetchSubmodules = false;
+      sha256 = "sha256-78sPqekEDJiol2YD3Hx2zHu5E4AtrbNrUKi0032HMHo=";
+    };
+    date = "2025-12-14";
   };
 }

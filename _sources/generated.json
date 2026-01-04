@@ -58,7 +58,7 @@
     },
     "helium-wrapped": {
         "cargoLock": null,
-        "date": "2026-01-03",
+        "date": "2026-01-04",
         "extract": null,
         "name": "helium-wrapped",
         "passthru": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "Michael-C-Buckley",
             "repo": "nixos",
-            "rev": "603e326ba869d4f809722b55acf94d1f5aa13dbc",
-            "sha256": "sha256-zlKFrBcxaHF2Vjyeegd1DrsaWQ9YQ06ptrzbS/hBVzw=",
+            "rev": "0abd7bd02a750749b2466661c846b49a0f5fecee",
+            "sha256": "sha256-9vrodKDyY5QQfVcEP7gTuM4Imr8FyO5g4Pri8AktRLc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "603e326ba869d4f809722b55acf94d1f5aa13dbc"
+        "version": "0abd7bd02a750749b2466661c846b49a0f5fecee"
     },
     "jail-nix": {
         "cargoLock": null,
@@ -159,5 +159,26 @@
             "type": "github"
         },
         "version": "e32b2dec08ec5a3ac3c7b0b4a500343886816e85"
+    },
+    "nvfetcher": {
+        "cargoLock": null,
+        "date": "2025-12-14",
+        "extract": null,
+        "name": "nvfetcher",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "berberman",
+            "repo": "nvfetcher",
+            "rev": "dbae9626c46b93d9fd6b85c8b292939ae569c4fc",
+            "sha256": "sha256-78sPqekEDJiol2YD3Hx2zHu5E4AtrbNrUKi0032HMHo=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "dbae9626c46b93d9fd6b85c8b292939ae569c4fc"
     }
 }

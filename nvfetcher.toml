@@ -1,3 +1,7 @@
+# nvfetcher latest
+[nvfetcher]
+src.git = "https://github.com/berberman/nvfetcher"
+fetch.github = "berberman/nvfetcher"
 # helium
 [helium]
 src.github_tag = "imputnet/helium-linux"

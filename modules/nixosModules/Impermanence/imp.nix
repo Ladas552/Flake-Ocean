@@ -1,7 +1,7 @@
+{ inputs, ... }:
 {
   flake.modules.nixos.imp =
     {
-      inputs,
       config,
       lib,
       ...

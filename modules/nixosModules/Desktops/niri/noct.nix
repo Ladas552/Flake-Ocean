@@ -1,12 +1,8 @@
+{ inputs, ... }:
 {
   flake.modules = {
     nixos.noct =
-      {
-        pkgs,
-        inputs,
-        lib,
-        ...
-      }:
+      { pkgs, lib, ... }:
       {
         environment.systemPackages = with pkgs; [
           inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -35,65 +31,56 @@
           );
         };
       };
-    homeManager.noct =
-      { config, inputs, ... }:
-      {
-        imports = [
-          inputs.noctalia.homeModules.default
-        ];
-        programs.noctalia-shell = {
-          enable = true;
-          package = null;
-          settings = ./settings.json;
-          colors = ./colors.json;
-        };
-        wayland.windowManager.niri.settings = {
-          layer-rule = [
-            {
-              _children = [ { match._props.namespace = "^noctalia-overview*"; } ];
-              place-within-backdrop = true;
-            }
-          ];
-          binds = {
-            "Super+Space".spawn = [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "launcher"
-              "toggle"
-            ];
-            "Super+X".spawn = [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "sessionMenu"
-              "toggle"
-            ];
-            "Super+L".spawn = [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "lockScreen"
-              "lock"
-            ];
-            "Super+G".spawn = [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "launcher"
-              "calculator"
-            ];
-            "Super+D".spawn = [
-              "noctalia-shell"
-              "ipc"
-              "call"
-              "bar"
-              "toggle"
-            ];
-          };
-        };
-        # persist for Impermanence
-        custom.imp.home.cache.directories = [ ".cache/noctalia/" ];
+    homeManager.noct = {
+      imports = [
+        inputs.noctalia.homeModules.default
+      ];
+      programs.noctalia-shell = {
+        enable = true;
+        package = null;
+        settings = ./settings.json;
+        colors = ./colors.json;
       };
+      wayland.windowManager.niri.settings = {
+        layer-rule = [
+          {
+            _children = [ { match._props.namespace = "^noctalia-overview*"; } ];
+            place-within-backdrop = true;
+          }
+        ];
+        binds = {
+          "Super+Space".spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "launcher"
+            "toggle"
+          ];
+          "Super+X".spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "sessionMenu"
+            "toggle"
+          ];
+          "Super+L".spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "lockScreen"
+            "lock"
+          ];
+          "Super+D".spawn = [
+            "noctalia-shell"
+            "ipc"
+            "call"
+            "bar"
+            "toggle"
+          ];
+        };
+      };
+      # persist for Impermanence
+      custom.imp.home.cache.directories = [ ".cache/noctalia/" ];
+    };
   };
 }
