@@ -70,12 +70,12 @@
             "name": null,
             "owner": "Michael-C-Buckley",
             "repo": "nixos",
-            "rev": "0abd7bd02a750749b2466661c846b49a0f5fecee",
-            "sha256": "sha256-9vrodKDyY5QQfVcEP7gTuM4Imr8FyO5g4Pri8AktRLc=",
+            "rev": "49d2318febe86a8de374f114a6aad90e9f4aff71",
+            "sha256": "sha256-NslUsj1v/3/4e4nliE6SWeeTijCZlnQgzJbHYjFq6y4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0abd7bd02a750749b2466661c846b49a0f5fecee"
+        "version": "49d2318febe86a8de374f114a6aad90e9f4aff71"
     },
     "jail-nix": {
         "cargoLock": null,
@@ -159,26 +159,5 @@
             "type": "github"
         },
         "version": "e32b2dec08ec5a3ac3c7b0b4a500343886816e85"
-    },
-    "nvfetcher": {
-        "cargoLock": null,
-        "date": "2025-12-14",
-        "extract": null,
-        "name": "nvfetcher",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "berberman",
-            "repo": "nvfetcher",
-            "rev": "dbae9626c46b93d9fd6b85c8b292939ae569c4fc",
-            "sha256": "sha256-78sPqekEDJiol2YD3Hx2zHu5E4AtrbNrUKi0032HMHo=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "dbae9626c46b93d9fd6b85c8b292939ae569c4fc"
     }
 }
