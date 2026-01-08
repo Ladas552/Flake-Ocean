@@ -12,18 +12,14 @@ draft: false
 layout: post
 version: 1.1.1
 @end
-** Who this post is for
-   ___
-   I am writing this for people interested in my Impermanence+ZFS+tmpFS configuration. But you can also read it as general Impermanence guide because I wrote it the way for you to write as your read.
 
-   If you have any questions, ping me on discord or send an issue on github for this site, I will try to address relevant information here.
 ** What is Impermanence
    ___
    It wipes your `/root` on reboot and your startup is a blank canvas, but you can persist mounts and bind mount directories from it in your normal root to save stuff like cache and tokens. So you wipe all the junk and save actually useful stuff. 
 
    For example you can install full KDE Plasma session, run it, and if you get bored. Just disable it and no KDE junk left.
 
-   *Important to note*: That impermanence of my setup uses tmpfs, so it writes `/root` to RAM, so nothing actually gets erased on the Disk. Meaning no continuous I/O rewrites wearing out your Drive. But the state isn't saved between reboots, as with anything on RAM
+   *Important to note*: That impermanence of my setup uses tmpfs, so it writes `/root` to RAM, so nothing actually gets erased on the Disk. Meaning no continuous I/O rewrites wearing out your Drive(/not that it would mater in practice/). But the state isn't saved between reboots, as with anything on RAM
 
    Also when I refer to `/root`, it's actually the whole `/`, not just root user directory.
 *** Why did you set it up
@@ -43,22 +39,61 @@ version: 1.1.1
 *** What is your current setup?
     ___
 
-    I got ZFS with tmpfs, with 2 persistence datasets. /cache and /persist. 
+    I got ZFS with tmpfs, with 2 persistence datasets. `/cache` and `/persist`. And a plaint vFAT `/boot` partition, where GRUB or Systemd-boot will put generation images.
 
-    Most people assume you gotta have 64Gb or RAM for tmpfs to be convenient, but actually you just need a well structured disk layout.
+    Most people assume you gotta have 64Gb or RAM for tmpfs to be convenient, but actually you just need a well structured disk layout. Then the tmpfs usually only takes 50MB to 100MB of RAM.
 
-    `/cache` is for rust targets, everything in `~/.cache`, .local states, etc.
+    Template structure of ZFS datasets that will be essential:
 
-    `/persist` is for Media, browser profiles, Projects, etc. This is the only datasets that get's backed up by `sanoid`.
+    - `/cache` is for rust targets, everything in `~/.cache`, .local states, etc.
+
+    - `/persist` is for Media, browser profiles, Projects, etc. This is the only datasets that get's backed up by `sanoid`.
+
+    - `/nix` for /nix/store. NixOS won't boot without it. All the files that aren't persisted, but appear on my system are symlinked from `/nix`. That includes config files and services.
+
+    - `/tmp` for /tmp. yeah, anyways it's to not overload tmpfs when downloading something on browser. with `boot.tmp.cleanOnBoot = true;` it is cleared on boot anyways. 
 
     tmpfs is erased on reboot, so `/` and everything below it, including `/home` is gone, unless put into `/cache` or `/persist` datasets.
     tmpfs is on RAM, so it can overload if exceeds certain size, to prevent that I got several more zfs datasets, that aren't persisted, meaning they don't have connection to files in other datasets, but aren't erased by default.
 
-    `/nix` for /nix/store. I am not about to redownload all of my system on every reboot, and it also stores the generations. All the files that aren't persisted, but appear on my system are symlinked from `/nix`. That includes config files and services.
-
-    `/tmp` for /tmp. yeah, anyways it's to not overload tmpfs when downloading something on browser. with `boot.tmp.cleanOnBoot = true;` it is cleared on boot anyways. 
-
 ** What we need?
+*** A ZFS setup
+    This isn't a *ZFS guide* so, unless you have *ZFS setup* on your *NixOS*, you can kiss this Guide goodbye. Go read OpenZFS documentation. But here is my installation script in case you'd like more guiding. But seriously, go read docs, real engineers know a lot more than I do.
+
+    {https://github.com/Ladas552/Flake-Ocean/blob/e460837d18f37723510f9b74c46636fd2b5b4f25/install/impermanence.norg}[permalink in the github repo, please insure the branch is up to date before checking in], it contains actual descriptions to each line as a Norg file format that you can tangle. Like bible in org mode.
+    @code sh
+    sudo zpool create -f \
+    -o ashift=12 \
+    -o autotrim=on \
+    -O compression=zstd \
+    -O acltype=posixacl \
+    -O atime=off \
+    -O xattr=sa \
+    -O normalization=formD \
+    -O mountpoint=none \
+    zroot "/dev/sda2"
+
+    sudo zfs create -o mountpoint=legacy zroot/root
+    sudo mount -t zfs zroot/root /mnt
+
+    sudo mount --mkdir "$BOOTDISK" /mnt/boot
+    # All the stuff below will be explained later
+    sudo zfs create -o mountpoint=legacy zroot/nix
+    sudo mount --mkdir -t zfs zroot/nix /mnt/nix
+
+    sudo zfs create -o mountpoint=legacy zroot/tmp
+    sudo mount --mkdir -t zfs zroot/tmp /mnt/tmp
+
+    sudo zfs create -o mountpoint=legacy zroot/cache
+    sudo mount --mkdir -t zfs zroot/cache /mnt/cache
+
+    sudo zfs create -o mountpoint=legacy zroot/persist
+    sudo zfs snapshot zroot/persist@blank
+    sudo mount --mkdir -t zfs zroot/persist /mnt/persist
+    # All the stuff above will be explained later
+    sudo nixos-install --no-root-password --flake "github:Ladas552/Nix-Is-Unbreakable#NixVM"
+    @end
+
 *** Partitions
     ___
     A new way to manage your system. NixOS.
@@ -85,13 +120,11 @@ version: 1.1.1
     sudo zfs create -o mountpoint=legacy zroot/nix
     @end
 
-    This will insure that you won't delete your `/nix/store` and it stays intact between reboots. And for this particular setup the `tmp` dataset will be used so out `tmpfs` *root* will insure that it won't randomly overload.
-
-    This is a starting point, unless you have *ZFS setup* on your *NixOS* with separate datasets for `/nix` and `/tmp`, you can kiss this Guide goodbye. Go read OpenZFS documentation.
+    This will insure that you won't delete your `/nix/store` and it stays intact between reboots. And for this particular setup the `tmp` dataset will be used so our `tmpfs` *root* will insure that it won't randomly overload.
 
 *** Impermanence module
     ___
-    The [Impermanence module]{https://github.com/nix-community/impermanence} is a NixOS flake that creates `mount binds`. I still don't understand how they work, but it isn't a big idea here. The main purpose of it is to just put stuff in special `/persist` dataset, and still be able to access it from `/root` and `/home`.
+    The [Impermanence module]{https://github.com/nix-community/impermanence} is a NixOS flake that creates `mount binds`. The main purpose of it is to just put stuff in special `/persist` dataset, and still be able to access it from `/root` and `/home`. More about technicality of bind mounts later
 
     Basically you define certain directories names in it, and it creates them, then binds them to specific relevant locations, like `".config/nvim"` will be located in `~/.config/nvim`. And if you put your Neovim config there, neovim will still follow the config, but it will be located on different dataset, and won't be wiped on boot. 
 
@@ -118,6 +151,8 @@ version: 1.1.1
      @end
 
      We will only use the `nixosModule` because I don't have standalone Home-Manager and not planning to adopt impermanence for distros outside of NixOS.
+
+     I have seen people use impermanence module on non flake setups, but I am not so interested in them to find and link a good one.
 *** Immutable users
     ___
     As we delete everything in `/root`, it means passwords for users, and most importantly `root` user will be deleted. 
@@ -224,7 +259,7 @@ version: 1.1.1
 
     Don't know what bind mounts are? Well simply put. They are mounts that make some directory to appear in normal location, but actually it's in a different dataset all together.
 
-    So for example: `/home/alice225/Downloads` will be deleted on boot. But, not it's content. On the next boot, the content of `Downloads` that is in `/persist` dataset will reapply itself to `/home/alice225/Downloads` path. 
+    So for example: `/home/alice225/Downloads` will be deleted on boot. But, not it's content. On the next boot, the content of `Downloads` that is in `/persist` dataset will remount itself to `/home/alice225/Downloads` path. 
 
     It will appear seamless to other applications and to yourself. But now you can access the same files in both `/home/alice225/Downloads` and in `/persist/home/alice225/Downloads`. And remember, it is *not a symlink*. Symlinks fool programs, while bind mounts genuinely make files accessible in several locations. But be careful, because they share permissions, and can also be deleted.
 
@@ -252,7 +287,7 @@ version: 1.1.1
 
 **** New options
      ___
-     `directories` and `files` in impermanence module are just a list of string, so we can make pseudo options to add more strings to the list and `++` them with actual persistence option, or just reference out list.
+     `directories` and `files` in impermanence module are just a list of string, so we can make pseudo options to add more strings to the list and `++` them with actual persistence option, or just reference our list.
 
      It will make it easier to define directories under different scopes. For example, setting files in `home.nix` file, but they will be used in `configuration.nix` file. 
 
@@ -380,7 +415,7 @@ version: 1.1.1
      };
      @end
 
-     But if you set this thing up, and rebuild it wouldn't do a thing. Remember, these options and list are just place holders. Meant to be easy to write and read. Now we gotta add them to  actual Impermanence module options.
+     But if you set this thing up, and rebuild it wouldn't do a thing. Remember, these options and list are just place holders. Meant to be easy to write and read. Now we gotta add them to an actual Impermanence module options.
 
      @code nix
      { lib, config, ... }:
@@ -395,10 +430,10 @@ version: 1.1.1
        environment.persistence = {
          "/persist" = {
            hideMounts = true;
-           # referencing files via out abstraction option
+           # referencing files via our abstraction option
            files = lib.unique cfg.root.files;
            directories = lib.unique (
-             # you can define directories normally too
+             # here you can define directories normally 
              [
                "/var/log"
                "/var/lib/nixos"
@@ -517,4 +552,5 @@ version: 1.1.1
      - *Graham* for {https://grahamc.com/blog/erase-your-darlings/}
      - *Willbush* for {https://willbush.dev/blog/impermanent-nixos/}
      - *Elis Hirwing* for {https://elis.nu/blog/2020/05/nixos-tmpfs-as-root/}
+     - {https://github.com/fliplus}[Flipus] and *snohater* for providing feedback on readability of the thing.
      - *You* for reading this all, good luck with your NixOS config. Hope this article helped you the same way all the people mentioned above helped me. Without such a vast community, I wouldn't be able to figure all these things out. And I didn't reinvent a wheel, it's all the work of Open Source contributors. So, hopefully you also share your knowledge in the future. Improve on what's old or reduce it to atoms, it's up to you. It's your setup, and only for you to decide, whether you really want to setup it up.
