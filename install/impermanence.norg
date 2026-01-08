@@ -24,7 +24,7 @@ So, create Boot Disk with gparted, idk. and /dev/sdaN for zpool too
   zroot "/dev/sda2"
   @end
 * Mounting Partitions
-  - echo "Creating /"
+  - echo "Creating /", as this is an impermanence setup we don't actually need `/root`, but otherwise the whole system build will be on the usb flash drive and I don't have enough space for that. So we just create this temporary and remove it once we are booted into an actual system.
   @code sh
   sudo zfs create -o mountpoint=legacy zroot/root
   sudo mount -t zfs zroot/root /mnt
