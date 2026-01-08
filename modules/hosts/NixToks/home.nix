@@ -1,6 +1,11 @@
 {
   flake.modules.homeManager.NixToks =
-    { pkgs, lib,config, ... }:
+    {
+      pkgs,
+      lib,
+      config,
+      ...
+    }:
     {
       home.shellAliases = {
         en = lib.mkForce "hx ${config.custom.meta.self}";

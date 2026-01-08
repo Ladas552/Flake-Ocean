@@ -40,7 +40,7 @@
             ini
             javascript
             json
-            jsonc
+            # jsonc
             julia
             kdl
             kotlin
@@ -61,7 +61,6 @@
             yaml
             zathurarc
           ];
-        incrementalSelection.enable = false;
       };
     };
 }

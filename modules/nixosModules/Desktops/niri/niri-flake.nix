@@ -37,7 +37,7 @@
         environment.systemPackages = with pkgs; [
           xwayland-satellite
           brightnessctl
-          xfce.xfce4-power-manager
+          xfce4-power-manager
           # self.packages.${pkgs.stdenv.hostPlatform.system}.rofi-powermenu
           self.packages.${pkgs.stdenv.hostPlatform.system}.wpick
         ];
@@ -218,6 +218,7 @@
                 { match._props.app-id = "legcord"; }
               ];
               open-maximized-to-edges = true;
+              default-column-width.proportion = 1.0;
             }
             # Screencast
             {

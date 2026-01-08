@@ -8,7 +8,7 @@
         # Emulators
         blastem
         mgba
-        snes9x-gtk
+        # snes9x-gtk
         # https://github.com/NixOS/nixpkgs/issues/461665
         # punes
         melonDS
