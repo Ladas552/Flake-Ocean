@@ -226,21 +226,6 @@
         "type": "github"
       }
     },
-    "import-tree": {
-      "locked": {
-        "lastModified": 1763762820,
-        "narHash": "sha256-ZvYKbFib3AEwiNMLsejb/CWs/OL/srFQ8AogkebEPF0=",
-        "owner": "vic",
-        "repo": "import-tree",
-        "rev": "3c23749d8013ec6daa1d7255057590e9ca726646",
-        "type": "github"
-      },
-      "original": {
-        "owner": "vic",
-        "repo": "import-tree",
-        "type": "github"
-      }
-    },
     "mnw": {
       "locked": {
         "lastModified": 1758834834,
@@ -674,7 +659,6 @@
         "hjem-rum": "hjem-rum",
         "home-manager": "home-manager",
         "impermanence": "impermanence",
-        "import-tree": "import-tree",
         "neovim-rocks": "neovim-rocks",
         "niri": "niri",
         "nix-on-droid": "nix-on-droid",

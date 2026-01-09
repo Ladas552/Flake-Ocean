@@ -45,15 +45,10 @@
     impermanence.url = "github:nix-community/impermanence";
 
     flake-parts.url = "github:hercules-ci/flake-parts";
-    import-tree.url = "github:vic/import-tree";
 
     # Neovim
     nixvim.url = "github:nix-community/nixvim";
 
-    neovim-rocks = {
-      url = "github:Ladas552/nvim-rocks-config";
-      flake = false;
-    };
     nvf = {
       url = "github:notashelf/nvf";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -91,5 +86,18 @@
     # };
 
   };
-  outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
+  outputs =
+    inputs:
+    let
+      inherit (inputs.nixpkgs.lib.fileset) toList fileFilter;
+      import-tree =
+        paths:
+        toList (
+          fileFilter (file: file.hasExt "nix" && !(inputs.nixpkgs.lib.hasPrefix "_" file.name)) paths
+        );
+    in
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      imports = import-tree ./modules;
+      flake.templates = import ./templates;
+    };
 }

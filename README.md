@@ -34,9 +34,9 @@ I am still working on adding modularity to pkgs, probably make them all flake mo
 ## Docs
 I write comments on things, that might explain certain ways of doing things, or leave not working options in comments for people to find. This is to not look up one thing twice, and just look at the nix file itself.
 
-Also, I have [Norg document](./nix.norg), containing notes and TODO for the config, and folder `/docs` for containing more specific instructions.
+Also, I have [Norg document](./nix.norg), containing notes and TODO for the config
 
-I also plan on writing some [blog posts about Nix](https://ladas552.me/Flake-Ocean/), so stay tuned!
+I also write some [blog posts about Nix](https://ladas552.me/Flake-Ocean/), fell free to check it out
 
 ## Nvfetcher
 
