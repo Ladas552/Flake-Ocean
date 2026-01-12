@@ -13,6 +13,9 @@
           description = "Name for the font it install";
         };
       };
+      gtk = {
+
+      };
       colors = {
         # single line helix theme to use
         helix-theme = lib.mkOption {

@@ -18,7 +18,6 @@
           systemd.enable = false;
           rum.environment.hideWarning = true;
         };
-
       };
     };
 }

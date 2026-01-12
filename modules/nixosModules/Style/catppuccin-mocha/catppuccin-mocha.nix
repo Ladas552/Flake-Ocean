@@ -38,16 +38,30 @@
         { pkgs, ... }:
         {
           inherit custom;
-          # icons in home-manager
-          gtk.iconTheme = {
-            name = "dark";
-            package = pkgs.candy-icons;
+
+          home.pointerCursor = {
+            package = pkgs.rose-pine-cursor;
+            name = "BreezeX-RosePine-Linux";
+            size = 28;
+            gtk.enable = true;
+            x11.enable = true;
+          };
+          gtk = {
+            enable = true;
+            theme = {
+              name = "adw-gtk3";
+              package = pkgs.adw-gtk3;
+            };
+            iconTheme = {
+              name = "candy-icons";
+              package = pkgs.candy-icons;
+            };
+          };
+          dconf.settings = {
+            "org/gnome/desktop/interface" = {
+              color-scheme = "prefer-dark";
+            };
           };
         };
     };
 }
-# dconf.settings = lib.mkForce {
-#   "org/gnome/desktop/interface" = {
-#     color-scheme = "prefer-dark";
-#   };
-# };

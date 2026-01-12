@@ -52,6 +52,10 @@
       syntaxHighlighting = true;
       undoFile.enable = true;
       enableLuaLoader = true;
+      # dependencies
+      withNodeJs = false;
+      withPython3 = false;
+      withRuby = false;
     };
   };
 }

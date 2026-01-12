@@ -75,8 +75,6 @@ in
             zfs
             openssh
             bluetooth
-            niri-flake
-            noct
           ];
         }
       ]
@@ -98,6 +96,8 @@ in
             mpv
             # flameshot
             helium
+            niri-flake
+            noct
           ];
         }
       ];

@@ -1,8 +1,7 @@
 {
-  flake.modules.nixos.users =
+  flake.modules.nixos.options =
     { lib, ... }:
     {
-
       # setup immutable users for impermanence
 
       # silence warning about setting multiple user password options
@@ -15,7 +14,6 @@
           );
         };
       };
-
       config.users.mutableUsers = false;
     };
 }
