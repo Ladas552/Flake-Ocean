@@ -1,0 +1,13 @@
+{
+  "directory": "/home/ladas552/Videos/Rerocrdings",
+  "filenamePattern": "recording_yyyyMMdd_HHmmss",
+  "frameRate": "30",
+  "audioCodec": "opus",
+  "videoCodec": "h264",
+  "quality": "medium",
+  "colorRange": "limited",
+  "showCursor": true,
+  "copyToClipboard": true,
+  "audioSource": "default_output",
+  "videoSource": "portal"
+}
