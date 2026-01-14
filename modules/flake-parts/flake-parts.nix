@@ -1,8 +1,6 @@
 { inputs, ... }:
 {
   imports = [ inputs.flake-parts.flakeModules.modules ];
-  systems = [
-    "x86_64-linux"
-    "aarch64-linux"
-  ];
+  # aarch64 and x86_64 Linux systems
+  systems = import inputs.systems;
 }

@@ -40,15 +40,15 @@
   };
   helium-wrapped = {
     pname = "helium-wrapped";
-    version = "fa8ceb8525c6d6eb0d8a992614b180ea2affb258";
+    version = "f2d9ede997319707567fcd22ae8f5e2ff318bc02";
     src = fetchFromGitHub {
       owner = "Michael-C-Buckley";
       repo = "nixos";
-      rev = "fa8ceb8525c6d6eb0d8a992614b180ea2affb258";
+      rev = "f2d9ede997319707567fcd22ae8f5e2ff318bc02";
       fetchSubmodules = false;
-      sha256 = "sha256-NEEHSo89gRnFuoTPSpch5FeyzGMqvYzYJVBZlWMvKBI=";
+      sha256 = "sha256-SR6vyEclklh3A5H7iUOR1Cf8kPl9dEDaow6ZJ1Hmico=";
     };
-    date = "2026-01-11";
+    date = "2026-01-13";
   };
   jail-nix = {
     pname = "jail-nix";
