@@ -56,7 +56,11 @@
       inputs.home-manager.follows = "home-manager";
     };
 
-    flake-parts.url = "github:hercules-ci/flake-parts";
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      # No useless inputs
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
 
     # Neovim
     nixvim = {
