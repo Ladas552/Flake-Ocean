@@ -58,7 +58,7 @@
     },
     "helium-wrapped": {
         "cargoLock": null,
-        "date": "2026-01-13",
+        "date": "2026-01-15",
         "extract": null,
         "name": "helium-wrapped",
         "passthru": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "Michael-C-Buckley",
             "repo": "nixos",
-            "rev": "f2d9ede997319707567fcd22ae8f5e2ff318bc02",
-            "sha256": "sha256-SR6vyEclklh3A5H7iUOR1Cf8kPl9dEDaow6ZJ1Hmico=",
+            "rev": "f829fb1414580d0e6fe63e90b3e8dc6b86300dd1",
+            "sha256": "sha256-IMcncijM2B9dqHdV5PelvOY2Fk4d4cnOVAMWEyL8oGA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "f2d9ede997319707567fcd22ae8f5e2ff318bc02"
+        "version": "f829fb1414580d0e6fe63e90b3e8dc6b86300dd1"
     },
     "jail-nix": {
         "cargoLock": null,
