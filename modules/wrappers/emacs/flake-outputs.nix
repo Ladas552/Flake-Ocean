@@ -42,9 +42,8 @@
               zk # Zettlekasten for org
               # UI
               catppuccin-theme # colorscheme
-              doom-themes # more colorchemes
               solaire-mode # color unreal bufferst darker
-              all-the-icons # Icons like nerdfonts
+              which-key
               # Dashboard
               dashboard # new Start up buffer
               page-break-lines # pretty horizontal lines
