@@ -44,6 +44,7 @@
               catppuccin-theme # colorscheme
               solaire-mode # color unreal bufferst darker
               which-key
+              nyan-mode
               # Dashboard
               dashboard # new Start up buffer
               page-break-lines # pretty horizontal lines
@@ -51,6 +52,8 @@
               eat # Better emacs Terminal
               magit # git client
               pretty-sha-path # shorten nix/store paths
+              # Workflow
+              meow
 
               # modes
               nix-ts-mode
@@ -88,6 +91,8 @@
               gnutar
 
               pandoc
+              # for nyan cat music
+              mplayer
             ];
           };
 
