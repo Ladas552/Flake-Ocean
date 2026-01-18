@@ -2,30 +2,26 @@
 # define nvf modules for homeManager and hjem
 {
   flake.modules = {
+    # I only use this home-manager in Nix-On-Droid, so no logic in making this one modular
     homeManager.nvf =
-      { pkgs, config, ... }:
       let
-        nvf-NixPort = self.packages.${pkgs.stdenv.hostPlatform.system}.nvf-NixPort;
-        nvf-NixMux = self.packages.${pkgs.stdenv.hostPlatform.system}.nvf-NixMux;
+        nvf-NixMux = self.packages."aarch64-Linux".nvf-NixMux;
       in
       {
-        home.packages =
-          [ ]
-          ++ lib.optionals (!config.custom.meta.isTermux) [ nvf-NixPort ]
-          ++ lib.optionals config.custom.meta.isTermux [ nvf-NixMux ];
+        home.packages = [ nvf-NixMux ];
         home.sessionVariables.EDITOR = "neovim";
       };
     hjem.nvf =
-      { pkgs, config, ... }:
+      { config, ... }:
       let
-        nvf-NixPort = self.packages.${pkgs.stdenv.hostPlatform.system}.nvf-NixPort;
-        nvf-NixMux = self.packages.${pkgs.stdenv.hostPlatform.system}.nvf-NixMux;
+        nvf-NixPort = self.packages."x86_64-linux".nvf-NixPort;
+        nvf-NixToks = self.packages."x86_64-linux".nvf-NixToks;
       in
       {
         packages =
           [ ]
-          ++ lib.optionals (!config.custom.meta.isTermux) [ nvf-NixPort ]
-          ++ lib.optionals config.custom.meta.isTermux [ nvf-NixMux ];
+          ++ lib.optionals (config.custom.meta.hostname == "NixPort") [ nvf-NixPort ]
+          ++ lib.optionals (config.custom.meta.hostname == "NixToks") [ nvf-NixToks ];
         environment.sessionVariables.EDITOR = "neovim";
       };
   };

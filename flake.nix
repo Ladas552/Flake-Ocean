@@ -63,14 +63,6 @@
     };
 
     # Neovim
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      # No useless inputs
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.systems.follows = "systems";
-    };
-
     nvf = {
       url = "github:notashelf/nvf";
       # No useless inputs

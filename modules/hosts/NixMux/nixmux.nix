@@ -1,4 +1,4 @@
-{ inputs, config, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixOnDroid.base =
     { pkgs, lib, ... }:

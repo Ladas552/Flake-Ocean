@@ -92,7 +92,6 @@ in
             # imv
             chawan
             nvf
-            # nixvim
             mpv
             # flameshot
             helium

@@ -23,7 +23,6 @@ in
           options
           NixMux
           nvf
-          chawan
           fastfetch
           gh
           git
