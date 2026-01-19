@@ -1,4 +1,8 @@
 { config, ... }:
 {
-  flake.modules.hjem.homebrewModules.imports = [ config.flake.modules.hjem.mpris-proxy-brew ];
+  flake.modules.hjem.homebrewModules.imports = with config.flake.modules.hjem; [
+    mpris-proxy-brew
+    mpd-brew
+    userDirs
+  ];
 }

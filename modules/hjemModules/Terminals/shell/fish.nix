@@ -65,10 +65,10 @@
           mc = "lf";
           # TODO
           # replaced config.xdg.userDirs. with hard paths
-          mcv = "lf ~/Videos/";
-          mcm = "lf ~/Music/";
-          mcc = "lf ~/.config/";
-          mcp = "lf ~/Pictures/";
+          mcv = "lf ${config.xdg.userDirs.videos.directory}";
+          mcm = "lf ${config.xdg.userDirs.music.directory}";
+          mcc = "lf ${config.xdg.config.directory}";
+          mcp = "lf ${config.xdg.userDirs.pictures.directory}";
         };
         # TODO
         # Doesn't work in hjem because it doesn't support submodules, but only concatinated strings

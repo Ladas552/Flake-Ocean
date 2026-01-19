@@ -7,16 +7,18 @@
       ...
     }:
     let
+      inherit (lib.modules) mkIf;
+      inherit (lib.options) mkEnableOption mkPackageOption;
 
       cfg = config.services.mpris-proxy;
     in
     {
       options.services.mpris-proxy = {
-        enable = lib.mkEnableOption "mpris-proxy";
+        enable = mkEnableOption "mpris-proxy";
 
-        package = lib.mkPackageOption pkgs "bluez" { nullable = true; };
+        package = mkPackageOption pkgs "bluez" { nullable = true; };
       };
-      config = lib.mkIf cfg.enable {
+      config = mkIf cfg.enable {
         systemd.services.mpris-proxy = {
           description = "Proxy forwarding Bluetooth MIDI controls via MPRIS2 to control media players";
           bindsTo = [ "bluetooth.target" ];
