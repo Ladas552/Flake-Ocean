@@ -74,7 +74,6 @@ in
             zathura
             zfs
             openssh
-            bluetooth
           ];
         }
       ]
@@ -97,6 +96,7 @@ in
             helium
             niri-flake
             noct
+            bluetooth
           ];
         }
       ];

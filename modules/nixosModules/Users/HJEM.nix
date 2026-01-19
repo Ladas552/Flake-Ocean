@@ -5,10 +5,6 @@
     {
       imports = [ inputs.hjem.nixosModules.default ];
       hjem = {
-        extraModules = [
-          inputs.hjem-rum.hjemModules.default
-          config.flake.modules.hjem.options
-        ];
         linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
         clobberByDefault = true;
         users.${config.custom.meta.user} = {

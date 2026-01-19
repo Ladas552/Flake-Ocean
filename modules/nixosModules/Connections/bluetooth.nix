@@ -15,7 +15,7 @@
       # persist for impermanance
       custom.imp.root.directories = [ "/var/lib/bluetooth" ];
     };
-    homeManager.bluetooth = {
+    hjem.bluetooth = {
       services.mpris-proxy.enable = true;
     };
   };
