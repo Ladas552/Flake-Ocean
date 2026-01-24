@@ -125,7 +125,9 @@
             shadow.off = [ ];
           }
           {
-            _children = [ { match._props.title = "Picture-in-Picture"; } ];
+            _children = [
+              { match._props.title = "Picture-in-Picture"; }
+            ];
             default-column-width.fixed = 420;
             default-window-height.fixed = 236;
             default-floating-position._props = {

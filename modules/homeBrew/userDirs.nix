@@ -1,8 +1,7 @@
 {
-  flake.modules.hjem.userDirs =
+  flake.modules.hjem.userDirs-brew =
     {
       lib,
-      pkgs,
       config,
       ...
     }:

@@ -50,52 +50,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-abNHp4WaR2MqidG42TErJZBR1PcUVtRpBYFiKCmadW8=",
+            "sha256": "sha256-GGltZ0/6rGQJixlGz3Na/vAwOlTeUR87WGyAPpLmtKM=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.8.2.1/helium-0.8.2.1-x86_64.AppImage"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.8.3.1/helium-0.8.3.1-x86_64.AppImage"
         },
-        "version": "0.8.2.1"
-    },
-    "helium-wrapped": {
-        "cargoLock": null,
-        "date": "2026-01-17",
-        "extract": null,
-        "name": "helium-wrapped",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "Michael-C-Buckley",
-            "repo": "nixos",
-            "rev": "982ec54061fc8a22f8537a59f681045a8effc761",
-            "sha256": "sha256-YVtIzKFzf9lQ0MnV2Nz3v0HyxBYfC7yuqqwUyQN+BBk=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "982ec54061fc8a22f8537a59f681045a8effc761"
-    },
-    "jail-nix": {
-        "cargoLock": null,
-        "date": "2025-12-16",
-        "extract": null,
-        "name": "jail-nix",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "rev": "bf9f49c8118e7a77b68a675dbe26e93e91412066",
-            "sha256": "sha256-buoPpx7moJzAXbLuHAImn6x9fGRdk3x0T57goPv1vnc=",
-            "sparseCheckout": [],
-            "type": "git",
-            "url": "https://git.sr.ht/~alexdavid/jail.nix"
-        },
-        "version": "bf9f49c8118e7a77b68a675dbe26e93e91412066"
+        "version": "0.8.3.1"
     },
     "neorg-conceal-wrap": {
         "cargoLock": null,
