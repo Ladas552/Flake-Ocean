@@ -7,7 +7,7 @@
       ...
     }:
     let
-      inherit (lib.modules) mkIf optionalString;
+      inherit (lib.modules) mkIf;
       inherit (lib.types)
         path
         lines
@@ -21,6 +21,7 @@
     in
     {
       # no extra args for the mpd binary
+      # broken socket dependency, needs requiremnts
       options.services.mpd = {
         enable = mkEnableOption "mpd";
 
@@ -82,23 +83,19 @@
       };
       config =
         let
-          mpdConf = writeText "mpd.conf" (
-            ''
-              music_directory     "${cfg.musicDirectory}"
-              playlist_directory  "${cfg.playlistDirectory}"
+          mpdConf = writeText "mpd.conf" ''
+            music_directory     "${cfg.musicDirectory}"
+            playlist_directory  "${cfg.playlistDirectory}"
 
-              db_file             "${cfg.dbFile}"
+            db_file             "${cfg.dbFile}"
 
-              state_file          "${cfg.dataDir}/state"
-              sticker_file        "${cfg.dataDir}/sticker.sql"
+            state_file          "${cfg.dataDir}/state"
+            sticker_file        "${cfg.dataDir}/sticker.sql"
 
-              bind_to_address     "${cfg.network.listenAddress}"
-              port                "${toString cfg.network.port}"
-            ''
-            + optionalString (cfg.extraConfig != "") ''
-              ${cfg.extraConfig}
-            ''
-          );
+            bind_to_address     "${cfg.network.listenAddress}"
+            port                "${toString cfg.network.port}"
+            ${cfg.extraConfig}
+          '';
         in
         mkIf cfg.enable {
           systemd = {
@@ -116,11 +113,7 @@
               ];
               script = "mpd --no-daemon ${mpdConf}";
               preStart = ''dash -c "mkdir -p '${cfg.dataDir}' '${cfg.playlistDirectory}'"'';
-            }
-            // (mkIf cfg.network.startWhenNeeded {
-              requires = [ "mpd.socket" ];
-              after = [ "mpd.socket" ];
-            });
+            };
             sockets.mpd = mkIf cfg.network.startWhenNeeded {
               listenStreams = [
                 "${cfg.network.listenAddress}:${toString cfg.network.port}"
