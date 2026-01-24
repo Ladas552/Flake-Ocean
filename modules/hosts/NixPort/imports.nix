@@ -64,9 +64,7 @@ in
             gh
             lf
             manual
-            mpd
             shell
-            syncthing
             thunderbird
             vesktop
             yt-dlp
@@ -97,6 +95,8 @@ in
             niri-flake
             noct
             bluetooth
+            mpd
+            syncthing
           ];
         }
       ];

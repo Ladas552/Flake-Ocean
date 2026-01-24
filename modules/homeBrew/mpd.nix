@@ -46,7 +46,7 @@
         dbFile = mkOption {
           type = path;
           apply = toString; # Prevent copies to Nix store.
-          default = "${config.dataDir}/tag_cache";
+          default = "${cfg.dataDir}/tag_cache";
         };
 
         network = {

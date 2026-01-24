@@ -13,5 +13,8 @@
       programs.home-manager.enable = true;
 
       programs.man.enable = false;
+
+      # I use hjem for user services
+      systemd.user.enable = false;
     };
 }

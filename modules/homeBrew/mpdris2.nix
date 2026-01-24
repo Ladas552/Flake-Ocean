@@ -1,5 +1,5 @@
 {
-  flake.modules.hjem.mpdris2 =
+  flake.modules.hjem.mpdris2-brew =
     {
       lib,
       pkgs,
@@ -36,7 +36,7 @@
       };
 
       config = mkIf cfg.enable {
-        xdg.config."mpDris2/mpDris2.conf".source = ini.generate "mpdris2" cfg.settings;
+        xdg.config.files."mpDris2/mpDris2.conf".source = ini.generate "mpdris2" cfg.settings;
         systemd.services.mpdris2 = {
           wantedBy = [ "default.target" ];
           description = "MPRIS 2 support for MPD";

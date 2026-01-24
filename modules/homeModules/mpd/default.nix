@@ -5,6 +5,7 @@
     {
       packages = with pkgs; [
         mpc
+        rmpc
         self.packages.${pkgs.stdenv.hostPlatform.system}.musnow
       ];
       # Todo. add keybinds for skiping to next album with `[` & `]` when it's added to rmpc
@@ -89,7 +90,6 @@
         '';
 
       xdg.config.files."rmpc/themes/bash.ron" = {
-        recursive = true;
         text = # ron
           ''
             #![enable(implicit_some)]
