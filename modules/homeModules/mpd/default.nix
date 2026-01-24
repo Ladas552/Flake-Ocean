@@ -1,98 +1,94 @@
 { self, ... }:
 {
-  flake.modules.homeManager.mpd =
+  flake.modules.hjem.mpd =
     { config, pkgs, ... }:
     {
-      home.packages = with pkgs; [
+      packages = with pkgs; [
         mpc
         self.packages.${pkgs.stdenv.hostPlatform.system}.musnow
       ];
-      # settings for rmpc, half Home-manager module, but poorly done
       # Todo. add keybinds for skiping to next album with `[` & `]` when it's added to rmpc
-      programs.rmpc = {
-        enable = true;
-        config = # ron
-          ''
-            #![enable(implicit_some)]
-            #![enable(unwrap_newtypes)]
-            #![enable(unwrap_variant_newtypes)]
-            (
-                address: "127.0.0.1:6600",
-                theme: Some("bash"),
-                cache_dir: "~/.cache/rmpc/",
-                on_song_change: None,
-                volume_step: 2,
-                scrolloff: 2,
-                enable_mouse: true,
-                wrap_navigation: true,
-                status_update_interval_ms: 1000,
-                select_current_song_on_change: true,
-                album_art: (
-                    method: Kitty,
-                ),
-                keybinds: (
-                    global: {
-                        "1":       QueueTab,
-                        "2":       DirectoriesTab,
-                        "3":       ArtistsTab,
-                        "4":       AlbumsTab,
-                        "5":       PlaylistsTab,
-                        "6":       SearchTab,
-                        "7":       ShowOutputs,
-                        "?":       ShowHelp,
-                        ":":       CommandMode,
-                        "Q":       Stop,
-                        "c":       ToggleSingle,
-                        "<Tab>":   NextTab,
-                        "<S-Tab>": PreviousTab,
-                        "q":       Quit,
-                        "n":       NextTrack,
-                        "N":       PreviousTrack,
-                        "b":       PreviousTrack,
-                        ".":       SeekForward,
-                        ",":       SeekBack,
-                        "k":       VolumeDown,
-                        "l":       VolumeUp,
-                        "r":       ToggleRandom,
-                        "C":       ToggleConsume,
-                        "p":       TogglePause,
-                        "R":       ToggleRepeat,
-                    },
-                    navigation: {
-                        "<C-u>":   UpHalf,
-                        "=":       NextResult,
-                        "-":       PreviousResult,
-                        "<Space>":       Add,
-                        "A":       AddAll,
-                        "g":       Top,
-                        "G":       Bottom,
-                        "<CR>":    Confirm,
-                        "i":       FocusInput,
-                        "J":       MoveDown,
-                        "<Up>":       Up,
-                        "<Down>":       Down,
-                        "<Left>":       Left,
-                        "<Right>":       Right,
-                        "<C-d>":   DownHalf,
-                        "/":       EnterSearch,
-                        "<C-c>":   Close,
-                        "<Esc>":   Close,
-                        "K":       MoveUp,
-                        "D":       Delete,
-                    },
-                    queue: {
-                        "D":       DeleteAll,
-                        "<CR>":    Play,
-                        "<C-s>":   Save,
-                        "a":       AddToPlaylist,
-                        "d":       Delete,
-                    },
-                ),
-            )
-          '';
-      };
+      xdg.config.files."rmpc/config.ron".text = # ron
+        ''
+          #![enable(implicit_some)]
+          #![enable(unwrap_newtypes)]
+          #![enable(unwrap_variant_newtypes)]
+          (
+              address: "127.0.0.1:6600",
+              theme: Some("bash"),
+              cache_dir: "~/.cache/rmpc/",
+              on_song_change: None,
+              volume_step: 2,
+              scrolloff: 2,
+              enable_mouse: true,
+              wrap_navigation: true,
+              status_update_interval_ms: 1000,
+              select_current_song_on_change: true,
+              album_art: (
+                  method: Kitty,
+              ),
+              keybinds: (
+                  global: {
+                      "1":       QueueTab,
+                      "2":       DirectoriesTab,
+                      "3":       ArtistsTab,
+                      "4":       AlbumsTab,
+                      "5":       PlaylistsTab,
+                      "6":       SearchTab,
+                      "7":       ShowOutputs,
+                      "?":       ShowHelp,
+                      ":":       CommandMode,
+                      "Q":       Stop,
+                      "c":       ToggleSingle,
+                      "<Tab>":   NextTab,
+                      "<S-Tab>": PreviousTab,
+                      "q":       Quit,
+                      "n":       NextTrack,
+                      "N":       PreviousTrack,
+                      "b":       PreviousTrack,
+                      ".":       SeekForward,
+                      ",":       SeekBack,
+                      "k":       VolumeDown,
+                      "l":       VolumeUp,
+                      "r":       ToggleRandom,
+                      "C":       ToggleConsume,
+                      "p":       TogglePause,
+                      "R":       ToggleRepeat,
+                  },
+                  navigation: {
+                      "<C-u>":   UpHalf,
+                      "=":       NextResult,
+                      "-":       PreviousResult,
+                      "<Space>":       Add,
+                      "A":       AddAll,
+                      "g":       Top,
+                      "G":       Bottom,
+                      "<CR>":    Confirm,
+                      "i":       FocusInput,
+                      "J":       MoveDown,
+                      "<Up>":       Up,
+                      "<Down>":       Down,
+                      "<Left>":       Left,
+                      "<Right>":       Right,
+                      "<C-d>":   DownHalf,
+                      "/":       EnterSearch,
+                      "<C-c>":   Close,
+                      "<Esc>":   Close,
+                      "K":       MoveUp,
+                      "D":       Delete,
+                  },
+                  queue: {
+                      "D":       DeleteAll,
+                      "<CR>":    Play,
+                      "<C-s>":   Save,
+                      "a":       AddToPlaylist,
+                      "d":       Delete,
+                  },
+              ),
+          )
+        '';
 
-      home.file.".config/rmpc/themes/bash.ron" = {
+      xdg.config.files."rmpc/themes/bash.ron" = {
         recursive = true;
         text = # ron
           ''
@@ -195,15 +191,11 @@
             )
           '';
       };
-      services.mpdris2 = {
-        enable = true;
-        multimediaKeys = true;
-        notifications = true;
-      };
+      services.mpdris2.enable = true;
 
       services.mpd = {
         enable = true;
-        musicDirectory = config.xdg.userDirs.music;
+        musicDirectory = config.xdg.userDirs.music.directory;
         extraConfig = ''
           audio_output {
             type "pipewire"
