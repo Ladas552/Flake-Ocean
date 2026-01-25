@@ -66,7 +66,7 @@
     nvf = {
       url = "github:notashelf/nvf";
       # No useless inputs
-      inputs.nixpkgs.follows = "nixpkgs";
+      # inputs.nixpkgs.follows = "nixpkgs";
       inputs.systems.follows = "systems";
       inputs.flake-parts.follows = "flake-parts";
       inputs.flake-compat.follows = "";

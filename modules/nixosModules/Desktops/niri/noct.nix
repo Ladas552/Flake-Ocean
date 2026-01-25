@@ -5,8 +5,9 @@
       { pkgs, lib, ... }:
       {
         environment.systemPackages = with pkgs; [
-          inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default
-          (python3.withPackages (pyPkgs: with pyPkgs; [ pygobject3 ]))
+          (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+            calendarSupport = true;
+          })
           gpu-screen-recorder
         ];
         # import the nixos module

@@ -18,7 +18,7 @@
         wl-clipboard
         ffmpeg
         gst_all_1.gst-libav
-        librewolf-bin
+        librewolf
         hunspell
         hunspellDicts.en-us-large
         hunspellDicts.ru-ru
