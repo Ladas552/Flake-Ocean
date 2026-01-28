@@ -73,6 +73,14 @@
       inputs.ndg.follows = "";
     };
 
+    nixvim = {
+      url = "github:nix-community/nixvim";
+      # No useless inputs
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.systems.follows = "systems";
+    };
+
     # Niri
     niri = {
       url = "git+https://codeberg.org/BANanaD3V/niri-nix";

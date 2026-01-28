@@ -33,6 +33,7 @@
         treesitter
         web-devicons
         which-key
+        config.flake.modules.generic.options
       ];
 
       heavy = with config.flake.modules.nvf; [
