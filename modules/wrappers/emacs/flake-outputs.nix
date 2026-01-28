@@ -3,15 +3,25 @@
 { self, ... }:
 {
   # modules to enable emacs service
-  # add hjem-rum module later
-  flake.modules.nixos.emacs =
-    { pkgs, ... }:
-    {
-      services.emacs = {
-        enable = true;
-        package = self.packages.${pkgs.stdenv.hostPlatform.system}.emacs;
+  flake.modules = {
+    nixos.emacs =
+      { pkgs, ... }:
+      {
+        services.emacs = {
+          enable = true;
+          package = self.packages.${pkgs.stdenv.hostPlatform.system}.emacs;
+        };
       };
-    };
+    homeManager.emacs =
+      { pkgs, ... }:
+      {
+        programs.emacs = {
+          enable = true;
+          package = self.packages.${pkgs.stdenv.hostPlatform.system}.emacs;
+        };
+        services.emacs.enable = true;
+      };
+  };
 
   # define emacs package for `nix run`
   perSystem =
