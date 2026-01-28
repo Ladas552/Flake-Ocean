@@ -50,5 +50,6 @@
         ".zotero"
         "Zotero"
       ];
+
     };
 }

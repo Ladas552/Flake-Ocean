@@ -21,11 +21,6 @@
         };
         services.emacs.enable = true;
       };
-    hjem.emacs =
-      { pkgs, ... }:
-      {
-        packages = [ self.packages.${pkgs.stdenv.hostPlatform.system}.emacs ];
-      };
   };
 
   # define emacs package for `nix run`

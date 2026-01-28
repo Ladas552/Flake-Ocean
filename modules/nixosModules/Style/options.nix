@@ -32,15 +32,7 @@
       alias = lib.mkAliasOptionModule [ "color" ] [ "custom" "style" "colors" "palette" ];
     in
     {
-      nixos.options = {
-        options.custom.style = { inherit font colors; };
-        imports = [ alias ];
-      };
-      homeManager.options = {
-        options.custom.style = { inherit font colors; };
-        imports = [ alias ];
-      };
-      hjem.options = {
+      generic.options = {
         options.custom.style = { inherit font colors; };
         imports = [ alias ];
       };

@@ -24,7 +24,7 @@
         daemonIOSchedClass = "idle";
         # Better Error messages
         package = pkgs.lixPackageSets.git.lix;
-        # Optimize nix experience by removing cache and store garbage
+        # Optimize nix experience by removing cache and store garbage, on timer
         optimise.automatic = true;
         # disable channels completely
         channel.enable = false;
@@ -34,8 +34,8 @@
           # error on IFD, It errors on using modules like Stylix tho
           # right now it's true because I IFD a helium wrapper
           allow-import-from-derivation = true;
-          # Optimize nix experience by removing cache and store garbage
-          auto-optimise-store = true;
+          # Optimize nix experience by removing cache and store garbage, per command
+          # auto-optimise-store = true;
           warn-dirty = false;
           experimental-features = [
             "nix-command"

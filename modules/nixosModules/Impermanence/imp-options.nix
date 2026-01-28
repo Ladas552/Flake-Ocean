@@ -54,8 +54,6 @@
       };
     in
     {
-      nixos.options.options.custom.imp = { inherit root home; };
-      hjem.options.options.custom.imp = { inherit home; };
-      homeManager.options.options.custom.imp = { inherit home; };
+      generic.options.options.custom.imp = { inherit root home; };
     };
 }

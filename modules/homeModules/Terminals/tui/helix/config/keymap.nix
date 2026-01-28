@@ -44,8 +44,8 @@
             G = "goto_last_line";
             # Buffer managment
             space = {
-              "," = ":buffer-previous";
-              "." = ":buffer-next";
+              "," = ":buffer-next";
+              "." = ":buffer-previous";
               "x" = ":buffer-close";
             };
             "=" = ":format";

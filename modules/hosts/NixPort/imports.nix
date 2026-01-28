@@ -64,9 +64,7 @@ in
             gh
             lf
             manual
-            mpd
             shell
-            syncthing
             thunderbird
             vesktop
             yt-dlp
@@ -74,7 +72,6 @@ in
             zathura
             zfs
             openssh
-            bluetooth
           ];
         }
       ]
@@ -92,12 +89,14 @@ in
             # imv
             chawan
             nvf
-            # nixvim
             mpv
             # flameshot
             helium
             niri-flake
             noct
+            bluetooth
+            mpd
+            syncthing
           ];
         }
       ];

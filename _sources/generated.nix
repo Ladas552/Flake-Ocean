@@ -32,37 +32,11 @@
   };
   helium = {
     pname = "helium";
-    version = "0.8.2.1";
+    version = "0.8.3.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.8.2.1/helium-0.8.2.1-x86_64.AppImage";
-      sha256 = "sha256-abNHp4WaR2MqidG42TErJZBR1PcUVtRpBYFiKCmadW8=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.8.3.1/helium-0.8.3.1-x86_64.AppImage";
+      sha256 = "sha256-GGltZ0/6rGQJixlGz3Na/vAwOlTeUR87WGyAPpLmtKM=";
     };
-  };
-  helium-wrapped = {
-    pname = "helium-wrapped";
-    version = "982ec54061fc8a22f8537a59f681045a8effc761";
-    src = fetchFromGitHub {
-      owner = "Michael-C-Buckley";
-      repo = "nixos";
-      rev = "982ec54061fc8a22f8537a59f681045a8effc761";
-      fetchSubmodules = false;
-      sha256 = "sha256-YVtIzKFzf9lQ0MnV2Nz3v0HyxBYfC7yuqqwUyQN+BBk=";
-    };
-    date = "2026-01-17";
-  };
-  jail-nix = {
-    pname = "jail-nix";
-    version = "bf9f49c8118e7a77b68a675dbe26e93e91412066";
-    src = fetchgit {
-      url = "https://git.sr.ht/~alexdavid/jail.nix";
-      rev = "bf9f49c8118e7a77b68a675dbe26e93e91412066";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-buoPpx7moJzAXbLuHAImn6x9fGRdk3x0T57goPv1vnc=";
-    };
-    date = "2025-12-16";
   };
   neorg-conceal-wrap = {
     pname = "neorg-conceal-wrap";

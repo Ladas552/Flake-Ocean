@@ -52,8 +52,8 @@
 
     impermanence = {
       url = "github:nix-community/impermanence";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
+      inputs.nixpkgs.follows = "";
+      inputs.home-manager.follows = "";
     };
 
     flake-parts = {
@@ -63,22 +63,22 @@
     };
 
     # Neovim
+    nvf = {
+      url = "github:notashelf/nvf";
+      # No useless inputs
+      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.systems.follows = "systems";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.flake-compat.follows = "";
+      inputs.ndg.follows = "";
+    };
+
     nixvim = {
       url = "github:nix-community/nixvim";
       # No useless inputs
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-parts.follows = "flake-parts";
       inputs.systems.follows = "systems";
-    };
-
-    nvf = {
-      url = "github:notashelf/nvf";
-      # No useless inputs
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "systems";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.flake-compat.follows = "";
-      inputs.ndg.follows = "";
     };
 
     # Niri
