@@ -10,8 +10,7 @@
       settings = {
         #one liners
         hotkey-overlay.skip-at-startup = true;
-        # doesn't work for some reason on niri-flake
-        # xwayland-satilate.enable = false;
+        xwayland-satellite.off = [ ];
         prefer-no-csd = true;
         screenshot-path = "~/Pictures/screenshots/Niri%Y-%m-%d %H-%M-%S.png";
         layout.default-column-display = "tabbed";
