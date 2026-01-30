@@ -648,9 +648,7 @@
       hjem.niri-flake =
         { pkgs, ... }:
         {
-          xdg.config.files."niri/config.kdl".text = inputs.niri.lib.validatedConfigFor pkgs.niri (
-            inputs.niri.lib.mkNiriKDL settings
-          );
+          xdg.config.files."niri/config.kdl".text = inputs.niri.lib.mkNiriKDL settings;
         };
     };
 }

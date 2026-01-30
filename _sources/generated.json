@@ -50,11 +50,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-GGltZ0/6rGQJixlGz3Na/vAwOlTeUR87WGyAPpLmtKM=",
+            "sha256": "sha256-y4KzR+pkBUuyVU+ALrzdY0n2rnTB7lTN2ZmVSzag5vE=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.8.3.1/helium-0.8.3.1-x86_64.AppImage"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.8.4.1/helium-0.8.4.1-x86_64.AppImage"
         },
-        "version": "0.8.3.1"
+        "version": "0.8.4.1"
     },
     "neorg-conceal-wrap": {
         "cargoLock": null,

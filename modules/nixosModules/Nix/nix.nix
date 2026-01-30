@@ -33,7 +33,7 @@
         settings = {
           # error on IFD, It errors on using modules like Stylix tho
           # right now it's true because I IFD a helium wrapper
-          allow-import-from-derivation = true;
+          allow-import-from-derivation = false;
           # Optimize nix experience by removing cache and store garbage, per command
           # auto-optimise-store = true;
           warn-dirty = false;

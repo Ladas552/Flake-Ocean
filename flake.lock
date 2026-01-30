@@ -75,11 +75,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769577069,
-        "narHash": "sha256-cQC2opXBeij+44CLOZfOSuf+lOsJZJmvXLrLUcAKNXE=",
+        "lastModified": 1769723138,
+        "narHash": "sha256-kgkwjs33YfJasADIrHjHcTIDs3wNX0xzJhnUP+oldEw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ef5da062697f9edb622724b6127c997ee417bd1b",
+        "rev": "175532b6275b34598a0ceb1aef4b9b4006dd4073",
         "type": "github"
       },
       "original": {
@@ -253,16 +253,16 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1768875095,
-        "narHash": "sha256-dYP3DjiL7oIiiq3H65tGIXXIT1Waiadmv93JS0sS+8A=",
+        "lastModified": 1769461804,
+        "narHash": "sha256-msG8SU5WsBUfVVa/9RPLaymvi5bI8edTavbIq3vRlhI=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "ed142ab1b3a092c4d149245d0c4126a5d7ea00b0",
+        "rev": "bfc1b8a4574108ceef22f02bafcf6611380c100d",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixpkgs-unstable",
+        "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -280,11 +280,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769537308,
-        "narHash": "sha256-N7famD4s2hiDIicr9mJWhUj8l9EULB60+1QN/S+UjeM=",
+        "lastModified": 1769644746,
+        "narHash": "sha256-1X9o0GjCzku03magX4pM+1OZXA0aUTN7KvEReZ9t3OU=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "7addac6d111837217c16762968a9042eac703f7e",
+        "rev": "3c27e1b35ca0fee6a89bfc20840654361ffe888d",
         "type": "github"
       },
       "original": {
@@ -300,11 +300,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769576527,
-        "narHash": "sha256-SUKPMvZiSfKlJOIjMXGx5Q8EHGy+EIMqaDQU/ld8Tss=",
+        "lastModified": 1769743095,
+        "narHash": "sha256-yZ1bR3ducegfyauYnZ6JRbLQnIwxMWM7P2PioyEtsMk=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "30f0cc2de15626834842763aeb8ab0824d856a19",
+        "rev": "4dea7d37801d705cf977ce69fd3ee87a3c995fe5",
         "type": "github"
       },
       "original": {
@@ -327,11 +327,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769555186,
-        "narHash": "sha256-wNoPRTt5ZAzXnu3uoan4p8h1hC0EvEurAX2708p1umU=",
+        "lastModified": 1769716128,
+        "narHash": "sha256-CAsiyTNjI0WmtJstw3kGyL7Q1jPCn7AsO6Ms47G+x3w=",
         "owner": "notashelf",
         "repo": "nvf",
-        "rev": "dacc7270a5a6db3dd2bdc5ae1713f1fe975ecbd8",
+        "rev": "866b983c4047b87bcdca6ab3673ed7bd602f0251",
         "type": "github"
       },
       "original": {
