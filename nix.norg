@@ -90,7 +90,6 @@ I start to have a life other than computers so I kinda begin to forget what I di
       The root password is setup automatically because the users are immutable
     - user
       In NixOS, users are Mutual by default, so you can just `su` to change to root, and `passwd ladas552` to change password of user-Ladas552 when you can't login to the user.
-
 * TODOs
 ** Notes
    Explain Nix-on-droid shenanigans

@@ -226,7 +226,7 @@ in
         services.mpd = {
           enable = true;
           musicDirectory = config.xdg.userDirs.music;
-          extraConfig = mpd-config;
+          extraConfig = "" + mpd-config;
         };
 
         # persist for Impermanence
@@ -248,7 +248,7 @@ in
         services.mpd = {
           enable = true;
           musicDirectory = config.xdg.userDirs.music.directory;
-          extraConfig = mpd-config;
+          extraConfig = "" + mpd-config;
         };
 
         # persist for Impermanence

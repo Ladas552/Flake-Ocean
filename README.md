@@ -2,18 +2,19 @@
 
 # What is this?
 This is my multi host, modular Nix config. It declares configs for different programs using Nix language, such as:
-- Neovim module to use [Rocks.nvim](https://github.com/nvim-neorocks/rocks.nvim) on NixOS with [my lua config](https://github.com/Ladas552/nvim-rocks-config)
-- [Niri](https://github.com/YaLTeR/niri) - Scrollable Tilling Wayland Compositor via Community [Niri-flake](https://github.com/sodiboo/niri-flake)
+- [Noctalia shell](https://github.com/noctalia-dev/noctalia-shell) - desktop components with generous customizability
+- [Niri](https://github.com/YaLTeR/niri) - Scrollable Tilling Wayland Compositor via Community [Niri-nix](https://codeberg.org/BANanaD3V/niri-nix) module
 - And many more with [Home-manager](https://github.com/nix-community/home-manager), that allows to declare configuration of user programs in Nix language
-- Slowly adopting [Hjem](https://github.com/feel-co/hjem) with set of modules of [Hjem-rum](https://github.com/snugnug/hjem-rum)
+- Excellent [Hjem](https://github.com/feel-co/hjem) linker with set of modules of [Hjem-rum](https://github.com/snugnug/hjem-rum)
 
-I also declare configuration as packages that you can try with `nix run
+I also declare configuration as packages/wrappers that you can try with `nix run
 github:Ladas552/Flake-Ocean#app`, replace `app` with:
 
 - [nvf](https://github.com/NotAShelf/nvf) - Nix declared Neovim
 - [nixvim](https://github.com/nix-community/nixvim) - another Nix declared Neovim
 - rofi-powermenu - power menu made of Rofi with a [nice theme](https://github.com/adi1090x/rofi)
 - all the other scripts in [pkgs directory](./pkgs/default.nix)
+- [wrappers directory](./modules/wrappers) for apps
 
 # Overview of things to note
 
@@ -30,7 +31,7 @@ Making all files their own modules that I can import, and if module isn't import
 
 Also I made `custom.meta` options on every host, and depending on host, different variables are used. Options defined in `modules/flake-parts/options`. And host variables are defined at `imports.nix` of every host. Even for nvf and nixvim configs.
 
-I also have a lot of unused code that I can import if need be, for example my niri can be managed with hjem and home-manager and result will be identical.
+I also have a lot of unused code that I can import if need be, for example my niri can be managed with hjem and home-manager and result will be identical. 
 
 ## Docs
 I write comments on things, that might explain certain ways of doing things, or leave not working options in comments for people to find. This is to not look up one thing twice, and just look at the nix file itself.
@@ -42,6 +43,9 @@ I also write some [blog posts about Nix](https://ladas552.me/Flake-Ocean/), feel
 ## Nvfetcher
 
 I also have inputs in `./_sources/`, they are generated with `nvfetcher` after editing the `./nvfetcher.toml` file. Instead of `nix flake update`, I update them with `nix run github:berberman/nvfetcher`.
+
+## Screenshot if you care
+![desktop](https://ladas552.me/assets/desktop/desktop.png)
 
 ## Name
 
