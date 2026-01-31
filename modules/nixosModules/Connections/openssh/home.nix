@@ -19,9 +19,9 @@
           controlPersist = "10m";
         };
 
-        matchBlocks."${config.custom.meta.user}" = {
+        matchBlocks."github.com" = {
           host = "github.com";
-          user = "${config.custom.meta.user}";
+          user = "Ladas552";
           identityFile = [ "~/.ssh/NixToks" ];
         };
 
