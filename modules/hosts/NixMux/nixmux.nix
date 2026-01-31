@@ -107,6 +107,5 @@
         # minimal = true;
         # overwriteBackup = true;
       };
-      user.shell = "${pkgs.fish}/bin/fish";
     };
 }

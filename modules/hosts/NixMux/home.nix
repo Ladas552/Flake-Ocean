@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   flake.modules.homeManager.NixMux =
     {
@@ -50,6 +51,7 @@
 
       programs.fish = {
         enable = true;
+        package = self.packages."aarch64-linux".fish;
         shellInit = # fish
           ''
             set -gx pure_enable_container_detection false
@@ -66,31 +68,6 @@
             abbr --set-cursor --command nix gb build github:%
             abbr --set-cursor --command nix gs shell github:%
           '';
-
-        plugins = with pkgs.fishPlugins; [
-          {
-            name = "autopair";
-            src = autopair.src;
-          }
-          {
-            name = "bass";
-            src = bass.src;
-          }
-          {
-            # Use this to not get error https://github.com/pure-fish/pure/issues/295#issuecomment-1673234460
-            # set --universal pure_enable_container_detection false
-            name = "pure";
-            src = pure.src;
-          }
-          {
-            name = "puffer";
-            src = puffer.src;
-          }
-          {
-            name = "sponge";
-            src = sponge.src;
-          }
-        ];
 
         preferAbbrs = true;
         shellAbbrs = config.home.shellAliases;

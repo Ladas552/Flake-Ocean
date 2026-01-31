@@ -3,14 +3,6 @@
   flake.modules.homeManager.shell =
     { pkgs, config, ... }:
     {
-      # Shell programs
-      home.packages = with pkgs; [
-        wiki-tui
-        duf
-        unimatrix
-        wgetpaste
-        self.packages.${pkgs.stdenv.hostPlatform.system}.gcp
-      ];
       programs = {
         ripgrep.enable = true;
         fd.enable = true;

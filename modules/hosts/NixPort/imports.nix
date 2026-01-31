@@ -47,6 +47,7 @@ in
         xkb
         zfs
         network-manager
+        fish
         # Users
         root
         ladas552
@@ -58,13 +59,10 @@ in
             { inherit custom; }
             NixPort
             cat-mocha
-            direnv
             fastfetch
-            fish
             gh
             lf
             manual
-            shell
             thunderbird
             vesktop
             yt-dlp
@@ -79,8 +77,7 @@ in
         {
           hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
             { inherit custom; }
-            # fish
-            # direnv
+            direnv
             obs
             # git
             neovide

@@ -15,6 +15,7 @@ in
     [
       { inherit custom; }
       base
+      fish
     ]
     ++ [
       {
@@ -28,7 +29,6 @@ in
           git
           helix
           lf
-          shell
         ];
       }
     ];

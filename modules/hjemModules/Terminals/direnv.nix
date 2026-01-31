@@ -4,10 +4,7 @@
     {
       rum.programs.direnv = {
         enable = true;
-        integrations = {
-          nix-direnv.enable = true;
-          fish.enable = true;
-        };
+        integrations.nix-direnv.enable = true;
         settings = {
           global = {
             # the same as direnv.silent in Home-manager
