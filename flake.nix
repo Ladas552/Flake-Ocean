@@ -21,8 +21,7 @@
     };
     # Modules for hjem
     hjem-rum = {
-      # url = "path:/home/ladas552/Projects/forks/hjem-rum";
-      url = "github:ladas552/hjem-rum/chawan";
+      url = "github:snugnug/hjem-rum";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.hjem.follows = "hjem";
       # No useless inputs

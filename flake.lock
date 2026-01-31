@@ -54,16 +54,15 @@
         "treefmt-nix": []
       },
       "locked": {
-        "lastModified": 1762688549,
-        "narHash": "sha256-b7um2twrO9TXZpU8/mPcqufOyQBJTUau2ZsSAJobv2w=",
-        "owner": "ladas552",
+        "lastModified": 1766394058,
+        "narHash": "sha256-P+59TbVusYqdx2Jt2liwvQ+hslUzU6M1ezRDy6c66Tc=",
+        "owner": "snugnug",
         "repo": "hjem-rum",
-        "rev": "aebece3531a2b2a01085e1f87376fe24f2202b34",
+        "rev": "edac54b7d57ad72cc4b124da2f44e7b2e584f3c6",
         "type": "github"
       },
       "original": {
-        "owner": "ladas552",
-        "ref": "chawan",
+        "owner": "snugnug",
         "repo": "hjem-rum",
         "type": "github"
       }
@@ -300,11 +299,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1769831457,
-        "narHash": "sha256-UCHlDVBQe0QGmcra1Oq9yX4LqLGkEPV7I6XvR4eq+oc=",
+        "lastModified": 1769867365,
+        "narHash": "sha256-w4cjGJCEegtHcFNH6emjbQUDEW0wjURRbZtzWeHkT5I=",
         "owner": "noctalia-dev",
         "repo": "noctalia-shell",
-        "rev": "131740dcc01af2d0372e169b060984bfe8afaa7a",
+        "rev": "042fdb51e061130afc9f50c9236b3a8a20a80597",
         "type": "github"
       },
       "original": {

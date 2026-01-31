@@ -60,7 +60,6 @@ in
             { inherit custom; }
             NixPort
             cat-mocha
-            fastfetch
             gh
             lf
             manual
@@ -82,7 +81,7 @@ in
             neovide
             ghostty
             cat-mocha
-            # imv
+            imv
             chawan
             nvf
             mpv
@@ -93,6 +92,7 @@ in
             bluetooth
             mpd
             syncthing
+            fastfetch
           ];
         }
       ];

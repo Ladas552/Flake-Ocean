@@ -6,5 +6,8 @@
     mpdris2-brew
     syncthing-brew
     userDirs-brew
+    fastfetch-brew
+    imv-brew
+    chawan-brew
   ];
 }
