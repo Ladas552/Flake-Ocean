@@ -1,4 +1,5 @@
 {
+  # Doesn't work without MPD module
   flake.modules.homeManager.mpv =
     { pkgs, ... }:
     {
@@ -60,7 +61,7 @@
         scriptOpts = {
           quality-menu = {
             quality_strings_video = ''[ {"1080p" : "bestvideo[height<=?1080]"}, {"720p" : "bestvideo[height<=?720]"}, {"480p" : "bestvideo[height<=?480]"}, {"360p" : "bestvideo[height<=?360]"}, {"240p" : "bestvideo[height<=?240]"}, {"144p" : "bestvideo[height<=?144]"} ]'';
-            columns_video = ''-resolution|bitrate_total,size,codec_video'';
+            columns_video = "-resolution|bitrate_total,size,codec_video";
             fetch_formats = "no";
             hide_identical_columns = "yes";
           };

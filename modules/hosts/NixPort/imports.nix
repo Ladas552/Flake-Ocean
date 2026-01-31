@@ -48,6 +48,7 @@ in
         zfs
         network-manager
         fish
+        yt-dlp
         # Users
         root
         ladas552
@@ -65,10 +66,8 @@ in
             manual
             thunderbird
             vesktop
-            yt-dlp
             git
             zathura
-            zfs
             openssh
           ];
         }
