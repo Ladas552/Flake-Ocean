@@ -1,6 +1,7 @@
 {
-  "settingsVersion": 44,
+  "settingsVersion": 46,
   "bar": {
+    "barType": "simple",
     "position": "left",
     "monitors": [],
     "density": "comfortable",
@@ -12,6 +13,8 @@
     "floating": false,
     "marginVertical": 7,
     "marginHorizontal": 5,
+    "frameThickness": 8,
+    "frameRadius": 12,
     "outerCorners": false,
     "exclusive": true,
     "hideOnOverview": false,
@@ -19,9 +22,9 @@
       "left": [
         {
           "colorizeDistroLogo": false,
-          "colorizeSystemIcon": "none",
+          "colorizeSystemIcon": "primary",
           "customIconPath": "",
-          "enableColorization": false,
+          "enableColorization": true,
           "icon": "",
           "id": "ControlCenter",
           "useDistroLogo": true
@@ -81,14 +84,19 @@
         {
           "characterCount": 2,
           "colorizeIcons": true,
+          "emptyColor": "secondary",
           "enableScrollWheel": true,
+          "focusedColor": "primary",
           "followFocusedScreen": false,
           "groupedBorderOpacity": 0,
           "hideUnoccupied": true,
           "iconScale": 1,
           "id": "Workspace",
           "labelMode": "index",
+          "occupiedColor": "secondary",
+          "reverseScroll": false,
           "showApplications": true,
+          "showBadge": true,
           "showLabelsOnlyWhenOccupied": true,
           "unfocusedIconsOpacity": 1
         },
@@ -112,7 +120,8 @@
           "hideWhenZero": true,
           "hideWhenZeroUnread": false,
           "id": "NotificationHistory",
-          "showUnreadBadge": false
+          "showUnreadBadge": false,
+          "unreadBadgeColor": "primary"
         },
         {
           "displayMode": "onhover",
@@ -180,7 +189,9 @@
     "showChangelogOnStartup": true,
     "telemetryEnabled": true,
     "enableLockScreenCountdown": true,
-    "lockScreenCountdownDuration": 10000
+    "lockScreenCountdownDuration": 10000,
+    "autoStartAuth": false,
+    "allowPasswordWithFprintd": false
   },
   "ui": {
     "fontDefault": "JetBrainsMono Nerd Font Mono",
@@ -265,6 +276,8 @@
     "autoPasteClipboard": false,
     "enableClipPreview": true,
     "clipboardWrapText": true,
+    "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
+    "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
     "position": "center",
     "pinnedApps": [],
     "useApp2Unit": false,
