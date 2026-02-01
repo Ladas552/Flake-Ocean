@@ -15,7 +15,8 @@ in
       NixVm
       NixVm-hardware
       # Modules
-      niri
+      niri-flake
+      noct
       openssh
       fonts
       sops
@@ -24,6 +25,7 @@ in
       cat-mocha
       nix
       general
+      fish
       # Users
       root
       ladas552
@@ -37,10 +39,7 @@ in
           ghostty
           direnv
           cat-mocha
-          imv
-          shell
           git
-          fish
         ];
       }
     ];

@@ -50,6 +50,7 @@
         c.nixd
         c.tinymist
         c.rustaceanvim
+        config.flake.modules.generic.options
       ];
       enableMan = false;
       clipboard.providers.wl-copy.enable = true;

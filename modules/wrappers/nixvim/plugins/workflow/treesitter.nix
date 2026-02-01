@@ -4,7 +4,7 @@
     {
       plugins.treesitter = {
         enable = true;
-        folding = true;
+        folding.enable = true;
         nixvimInjections = true;
         grammarPackages =
           with config.plugins.treesitter.package.builtGrammars;
@@ -36,7 +36,6 @@
             ini
             javascript
             json
-            jsonc
             julia
             kdl
             kotlin

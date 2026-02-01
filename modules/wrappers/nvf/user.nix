@@ -5,7 +5,7 @@
     # I only use this home-manager in Nix-On-Droid, so no logic in making this one modular
     homeManager.nvf =
       let
-        nvf-NixMux = self.packages."aarch64-Linux".nvf-NixMux;
+        nvf-NixMux = self.packages."aarch64-linux".nvf-NixMux;
       in
       {
         home.packages = [ nvf-NixMux ];

@@ -18,6 +18,7 @@ in
       nix
       general
       cat-mocha
+      fish
       # Users
       root
       ladas552
@@ -29,9 +30,7 @@ in
           { inherit custom; }
           NixwsL
           git
-          shell
           cat-mocha
-          fish
           lf
           gh
           direnv

@@ -10,7 +10,7 @@
         users.${config.custom.meta.user} = {
           user = "${config.custom.meta.user}";
           directory = "/home/${config.custom.meta.user}";
-          # Only because systemd of hjem is readonly, while home-manager it's a writable directory
+          # If enabled, can't use home-manager service modules.
           systemd.enable = true;
           rum.environment.hideWarning = true;
         };

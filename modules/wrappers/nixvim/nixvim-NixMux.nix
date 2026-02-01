@@ -31,6 +31,7 @@
         c.web-devicons
         c.which-key
         c.friendly-snippets
+        config.flake.modules.generic.options
       ];
       enableMan = false;
       withRuby = false;

@@ -60,7 +60,6 @@ in
           helix
           mpd
           openssh
-          shell
           syncthing
           yt-dlp
           nvf

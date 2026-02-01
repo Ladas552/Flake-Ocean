@@ -9,7 +9,7 @@
     {
       packages = with pkgs; [
         nixd
-        nixfmt-rfc-style
+        nixfmt
         clang-tools
         ruff
         basedpyright

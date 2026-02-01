@@ -25,6 +25,9 @@
           "${modulesPath}/services/mpdris2.nix"
           "${modulesPath}/services/mpris-proxy.nix" # for mpdris2
           "${modulesPath}/programs/vim.nix"
+          "${modulesPath}/programs/helix.nix"
+          "${modulesPath}/programs/foot.nix"
+          "${modulesPath}/programs/ghostty.nix"
 
           # I hate all of this
           "${modulesPath}/programs/git.nix"

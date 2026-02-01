@@ -10,91 +10,89 @@ in
 {
   flake.modules.nixvim.NixPort.imports = [ { inherit custom; } ];
   flake.modules.nvf.NixPort.imports = [ { inherit custom; } ];
-  flake.modules.nixos."hosts/NixPort" = {
-    imports =
-      with config.flake.modules.nixos;
-      [
-        { inherit custom; }
-        NixPort
-        # Modules
-        ## Games
-        games
-        emulators
-        steam
-        bluetooth
-        cache
-        cat-mocha
-        cups
-        firewall
-        general
-        imp
-        kdeconnect
-        nh
-        niri-flake
-        nuphy
-        nix
-        openssh
-        otd
-        pipewire
-        plymouth
-        sops
-        adb
-        systemd-boot
-        tailscale
-        thunar
-        tlp
-        noct
-        xkb
-        zfs
-        network-manager
-        fish
-        yt-dlp
-        # Users
-        root
-        ladas552
-      ]
-      # Specific Home-Manager modules
-      ++ [
-        {
-          home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
-            { inherit custom; }
-            NixPort
-            cat-mocha
-            gh
-            lf
-            manual
-            thunderbird
-            vesktop
-            git
-            zathura
-            openssh
-          ];
-        }
-      ]
-      ++ [
-        {
-          hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
-            { inherit custom; }
-            direnv
-            obs
-            # git
-            neovide
-            ghostty
-            cat-mocha
-            imv
-            chawan
-            nvf
-            mpv
-            # flameshot
-            helium
-            niri-flake
-            noct
-            bluetooth
-            mpd
-            syncthing
-            fastfetch
-          ];
-        }
-      ];
-  };
+  flake.modules.nixos."hosts/NixPort".imports =
+    with config.flake.modules.nixos;
+    [
+      { inherit custom; }
+      NixPort
+      # Modules
+      ## Games
+      games
+      emulators
+      steam
+      bluetooth
+      cache
+      cat-mocha
+      cups
+      firewall
+      general
+      imp
+      kdeconnect
+      nh
+      niri-flake
+      nuphy
+      nix
+      openssh
+      otd
+      pipewire
+      plymouth
+      sops
+      adb
+      systemd-boot
+      tailscale
+      thunar
+      tlp
+      noct
+      xkb
+      zfs
+      network-manager
+      fish
+      yt-dlp
+      # Users
+      root
+      ladas552
+    ]
+    # Specific Home-Manager modules
+    ++ [
+      {
+        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
+          { inherit custom; }
+          NixPort
+          cat-mocha
+          gh
+          lf
+          manual
+          thunderbird
+          vesktop
+          git
+          zathura
+          openssh
+        ];
+      }
+    ]
+    ++ [
+      {
+        hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
+          { inherit custom; }
+          direnv
+          obs
+          # git
+          neovide
+          ghostty
+          cat-mocha
+          imv
+          chawan
+          nvf
+          mpv
+          # flameshot
+          helium
+          niri-flake
+          noct
+          bluetooth
+          mpd
+          syncthing
+          fastfetch
+        ];
+      }
+    ];
 }

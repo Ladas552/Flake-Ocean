@@ -5,7 +5,7 @@
       programs.helix = {
         extraPackages = [
           pkgs.nixd
-          pkgs.nixfmt-rfc-style
+          pkgs.nixfmt
         ];
         languages = {
           language-server.nixd = {

@@ -17,7 +17,7 @@
       networking.hostName = "NixToks";
       imports = [
         # enable trimming
-        inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+        # inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
       ];
       # Needed for ZFS, generated from command:
       # head -c 8 /etc/machine-id
