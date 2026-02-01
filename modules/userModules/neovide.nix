@@ -15,18 +15,18 @@
     in
     {
       homeManager.neovide =
-        { config, ... }:
+        { lib, config, ... }:
         {
-          programs.neovide = neovide-config // {
-            settings.wsl = if config.custom.meta.hostname == "NixwsL" then true else false;
-          };
+          programs.neovide =
+            neovide-config
+            // lib.optionalAttrs (config.custom.meta.hostname == "NixwsL") { settings.wsl = true; };
         };
       hjem.neovide =
-        { config, ... }:
+        { lib, config, ... }:
         {
-          rum.programs.neovide = neovide-config // {
-            settings.wsl = if config.custom.meta.hostname == "NixwsL" then true else false;
-          };
+          rum.programs.neovide =
+            neovide-config
+            // lib.optionalAttrs (config.custom.meta.hostname == "NixwsL") { settings.wsl = true; };
         };
     };
 }

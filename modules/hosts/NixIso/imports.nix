@@ -23,6 +23,7 @@ in
       cat-mocha
       xkb
       sops
+      fish
       # Users
       root
       # I don't know why, but it creates ladas552 user in my config somewhere, but I use `nixos` user in NixIso
@@ -37,26 +38,37 @@ in
           { inherit custom; }
           NixIso
           vim
-          chromium
-          direnv
-          fastfetch
           gh
-          ghostty
-          helix
-          imv
           lf
           mpv
-          obs
           vesktop
-          rofi
           thunderbird
           zathura
-          shell
-          fish
           manual
-          shell
           cat-mocha
           git
+        ];
+      }
+    ]
+    ++ [
+      {
+        hjem.users."nixos".imports = with config.flake.modules.hjem; [
+          { inherit custom; }
+          direnv
+          obs
+          # git
+          helix
+          ghostty
+          cat-mocha
+          imv
+          chawan
+          mpv
+          helium
+          # flameshot
+          bluetooth
+          mpd
+          syncthing
+          fastfetch
         ];
       }
     ];
