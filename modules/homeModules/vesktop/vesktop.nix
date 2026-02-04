@@ -61,7 +61,6 @@
               "https://aushevahmad.github.io/awesome-css/modules/declutter.css"
               "https://minidiscordthemes.github.io/Snippets/ForumImprovements/main.css"
               "https://raw.githubusercontent.com/tom22k/discord-css/main/Themes/HideNitroUpsellV2.css"
-              "https://aushevahmad.github.io/awesome-css/modules/compressbotmsgs.css"
               "https://dablulite.github.io/css-snippets/TabsV2HomeIcon/import.css"
             ];
             plugins = {
@@ -340,9 +339,6 @@
               ValidUser = {
                 enabled = true;
               };
-              VoiceChatDoubleClick = {
-                enabled = true;
-              };
               ViewIcons = {
                 enabled = true;
                 format = "webp";
@@ -435,7 +431,7 @@
               };
             };
           };
-          themes.enabledThemes = '''';
+          themes.enabledThemes = "";
         };
       };
 
