@@ -56,6 +56,26 @@
         },
         "version": "0.8.4.1"
     },
+    "impermanence": {
+        "cargoLock": null,
+        "date": "2026-01-27",
+        "extract": null,
+        "name": "impermanence",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "7b1d382faf603b6d264f58627330f9faa5cba149",
+            "sha256": "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/nix-community/impermanence"
+        },
+        "version": "7b1d382faf603b6d264f58627330f9faa5cba149"
+    },
     "neorg-conceal-wrap": {
         "cargoLock": null,
         "date": "2025-10-17",
@@ -118,5 +138,45 @@
             "type": "github"
         },
         "version": "e32b2dec08ec5a3ac3c7b0b4a500343886816e85"
+    },
+    "nixos-wsl": {
+        "cargoLock": null,
+        "date": "2026-01-24",
+        "extract": null,
+        "name": "nixos-wsl",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "38a5250e57f583662eac3b944830e4b9e169e965",
+            "sha256": "sha256-RY9kJDXD6+2Td/59LkZ0PFSereCXHdBX9wIkbYjRKCY=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/nix-community/NixOS-WSL"
+        },
+        "version": "38a5250e57f583662eac3b944830e4b9e169e965"
+    },
+    "sops-nix": {
+        "cargoLock": null,
+        "date": "2026-02-03",
+        "extract": null,
+        "name": "sops-nix",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "f990b0a334e96d3ef9ca09d4bd92778b42fd84f9",
+            "sha256": "sha256-NUVGVtYBTC96WhPh4Y3SVM7vf0o1z5W4uqRBn9v1pfo=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/Mic92/sops-nix"
+        },
+        "version": "f990b0a334e96d3ef9ca09d4bd92778b42fd84f9"
     }
 }

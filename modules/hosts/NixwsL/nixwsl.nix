@@ -1,10 +1,10 @@
-{ inputs, ... }:
+{ modules, ... }:
 {
   flake.modules.nixos.NixwsL =
     { config, ... }:
     {
       imports = [
-        inputs.nixos-wsl.nixosModules.default
+        "${modules.nixos-wsl.src}/modules"
       ];
       networking.hostName = "NixwsL";
       wsl = {

@@ -24,3 +24,17 @@ fetch.github = "Zeioth/heirline-components.nvim"
 [cyrillic]
 src.git = "https://github.com/nativerv/cyrillic.nvim"
 fetch.github = "nativerv/cyrillic.nvim"
+
+# NixOS modules
+[impermanence]
+src.git = "https://github.com/nix-community/impermanence"
+fetch.git = "https://github.com/nix-community/impermanence"
+
+[sops-nix]
+src.git = "https://github.com/Mic92/sops-nix"
+fetch.git = "https://github.com/Mic92/sops-nix"
+
+[nixos-wsl]
+src.git = "https://github.com/nix-community/NixOS-WSL"
+fetch.git = "https://github.com/nix-community/NixOS-WSL"
+

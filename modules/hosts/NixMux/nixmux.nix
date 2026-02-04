@@ -94,9 +94,6 @@
       };
 
       home-manager = {
-        extraSpecialArgs = {
-          inherit inputs;
-        };
         backupFileExtension = "hm-bak";
         config = {
           home.stateVersion = "24.05";

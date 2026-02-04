@@ -40,20 +40,7 @@
       inputs.nixpkgs-for-bootstrap.follows = ""; # I don't boot strap from my config
     };
 
-    nixos-wsl = {
-      url = "github:nix-community/NixOS-WSL";
-      inputs.nixpkgs.follows = "nixpkgs";
-      # No useless inputs
-      inputs.flake-compat.follows = "";
-    };
-
     nixos-hardware.url = "github:nixos/nixos-hardware";
-
-    impermanence = {
-      url = "github:nix-community/impermanence";
-      inputs.nixpkgs.follows = "";
-      inputs.home-manager.follows = "";
-    };
 
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
@@ -92,14 +79,29 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Secrets
-    sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Boilerplate
     systems.url = "github:nix-systems/default-linux";
+
+    # Inputs below are either unused, or replaced with nvfetcher inputs
+
+    # Secrets
+    # sops-nix = {
+    #   url = "github:Mic92/sops-nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
+
+    # impermanence = {
+    #   url = "github:nix-community/impermanence";
+    #   inputs.nixpkgs.follows = "";
+    #   inputs.home-manager.follows = "";
+    # };
+
+    # nixos-wsl = {
+    #   url = "github:nix-community/NixOS-WSL";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   # No useless inputs
+    #   inputs.flake-compat.follows = "";
+    # };
 
     # Overlays
     # neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
@@ -121,15 +123,40 @@
   outputs =
     inputs:
     let
+      # Function to stop using `import-tree` by Vic.
+      # Just to lighten the config a bit, written by https://codeberg.org/BANanaD3V
+      # Adaptation stolen from @iynai
       inherit (inputs.nixpkgs.lib.fileset) toList fileFilter;
       import-tree =
         paths:
         toList (
           fileFilter (file: file.hasExt "nix" && !(inputs.nixpkgs.lib.hasPrefix "_" file.name)) paths
         );
+
+      # a way to fetch nix files via nvfetcher and import them in the config
+      # basically parse the json crated by nvfetcher, and use fetchTarball
+      # nvfetcher uses fetchers from nixpkgs by default, so we can't use the generated.nix file here
+      # but can everywhere else.
+      sourcesJson = builtins.fromJSON (builtins.readFile ./_sources/generated.json);
+
+      modules = builtins.mapAttrs (
+        name: value:
+        let
+          src = fetchTarball {
+            url = "${value.src.url}/archive/${value.src.rev}.tar.gz";
+            sha256 = value.src.sha256;
+          };
+        in
+        value // { inherit src; }
+      ) sourcesJson;
     in
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
-      imports = import-tree ./modules;
-      flake.templates = import ./templates;
-    };
+    inputs.flake-parts.lib.mkFlake
+      {
+        inherit inputs;
+        specialArgs = { inherit modules; };
+      }
+      {
+        imports = import-tree ./modules;
+        flake.templates = import ./templates;
+      };
 }

@@ -32,6 +32,7 @@
           ".local/share/bottles"
           ".local/share/openmw"
           ".local/share/osu"
+          ".local/share/Terraria"
         ];
       };
     };

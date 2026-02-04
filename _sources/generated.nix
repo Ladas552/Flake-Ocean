@@ -38,6 +38,20 @@
       sha256 = "sha256-y4KzR+pkBUuyVU+ALrzdY0n2rnTB7lTN2ZmVSzag5vE=";
     };
   };
+  impermanence = {
+    pname = "impermanence";
+    version = "7b1d382faf603b6d264f58627330f9faa5cba149";
+    src = fetchgit {
+      url = "https://github.com/nix-community/impermanence";
+      rev = "7b1d382faf603b6d264f58627330f9faa5cba149";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y=";
+    };
+    date = "2026-01-27";
+  };
   neorg-conceal-wrap = {
     pname = "neorg-conceal-wrap";
     version = "447a76e4abf07ccc5eeb8cc3ee5fae241b434f5a";
@@ -73,5 +87,33 @@
       sha256 = "sha256-jL5oMviGGKo9WgIPSFY3bBNmGuTjpUp+TPO4qW5NGlw=";
     };
     date = "2025-07-12";
+  };
+  nixos-wsl = {
+    pname = "nixos-wsl";
+    version = "38a5250e57f583662eac3b944830e4b9e169e965";
+    src = fetchgit {
+      url = "https://github.com/nix-community/NixOS-WSL";
+      rev = "38a5250e57f583662eac3b944830e4b9e169e965";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-RY9kJDXD6+2Td/59LkZ0PFSereCXHdBX9wIkbYjRKCY=";
+    };
+    date = "2026-01-24";
+  };
+  sops-nix = {
+    pname = "sops-nix";
+    version = "f990b0a334e96d3ef9ca09d4bd92778b42fd84f9";
+    src = fetchgit {
+      url = "https://github.com/Mic92/sops-nix";
+      rev = "f990b0a334e96d3ef9ca09d4bd92778b42fd84f9";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-NUVGVtYBTC96WhPh4Y3SVM7vf0o1z5W4uqRBn9v1pfo=";
+    };
+    date = "2026-02-03";
   };
 }
