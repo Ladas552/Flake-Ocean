@@ -171,12 +171,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "f990b0a334e96d3ef9ca09d4bd92778b42fd84f9",
-            "sha256": "sha256-NUVGVtYBTC96WhPh4Y3SVM7vf0o1z5W4uqRBn9v1pfo=",
+            "rev": "17eea6f3816ba6568b8c81db8a4e6ca438b30b7c",
+            "sha256": "sha256-ktjWTq+D5MTXQcL9N6cDZXUf9kX8JBLLBLT0ZyOTSYY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Mic92/sops-nix"
         },
-        "version": "f990b0a334e96d3ef9ca09d4bd92778b42fd84f9"
+        "version": "17eea6f3816ba6568b8c81db8a4e6ca438b30b7c"
     }
 }

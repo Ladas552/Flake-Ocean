@@ -104,15 +104,15 @@
   };
   sops-nix = {
     pname = "sops-nix";
-    version = "f990b0a334e96d3ef9ca09d4bd92778b42fd84f9";
+    version = "17eea6f3816ba6568b8c81db8a4e6ca438b30b7c";
     src = fetchgit {
       url = "https://github.com/Mic92/sops-nix";
-      rev = "f990b0a334e96d3ef9ca09d4bd92778b42fd84f9";
+      rev = "17eea6f3816ba6568b8c81db8a4e6ca438b30b7c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-NUVGVtYBTC96WhPh4Y3SVM7vf0o1z5W4uqRBn9v1pfo=";
+      sha256 = "sha256-ktjWTq+D5MTXQcL9N6cDZXUf9kX8JBLLBLT0ZyOTSYY=";
     };
     date = "2026-02-03";
   };

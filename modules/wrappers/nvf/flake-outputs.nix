@@ -4,6 +4,7 @@
 # - cord.nvim
 # - parinfer-rust
 # - module for numb.nvim
+# - module for blink-pairs
 {
   perSystem =
     { pkgs, ... }:
@@ -12,6 +13,7 @@
         auto-save
         autocmd
         blink-cmp
+        blink-pairs
         cat-mocha
         colorizer
         cyrillic
@@ -24,7 +26,6 @@
         neogit
         neorg
         numb
-        nvim-autopairs
         nvim-surround
         oil
         options
