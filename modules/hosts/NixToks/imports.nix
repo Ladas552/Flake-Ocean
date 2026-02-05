@@ -16,6 +16,7 @@ in
       NixToks
       cat-mocha
       general
+      cache
       grub
       nix
       sops
@@ -23,6 +24,7 @@ in
       zfs
       dashboard
       ollama
+      open-webui
       # immich
       jellyfin
       karakeep
@@ -38,6 +40,9 @@ in
       qemu
       tlp
       xkb
+      fish
+      yt-dlp
+
       # Modules
       # Users
       root
@@ -50,19 +55,25 @@ in
           { inherit custom; }
           NixToks
           cat-mocha
-          direnv
-          fastfetch
-          fish
           gh
           git
           lf
           manual
-          helix
-          mpd
           openssh
-          syncthing
-          yt-dlp
+        ];
+      }
+    ]
+    ++ [
+      {
+        hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
+          { inherit custom; }
           nvf
+          mpd
+          syncthing
+          helix
+          direnv
+          fastfetch
+          cat-mocha
         ];
       }
     ];

@@ -36,7 +36,6 @@
         }
       ];
       services = [
-
         {
           "Share/Download files" = [
             {
@@ -84,6 +83,12 @@
               "Miniflux" = {
                 description = "RSS feed";
                 href = "http://100.74.112.27:8067";
+              };
+            }
+            {
+              "Open-WebUI" = {
+                description = "My Ollama instance";
+                href = "http://100.74.112.27:1212";
               };
             }
           ];
