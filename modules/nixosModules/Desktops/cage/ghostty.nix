@@ -16,7 +16,7 @@
 
       services.cage = {
         enable = true;
-        program = ''${lib.meta.getExe' pkgs.ghostty "ghostty"}'';
+        program = "${lib.meta.getExe' pkgs.ghostty "ghostty"}";
         extraArguments = [
           "-m"
           "extend"

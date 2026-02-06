@@ -6,7 +6,7 @@
         event = [ "textyankpost" ];
         pattern = [ "*" ];
         callback.__raw = # lua
-          ''function() vim.highlight.on_yank({ higroup = 'visual', timeout = 300 }) end'';
+          "function() vim.highlight.on_yank({ higroup = 'visual', timeout = 300 }) end";
       }
       {
         desc = "Preserve last editing position";

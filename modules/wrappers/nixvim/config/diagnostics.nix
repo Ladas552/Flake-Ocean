@@ -1,4 +1,3 @@
-{ ... }:
 {
   flake.modules.nixvim.diagnostics = {
     # Config for diagnostics with lsp
@@ -10,7 +9,7 @@
       {
         underline = {
           enable = true;
-          severity.min.__raw = ''${sy}.WARN'';
+          severity.min.__raw = "${sy}.WARN";
         };
         virtual_lines = {
           enable = true;
@@ -25,7 +24,7 @@
           show_header = false;
         };
         signs = {
-          severity.min.__raw = ''${sy}.HINT'';
+          severity.min.__raw = "${sy}.HINT";
           text = {
             "${rsy}.ERROR" = "";
             "${rsy}.WARN" = "";

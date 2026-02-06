@@ -12,7 +12,7 @@
         {
           underline = {
             enable = true;
-            severity.min = raw ''${sy}.WARN'';
+            severity.min = raw "${sy}.WARN";
           };
           virtual_lines = {
             enable = true;
@@ -27,7 +27,7 @@
             show_header = false;
           };
           signs = {
-            severity.min = raw ''${sy}.HINT'';
+            severity.min = raw "${sy}.HINT";
             text = raw ''
               {
               [${sy}.ERROR] = "",

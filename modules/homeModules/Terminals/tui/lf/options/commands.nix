@@ -8,9 +8,9 @@
       programs.lf = {
         commands = {
           trash = ''%${lib.getExe' pkgs.trash-cli "trash-put"} "$fx"'';
-          open-nvim = ''$nvim $f'';
-          open-helix = ''$hx $f'';
-          q = ''quit'';
+          open-nvim = "$nvim $f";
+          open-helix = "$hx $f";
+          q = "quit";
           touch = # bash
             ''
               %{{
@@ -44,11 +44,11 @@
           # Ranger muscle memory
           Dd = "trash";
           DD = "delete";
-          "<f-7>" = ''touch'';
-          "<f-1>" = ''touch'';
-          "<c-d>" = ''quit'';
+          "<f-7>" = "touch";
+          "<f-1>" = "touch";
+          "<c-d>" = "quit";
           V = "unselect";
-          "<esc>" = '':unselect;clear'';
+          "<esc>" = ":unselect;clear";
           t = ":tag-toggle; down";
           w = "";
           S = "$fish";
@@ -60,7 +60,7 @@
           f = "search";
           F = "filter";
           # Zoxide integration
-          z = ''push :z<space>'';
+          z = "push :z<space>";
         };
         cmdKeybindings = {
           "<tab>" = "cmd-menu-complete";

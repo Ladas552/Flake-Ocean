@@ -42,14 +42,12 @@
             };
 
         devShells.default = pkgs.mkShell {
-          nativeBuildInputs =
-            with pkgs;
-            [
-              rustToolchain
-              pkg-config
-              gcc
-              openssl
-            ];
+          nativeBuildInputs = with pkgs; [
+            rustToolchain
+            pkg-config
+            gcc
+            openssl
+          ];
         };
       }
     );

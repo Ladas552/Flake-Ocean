@@ -78,34 +78,33 @@
           buildInputs =
             with pkgs;
             let
-              rustBuildInputs =
+              rustBuildInputs = [
+                pkgs.openssl
+                pkgs.libiconv
+                pkgs.pkg-config
+              ]
+              ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
+                pkgs.glib
+                pkgs.gtk3
+                pkgs.libsoup_3
+                pkgs.webkitgtk_4_1
+                pkgs.xdotool
+                pkgs.cairo
+                pkgs.gdk-pixbuf
+                pkgs.gobject-introspection
+                pkgs.atkmm
+                pkgs.pango
+              ]
+              ++ pkgs.lib.optionals pkgs.stdenv.isDarwin (
+                with pkgs.darwin.apple_sdk.frameworks;
                 [
-                  pkgs.openssl
-                  pkgs.libiconv
-                  pkgs.pkg-config
+                  IOKit
+                  Carbon
+                  WebKit
+                  Security
+                  Cocoa
                 ]
-                ++ pkgs.lib.optionals pkgs.stdenv.isLinux [
-                  pkgs.glib
-                  pkgs.gtk3
-                  pkgs.libsoup_3
-                  pkgs.webkitgtk_4_1
-                  pkgs.xdotool
-                  pkgs.cairo
-                  pkgs.gdk-pixbuf
-                  pkgs.gobject-introspection
-                  pkgs.atkmm
-                  pkgs.pango
-                ]
-                ++ pkgs.lib.optionals pkgs.stdenv.isDarwin (
-                  with pkgs.darwin.apple_sdk.frameworks;
-                  [
-                    IOKit
-                    Carbon
-                    WebKit
-                    Security
-                    Cocoa
-                  ]
-                );
+              );
             in
             [
               (pkgs.rust-bin.stable.latest.default.override {
