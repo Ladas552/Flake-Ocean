@@ -23,6 +23,13 @@
           # I wanted to add fonts based on custom.style, but I can't put pkgs args in let in
           fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
           imports = [ config.flake.modules.nixos.fonts ];
+          # Thanks @Gerg
+          programs.dconf.profiles.user.databases = [
+            {
+              lockAll = false;
+              settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
+            }
+          ];
         };
       hjem.cat-mocha =
         { config, ... }:

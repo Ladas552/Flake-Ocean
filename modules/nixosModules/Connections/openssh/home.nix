@@ -22,7 +22,7 @@
         matchBlocks."github.com" = {
           host = "github.com";
           user = "Ladas552";
-          identityFile = [ "~/.ssh/NixToks" ];
+          identityFile = [ "~/.ssh/NixToks.pub" ];
         };
 
         matchBlocks."aur.archlinux.org" = {

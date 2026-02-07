@@ -1,5 +1,5 @@
 {
-  "settingsVersion": 47,
+  "settingsVersion": 49,
   "bar": {
     "barType": "simple",
     "position": "left",
@@ -8,6 +8,7 @@
     "showOutline": false,
     "showCapsule": false,
     "capsuleOpacity": 1,
+    "capsuleColorKey": "none",
     "backgroundOpacity": 1,
     "useSeparateOpacity": true,
     "floating": false,
@@ -32,13 +33,13 @@
           "useDistroLogo": true
         },
         {
-          "colorName": "tertiary",
+          "iconColor": "error",
           "id": "SessionMenu"
         },
         {
           "icon": "rocket",
-          "id": "Launcher",
-          "usePrimaryColor": false
+          "iconColor": "none",
+          "id": "Launcher"
         },
         {
           "defaultSettings": {
@@ -78,6 +79,7 @@
           "showArtistFirst": true,
           "showProgressRing": true,
           "showVisualizer": false,
+          "textColor": "none",
           "useFixedWidth": false,
           "visualizerType": "linear"
         }
@@ -113,6 +115,7 @@
       "right": [
         {
           "blacklist": [],
+          "chevronColor": "none",
           "colorizeIcons": true,
           "drawerEnabled": true,
           "hidePassive": false,
@@ -122,17 +125,22 @@
         {
           "hideWhenZero": true,
           "hideWhenZeroUnread": false,
+          "iconColor": "none",
           "id": "NotificationHistory",
           "showUnreadBadge": false,
           "unreadBadgeColor": "primary"
         },
         {
           "displayMode": "onhover",
-          "id": "Network"
+          "iconColor": "none",
+          "id": "Network",
+          "textColor": "none"
         },
         {
           "displayMode": "onhover",
-          "id": "Bluetooth"
+          "iconColor": "none",
+          "id": "Bluetooth",
+          "textColor": "none"
         },
         {
           "deviceNativePath": "",
@@ -145,17 +153,21 @@
         },
         {
           "displayMode": "onhover",
+          "iconColor": "none",
           "id": "Volume",
-          "middleClickCommand": "pwvucontrol || pavucontrol"
+          "middleClickCommand": "pwvucontrol || pavucontrol",
+          "textColor": "none"
         },
         {
           "displayMode": "forceOpen",
+          "iconColor": "none",
           "id": "KeyboardLayout",
-          "showIcon": false
+          "showIcon": false,
+          "textColor": "none"
         },
         {
-          "clockColor": "none",
-          "customFont": "",
+          "clockColor": "primary",
+          "customFont": "DejaVu Math TeX Gyre",
           "formatHorizontal": "HH:mm ddd, MMM dd",
           "formatVertical": "HH mm --- dd MMM",
           "id": "Clock",
@@ -368,6 +380,8 @@
     "diskCriticalThreshold": 90,
     "diskAvailWarningThreshold": 20,
     "diskAvailCriticalThreshold": 10,
+    "batteryWarningThreshold": 30,
+    "batteryCriticalThreshold": 5,
     "cpuPollingInterval": 1000,
     "gpuPollingInterval": 3000,
     "enableDgpuMonitoring": false,
@@ -417,37 +431,43 @@
         "action": "lock",
         "command": "",
         "countdownEnabled": false,
-        "enabled": true
+        "enabled": true,
+        "keybind": ""
       },
       {
         "action": "suspend",
         "command": "",
         "countdownEnabled": false,
-        "enabled": true
+        "enabled": true,
+        "keybind": ""
       },
       {
         "action": "hibernate",
         "command": "",
         "countdownEnabled": false,
-        "enabled": false
+        "enabled": false,
+        "keybind": ""
       },
       {
         "action": "reboot",
         "command": "",
         "countdownEnabled": false,
-        "enabled": true
+        "enabled": true,
+        "keybind": ""
       },
       {
         "action": "logout",
         "command": "",
         "countdownEnabled": false,
-        "enabled": false
+        "enabled": false,
+        "keybind": ""
       },
       {
         "action": "shutdown",
         "command": "",
         "countdownEnabled": false,
-        "enabled": true
+        "enabled": true,
+        "keybind": ""
       }
     ]
   },
@@ -477,8 +497,7 @@
     },
     "enableMediaToast": false,
     "enableKeyboardLayoutToast": false,
-    "batteryWarningThreshold": 30,
-    "batteryCriticalThreshold": 5
+    "enableBatteryToast": true
   },
   "osd": {
     "enabled": true,
@@ -553,6 +572,9 @@
     "performanceModeDisabled": "",
     "startup": "",
     "session": ""
+  },
+  "plugins": {
+    "autoUpdate": true
   },
   "desktopWidgets": {
     "enabled": false,

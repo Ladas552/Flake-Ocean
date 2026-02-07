@@ -8,6 +8,7 @@
         services.login.enableGnomeKeyring = true;
         # Can use ssh instead of password on system
         sshAgentAuth.enable = true;
+        services.sudo.sshAgentAuth = true;
       };
       # Makes my reboots hang on poweroff sometimes
       # services.sshguard.enable = true;
