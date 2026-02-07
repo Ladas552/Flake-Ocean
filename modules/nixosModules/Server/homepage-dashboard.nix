@@ -30,7 +30,8 @@
         }
         {
           search = {
-            provider = "duckduckgo";
+            provider = "custom";
+            url = "http://100.74.112.27:3038/search?q=";
             target = "_blank";
           };
         }

@@ -25,6 +25,7 @@ in
       dashboard
       ollama
       open-webui
+      searxng
       # immich
       jellyfin
       karakeep
