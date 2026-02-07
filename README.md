@@ -70,4 +70,4 @@ Also for that [one guy](https://codeberg.org/Dich0tomy/snowstorm) who switched t
 
 Also [this post from drupol](https://not-a-number.io/2025/refactoring-my-infrastructure-as-code-configurations/) was huge help in migrating my config to dendritic
 
-Also, thanks to everyone in nix-community for being so awesome, wouldn't be there without ya
+Also, thanks to everyone in Nix community for being so awesome, wouldn't be there without ya
