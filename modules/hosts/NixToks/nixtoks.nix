@@ -1,7 +1,6 @@
 {
   flake.modules.nixos.NixToks =
     {
-      inputs,
       config,
       pkgs,
       ...

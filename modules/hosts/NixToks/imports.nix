@@ -42,7 +42,7 @@ in
       tlp
       xkb
       fish
-      yt-dlp
+      yt-dlp-NixToks
 
       # Modules
       # Users
