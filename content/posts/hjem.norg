@@ -1,0 +1,21 @@
+@document.meta
+title: Hjem
+description: link your home and feel superiour
+authors: [
+  ladas552
+]
+categories: [
+  Home
+  linker
+  dotfiles
+]
+created: 2026-02-08T21:09:52+05:00
+updated: 2026-02-08T21:09:52+05:00
+draft: true
+layout: post
+version: 1.1.1
+@end
+
+* Hjem
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+  labore et dolore magna aliqua. Lobortis scelerisque fermentum dui faucibus in ornare.

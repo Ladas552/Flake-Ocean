@@ -6,7 +6,7 @@
   };
 
   outputs =
-    { self, nixpkgs, ... }:
+    { nixpkgs, ... }:
     {
       devShells = {
         x86_64-linux =

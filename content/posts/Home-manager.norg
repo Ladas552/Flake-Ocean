@@ -1,0 +1,20 @@
+@document.meta
+title: Home Manager
+description: Lazy house keeping service
+authors: [
+  ladas552
+]
+categories: [
+  Home
+  dotfiles
+]
+created: 2026-02-08T21:13:36+05:00
+updated: 2026-02-08T21:13:36+05:00
+draft: true
+layout: post
+version: 1.1.1
+@end
+
+* Home Manager
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+  labore et dolore magna aliqua. Lobortis scelerisque fermentum dui faucibus in ornare.

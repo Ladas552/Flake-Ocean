@@ -1,0 +1,383 @@
+/* Prism Sweetie Theme - Improved Code Block Styling */
+
+/* Base code block styles */
+pre[class*="language-"] {
+    --padding-y: var(--am-prism-padding-y, 1rem);
+    --padding-x: var(--am-prism-padding-x, 1rem);
+    padding: var(--padding-y) var(--padding-x);
+    overflow: auto;
+    font-size: var(--am-prism-font-size, 0.85em);
+    border-radius: var(--am-prism-border-radius, 0.4em);
+    line-height: 1.6;
+    /* Fixed: More consistent line spacing */
+}
+
+/* Code inside pre blocks */
+pre>code[class*="language-"] {
+    padding: initial;
+    font-size: 1em;
+    font-weight: 400;
+    font-family: var(--am-prism-font-family, "JetBrains Mono", "Fira Code", ui-monospace), monospace;
+    line-height: 1.6;
+    /* Fixed: Consistent line height */
+    background-color: initial;
+}
+
+/* General code/pre language settings */
+code[class*="language-"],
+pre[class*="language-"] {
+    text-align: left;
+    white-space: pre;
+    word-spacing: normal;
+    word-break: normal;
+    word-wrap: normal;
+    -moz-tab-size: 4;
+    -o-tab-size: 4;
+    tab-size: 4;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
+    hyphens: none;
+}
+
+/* Line numbers */
+pre[class*="language-"] .line-numbers-rows {
+    box-sizing: content-box;
+    margin: calc(var(--padding-y) * -1) 0;
+    padding: var(--padding-y) 0;
+}
+
+.line-numbers.line-numbers .line-numbers-rows {
+    border-right-width: var(--am-prism-border-width, 1px);
+    border-right-color: var(--am-prism-border-color);
+}
+
+.line-numbers .line-numbers-rows>span:before {
+    color: var(--am-prism-line-numbers-color);
+}
+
+/* Toolbar positioning */
+div.code-toolbar>.toolbar {
+    top: 0.3rem !important;
+    right: 0.3rem !important;
+}
+
+/* Copy button styling */
+div.code-toolbar>.toolbar>.toolbar-item>button.copy-to-clipboard-button {
+    display: inline-flex;
+    padding: 0 0.75em;
+    font-size: var(--am-prism-font-size, 0.8em);
+    font-family: var(--am-prism-font-family, "JetBrains Mono", "Fira Code", ui-monospace), monospace;
+    font-weight: 600 !important;
+    line-height: 2.25em;
+    color: var(--am-prism-copy-color);
+    background-color: var(--am-prism-copy-bg);
+    border-radius: calc(var(--am-prism-border-radius, 0.4em) - 0.1em);
+    cursor: pointer;
+    box-shadow: none;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+div.code-toolbar>.toolbar>.toolbar-item>button.copy-to-clipboard-button:hover {
+    opacity: 0.8;
+}
+
+div.code-toolbar>.toolbar>.toolbar-item>button.copy-to-clipboard-button:focus {
+    opacity: 1;
+}
+
+/* ==================== Light Theme ==================== */
+code[class*="language-"],
+pre[class*="language-"] {
+    color: #202023;
+}
+
+pre[class*="language-"] {
+    background: #bbbbce;
+}
+
+:not(pre)>code[class*="language-"] {
+    padding: 0.1em 0.3em;
+    border-radius: 0.3em;
+    color: #202023;
+    background: #bbbbce;
+}
+
+/* Line highlighting */
+pre[data-line] {
+    position: relative;
+}
+
+pre[class*="language-"]>code[class*="language-"] {
+    position: relative;
+    z-index: 1;
+}
+
+.line-highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: inherit 0;
+    margin-top: 1em;
+    background: #fff8c5;
+    box-shadow: inset 5px 0 0 #eed888;
+    z-index: 0;
+    pointer-events: none;
+    line-height: inherit;
+    white-space: pre;
+}
+
+/* Tokens - Light theme */
+.namespace {
+    opacity: 0.7;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+    color: #8989a9;
+}
+
+.token.punctuation,
+.token.operator {
+    color: #0c5090;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted,
+.token.class-name {
+    color: #ae580e;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+    color: #287f0d;
+}
+
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+    color: #287f0d;
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+    color: #0c5090;
+}
+
+.token.function {
+    color: #a00c79;
+}
+
+.token.regex,
+.token.important,
+.token.variable,
+.token.macro {
+    color: #9437ff;
+}
+
+.token.important,
+.token.bold {
+    font-weight: 700;
+}
+
+.token.italic {
+    font-style: italic;
+}
+
+.token.entity {
+    cursor: help;
+}
+
+/* CSS Variables - Light theme */
+:root {
+    --am-prism-line-numbers-color: rgba(24, 24, 26, 0.47);
+    --am-prism-border-color: rgba(24, 24, 26, 0.13);
+    --am-prism-copy-color: rgba(32, 32, 35, 0.67);
+    --am-prism-copy-bg: rgba(120, 120, 157, 0.13);
+}
+
+/* ==================== Dark Theme ==================== */
+html[class*="-dark"],
+html[class*="dark-"],
+.dark {
+
+    & code[class*="language-"],
+    & pre[class*="language-"] {
+        color: #d3d7de;
+    }
+
+    & pre[class*="language-"] {
+        background: #303040;
+    }
+
+    & :not(pre)>code[class*="language-"] {
+        padding: 0.1em 0.3em;
+        border-radius: 0.3em;
+        color: #bdbdbd;
+        background: #303040;
+    }
+
+    & pre[data-line] {
+        position: relative;
+    }
+
+    & pre[class*="language-"]>code[class*="language-"] {
+        position: relative;
+        z-index: 1;
+    }
+
+    & .line-highlight {
+        position: absolute;
+        left: 0;
+        right: 0;
+        padding: inherit 0;
+        margin-top: 1em;
+        background: #2f2a1e;
+        box-shadow: inset 5px 0 0 #674c16;
+        z-index: 0;
+        pointer-events: none;
+        line-height: inherit;
+        white-space: pre;
+    }
+
+    & .namespace {
+        opacity: 0.7;
+    }
+
+    & .token.comment,
+    & .token.prolog,
+    & .token.doctype,
+    & .token.cdata {
+        color: #798399;
+    }
+
+    & .token.punctuation,
+    & .token.operator,
+    & .token.variable {
+        color: #73a3f3;
+    }
+
+    & .token.property,
+    & .token.tag,
+    & .token.boolean,
+    & .token.number,
+    & .token.constant,
+    & .token.symbol,
+    & .token.deleted,
+    & .token.class-name {
+        color: #e7a06a;
+    }
+
+    & .token.selector,
+    & .token.attr-name,
+    & .token.string,
+    & .token.char,
+    & .token.builtin,
+    & .token.inserted {
+        color: #89c252;
+    }
+
+    & .token.entity,
+    & .token.url,
+    & .language-css .token.string,
+    & .style .token.string {
+        color: #89c252;
+        background: #161b22;
+    }
+
+    & .token.atrule,
+    & .token.keyword {
+        color: #73a3f3;
+    }
+
+    & .token.attr-value,
+    & .token.function {
+        color: #d087e8;
+    }
+
+    & .token.regex,
+    & .token.important,
+    & .token.macro {
+        color: #b094e2;
+    }
+
+    & .token.important,
+    & .token.bold {
+        font-weight: 700;
+    }
+
+    & .token.italic {
+        font-style: italic;
+    }
+
+    & .token.entity {
+        cursor: help;
+    }
+
+    /* CSS Variables - Dark theme */
+    --am-prism-line-numbers-color: rgba(189, 189, 189, 0.33);
+    --am-prism-border-color: rgba(189, 189, 189, 0.13);
+    --am-prism-copy-color: #d3d7de;
+    --am-prism-copy-bg: rgba(112, 123, 135, 0.13);
+}
+
+/* ==================== Custom Scrollbar Styling ==================== */
+/* Fixed: Smaller, more refined scrollbar */
+pre[class*="language-"]::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Dark theme scrollbar adjustments */
+html[class*="-dark"] pre[class*="language-"]::-webkit-scrollbar-thumb,
+html[class*="dark-"] pre[class*="language-"]::-webkit-scrollbar-thumb,
+.dark pre[class*="language-"]::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+html[class*="-dark"] pre[class*="language-"]::-webkit-scrollbar-thumb:hover,
+html[class*="dark-"] pre[class*="language-"]::-webkit-scrollbar-thumb:hover,
+.dark pre[class*="language-"]::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* Firefox scrollbar styling */
+pre[class*="language-"] {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+html[class*="-dark"] pre[class*="language-"],
+html[class*="dark-"] pre[class*="language-"],
+.dark pre[class*="language-"] {
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}

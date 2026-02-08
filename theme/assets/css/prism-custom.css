@@ -1,0 +1,76 @@
+/* Custom Prism enhancements - Font, Line Spacing, and Scrollbar */
+/* This file adds improvements without changing Catppuccin colors */
+
+/* Better line spacing and font - Terminal-like tight spacing */
+pre[class*="language-"] {
+    line-height: 1.2 !important;
+}
+
+pre>code[class*="language-"] {
+    font-family: "JetBrains Mono", "Fira Code", ui-monospace, monospace !important;
+    line-height: 1.2 !important;
+}
+
+/* Remove Tab navigation - code blocks shouldn't be focusable */
+pre[class*="language-"],
+code[class*="language-"] {
+    outline: none !important;
+}
+
+pre[class*="language-"]:focus,
+code[class*="language-"]:focus {
+    outline: none !important;
+}
+
+/* Prevent code blocks from being tabbable */
+pre[class*="language-"] {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    user-select: text;
+}
+
+/* Smaller, refined scrollbar for code blocks */
+pre[class*="language-"]::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 3px;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+pre[class*="language-"]::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+/* Dark theme scrollbar adjustments */
+html[class*="-dark"] pre[class*="language-"]::-webkit-scrollbar-thumb,
+html[class*="dark-"] pre[class*="language-"]::-webkit-scrollbar-thumb,
+.dark pre[class*="language-"]::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+html[class*="-dark"] pre[class*="language-"]::-webkit-scrollbar-thumb:hover,
+html[class*="dark-"] pre[class*="language-"]::-webkit-scrollbar-thumb:hover,
+.dark pre[class*="language-"]::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.35);
+}
+
+/* Firefox scrollbar styling */
+pre[class*="language-"] {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+}
+
+html[class*="-dark"] pre[class*="language-"],
+html[class*="dark-"] pre[class*="language-"],
+.dark pre[class*="language-"] {
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
