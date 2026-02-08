@@ -1,0 +1,101 @@
+@document.meta
+title: Nvfetcher
+description: Inputs outside of flakes
+authors: [
+  ladas552
+]
+categories: [
+  inputs
+  un-flake
+]
+created: 2026-02-08
+draft: false
+layout: post
+version: 1.1.1
+@end
+
+** What is Nvfetcher?
+   It's a Haskell program that takes values from a toml file and generates fetched inputs that I can use in my config. Without having to manually update the Hash, but still remain locked on per commit basis. Same as `flake.lock`.
+** Why don't you just use flakes?
+   Even tho I love flakes, I can acknowledge that they have issues. Namely, in the context of inputs:
+   - Unchanged `follows` for inputs will download unnecessary code, that in context of something big as nixpkgs can cost 40MiB of download data per input and per `nix flake update`;
+   - You can't define inputs to download stuff only when needed. The `ghostty-shaders` input will be downloaded during update on both Desktop, a server and even on the phone. Can't decide whether it's needed there or not;
+   - Inputs are hella slow. No, I am not benchmarking it, just feels like this.
+
+   In this case, Nvfetcher comes in handy. Fetchers work only if you import the input. 
+*** What about Npins?
+    I don't like using cli interface to generate fetches. Also It has problems with AppImages.
+** How to use Nvfetcher?
+   Go read the docs in the {https://github.com/berberman/nvfetcher}[project's repository]. 
+
+   TLDR: define source and fetcher in toml file, 2 files are generated, you import nix file with `pkgs.callPackage`, or read json file directly with `builtins.fromJSON` and `builtins.readFile` if `pkgs` isn't available on the scope, or you want to import a fetched nix file inside of your nix module.
+
+   For example, it works wonders for fetching neovim plugins.
+   @code nix
+   # nvfetcher pins
+   sources = pkgs.callPackage "${self}/_sources/generated.nix" { };
+   heirline-components = pkgs.vimUtils.buildVimPlugin {
+     name = "heirline-components.nvim";
+     doCheck = false;
+     src = sources.heirline-components.src;
+   };
+   @end
+
+   Then I can call `heirline-components` in a package list to install it. I use `self` to avoid using relative paths, and keep my config modules independent of location.
+
+   And here is a custom example of using the json file directly. 
+
+   @code nix
+   sourcesJson = builtins.fromJSON (builtins.readFile ./_sources/generated.json);
+
+   modules = builtins.mapAttrs (
+     name: value:
+       let
+         src = fetchTarball {
+         url = "${value.src.url}/archive/${value.src.rev}.tar.gz";
+           sha256 = value.src.sha256;
+         };
+       in
+     value // { inherit src; }
+   ) sourcesJson;
+   @end
+
+   This snippet is in my `flake.nix`. I use it to create a `specialArgs` in my config called `modules`. In any file I can add `modules` to the top and import some file from Nvfetcher inputs.
+
+   Demonstration of one of my hosts that is NixOS-WSL based.
+
+   @code nix
+   { modules, ... }:
+   {
+    flake.modules.nixos.NixwsL =
+    { config, ... }:
+    {
+      imports = [
+        "${modules.nixos-wsl.src}/modules"
+      ];
+      networking.hostName = "NixwsL";
+      wsl = {
+        enable = true;
+        # if you are wondering what these config options are
+        # it will be explained in another article
+        defaultUser = "${config.custom.meta.user}";
+        startMenuLaunchers = true;
+        tarball.configPath = "${config.custom.meta.self}";
+        usbip.enable = true;
+        useWindowsDriver = true;
+      };
+
+      system.stateVersion = "24.05"; # Do you like bunnies?
+
+      nixpkgs.hostPlatform = "x86_64-linux";
+    };
+   }
+   @end
+
+   `"${modules.nixos-wsl.src}/modules"` is equivalent to importing `inputs.nixos-wsl.nixosModules.default`. But it will be fetched only if I use NixOS-WSL, and not on other hosts.
+** Roll the credits
+   Okay, that's about all I know and use Nvfetcher for, as always, Thanks goes to:
+   - {https://github.com/berberman}[@berberman] - for creating and maintaining such a nice program;
+   - {https://github.com/iynaix}[@iynaix] - for information that Nvfetcher exists;
+   - {https://git.gay/sunworms}[@sunworms] - for sharing a way to parse json file directly;
+   - *You* - for reading to the end, have a nice day and reproducible builds.
