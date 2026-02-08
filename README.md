@@ -42,7 +42,7 @@ I also write some [blog posts about Nix](https://ladas552.me/Flake-Ocean/), feel
 
 ## Nvfetcher
 
-I also have inputs in `./_sources/`, they are generated with `nvfetcher` after editing the `./nvfetcher.toml` file. Instead of `nix flake update`, I update them with `nix run github:berberman/nvfetcher`.
+I also have inputs in `./_sources/`, they are generated with `nvfetcher` after editing the `./nvfetcher.toml` file. Instead of `nix flake update`, I update them with `nix run nixpkgs#nvfetcher`.
 
 To use them, use inputs from it:
 
@@ -52,7 +52,9 @@ sources = pkgs.callPackage "${self}/_sources/generated.nix" { };
 
 Then with `sources.<input-name>.src` you can skip manual fetching for neovim plugins for example.
 
-I also use nvfetcher to fetch nixos modules, the method described in the `flake.nix` file.
+I also use nvfetcher to fetch nixos modules, the method described in the `flake.nix` file. 
+
+[Check out a blog post about it](https://ladas552.me/Flake-Ocean/posts/Nvfetcher/)
 
 ## Screenshot if you care
 ![desktop](https://ladas552.me/assets/desktop/desktop.png)

@@ -32,6 +32,7 @@
         typst
         xarchiver
         zotero
+        nvfetcher
       ];
       # Environmental Variables
       home.sessionVariables = {
