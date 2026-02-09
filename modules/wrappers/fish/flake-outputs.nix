@@ -50,6 +50,7 @@
             # Only source once
             # set -q __fish_config_sourced; and exit
             # set -gx __fish_config_sourced 1
+            set fish_greeting
             set -gx pure_show_system_time true
             set -gx pure_color_system_time FF78C5
 
