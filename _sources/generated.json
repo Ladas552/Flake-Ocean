@@ -159,6 +159,26 @@
         },
         "version": "5b50ea1aaa14945d4794c80fcc99c4aa1db84d2d"
     },
+    "noctalia-dev": {
+        "cargoLock": null,
+        "date": "2026-02-09",
+        "extract": null,
+        "name": "noctalia-dev",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "ba79acf68715040c8876973557b38935c6af1011",
+            "sha256": "sha256-aVx6DO33dxeK5dA2ziVkGxhD3SGpfibW9hNnx8BwKJo=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/noctalia-dev/noctalia-shell"
+        },
+        "version": "ba79acf68715040c8876973557b38935c6af1011"
+    },
     "sops-nix": {
         "cargoLock": null,
         "date": "2026-02-10",

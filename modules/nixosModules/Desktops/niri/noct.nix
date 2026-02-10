@@ -1,21 +1,27 @@
-{ inputs, ... }:
+{ modules, ... }:
 {
   flake.modules = {
     nixos.noct =
       { pkgs, lib, ... }:
+      let
+        noct = pkgs.callPackage "${modules.noctalia-dev.src}/nix/package.nix" {
+          calendarSupport = true;
+        };
+      in
       {
         environment.systemPackages = with pkgs; [
-          (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
-            calendarSupport = true;
-          })
+          noct
           gpu-screen-recorder
         ];
         # import the nixos module
         imports = [
-          inputs.noctalia.nixosModules.default
+          "${modules.noctalia-dev.src}/nix/nixos-module.nix"
         ];
         # enable the systemd service
-        services.noctalia-shell.enable = true;
+        services.noctalia-shell = {
+          enable = true;
+          package = noct;
+        };
 
         # make calendar events work
         services.gnome.evolution-data-server.enable = true;
@@ -35,7 +41,7 @@
       };
     homeManager.noct = {
       imports = [
-        inputs.noctalia.homeModules.default
+        "${modules.noctalia-dev.src}/nix/home-module.nix"
       ];
       programs.noctalia-shell = {
         enable = true;

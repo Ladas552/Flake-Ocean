@@ -74,11 +74,6 @@
       inputs.git-hooks.follows = "";
     };
 
-    noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # Boilerplate
     systems.url = "github:nix-systems/default-linux";
 
@@ -101,6 +96,11 @@
     #   inputs.nixpkgs.follows = "nixpkgs";
     #   # No useless inputs
     #   inputs.flake-compat.follows = "";
+    # };
+
+    # noctalia = {
+    #   url = "github:noctalia-dev/noctalia-shell";
+    #   inputs.nixpkgs.follows = "nixpkgs";
     # };
 
     # Overlays

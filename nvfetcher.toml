@@ -38,3 +38,6 @@ fetch.git = "https://github.com/Mic92/sops-nix"
 src.git = "https://github.com/nix-community/NixOS-WSL"
 fetch.git = "https://github.com/nix-community/NixOS-WSL"
 
+[noctalia-dev]
+src.git = "https://github.com/noctalia-dev/noctalia-shell"
+fetch.git = "https://github.com/noctalia-dev/noctalia-shell"

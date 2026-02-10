@@ -191,6 +191,7 @@
     "animationSpeed": 1.5,
     "animationDisabled": false,
     "compactLockScreen": false,
+    "lockScreenAnimations": false,
     "lockOnSuspend": true,
     "showSessionButtonsOnLockScreen": true,
     "showHibernateOnLockScreen": false,
@@ -207,7 +208,16 @@
     "autoStartAuth": false,
     "allowPasswordWithFprintd": false,
     "clockStyle": "custom",
-    "clockFormat": "hh\\nmm"
+    "clockFormat": "hh\\nmm",
+    "lockScreenMonitors": [],
+    "keybinds": {
+      "keyUp": "Up",
+      "keyDown": "Down",
+      "keyLeft": "Left",
+      "keyRight": "Right",
+      "keyEnter": "Return",
+      "keyEscape": "Esc"
+    }
   },
   "ui": {
     "fontDefault": "JetBrainsMono Nerd Font Mono",
@@ -275,6 +285,8 @@
     "transitionEdgeSmoothness": 0.05,
     "panelPosition": "top_left",
     "hideWallpaperFilenames": true,
+    "overviewBlur": 0.4,
+    "overviewTint": 0.6,
     "useWallhaven": false,
     "wallhavenQuery": "",
     "wallhavenSorting": "relevance",
@@ -306,10 +318,12 @@
     "showCategories": true,
     "iconMode": "tabler",
     "showIconBackground": false,
-    "enableSettingsSearch": true,
+    "enableSettingsSearch": false,
     "enableWindowsSearch": true,
     "ignoreMouseInput": false,
-    "screenshotAnnotationTool": ""
+    "screenshotAnnotationTool": "",
+    "overviewLayer": true,
+    "density": "comfortable"
   },
   "controlCenter": {
     "position": "close_to_bar_button",
@@ -516,7 +530,7 @@
     "volumeStep": 5,
     "volumeOverdrive": false,
     "cavaFrameRate": 30,
-    "visualizerType": "linear",
+    "visualizerType": "mirrored",
     "mprisBlacklist": [],
     "preferredPlayer": "mpd",
     "volumeFeedback": false

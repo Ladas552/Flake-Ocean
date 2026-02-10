@@ -102,6 +102,20 @@
     };
     date = "2026-02-09";
   };
+  noctalia-dev = {
+    pname = "noctalia-dev";
+    version = "ba79acf68715040c8876973557b38935c6af1011";
+    src = fetchgit {
+      url = "https://github.com/noctalia-dev/noctalia-shell";
+      rev = "ba79acf68715040c8876973557b38935c6af1011";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-aVx6DO33dxeK5dA2ziVkGxhD3SGpfibW9hNnx8BwKJo=";
+    };
+    date = "2026-02-09";
+  };
   sops-nix = {
     pname = "sops-nix";
     version = "8b89f44c2cc4581e402111d928869fe7ba9f7033";
