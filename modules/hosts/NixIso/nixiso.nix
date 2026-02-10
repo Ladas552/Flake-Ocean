@@ -48,10 +48,6 @@
       nixpkgs.hostPlatform = "x86_64-linux";
       services.openssh.settings.PermitRootLogin = lib.mkForce "yes";
 
-      networking.hostName = "NixIso";
-      # Xanmod kernel
-      boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
-
       # Enable networking
       networking.networkmanager.enable = true;
       networking.wireless.enable = lib.mkForce false;

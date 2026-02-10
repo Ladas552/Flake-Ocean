@@ -40,8 +40,6 @@
       inputs.nixpkgs-for-bootstrap.follows = ""; # I don't boot strap from my config
     };
 
-    nixos-hardware.url = "github:nixos/nixos-hardware";
-
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       # No useless inputs
@@ -102,6 +100,8 @@
     #   url = "github:noctalia-dev/noctalia-shell";
     #   inputs.nixpkgs.follows = "nixpkgs";
     # };
+
+    # nixos-hardware.url = "github:nixos/nixos-hardware";
 
     # Overlays
     # neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";

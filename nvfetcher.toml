@@ -41,3 +41,8 @@ fetch.git = "https://github.com/nix-community/NixOS-WSL"
 [noctalia-dev]
 src.git = "https://github.com/noctalia-dev/noctalia-shell"
 fetch.git = "https://github.com/noctalia-dev/noctalia-shell"
+
+[nixos-hardware]
+src.git = "https://github.com/nixos/nixos-hardware"
+fetch.git = "https://github.com/nixos/nixos-hardware"
+

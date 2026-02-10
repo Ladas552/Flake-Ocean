@@ -32,7 +32,6 @@
           yyy = lib.mkForce "nh os boot -u ${config.custom.meta.self}";
         };
 
-        networking.hostName = "NixwsL";
         wsl = {
           enable = true;
           defaultUser = "${config.custom.meta.user}";

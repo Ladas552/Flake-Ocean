@@ -26,12 +26,6 @@
           "/home/ladas552/.ssh/NixToks"
         ];
 
-        # Define your hostname.
-        networking.hostName = "NixToks";
-        imports = [
-          # enable trimming
-          # inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
-        ];
         # Needed for ZFS, generated from command:
         # head -c 8 /etc/machine-id
         networking.hostId = "98d7caca";
@@ -39,9 +33,6 @@
         #build machine for termux
         # Termux builder
         boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
-
-        # Xanmod kernel
-        boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
 
         # Linux sheduler, works post 6.12
         # services.scx = {
@@ -93,7 +84,7 @@
         hardware.nvidia-container-toolkit.enable = config.virtualisation.podman.enable;
 
         # Define a user account. Check Impermanence Module for user password
-        users.users."ladas552".extraGroups = [ "media" ];
+        users.users."${config.custom.meta.user}".extraGroups = [ "media" ];
 
         # This value determines the NixOS release from which the default
         # settings for stateful data, like file locations and database versions
@@ -105,7 +96,6 @@
 
         ## Powermanagment
         ## It disabled usb after some time of incativity, so not usable on desktop
-
         powerManagement.powertop.enable = true;
 
         ## Turn off screen and don't go to sleep

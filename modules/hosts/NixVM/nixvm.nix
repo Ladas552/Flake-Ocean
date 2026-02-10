@@ -2,7 +2,6 @@ inputs: {
   flake.modules.nixos.NixVm =
     { pkgs, lib, ... }:
     {
-      networking.hostName = "NixVm";
       # Stolen from Iynaix's VM config
       # Installing the appropriate guest utilities on a virtualised system
       # enable clipboard and file sharing
@@ -27,9 +26,6 @@ inputs: {
       };
       # For ZFS
       networking.hostId = "cb82b8e4";
-
-      # Latest kernel
-      boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
       # Enable networking
       networking.networkmanager.enable = true;

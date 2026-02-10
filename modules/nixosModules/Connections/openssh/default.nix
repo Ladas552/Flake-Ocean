@@ -35,7 +35,7 @@
         };
       };
 
-      # persist for impermanance
+      # persist for Impermanence
       custom.imp = {
         # I don't know half of what these persists do, I stole them
         root.files = [

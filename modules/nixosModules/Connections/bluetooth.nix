@@ -12,7 +12,7 @@
         };
       };
 
-      # persist for impermanance
+      # persist for Impermanence
       custom.imp.root.directories = [ "/var/lib/bluetooth" ];
     };
     hjem.bluetooth = {

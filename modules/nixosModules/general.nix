@@ -1,53 +1,57 @@
 {
-  flake.modules.nixos.general = {
-    # Updates firmware directly from vendors
-    services.fwupd.enable = true;
-    # clear out journalctl logs
-    services.journald.extraConfig = "MaxRetentionSec=14day";
-    # Allow core dumps, idk why it isn't a default
-    # https://github.com/curtbushko/nixos-config/blob/fa15644a47c6c937841ae2943370ad7228ed3e2e/systems/x86_64-linux/gamingrig/default.nix#L60
-    systemd.coredump.enable = true;
-    # Disable nano
-    programs.nano.enable = false;
-    # Enable Swaylock to unlock the screen
-    security.pam.services.swaylock = { };
-    # Disable X11 prompt for Git. Changes work only after Reboot for some reason
-    # Here is the issue: https://github.com/NixOS/nixpkgs/issues/24311
-    programs.ssh.askPassword = "";
-    # something stolen from https://kokada.dev/blog/an-unordered-list-of-hidden-gems-inside-nixos/
-    ## Faster wifi connection
-    networking.networkmanager.wifi.backend = "iwd";
-    ## Using cpu to comress RAM like swap
-    zramSwap = {
-      enable = true;
-      algorithm = "zstd";
-    };
-    ## Suppousetly faster dbus
-    services.dbus.implementation = "broker";
+  flake.modules.nixos.general =
+    { pkgs, config, ... }:
+    {
+      # Define hostname.
+      networking.hostName = "${config.custom.meta.hostname}";
+      # Set kernel
+      boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
+      # boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
-    # Set your time zone.
-    time.timeZone = "Asia/Almaty";
-
-    # Select internationalisation properties.
-    i18n.defaultLocale = "en_US.UTF-8";
-
-    i18n.extraLocaleSettings = {
-      LC_ADDRESS = "ru_RU.UTF-8";
-      LC_IDENTIFICATION = "ru_RU.UTF-8";
-      LC_MEASUREMENT = "ru_RU.UTF-8";
-      LC_MONETARY = "ru_RU.UTF-8";
-      LC_NAME = "ru_RU.UTF-8";
-      LC_NUMERIC = "ru_RU.UTF-8";
-      LC_PAPER = "ru_RU.UTF-8";
-      LC_TELEPHONE = "ru_RU.UTF-8";
-      LC_TIME = "ru_RU.UTF-8";
-    };
-    custom.imp = {
-      home = {
-        cache = {
-          files = [ ".local/share/nix/repl-history" ];
-        };
+      # Updates firmware directly from vendors
+      services.fwupd.enable = true;
+      # clear out journalctl logs
+      services.journald.extraConfig = "MaxRetentionSec=14day";
+      # Allow core dumps, idk why it isn't a default
+      # https://github.com/curtbushko/nixos-config/blob/fa15644a47c6c937841ae2943370ad7228ed3e2e/systems/x86_64-linux/gamingrig/default.nix#L60
+      systemd.coredump.enable = true;
+      # Disable nano
+      programs.nano.enable = false;
+      # Enable Swaylock to unlock the screen
+      security.pam.services.swaylock = { };
+      # Disable X11 prompt for Git. Changes work only after Reboot for some reason
+      # Here is the issue: https://github.com/NixOS/nixpkgs/issues/24311
+      programs.ssh.askPassword = "";
+      # something stolen from https://kokada.dev/blog/an-unordered-list-of-hidden-gems-inside-nixos/
+      ## Faster wifi connection
+      networking.networkmanager.wifi.backend = "iwd";
+      ## Using cpu to comress RAM like swap
+      zramSwap = {
+        enable = true;
+        algorithm = "zstd";
       };
+      ## Supposedly faster dbus
+      services.dbus.implementation = "broker";
+
+      # Set your time zone.
+      time.timeZone = "Asia/Almaty";
+
+      # Select internationalization properties.
+      i18n.defaultLocale = "en_US.UTF-8";
+
+      i18n.extraLocaleSettings = {
+        LC_ADDRESS = "ru_RU.UTF-8";
+        LC_IDENTIFICATION = "ru_RU.UTF-8";
+        LC_MEASUREMENT = "ru_RU.UTF-8";
+        LC_MONETARY = "ru_RU.UTF-8";
+        LC_NAME = "ru_RU.UTF-8";
+        LC_NUMERIC = "ru_RU.UTF-8";
+        LC_PAPER = "ru_RU.UTF-8";
+        LC_TELEPHONE = "ru_RU.UTF-8";
+        LC_TIME = "ru_RU.UTF-8";
+      };
+
+      # persist for Impermanence
+      custom.imp.home.cache.files = [ ".local/share/nix/repl-history" ];
     };
-  };
 }

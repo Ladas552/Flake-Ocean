@@ -25,6 +25,7 @@ in
       sops
       fish
       nix
+      general
       # Users
       root
       # I don't know why, but it creates ladas552 user in my config somewhere, but I use `nixos` user in NixIso
