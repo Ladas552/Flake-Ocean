@@ -1,16 +1,17 @@
 { inputs, ... }:
 {
   flake.modules = {
-    nixos.homeManager = {
-      imports = [ inputs.home-manager.nixosModules.home-manager ];
-      home-manager = {
-        useUserPackages = true;
-        useGlobalPkgs = true;
-        backupFileExtension = "bk";
-        overwriteBackup = true;
-        minimal = true;
+    nixos.homeManager =
+      { lib, pkgs, ... }:
+      {
+        imports = [ inputs.home-manager.nixosModules.home-manager ];
+        home-manager = {
+          useUserPackages = true;
+          useGlobalPkgs = true;
+          backupCommand = lib.getExe' pkgs.toybox "rm";
+          minimal = true;
+        };
       };
-    };
     # I hate nix-on-droid for this, but I am too lazy to add the option into it so I probably should hate myself
     homeManager.homeManager-minimal =
       { modulesPath, ... }:
