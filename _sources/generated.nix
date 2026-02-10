@@ -90,30 +90,30 @@
   };
   nixos-wsl = {
     pname = "nixos-wsl";
-    version = "843582709028607bf112d7cdc99af825e224a29b";
+    version = "5b50ea1aaa14945d4794c80fcc99c4aa1db84d2d";
     src = fetchgit {
       url = "https://github.com/nix-community/NixOS-WSL";
-      rev = "843582709028607bf112d7cdc99af825e224a29b";
+      rev = "5b50ea1aaa14945d4794c80fcc99c4aa1db84d2d";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LBKeSntmhCBj0tHFVFGfT4+KBmKi57gAnr240/F1Qkc=";
+      sha256 = "sha256-v/LA5ZSJ+JQYzMSKB4sySM0wKfsAqddNzzxLLnbsV/E=";
     };
-    date = "2026-02-07";
+    date = "2026-02-09";
   };
   sops-nix = {
     pname = "sops-nix";
-    version = "d6e0e666048a5395d6ea4283143b7c9ac704720d";
+    version = "8b89f44c2cc4581e402111d928869fe7ba9f7033";
     src = fetchgit {
       url = "https://github.com/Mic92/sops-nix";
-      rev = "d6e0e666048a5395d6ea4283143b7c9ac704720d";
+      rev = "8b89f44c2cc4581e402111d928869fe7ba9f7033";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-xbvX5Ik+0inJcLJtJ/AajAt7xCk6FOCrm5ogpwwvVDg=";
+      sha256 = "sha256-xVfPvXDf9QN3Eh9dV+Lw6IkWG42KSuQ1u2260HKvpnc=";
     };
-    date = "2026-02-08";
+    date = "2026-02-10";
   };
 }

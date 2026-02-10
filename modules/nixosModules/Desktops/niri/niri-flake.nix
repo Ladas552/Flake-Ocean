@@ -276,7 +276,7 @@
           # GUI apps
           "Super+F".spawn = "thunar";
           "Super+W".spawn = "librewolf";
-          "Shift+Super+W".spawn = "helium";
+          "Shift+Super+W".spawn-sh = "helium";
           # MPD
           "Shift+Alt+P" = {
             spawn = [
