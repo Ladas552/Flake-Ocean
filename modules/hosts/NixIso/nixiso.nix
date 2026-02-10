@@ -17,6 +17,33 @@
         # Include the results of the hardware scan.
         (modulesPath + "/installer/cd-dvd/installation-cd-graphical-calamares-gnome.nix")
       ];
+      # Standalone Packages
+      environment.systemPackages = with pkgs; [
+        libreoffice-fresh
+        # shotcut
+        imagemagick
+        wl-clipboard
+        ffmpeg
+        gst_all_1.gst-libav
+        libqalculate
+        lshw
+        pamixer
+        pwvucontrol
+        qbittorrent
+        telegram-desktop
+        xarchiver
+        gparted
+        networkmanagerapplet
+        restore
+        # Get list of locales
+        glibcLocales
+      ];
+
+      # Environmental Variables
+      environment.variables = {
+        BROWSER = "chromium";
+      };
+
       services.greetd.enable = false;
       nixpkgs.hostPlatform = "x86_64-linux";
       services.openssh.settings.PermitRootLogin = lib.mkForce "yes";
@@ -29,13 +56,6 @@
       networking.networkmanager.enable = true;
       networking.wireless.enable = lib.mkForce false;
 
-      environment.systemPackages = with pkgs; [
-        gparted
-        networkmanagerapplet
-        restore
-        # Get list of locales
-        glibcLocales
-      ];
       # Seg faults the iso build
       # i18n.supportedLocales = lib.mkForce [ "all" ];
 

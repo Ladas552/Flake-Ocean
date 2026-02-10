@@ -7,6 +7,19 @@
     }:
     {
 
+      # Standalone Packages
+      environment.systemPackages = with pkgs; [
+        imagemagick
+        ffmpeg
+        gst_all_1.gst-libav
+        libqalculate
+        lshw
+        nuspell
+        python3
+        typst
+        # custom.Subtitlenator
+      ];
+
       sops.age.keyFile = "/home/ladas552/.config/sops/age/keys.txt";
       sops.age.sshKeyPaths = [
         "/home/ladas552/.ssh/NixToks"

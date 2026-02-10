@@ -2,6 +2,37 @@
   flake.modules.nixos.NixPort =
     { pkgs, ... }:
     {
+      # Standalone Packages
+      environment.systemPackages = with pkgs; [
+        blender
+        libreoffice-fresh
+        # shotcut
+        imagemagick
+        wl-clipboard
+        ffmpeg
+        gst_all_1.gst-libav
+        librewolf
+        hunspell
+        hunspellDicts.en-us-large
+        hunspellDicts.ru-ru
+        keepassxc
+        libqalculate
+        lshw
+        pamixer
+        pwvucontrol
+        qbittorrent
+        telegram-desktop
+        typst
+        xarchiver
+        zotero
+        nvfetcher
+      ];
+
+      # Environmental Variables
+      environment.variables = {
+        BROWSER = "librewolf";
+      };
+
       # Define your hostname.
       networking.hostName = "NixPort";
       # ZFS needs it
