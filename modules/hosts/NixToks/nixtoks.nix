@@ -19,6 +19,7 @@
           python3
           typst
           # custom.Subtitlenator
+          nvtopPackages.nvidia
         ];
 
         sops.age.keyFile = "/home/ladas552/.config/sops/age/keys.txt";
@@ -64,7 +65,7 @@
         hardware.nvidia = {
           modesetting.enable = true;
           open = false;
-          package = config.boot.kernelPackages.nvidiaPackages.beta;
+          package = config.boot.kernelPackages.nvidiaPackages.stable;
           prime = {
             sync.enable = true;
             intelBusId = "PCI:0:2:0";

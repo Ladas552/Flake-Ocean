@@ -23,8 +23,8 @@ in
       tailscale
       zfs
       dashboard
-      ollama
-      open-webui
+      # ollama
+      # open-webui
       searxng
       # immich
       jellyfin

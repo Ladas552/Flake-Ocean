@@ -26,9 +26,10 @@
               type = "shell";
             }
             {
-              key = "{$1}Packages";
+              key = "{$1}Generation";
               keyColor = "38;5;200";
-              type = "packages";
+              type = "command";
+              text = "readlink /nix/var/nix/profiles/system | sed -E 's/system-([0-9]+)-link/\\1/'";
             }
             {
               key = "{$1}WM";
