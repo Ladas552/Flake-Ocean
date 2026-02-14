@@ -640,6 +640,7 @@
             };
           };
         };
+
       homeManager.niri-flake = {
         imports = [ inputs.niri.homeModules.default ];
         wayland.windowManager.niri = {
@@ -647,10 +648,9 @@
           inherit settings;
         };
       };
-      hjem.niri-flake =
-        { pkgs, ... }:
-        {
-          xdg.config.files."niri/config.kdl".text = inputs.niri.lib.mkNiriKDL settings;
-        };
+
+      hjem.niri-flake = {
+        xdg.config.files."niri/config.kdl".text = inputs.niri.lib.mkNiriKDL settings;
+      };
     };
 }
