@@ -45,4 +45,3 @@ fetch.git = "https://github.com/noctalia-dev/noctalia-shell"
 [nixos-hardware]
 src.git = "https://github.com/nixos/nixos-hardware"
 fetch.git = "https://github.com/nixos/nixos-hardware"
-

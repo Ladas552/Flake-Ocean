@@ -11,7 +11,7 @@
         init.defaultBranch = "master";
         gpg.format = "ssh";
         #it can't read it. permission error or something
-        user.signingkey = "~/.ssh/NixToks.pub";
+        user.signingkey = "~/.ssh/NixToks";
         # commit.gpgsign = true;
         aliases = {
           cm = "commit -m";

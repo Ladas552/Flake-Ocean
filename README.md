@@ -25,6 +25,7 @@ github:Ladas552/Flake-Ocean#app`, replace `app` with:
 - [NixOS-WSL](https://github.com/nix-community/NixOS-WSL) for Windows partition
 - NixVM for testing, you shouldn't use it unless testing breaking changes
 - NixIso for my portable NixOS image
+- NixWool is my Hetzner cloud that runs [Tangled.sh](https://tangled.org/) knot
 ## Modular
 I adopted [Dendritic layout](https://github.com/mightyiam/dendritic) for my config. 
 Making all files their own modules that I can import, and if module isn't imported, it doesn't exist. This way most of my config is fairy atomic and you can pop in and out modules as you wish.
