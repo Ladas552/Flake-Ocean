@@ -24,6 +24,14 @@
           max-jobs = lib.mkForce 1;
         };
 
+        boot = {
+          supportedFilesystems.ntfs = lib.mkForce false;
+          loader = {
+            grub.efiSupport = lib.mkForce false;
+            efi = lib.mkForce { };
+          };
+        };
+
         custom.imp.home.directories = [
         ];
       };

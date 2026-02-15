@@ -39,6 +39,10 @@ sgdisk -n3:0:0 -t3:BF01 -c3:"ZROOT" /dev/sda
 # Format the boot partition
 mkfs.vfat -F32 /dev/sda1
 
+# Swap
+mkswap /dev/sda2
+swapon /dev/sda2
+
 # Create the pool on the drive, use reasonable settings
 echo "Creating zroot..."
 zpool create -f $ZFS_OPTS zroot /dev/sda3
@@ -49,7 +53,6 @@ mkdir -p /mnt/{cache,nix,persist,tmp,boot}
 mount /dev/sda1 /mnt/boot
 
 # This create the zvols used in this cluster
-zfs create -o mountpoint=none zroot
 for zvol in "tmp" "nix" "cache" "persist"; do
   zfs create -o mountpoint=legacy zroot/$zvol
   mount -t zfs zroot/$zvol /mnt/$zvol
