@@ -57,3 +57,6 @@ for zvol in "tmp" "nix" "cache" "persist"; do
   zfs create -o mountpoint=legacy zroot/$zvol
   mount -t zfs zroot/$zvol /mnt/$zvol
 done
+
+nixos-install --no-root-password --flake "github:Ladas552/Flake-Ocean#NixWool"
+

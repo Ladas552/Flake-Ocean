@@ -17,7 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       # No useless inputs
       inputs.nix-darwin.follows = ""; # I don't use nix-darwin machine
-      inputs.smfh.inputs.systems.follows = "systems";
+      inputs.smfh.follows = "";
     };
     # Modules for hjem
     hjem-rum = {
