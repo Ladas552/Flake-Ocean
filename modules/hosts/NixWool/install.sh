@@ -39,7 +39,7 @@ sgdisk -n2:0:+4G -t2:8200 -c2:"Linux Swap" /dev/sda
 sgdisk -n3:0:0 -t3:BF01 -c3:"ZROOT" /dev/sda
 
 # Format the boot partition
-mkfs.vfat -F32 /dev/sda1
+mkfs.vfat -n NIXBOOT -F32 /dev/sda1
 
 # Swap
 mkswap /dev/sda2

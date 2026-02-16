@@ -2,7 +2,7 @@
 let
   custom.meta = {
     hostname = "NixWool";
-    self = "/persist/home/${config.custom.meta.user}/Projects/my_repos/Flake-Ocean";
+    self = "github:Ladas552/Flake-Ocean";
     isTermux = false;
     norg = null;
   };
@@ -16,7 +16,6 @@ in
       { inherit custom; }
       NixWool
       # Modules
-      ## Games
       cache
       general
       imp
@@ -50,7 +49,6 @@ in
           { inherit custom; }
           direnv
           git
-          nvf
           fastfetch
         ];
       }
