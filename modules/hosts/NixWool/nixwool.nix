@@ -37,6 +37,9 @@
         services.sshguard.enable = true;
         services.caddy = {
           enable = true;
+          globalConfig = ''
+            email me@ladas552.me
+          '';
         };
 
         # ZFS needs it
@@ -49,6 +52,14 @@
           cores = lib.mkForce 1;
           max-jobs = lib.mkForce 1;
         };
+
+        networking.firewall.allowedTCPPorts = [
+          80
+          443
+          22
+          3000
+        ];
+        networking.firewall.allowedUDPPorts = [ 443 ];
 
         custom.imp.home.directories = [
         ];

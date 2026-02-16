@@ -37,10 +37,9 @@
 
       # Reverse proxy
       services.caddy.virtualHosts."social.ladas552.me" = {
-        serverAliases = [ "*.social.ladas552.me" ];
         extraConfig = ''
           handle {
-            reverse_proxy http://127.0.0.1:3000
+            reverse_proxy http://127.0.0.1:${toString config.services.bluesky-pds.settings.PDS_PORT}
           }
         '';
       };
