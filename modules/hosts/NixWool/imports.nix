@@ -18,13 +18,12 @@ in
       # Modules
       ## Games
       cache
-      firewall
       general
       imp
       nh
       nix
-      grub-legacy
       openssh
+      systemd-boot
       sops
       tailscale
       zfs
