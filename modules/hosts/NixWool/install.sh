@@ -45,7 +45,7 @@ swapon /dev/sda2
 
 # Create the pool on the drive, use reasonable settings
 echo "Creating zroot..."
-zpool create -f $ZFS_OPTS zroot /dev/sda2
+zpool create -f $ZFS_OPTS zroot /dev/sda3
 
 # Mount the drives and prepare for the install
 mkdir -p /mnt

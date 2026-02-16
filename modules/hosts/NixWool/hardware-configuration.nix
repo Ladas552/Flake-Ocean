@@ -3,6 +3,7 @@
     {
       lib,
       modulesPath,
+      pkgs,
       ...
     }:
     {
@@ -20,8 +21,13 @@
         "virtio_scsi"
       ];
       boot.initrd.kernelModules = [ ];
-      boot.kernelModules = [ "kvm-amd" ];
+      boot.kernelModules = [
+        "nls_cp437"
+        "nls_iso8859-1"
+      ];
       boot.extraModulePackages = [ ];
+      # Xanmod broken on aarch64-linux, idk
+      boot.kernelPackages = lib.mkForce pkgs.linuxKernel.packages.linux_6_18;
 
       swapDevices = [ ];
 
