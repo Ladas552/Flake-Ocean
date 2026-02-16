@@ -161,7 +161,7 @@
     },
     "nixos-wsl": {
         "cargoLock": null,
-        "date": "2026-02-09",
+        "date": "2026-02-16",
         "extract": null,
         "name": "nixos-wsl",
         "passthru": null,
@@ -171,17 +171,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "5b50ea1aaa14945d4794c80fcc99c4aa1db84d2d",
-            "sha256": "sha256-v/LA5ZSJ+JQYzMSKB4sySM0wKfsAqddNzzxLLnbsV/E=",
+            "rev": "a2cb8eeecfbf4a1ce0083e6a32680b1bec8b045c",
+            "sha256": "sha256-oeHgjE5GpACBjDeXrTczIl6cKmHltLbk7inNSMgGFFQ=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/NixOS-WSL"
         },
-        "version": "5b50ea1aaa14945d4794c80fcc99c4aa1db84d2d"
+        "version": "a2cb8eeecfbf4a1ce0083e6a32680b1bec8b045c"
     },
     "noctalia-dev": {
         "cargoLock": null,
-        "date": "2026-02-15",
+        "date": "2026-02-16",
         "extract": null,
         "name": "noctalia-dev",
         "passthru": null,
@@ -191,13 +191,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "1dc00a137325f8a9308baed0845911ef37626dd9",
-            "sha256": "sha256-Oirf2QTHL0gRKNCGEwZ2vx6JnlGLO51mBzlkEB2QTAU=",
+            "rev": "9e363ceb3a29cc094ecd63035143adfc35a2149a",
+            "sha256": "sha256-Ptc2B3BTUFo/sPxpQTHOqSOXLytNqz9GeJ4l7+zWywk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/noctalia-dev/noctalia-shell"
         },
-        "version": "1dc00a137325f8a9308baed0845911ef37626dd9"
+        "version": "9e363ceb3a29cc094ecd63035143adfc35a2149a"
     },
     "sops-nix": {
         "cargoLock": null,
@@ -218,5 +218,25 @@
             "url": "https://github.com/Mic92/sops-nix"
         },
         "version": "2d0cf89b4404529778bc82de7e42b5754e0fe4fa"
+    },
+    "tangled": {
+        "cargoLock": null,
+        "date": "2026-02-16",
+        "extract": null,
+        "name": "tangled",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "74318eac9fdd72cf69e916276814351931ed0dcb",
+            "sha256": "sha256-ZlcA9mzvUINXV/XUi892j/8Gfj0/qG4+1B8Q3ouPToQ=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://tangled.org/tangled.org/core"
+        },
+        "version": "74318eac9fdd72cf69e916276814351931ed0dcb"
     }
 }

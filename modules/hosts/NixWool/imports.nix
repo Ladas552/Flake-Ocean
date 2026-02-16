@@ -28,6 +28,8 @@ in
       zfs
       network-manager
       fish
+      bluesky-pds
+      # tangled
       # Users
       root
       ladas552
@@ -50,6 +52,7 @@ in
           direnv
           git
           fastfetch
+          nvf
         ];
       }
     ];
