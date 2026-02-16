@@ -17,7 +17,7 @@ in
       cat-mocha
       general
       cache
-      grub
+      grub-efi
       nix
       sops
       tailscale

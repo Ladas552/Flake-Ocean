@@ -23,7 +23,7 @@ in
       imp
       nh
       nix
-      grub
+      grub-legacy
       openssh
       sops
       tailscale
