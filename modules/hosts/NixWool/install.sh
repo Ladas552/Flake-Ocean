@@ -42,7 +42,7 @@ sgdisk -n3:0:0 -t3:BF01 -c3:"ZROOT" /dev/sda
 mkfs.vfat -n NIXBOOT -F32 /dev/sda1
 
 # Swap
-mkswap /dev/sda2
+mkswap -L SWAP /dev/sda2
 swapon /dev/sda2
 
 # Create the pool on the drive, use reasonable settings

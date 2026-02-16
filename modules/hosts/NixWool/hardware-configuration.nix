@@ -30,7 +30,7 @@
       # Xanmod broken on aarch64-linux, idk
       boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
 
-      swapDevices = [ ];
+      swapDevices = [ { label = "SWAP"; } ];
 
       # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
       # (the default) this is the recommended approach. When using systemd-networkd it's

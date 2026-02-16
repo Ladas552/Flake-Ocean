@@ -3,6 +3,26 @@
     nixos.NixWool =
       { pkgs, lib, ... }:
       {
+        nix = {
+          buildMachines = [
+            {
+              hostName = "NixToks";
+              sshUser = "ladas552";
+              protocol = "ssh-ng";
+              systems = [
+                "x86_64-linux"
+                "aarch64-linux"
+              ];
+              maxJobs = 16;
+              speedFactor = 6;
+              supportedFeatures = [
+                "big-parallel"
+                "kvm"
+                "nixos-test"
+              ];
+            }
+          ];
+        };
         # Standalone Packages
         environment.systemPackages = with pkgs; [
           libqalculate
@@ -11,7 +31,10 @@
 
         # Environmental Variables
         environment.variables = {
+          NIX_REMOTE = "daemon";
         };
+
+        services.sshguard.enable = true;
 
         # ZFS needs it
         networking.hostId = "fcb8b0b0";
