@@ -27,7 +27,7 @@
       ];
       boot.extraModulePackages = [ ];
       # Xanmod broken on aarch64-linux, idk
-      boot.kernelPackages = lib.mkForce pkgs.linuxKernel.packages.linux_6_18;
+      boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
 
       swapDevices = [ ];
 
