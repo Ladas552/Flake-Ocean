@@ -1,5 +1,6 @@
 # installation script for Hetzner VPS, I just loaded a standart nix iso in there
 # Stolen from @Jet https://github.com/Michael-C-Buckley/nixos/blob/master/modules/hosts/o1/tools/format.sh
+# Adapted to use msdos partition table
 
 #!/usr/bin/env bash
 set -euo pipefail
@@ -28,29 +29,26 @@ fi
 echo "Wiping drives..."
 # Wipe the NVMe
 wipefs -a /dev/sda
-sgdisk --zap-all /dev/sda
+
+parted /dev/sda --script mklabel msdos
 
 echo "Formatting drives..."
 # Put boot on the NVMe then fill the rest with ZFS
-sgdisk -n1:1M:+512M -t1:EF00 -c1:"EFI System" /dev/sda
-sgdisk -n2:0:+4G -t2:8200 -c2:"Linux Swap" /dev/sda
-sgdisk -n3:0:0 -t3:BF01 -c3:"ZROOT" /dev/sda
-
-# Format the boot partition
-mkfs.vfat -F32 /dev/sda1
+parted /dev/sda --script mkpart primary 1MiB 4097MiB
+parted /dev/sda --script mkpart primary 4097MiB 100%
+parted /dev/sda --script set 2 boot on
 
 # Swap
-mkswap /dev/sda2
-swapon /dev/sda2
+mkswap /dev/sda1
+swapon /dev/sda1
 
 # Create the pool on the drive, use reasonable settings
 echo "Creating zroot..."
-zpool create -f $ZFS_OPTS zroot /dev/sda3
+zpool create -f $ZFS_OPTS zroot /dev/sda2
 
 # Mount the drives and prepare for the install
 mkdir -p /mnt
 mkdir -p /mnt/{cache,nix,persist,tmp,boot}
-mount /dev/sda1 /mnt/boot
 
 # This create the zvols used in this cluster
 for zvol in "tmp" "nix" "cache" "persist"; do
