@@ -1,10 +1,10 @@
 # installation script for Hetzner VPS, I just loaded a standart nix iso in there
 # Stolen from @Jet https://github.com/Michael-C-Buckley/nixos/blob/master/modules/hosts/o1/tools/format.sh
 
+# find a way to put keys for secrets into respective directories yourself
+
 #!/usr/bin/env bash
 set -euo pipefail
-
-# ZFS Install Script for O1 (Oracle ARM instance)
 
 ZFS_OPTS="-o ashift=12 \
   -O compression=zstd \

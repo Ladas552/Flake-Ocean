@@ -20,11 +20,12 @@
         "xhci_pci"
         "virtio_scsi"
       ];
-      boot.initrd.kernelModules = [ ];
+      boot.initrd.kernelModules = [ "virtio_gpu" ];
       boot.kernelModules = [
         "nls_cp437"
         "nls_iso8859-1"
       ];
+      boot.kernelParams = [ "console=tty" ];
       boot.extraModulePackages = [ ];
       # Xanmod broken on aarch64-linux, idk
       boot.kernelPackages = pkgs.linuxKernel.packages.linux_6_18;
@@ -39,6 +40,5 @@
       # networking.interfaces.wlp2s0.useDHCP = lib.mkDefault true;
 
       nixpkgs.hostPlatform = "aarch64-linux";
-      hardware.cpu.amd.updateMicrocode = true;
     };
 }
