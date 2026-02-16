@@ -21,7 +21,7 @@
         pdsadmin.enable = true;
         settings = {
           PDS_HOSTNAME = "social.ladas552.me";
-          PDS_PORT = 3333;
+          PDS_PORT = 3000;
           PDS_BLOB_UPLOAD_LIMIT = "200000000"; # 200 MB
           PDS_CRAWLERS = lib.concatStringsSep "," [
             "https://bsky.network"
@@ -40,7 +40,7 @@
         serverAliases = [ "*.social.ladas552.me" ];
         extraConfig = ''
           handle {
-            reverse_proxy http://127.0.0.1:3333
+            reverse_proxy http://127.0.0.1:3000
           }
         '';
       };
