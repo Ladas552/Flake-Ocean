@@ -35,6 +35,9 @@
         };
 
         services.sshguard.enable = true;
+        services.caddy = {
+          enable = true;
+        };
 
         # ZFS needs it
         networking.hostId = "fcb8b0b0";
