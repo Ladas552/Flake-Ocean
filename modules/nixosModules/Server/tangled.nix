@@ -21,12 +21,11 @@
           knot = {
             enable = true;
             gitUser = "git";
-            stateDir = "/var/lib/tangled-knot";
             repo.scanPath = "${cfg.stateDir}/repos";
             server = {
               listenAddr = "0.0.0.0:3050";
               hostname = "git.ladas552.me";
-              internalListenAddr = "127.0.0.1:5555";
+              internalListenAddr = "127.0.0.1:5444";
               owner = "did:plc:6ikdlkw64mrjygj6cea62kn4"; # @ladas552.me
             };
           };
@@ -52,6 +51,6 @@
       };
 
       # persist for Impermanence
-      custom.imp.root.directories = [ "/var/lib/tangled-knot" ];
+      custom.imp.root.directories = [ "/home/git" ];
     };
 }

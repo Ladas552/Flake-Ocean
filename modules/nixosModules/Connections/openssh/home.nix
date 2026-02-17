@@ -25,6 +25,12 @@
           identityFile = [ "~/.ssh/NixToks.pub" ];
         };
 
+        matchBlocks."git.ladas552.me" = {
+          host = "git.ladas552.me";
+          user = "git";
+          identityFile = [ "~/.ssh/NixToks" ];
+        };
+
         matchBlocks."aur.archlinux.org" = {
           host = "aur.archlinux.org";
           user = "aur";

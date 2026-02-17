@@ -4,6 +4,7 @@
       { pkgs, lib, ... }:
       {
         nix = {
+          distributedBuilds = true;
           buildMachines = [
             {
               hostName = "NixToks";
@@ -59,7 +60,10 @@
           22
           3000
         ];
-        networking.firewall.allowedUDPPorts = [ 443 ];
+        networking.firewall.allowedUDPPorts = [
+          443
+          22
+        ];
 
         custom.imp.home.directories = [
         ];
