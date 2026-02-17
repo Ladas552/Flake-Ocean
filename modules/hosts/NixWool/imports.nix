@@ -29,7 +29,7 @@ in
       network-manager
       fish
       bluesky-pds
-      # tangled
+      tangled
       # Users
       root
       ladas552
