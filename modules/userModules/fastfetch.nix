@@ -51,7 +51,6 @@
       };
     in
     {
-      # fastfetch hjem-rum is from https://github.com/snugnug/hjem-rum/pull/172
       hjem.fastfetch.rum.programs.fastfetch = config-fastfetch;
       homeManager.fastfetch.programs.fastfetch = config-fastfetch;
     };

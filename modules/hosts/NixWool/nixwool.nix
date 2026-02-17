@@ -41,11 +41,28 @@
           globalConfig = ''
             email me@ladas552.me
           '';
+          virtualHosts = {
+            "blog.ladas552.me" = {
+              extraConfig = ''
+                handle {
+                  reverse_proxy http://127.0.0.1:1313
+                }
+              '';
+            };
+            "nix.ladas552.me" = {
+              extraConfig = ''
+                handle {
+                  reverse_proxy http://127.0.0.1:3131
+                }
+              '';
+            };
+          };
         };
 
         # ZFS needs it
         networking.hostId = "fcb8b0b0";
 
+        # No
         system.stateVersion = "26.05"; # Did you read the comment?
 
         #  It's a 2 vCPU server
@@ -54,6 +71,7 @@
           max-jobs = lib.mkForce 1;
         };
 
+        # I don't have firewall enabled, firewall is managed by hetzner, but just to be sure I added these ports
         networking.firewall.allowedTCPPorts = [
           80
           443
