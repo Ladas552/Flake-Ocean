@@ -1,4 +1,4 @@
-{ modules, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixos.tangled =
     { config, ... }:
@@ -8,11 +8,11 @@
     {
       imports = [
         # git
-        "${modules.tangled.src}/nix/modules/knot.nix"
+        inputs.tangled.nixosModules.knot
         # UI
-        "${modules.tangled.src}/nix/modules/appview.nix"
+        inputs.tangled.nixosModules.appview
         # CI
-        "${modules.tangled.src}/nix/modules/spindle.nix"
+        inputs.tangled.nixosModules.spindle
       ];
 
       # module

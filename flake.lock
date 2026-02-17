@@ -20,6 +20,48 @@
         "type": "github"
       }
     },
+    "flake-utils": {
+      "inputs": {
+        "systems": [
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "gomod2nix": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": [
+          "tangled",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1763982521,
+        "narHash": "sha256-ur4QIAHwgFc0vXiaxn5No/FuZicxBr2p0gmT54xZkUQ=",
+        "owner": "nix-community",
+        "repo": "gomod2nix",
+        "rev": "02e63a239d6eabd595db56852535992c898eba72",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "gomod2nix",
+        "type": "github"
+      }
+    },
     "hjem": {
       "inputs": {
         "nix-darwin": [],
@@ -275,7 +317,8 @@
         "nixpkgs": "nixpkgs_2",
         "nixvim": "nixvim",
         "nvf": "nvf",
-        "systems": "systems"
+        "systems": "systems",
+        "tangled": "tangled"
       }
     },
     "systems": {
@@ -291,6 +334,36 @@
         "owner": "nix-systems",
         "repo": "default-linux",
         "type": "github"
+      }
+    },
+    "tangled": {
+      "inputs": {
+        "actor-typeahead-src": [],
+        "flake-compat": [],
+        "gomod2nix": "gomod2nix",
+        "htmx-src": [],
+        "htmx-ws-src": [],
+        "ibm-plex-mono-src": [],
+        "indigo": [],
+        "inter-fonts-src": [],
+        "lucide-src": [],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "sqlite-lib-src": []
+      },
+      "locked": {
+        "lastModified": 1771310966,
+        "narHash": "sha256-Stv96R6WW+FpXsSKfILauEIcTacRSZcEaTHy17yTsNY=",
+        "ref": "refs/heads/master",
+        "rev": "df9dddd24e954f28be6151ec9c4a5b4726e7eabf",
+        "revCount": 1973,
+        "type": "git",
+        "url": "https://tangled.org/@tangled.org/core"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://tangled.org/@tangled.org/core"
       }
     },
     "xwayland-satellite-unstable": {

@@ -72,6 +72,23 @@
       inputs.git-hooks.follows = "";
     };
 
+    # Tangled, git hosting
+    tangled = {
+      url = "git+https://tangled.org/@tangled.org/core";
+      # No useless inputs
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.gomod2nix.inputs.flake-utils.inputs.systems.follows = "systems";
+      inputs.flake-compat.follows = "";
+      inputs.indigo.follows = "";
+      inputs.htmx-src.follows = "";
+      inputs.htmx-ws-src.follows = "";
+      inputs.lucide-src.follows = "";
+      inputs.inter-fonts-src.follows = "";
+      inputs.actor-typeahead-src.follows = "";
+      inputs.ibm-plex-mono-src.follows = "";
+      inputs.sqlite-lib-src.follows = "";
+    };
+
     # Boilerplate
     systems.url = "github:nix-systems/default-linux";
 

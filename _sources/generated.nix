@@ -32,10 +32,10 @@
   };
   helium = {
     pname = "helium";
-    version = "0.9.1.1";
+    version = "0.9.2.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.9.1.1/helium-0.9.1.1-x86_64.AppImage";
-      sha256 = "sha256-0Kw8Ko41Gdz4xLn62riYAny99Hd0s7/75h8bz4LUuCE=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.9.2.1/helium-0.9.2.1-x86_64.AppImage";
+      sha256 = "sha256-guDBIr8NOD0GtjWznsVXlvb6llvdWHxREfDvXeP4m/w=";
     };
   };
   impermanence = {
@@ -90,17 +90,17 @@
   };
   nixos-hardware = {
     pname = "nixos-hardware";
-    version = "531af1dbaee7cfdd7aed1e595ce418b7e2e99a80";
+    version = "66e1a090ded57a0f88e2b381a7d4daf4a5722c3f";
     src = fetchgit {
       url = "https://github.com/nixos/nixos-hardware";
-      rev = "531af1dbaee7cfdd7aed1e595ce418b7e2e99a80";
+      rev = "66e1a090ded57a0f88e2b381a7d4daf4a5722c3f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ngIarpog/Hv5r9M1YyvsaaSUBCqtWqHl6pibq6n2ppo=";
+      sha256 = "sha256-H1l+zHq+ZinWH7F1IidpJ2farmbfHXjaxAm1RKWE1KI=";
     };
-    date = "2026-02-15";
+    date = "2026-02-16";
   };
   nixos-wsl = {
     pname = "nixos-wsl";
@@ -118,15 +118,15 @@
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "9e363ceb3a29cc094ecd63035143adfc35a2149a";
+    version = "c33db6b999a884000e33ec2d018ef9de394bf42a";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "9e363ceb3a29cc094ecd63035143adfc35a2149a";
+      rev = "c33db6b999a884000e33ec2d018ef9de394bf42a";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Ptc2B3BTUFo/sPxpQTHOqSOXLytNqz9GeJ4l7+zWywk=";
+      sha256 = "sha256-OcSMUdOxKeCCNV+gOgZWP+BOGedi3QxxGNIbQQQsEFk=";
     };
     date = "2026-02-16";
   };
@@ -143,19 +143,5 @@
       sha256 = "sha256-UFc4lfGBr+wJmwgDGJDn1cVD6DTr0/8TdronNUiyXlU=";
     };
     date = "2026-02-15";
-  };
-  tangled = {
-    pname = "tangled";
-    version = "74318eac9fdd72cf69e916276814351931ed0dcb";
-    src = fetchgit {
-      url = "https://tangled.org/tangled.org/core";
-      rev = "74318eac9fdd72cf69e916276814351931ed0dcb";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-ZlcA9mzvUINXV/XUi892j/8Gfj0/qG4+1B8Q3ouPToQ=";
-    };
-    date = "2026-02-16";
   };
 }
