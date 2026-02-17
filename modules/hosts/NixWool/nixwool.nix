@@ -41,22 +41,22 @@
           globalConfig = ''
             email me@ladas552.me
           '';
-          virtualHosts = {
-            "blog.ladas552.me" = {
-              extraConfig = ''
-                handle {
-                  reverse_proxy http://127.0.0.1:1313
-                }
-              '';
-            };
-            "nix.ladas552.me" = {
-              extraConfig = ''
-                handle {
-                  reverse_proxy http://127.0.0.1:3131
-                }
-              '';
-            };
-          };
+          # virtualHosts = {
+          #   "blog.ladas552.me" = {
+          #     extraConfig = ''
+          #       handle {
+          #         reverse_proxy http://127.0.0.1:1313
+          #       }
+          #     '';
+          #   };
+          #   "nix.ladas552.me" = {
+          #     extraConfig = ''
+          #       handle {
+          #         reverse_proxy http://127.0.0.1:3131
+          #       }
+          #     '';
+          #   };
+          # };
         };
 
         # ZFS needs it
