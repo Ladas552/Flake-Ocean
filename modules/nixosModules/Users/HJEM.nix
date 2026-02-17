@@ -5,7 +5,8 @@
     {
       imports = [ inputs.hjem.nixosModules.default ];
       hjem = {
-        linker = pkgs.smfh;
+        # linker = pkgs.smfh;
+        linker = inputs.hjem.packages.${pkgs.stdenv.hostPlatform.system}.smfh;
         clobberByDefault = true;
         users.${config.custom.meta.user} = {
           user = "${config.custom.meta.user}";

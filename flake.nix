@@ -17,7 +17,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
       # No useless inputs
       inputs.nix-darwin.follows = ""; # I don't use nix-darwin machine
-      inputs.smfh.follows = "";
+      # inputs.smfh.follows = "";
+      inputs.smfh.inputs.systems.follows = "systems";
     };
     # Modules for hjem
     hjem-rum = {
@@ -86,7 +87,7 @@
       inputs.inter-fonts-src.follows = "";
       inputs.actor-typeahead-src.follows = "";
       inputs.ibm-plex-mono-src.follows = "";
-      inputs.sqlite-lib-src.follows = "";
+      # inputs.sqlite-lib-src.follows = "";
     };
 
     # Boilerplate
