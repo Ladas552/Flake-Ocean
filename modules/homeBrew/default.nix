@@ -7,6 +7,5 @@
     syncthing-brew
     userDirs-brew
     imv-brew
-    chawan-brew
   ];
 }

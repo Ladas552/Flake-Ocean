@@ -41,22 +41,26 @@
           globalConfig = ''
             email me@ladas552.me
           '';
-          # virtualHosts = {
-          #   "blog.ladas552.me" = {
-          #     extraConfig = ''
-          #       handle {
-          #         reverse_proxy http://127.0.0.1:1313
-          #       }
-          #     '';
-          #   };
-          #   "nix.ladas552.me" = {
-          #     extraConfig = ''
-          #       handle {
-          #         reverse_proxy http://127.0.0.1:3131
-          #       }
-          #     '';
-          #   };
-          # };
+          virtualHosts = {
+            "blog.ladas552.me" = {
+              extraConfig = ''
+                handle {
+                  reverse_proxy http://127.0.0.1:1313
+                }
+                root * /home/ladas552/sites/blog/public
+                encode gzip
+              '';
+            };
+            "nix.ladas552.me" = {
+              extraConfig = ''
+                handle {
+                  reverse_proxy http://127.0.0.1:3131
+                }
+                root * /home/ladas552/sites/nix/public
+                encode gzip
+              '';
+            };
+          };
         };
 
         # ZFS needs it
@@ -84,6 +88,7 @@
         ];
 
         custom.imp.home.directories = [
+          "sites"
         ];
       };
     homeManager.NixWool = {
