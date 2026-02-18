@@ -90,17 +90,17 @@
   };
   nixos-hardware = {
     pname = "nixos-hardware";
-    version = "66e1a090ded57a0f88e2b381a7d4daf4a5722c3f";
+    version = "740a22363033e9f1bb6270fbfb5a9574067af15b";
     src = fetchgit {
       url = "https://github.com/nixos/nixos-hardware";
-      rev = "66e1a090ded57a0f88e2b381a7d4daf4a5722c3f";
+      rev = "740a22363033e9f1bb6270fbfb5a9574067af15b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-H1l+zHq+ZinWH7F1IidpJ2farmbfHXjaxAm1RKWE1KI=";
+      sha256 = "sha256-yRKJ7gpVmXbX2ZcA8nFi6CMPkJXZGjie2unsiMzj3Ig=";
     };
-    date = "2026-02-16";
+    date = "2026-02-18";
   };
   nixos-wsl = {
     pname = "nixos-wsl";
@@ -118,17 +118,17 @@
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "c33db6b999a884000e33ec2d018ef9de394bf42a";
+    version = "abfcbd3a547e2115c81364938335ff739c641e0e";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "c33db6b999a884000e33ec2d018ef9de394bf42a";
+      rev = "abfcbd3a547e2115c81364938335ff739c641e0e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-OcSMUdOxKeCCNV+gOgZWP+BOGedi3QxxGNIbQQQsEFk=";
+      sha256 = "sha256-uQ0iPqH8sLBZIeRsvri91E7mTsuYjS4ct6/jU0TPXOA=";
     };
-    date = "2026-02-16";
+    date = "2026-02-18";
   };
   sops-nix = {
     pname = "sops-nix";

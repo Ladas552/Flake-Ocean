@@ -1,7 +1,12 @@
 {
   flake.modules = {
     nixos.NixWool =
-      { pkgs, lib, ... }:
+      {
+        pkgs,
+        lib,
+        config,
+        ...
+      }:
       {
         nix = {
           distributedBuilds = true;
@@ -36,6 +41,8 @@
         };
 
         services.sshguard.enable = true;
+        # I chowned this directories `sudo chown -R ladas552:caddy /var/www`
+        users.users."${config.custom.meta.user}".extraGroups = [ "caddy" ];
         services.caddy = {
           enable = true;
           globalConfig = ''
@@ -44,19 +51,15 @@
           virtualHosts = {
             "blog.ladas552.me" = {
               extraConfig = ''
-                handle {
-                  reverse_proxy http://127.0.0.1:1313
-                }
-                root * /home/ladas552/sites/blog/public
+                root * /var/www/blog
+                file_server
                 encode gzip
               '';
             };
             "nix.ladas552.me" = {
               extraConfig = ''
-                handle {
-                  reverse_proxy http://127.0.0.1:3131
-                }
-                root * /home/ladas552/sites/nix/public
+                root * /var/www/nix
+                file_server
                 encode gzip
               '';
             };
@@ -87,8 +90,8 @@
           22
         ];
 
-        custom.imp.home.directories = [
-          "sites"
+        custom.imp.root.cache.directories = [
+          "/var/www"
         ];
       };
     homeManager.NixWool = {

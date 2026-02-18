@@ -39,7 +39,7 @@ I write comments on things, that might explain certain ways of doing things, or 
 
 Also, I have [Norg document](./nix.norg), containing notes and TODO for the config
 
-I also write some [blog posts about Nix](https://ladas552.me/Flake-Ocean/), feel free to check it out
+I also write some [blog posts about Nix](https://nix.ladas552.me/), feel free to check it out
 
 ## Nvfetcher
 
@@ -55,7 +55,7 @@ Then with `sources.<input-name>.src` you can skip manual fetching for neovim plu
 
 I also use nvfetcher to fetch nixos modules, the method described in the `flake.nix` file. 
 
-[Check out a blog post about it](https://ladas552.me/Flake-Ocean/posts/Nvfetcher/)
+[Check out a blog post about it](https://nix.ladas552.me/posts/Nvfetcher/)
 
 ## Screenshot if you care
 ![desktop](https://ladas552.me/assets/desktop/desktop.png)
