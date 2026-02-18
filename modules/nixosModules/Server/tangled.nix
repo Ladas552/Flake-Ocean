@@ -1,7 +1,7 @@
 { inputs, ... }:
 {
   flake.modules.nixos.tangled =
-    { config, lib, ... }:
+    { config, ... }:
     let
       cfg = config.services.tangled.knot;
     in
@@ -10,7 +10,7 @@
         # git
         inputs.tangled.nixosModules.knot
         # UI
-        inputs.tangled.nixosModules.appview
+        # inputs.tangled.nixosModules.appview
         # CI
         inputs.tangled.nixosModules.spindle
       ];
@@ -40,17 +40,6 @@
           };
         };
       };
-
-      # use podman instead of docker for spindle
-      virtualisation.podman = {
-        enable = true;
-        # create a `docker` alias for podman, to use it as a drop-in replacement
-        dockerCompat = true;
-        # required for containers under podman-compose to be able to talk to each other.
-        defaultNetwork.settings.dns_enabled = true;
-      };
-
-      virtualisation.docker.enable = lib.mkForce false;
 
       # Reverse proxy
       services.caddy.virtualHosts = {
