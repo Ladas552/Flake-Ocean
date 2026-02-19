@@ -49,6 +49,9 @@
             email me@ladas552.me
           '';
           virtualHosts = {
+            "www.ladas552.me" = {
+              extraConfig = ''respond "Blog: https://blog.ladas552.me Nix-Docs: https://nix.ladas552.me Git-Hosting: https://tangled.org/did:plc:6ikdlkw64mrjygj6cea62kn4 GitHub: https://github.com/Ladas552"'';
+            };
             "blog.ladas552.me" = {
               extraConfig = ''
                 root * /var/www/blog
