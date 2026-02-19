@@ -1,7 +1,7 @@
 # helium
 [helium]
 src.github_tag = "imputnet/helium-linux"
-fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64.AppImage"
+fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64_linux.tar.xz"
 
 # neorg
 [neorg-interim-ls]

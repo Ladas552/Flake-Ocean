@@ -34,8 +34,8 @@
     pname = "helium";
     version = "0.9.2.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.9.2.1/helium-0.9.2.1-x86_64.AppImage";
-      sha256 = "sha256-guDBIr8NOD0GtjWznsVXlvb6llvdWHxREfDvXeP4m/w=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.9.2.1/helium-0.9.2.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-wDHs/FEoOkYUjKPUrM9QAPwsqNvURJhlP/RZteLL2gA=";
     };
   };
   impermanence = {
@@ -118,15 +118,15 @@
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "3c3a8a2823496d42730095970c9ebccdde2899da";
+    version = "9c47ce03f200e0b8fc515d973440d5bc3e359785";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "3c3a8a2823496d42730095970c9ebccdde2899da";
+      rev = "9c47ce03f200e0b8fc515d973440d5bc3e359785";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-DB6CCfGg+UAro5tZEP/VMgWL5ZdBCUfPOBf3Ox0Vu24=";
+      sha256 = "sha256-dPeHevAT1Cb2w/Wrfz/d5i6RfO8bvbGl/KrTPxU2l3w=";
     };
     date = "2026-02-19";
   };
