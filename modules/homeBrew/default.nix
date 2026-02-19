@@ -6,6 +6,5 @@
     mpdris2-brew
     syncthing-brew
     userDirs-brew
-    imv-brew
   ];
 }
