@@ -58,7 +58,7 @@ I also use nvfetcher to fetch nixos modules, the method described in the `flake.
 [Check out a blog post about it](https://nix.ladas552.me/posts/Nvfetcher/)
 
 ## Screenshot if you care
-![desktop](https://ladas552.me/assets/desktop/desktop.png)
+![desktop](https://blog.ladas552.me/assets/desktop/desktop.png)
 
 ## Name
 
