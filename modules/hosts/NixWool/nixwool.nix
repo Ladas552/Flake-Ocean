@@ -90,8 +90,13 @@
           22
         ];
 
-        custom.imp.root.cache.directories = [
-          "/var/www"
+        environment.persistence."/cache".directories = [
+          {
+            directory = "/var/www";
+            mode = "0755";
+            user = "ladas552";
+            group = "caddy";
+          }
         ];
       };
     homeManager.NixWool = {
