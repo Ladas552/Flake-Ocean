@@ -91,7 +91,7 @@
           mkdir -p $out/share/applications
           cp $out/opt/helium/helium.desktop $out/share/applications/
           substituteInPlace $out/share/applications/helium.desktop \
-            --replace 'Exec=helium' 'Exec=${pname}'
+            --replace 'Exec=helium --incognito' 'Exec=${pname} &'
 
           for size in 16 32 48 64 128 256; do
             mkdir -p $out/share/icons/hicolor/''${size}x''${size}/apps

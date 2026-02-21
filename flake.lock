@@ -293,15 +293,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1771422729,
-        "narHash": "sha256-3wI44Rn8PyJ48CdxsJHKEJASdCxtp8jWvCsjV+CrDvE=",
-        "owner": "notashelf",
+        "lastModified": 1771666407,
+        "narHash": "sha256-EED6YOg3DdRwaehpt4oS3xDESKaGRH202N0WZEkl9iY=",
+        "owner": "Ladas552",
         "repo": "nvf",
-        "rev": "7dc5b7980026136c11b4c704508289876e55d8ee",
+        "rev": "a70f7ff8ca159d9c7721146d1177313628c0c599",
         "type": "github"
       },
       "original": {
-        "owner": "notashelf",
+        "owner": "Ladas552",
         "repo": "nvf",
         "type": "github"
       }
