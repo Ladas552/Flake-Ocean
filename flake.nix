@@ -17,6 +17,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
       # No useless inputs
       inputs.nix-darwin.follows = ""; # I don't use nix-darwin machine
+      # inputs.smfh.follows = "";
       inputs.smfh.inputs.systems.follows = "systems";
     };
     # Modules for hjem
@@ -72,6 +73,23 @@
       inputs.git-hooks.follows = "";
     };
 
+    # Tangled, git hosting
+    tangled = {
+      url = "git+https://tangled.org/@tangled.org/core";
+      # No useless inputs
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.gomod2nix.inputs.flake-utils.inputs.systems.follows = "systems";
+      inputs.flake-compat.follows = "";
+      inputs.indigo.follows = "";
+      inputs.htmx-src.follows = "";
+      inputs.htmx-ws-src.follows = "";
+      inputs.lucide-src.follows = "";
+      inputs.inter-fonts-src.follows = "";
+      inputs.actor-typeahead-src.follows = "";
+      inputs.ibm-plex-mono-src.follows = "";
+      # inputs.sqlite-lib-src.follows = "";
+    };
+
     # Boilerplate
     systems.url = "github:nix-systems/default-linux";
 
@@ -124,14 +142,8 @@
     inputs:
     let
       # Function to stop using `import-tree` by Vic.
-      # Just to lighten the config a bit, written by https://codeberg.org/BANanaD3V
-      # Adaptation stolen from @iynai
-      inherit (inputs.nixpkgs.lib.fileset) toList fileFilter;
-      import-tree =
-        paths:
-        toList (
-          fileFilter (file: file.hasExt "nix" && !(inputs.nixpkgs.lib.hasPrefix "_" file.name)) paths
-        );
+      # Just to lighten the config a bit, written by @llakala https://github.com/llakala/synaptic-standard/blob/main/demo/recursivelyImport.nix
+      import-tree = import ./stuff/recursivelyImport.nix { lib = inputs.nixpkgs.lib; };
 
       # a way to fetch nix files via nvfetcher and import them in the config
       # basically parse the json crated by nvfetcher, and use fetchTarball
@@ -156,7 +168,7 @@
         specialArgs = { inherit modules; };
       }
       {
-        imports = import-tree ./modules;
+        imports = import-tree [ ./modules ];
         flake.templates = import ./templates;
       };
 }

@@ -11,7 +11,7 @@
         # snes9x-gtk
         # https://github.com/NixOS/nixpkgs/issues/461665
         # punes
-        melonDS
+        melonds
         # doesn't work       retroarchFull
         # too complex and need a special controller      mame
       ];

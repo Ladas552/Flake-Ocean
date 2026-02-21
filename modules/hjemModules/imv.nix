@@ -1,6 +1,5 @@
 {
   flake.modules.hjem.imv = {
-    # imv rum module from https://github.com/snugnug/hjem-rum/pull/160
     rum.programs.imv = {
       enable = true;
       settings = {

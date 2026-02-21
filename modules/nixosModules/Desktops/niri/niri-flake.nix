@@ -276,7 +276,7 @@
           # GUI apps
           "Super+F".spawn = "thunar";
           "Super+W".spawn = "librewolf";
-          "Shift+Super+W".spawn-sh = "helium";
+          "Shift+Super+W".spawn-sh = "helium &";
           # MPD
           "Shift+Alt+P" = {
             spawn = [
@@ -640,6 +640,7 @@
             };
           };
         };
+
       homeManager.niri-flake = {
         imports = [ inputs.niri.homeModules.default ];
         wayland.windowManager.niri = {
@@ -647,10 +648,9 @@
           inherit settings;
         };
       };
-      hjem.niri-flake =
-        { pkgs, ... }:
-        {
-          xdg.config.files."niri/config.kdl".text = inputs.niri.lib.mkNiriKDL settings;
-        };
+
+      hjem.niri-flake = {
+        xdg.config.files."niri/config.kdl".text = inputs.niri.lib.mkNiriKDL settings;
+      };
     };
 }

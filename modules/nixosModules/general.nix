@@ -1,11 +1,16 @@
 {
   flake.modules.nixos.general =
-    { pkgs, config, ... }:
+    {
+      pkgs,
+      config,
+      lib,
+      ...
+    }:
     {
       # Define hostname.
       networking.hostName = "${config.custom.meta.hostname}";
       # Set kernel
-      boot.kernelPackages = pkgs.linuxKernel.packages.linux_xanmod;
+      boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_xanmod;
       # boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
       # Updates firmware directly from vendors

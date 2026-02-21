@@ -25,6 +25,7 @@ github:Ladas552/Flake-Ocean#app`, replace `app` with:
 - [NixOS-WSL](https://github.com/nix-community/NixOS-WSL) for Windows partition
 - NixVM for testing, you shouldn't use it unless testing breaking changes
 - NixIso for my portable NixOS image
+- NixWool is my Hetzner cloud that runs [Tangled.sh](https://tangled.org/) knot
 ## Modular
 I adopted [Dendritic layout](https://github.com/mightyiam/dendritic) for my config. 
 Making all files their own modules that I can import, and if module isn't imported, it doesn't exist. This way most of my config is fairy atomic and you can pop in and out modules as you wish.
@@ -38,7 +39,7 @@ I write comments on things, that might explain certain ways of doing things, or 
 
 Also, I have [Norg document](./nix.norg), containing notes and TODO for the config
 
-I also write some [blog posts about Nix](https://ladas552.me/Flake-Ocean/), feel free to check it out
+I also write some [blog posts about Nix](https://nix.ladas552.me/), feel free to check it out
 
 ## Nvfetcher
 
@@ -54,10 +55,10 @@ Then with `sources.<input-name>.src` you can skip manual fetching for neovim plu
 
 I also use nvfetcher to fetch nixos modules, the method described in the `flake.nix` file. 
 
-[Check out a blog post about it](https://ladas552.me/Flake-Ocean/posts/Nvfetcher/)
+[Check out a blog post about it](https://nix.ladas552.me/posts/Nvfetcher/)
 
 ## Screenshot if you care
-![desktop](https://ladas552.me/assets/desktop/desktop.png)
+![desktop](https://blog.ladas552.me/assets/desktop/desktop.png)
 
 ## Name
 

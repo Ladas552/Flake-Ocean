@@ -85,6 +85,16 @@
                 NixMux
               ];
           }).neovim;
+        nvf-NixWool =
+          (inputs.nvf.lib.neovimConfiguration {
+            inherit pkgs;
+            modules =
+              with config.flake.modules.nvf;
+              base
+              ++ [
+                NixWool
+              ];
+          }).neovim;
       };
     };
 }

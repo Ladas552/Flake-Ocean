@@ -17,7 +17,7 @@ in
       cat-mocha
       general
       cache
-      grub
+      grub-efi
       nix
       sops
       tailscale
@@ -45,6 +45,8 @@ in
       fish
       yt-dlp-NixToks
 
+      # temporary
+      # tangled
       # Modules
       # Users
       root

@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.grub = {
+  flake.modules.nixos.grub-efi = {
     # GRUB Bootloader
     boot = {
       initrd.systemd.enable = true;

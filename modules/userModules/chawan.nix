@@ -45,7 +45,6 @@
     in
     {
       hjem.chawan = {
-        # from https://github.com/snugnug/hjem-rum/pull/162
         inherit custom;
         rum.programs.chawan = config-chawan;
       };

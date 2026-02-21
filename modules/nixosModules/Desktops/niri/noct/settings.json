@@ -1,5 +1,5 @@
 {
-  "settingsVersion": 49,
+  "settingsVersion": 53,
   "bar": {
     "barType": "simple",
     "position": "left",
@@ -99,7 +99,6 @@
           "labelMode": "index",
           "occupiedColor": "secondary",
           "pillSize": 0.6,
-          "reverseScroll": false,
           "showApplications": true,
           "showBadge": true,
           "showLabelsOnlyWhenOccupied": true,
@@ -191,7 +190,7 @@
     "animationSpeed": 1.5,
     "animationDisabled": false,
     "compactLockScreen": false,
-    "lockScreenAnimations": false,
+    "lockScreenAnimations": true,
     "lockOnSuspend": true,
     "showSessionButtonsOnLockScreen": true,
     "showHibernateOnLockScreen": false,
@@ -207,17 +206,36 @@
     "lockScreenCountdownDuration": 10000,
     "autoStartAuth": false,
     "allowPasswordWithFprintd": false,
-    "clockStyle": "custom",
+    "clockStyle": "digital",
     "clockFormat": "hh\\nmm",
+    "passwordChars": false,
     "lockScreenMonitors": [],
+    "lockScreenBlur": 0.8,
+    "lockScreenTint": 0.8,
     "keybinds": {
-      "keyUp": "Up",
-      "keyDown": "Down",
-      "keyLeft": "Left",
-      "keyRight": "Right",
-      "keyEnter": "Return",
-      "keyEscape": "Esc"
-    }
+      "keyUp": [
+        "Up"
+      ],
+      "keyDown": [
+        "Down"
+      ],
+      "keyLeft": [
+        "Left"
+      ],
+      "keyRight": [
+        "Right"
+      ],
+      "keyEnter": [
+        "Return"
+      ],
+      "keyEscape": [
+        "Esc"
+      ],
+      "keyRemove": [
+        "Del"
+      ]
+    },
+    "reverseScroll": false
   },
   "ui": {
     "fontDefault": "JetBrainsMono Nerd Font Mono",
@@ -282,6 +300,7 @@
     "randomIntervalSec": 600,
     "transitionDuration": 1500,
     "transitionType": "random",
+    "skipStartupTransition": true,
     "transitionEdgeSmoothness": 0.05,
     "panelPosition": "top_left",
     "hideWallpaperFilenames": true,
@@ -298,7 +317,8 @@
     "wallhavenResolutionMode": "atleast",
     "wallhavenResolutionWidth": "",
     "wallhavenResolutionHeight": "",
-    "sortOrder": "name"
+    "sortOrder": "name",
+    "favorites": []
   },
   "appLauncher": {
     "enableClipboardHistory": false,
@@ -320,6 +340,7 @@
     "showIconBackground": false,
     "enableSettingsSearch": false,
     "enableWindowsSearch": true,
+    "enableSessionSearch": true,
     "ignoreMouseInput": false,
     "screenshotAnnotationTool": "",
     "overviewLayer": true,
@@ -396,13 +417,7 @@
     "diskAvailCriticalThreshold": 10,
     "batteryWarningThreshold": 30,
     "batteryCriticalThreshold": 5,
-    "cpuPollingInterval": 1000,
-    "gpuPollingInterval": 3000,
     "enableDgpuMonitoring": false,
-    "memPollingInterval": 1000,
-    "diskPollingInterval": 3000,
-    "networkPollingInterval": 1000,
-    "loadAvgPollingInterval": 3000,
     "useCustomColors": false,
     "warningColor": "#94e2d5",
     "criticalColor": "#f38ba8",
@@ -412,6 +427,7 @@
     "enabled": false,
     "position": "bottom",
     "displayMode": "auto_hide",
+    "dockType": "floating",
     "backgroundOpacity": 1,
     "floatingRatio": 0,
     "size": 1,
@@ -422,38 +438,42 @@
     "pinnedStatic": false,
     "inactiveIndicators": false,
     "deadOpacity": 0.6,
-    "animationSpeed": 1
+    "animationSpeed": 1,
+    "sitOnFrame": false,
+    "showFrameIndicator": true
   },
   "network": {
     "wifiEnabled": true,
+    "airplaneModeEnabled": false,
     "bluetoothRssiPollingEnabled": false,
     "bluetoothRssiPollIntervalMs": 10000,
     "wifiDetailsViewMode": "grid",
     "bluetoothDetailsViewMode": "grid",
-    "bluetoothHideUnnamedDevices": false
+    "bluetoothHideUnnamedDevices": false,
+    "disableDiscoverability": false
   },
   "sessionMenu": {
     "enableCountdown": false,
     "countdownDuration": 10000,
     "position": "center",
     "showHeader": false,
+    "showKeybinds": true,
     "largeButtonsStyle": false,
     "largeButtonsLayout": "single-row",
-    "showNumberLabels": true,
     "powerOptions": [
       {
         "action": "lock",
         "command": "",
         "countdownEnabled": false,
         "enabled": true,
-        "keybind": ""
+        "keybind": "1"
       },
       {
         "action": "suspend",
         "command": "",
         "countdownEnabled": false,
         "enabled": true,
-        "keybind": ""
+        "keybind": "2"
       },
       {
         "action": "hibernate",
@@ -467,7 +487,7 @@
         "command": "",
         "countdownEnabled": false,
         "enabled": true,
-        "keybind": ""
+        "keybind": "3"
       },
       {
         "action": "logout",
@@ -481,12 +501,21 @@
         "command": "",
         "countdownEnabled": false,
         "enabled": true,
+        "keybind": "4"
+      },
+      {
+        "action": "rebootToUefi",
+        "command": "",
+        "countdownEnabled": true,
+        "enabled": true,
         "keybind": ""
       }
     ]
   },
   "notifications": {
     "enabled": true,
+    "enableMarkdown": false,
+    "density": "default",
     "monitors": [],
     "location": "top_right",
     "overlayLayer": true,
@@ -495,6 +524,7 @@
     "lowUrgencyDuration": 3,
     "normalUrgencyDuration": 3,
     "criticalUrgencyDuration": 30,
+    "clearDismissed": true,
     "saveToHistory": {
       "low": false,
       "normal": true,
@@ -530,7 +560,7 @@
     "volumeStep": 5,
     "volumeOverdrive": false,
     "cavaFrameRate": 30,
-    "visualizerType": "mirrored",
+    "visualizerType": "wave",
     "mprisBlacklist": [],
     "preferredPlayer": "mpd",
     "volumeFeedback": false
