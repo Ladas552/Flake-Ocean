@@ -13,6 +13,7 @@
       # incus create images:archlinux ArchLinux -c nvidia.runtime=true
       virtualisation.incus = {
         enable = true;
+        package = pkgs.incus;
         agent.enable = true;
         ui.enable = true;
       };
@@ -21,6 +22,7 @@
       environment.systemPackages = [ pkgs.virtiofsd ];
       # Incus is bested used with these modules available
       boot.kernelModules = [
+        "apparmor"
         "virtiofs"
         "9p"
         "9pnet_virtio"

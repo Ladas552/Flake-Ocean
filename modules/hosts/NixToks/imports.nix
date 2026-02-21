@@ -23,6 +23,7 @@ in
       tailscale
       zfs
       dashboard
+      incus
       # ollama
       # open-webui
       searxng
