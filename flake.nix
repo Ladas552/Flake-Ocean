@@ -49,8 +49,7 @@
 
     # Neovim
     nvf = {
-      # url = "github:notashelf/nvf";
-      url = "github:Ladas552/nvf";
+      url = "github:notashelf/nvf";
       # No useless inputs
       # inputs.nixpkgs.follows = "nixpkgs";
       inputs.systems.follows = "systems";
