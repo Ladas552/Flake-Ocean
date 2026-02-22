@@ -6,7 +6,7 @@
       settings = {
         user = {
           name = "Ladas552";
-          email = "l.tokshalov@gmail.com";
+          email = "me@ladas552.me";
         };
         init.defaultBranch = "master";
         gpg.format = "ssh";

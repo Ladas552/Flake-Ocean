@@ -5,7 +5,7 @@
       settings = {
         user = {
           name = "Ladas552";
-          email = "l.tokshalov@gmail.com";
+          email = "me@ladas552.me";
           # chmod 400
           signingkey = "~/.ssh/NixToks";
         };
