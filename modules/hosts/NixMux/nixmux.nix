@@ -31,7 +31,7 @@
       nix.registry = (lib.mapAttrs (_: flake: { inherit flake; }) inputs);
       nix.nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
       # Better Error messages
-      nix.package = pkgs.nixVersions.latest;
+      nix.package = pkgs.lixPackageSets.git.lix;
       # Read the changelog before changing this value
       system.stateVersion = "24.05"; # Set up nix for flakes
       # Set your time zone
