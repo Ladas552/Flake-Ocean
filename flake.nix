@@ -4,6 +4,7 @@
   inputs = {
     # nixpkgs links
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
+    nixpkgs-termux.url = "github:NixOS/nixpkgs/88d3861";
 
     # Home-manager
     home-manager = {

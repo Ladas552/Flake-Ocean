@@ -48,7 +48,7 @@
           name: module: {
             name = lib.removePrefix prefixAndroid name;
             value = inputs.nix-on-droid.lib.nixOnDroidConfiguration {
-              pkgs = import inputs.nixpkgs { system = "aarch64-linux"; };
+              pkgs = import inputs.nixpkgs-termux { system = "aarch64-linux"; };
               modules = [
                 module
                 config.flake.modules.generic.options

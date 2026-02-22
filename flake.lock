@@ -224,6 +224,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-termux": {
+      "locked": {
+        "lastModified": 1769018530,
+        "narHash": "sha256-MJ27Cy2NtBEV5tsK+YraYr2g851f3Fl1LpNHDzDX15c=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "88d3861acdd3d2f0e361767018218e51810df8a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "88d3861",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1771008912,
@@ -315,6 +331,7 @@
         "niri": "niri",
         "nix-on-droid": "nix-on-droid",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-termux": "nixpkgs-termux",
         "nixvim": "nixvim",
         "nvf": "nvf",
         "systems": "systems",
