@@ -21,7 +21,7 @@ in
       {
         home-manager.config.imports = with config.flake.modules.homeManager; [
           { inherit custom; }
-          options
+          config.flake.modules.generic.options
           NixMux
           nvf
           fastfetch
