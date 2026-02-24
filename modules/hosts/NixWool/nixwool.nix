@@ -63,8 +63,8 @@
                 encode gzip
               '';
             };
-            "ladas552" = {
-              extraConfig = ''respond "Blog: https://blog.ladas552.me Nix-Docs: https://nix.ladas552.me Git-Hosting: https://tangled.org/did:plc:6ikdlkw64mrjygj6cea62kn4 GitHub: https://github.com/          Ladas552"'';
+            "ladas552.me" = {
+              extraConfig = ''respond "Blog: https://blog.ladas552.me Nix-Docs: https://nix.ladas552.me Git-Hosting: https://tangled.org/did:plc:6ikdlkw64mrjygj6cea62kn4 GitHub: https://github.com/Ladas552"'';
             };
           };
         };
