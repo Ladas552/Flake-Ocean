@@ -12,7 +12,7 @@
         # arx-libertatis
         # stepmania
         # openmw
-        daggerfall-unity
+        # daggerfall-unity
         # luanti
         # mindustry
         steam-run

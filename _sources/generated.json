@@ -181,7 +181,7 @@
     },
     "noctalia-dev": {
         "cargoLock": null,
-        "date": "2026-02-21",
+        "date": "2026-02-23",
         "extract": null,
         "name": "noctalia-dev",
         "passthru": null,
@@ -191,17 +191,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "198a9f740d82997c0de7f1b52cfb92907f30bfca",
-            "sha256": "sha256-c7O9D30C145cI5QlDxO/IemLbZHyU3SfP+ptOmyJdY0=",
+            "rev": "90e44d6edd604a0877310b01ff20006abcf67e77",
+            "sha256": "sha256-evn+p0+T9yNtjdRr5UnYwXnhlHgFB8ilzhGQoYvgXhs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/noctalia-dev/noctalia-shell"
         },
-        "version": "198a9f740d82997c0de7f1b52cfb92907f30bfca"
+        "version": "90e44d6edd604a0877310b01ff20006abcf67e77"
     },
     "sops-nix": {
         "cargoLock": null,
-        "date": "2026-02-19",
+        "date": "2026-02-23",
         "extract": null,
         "name": "sops-nix",
         "passthru": null,
@@ -211,12 +211,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "e85540ffe97322dc1fea14dd11cdc2f59d540ac7",
-            "sha256": "sha256-eksVUcUsfS9mQx4D9DrYu88u9w70bAf+n6KmTDuIGEE=",
+            "rev": "b027513c32e5b39b59f64626b87fbe168ae02094",
+            "sha256": "sha256-YV17Q5lEU0S9ppw08Y+cs4eEQJBuc79AzblFoHORLMU=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Mic92/sops-nix"
         },
-        "version": "e85540ffe97322dc1fea14dd11cdc2f59d540ac7"
+        "version": "b027513c32e5b39b59f64626b87fbe168ae02094"
     }
 }
