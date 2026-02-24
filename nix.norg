@@ -91,6 +91,12 @@ I start to have a life other than computers so I kinda begin to forget what I di
     - user
       In NixOS, users are Mutual by default, so you can just `su` to change to root, and `passwd ladas552` to change password of user-Ladas552 when you can't login to the user.
 * TODOs
+** Small tasks
+   - ( ) Update nextcloud to 32 then 33
+   - ( ) Fix remote builder for NixWool
+   - ( ) Fix Fish shell for NixMux
+   - ( ) Wrap Bash to use the same programs as fish
+
 ** Notes
    Explain Nix-on-droid shenanigans
 
