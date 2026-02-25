@@ -44,6 +44,7 @@ in
       xkb
       fish
       yt-dlp-NixToks
+      run0
 
       # temporary
       # tangled

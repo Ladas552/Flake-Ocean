@@ -45,6 +45,7 @@ in
       noct
       xkb
       zfs
+      run0
       network-manager
       fish
       yt-dlp

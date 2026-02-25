@@ -30,6 +30,7 @@ in
       fish
       bluesky-pds
       tangled
+      run0
       # Users
       root
       ladas552
