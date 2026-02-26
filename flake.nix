@@ -94,57 +94,14 @@
     # Boilerplate
     systems.url = "github:nix-systems/default-linux";
 
-    # Inputs below are either unused, or replaced with nvfetcher inputs
-
-    # Secrets
-    # sops-nix = {
-    #   url = "github:Mic92/sops-nix";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # impermanence = {
-    #   url = "github:nix-community/impermanence";
-    #   inputs.nixpkgs.follows = "";
-    #   inputs.home-manager.follows = "";
-    # };
-
-    # nixos-wsl = {
-    #   url = "github:nix-community/NixOS-WSL";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    #   # No useless inputs
-    #   inputs.flake-compat.follows = "";
-    # };
-
-    # noctalia = {
-    #   url = "github:noctalia-dev/noctalia-shell";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-
-    # nixos-hardware.url = "github:nixos/nixos-hardware";
-
-    # Overlays
-    # neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
-    # emacs-overlay.url = "github:nix-community/emacs-overlay";
-    # helix-overlay.url = "github:helix-editor/helix";
-    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-
-    # ghostty.url = "github:ghostty-org/ghostty";
-    # ghostty-shaders = {
-    #   url = "github:hackr-sh/ghostty-shaders";
-    #   flake = false;
-    # };
-    # ghostty-cursor = {
-    #   url = "github:KroneCorylus/shader-playground";
-    #   flake = false;
-    # };
-
+    # Also check inputs in ./nvfetcher.toml for more modules I use
   };
   outputs =
     inputs:
     let
       # Function to stop using `import-tree` by Vic.
       # Just to lighten the config a bit, written by @llakala https://github.com/llakala/synaptic-standard/blob/main/demo/recursivelyImport.nix
-      import-tree = import ./stuff/recursivelyImport.nix { lib = inputs.nixpkgs.lib; };
+      import-tree = import ./lib/recursivelyImport.nix { lib = inputs.nixpkgs.lib; };
 
       # a way to fetch nix files via nvfetcher and import them in the config
       # basically parse the json crated by nvfetcher, and use fetchTarball
@@ -169,7 +126,13 @@
         specialArgs = { inherit modules; };
       }
       {
-        imports = import-tree [ ./modules ];
+        imports = import-tree [
+          ./modules
+          inputs.flake-parts.flakeModules.modules
+        ];
         flake.templates = import ./templates;
+        # aarch64 and x86_64 Linux systems
+        systems = import inputs.systems;
+
       };
 }

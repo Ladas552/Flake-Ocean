@@ -10,7 +10,7 @@ This is my multi host, modular Nix config. It declares configs for different pro
 I also declare configuration as packages/wrappers that you can try with `nix run
 github:Ladas552/Flake-Ocean#app`, replace `app` with:
 
-- [nvf](https://github.com/NotAShelf/nvf) - Nix declared Neovim
+- [nvf](https://github.com/NotAShelf/nvf) - Nix declared Neovim (current daily driver)
 - [nixvim](https://github.com/nix-community/nixvim) - another Nix declared Neovim
 - rofi-powermenu - power menu made of Rofi with a [nice theme](https://github.com/adi1090x/rofi)
 - all the other scripts in [pkgs directory](./pkgs/default.nix)
