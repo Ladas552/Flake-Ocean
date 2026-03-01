@@ -8,9 +8,12 @@
       programs.lf = {
         commands = {
           trash = ''%${lib.getExe' pkgs.trash-cli "trash-put"} "$fx"'';
-          open-nvim = "$nvim $f";
-          open-helix = "$hx $f";
+          open-nvim = ''$nvim "$f"'';
+          open-helix = ''$hx "$f"'';
           q = "quit";
+          # Doesn't work for files with ` ` in their names so there is a second command
+          drag-many = "%${lib.getExe' pkgs.ripdrag "ripdrag"} -a -x -b $fx";
+          drag-single = ''%${lib.getExe' pkgs.ripdrag "ripdrag"} -a -x -b "$f"'';
           touch = # bash
             ''
               %{{
@@ -36,6 +39,8 @@
                 zoxide add "$PWD"
               }}
             '';
+          # Copies full path, not just the name
+          copy-name = "$wl-copy $f";
         };
         keybindings = {
           # Open text editor
@@ -53,18 +58,23 @@
           w = "";
           S = "$fish";
           a = "rename";
-          r = "";
+          r = "reload";
           "<backspace2>" = "set hidden!";
           "<enter>" = "open";
+          Y = "copy-name";
           # Rebind find to search
           f = "search";
           F = "filter";
           # Zoxide integration
           z = "push :z<space>";
+          # ripdrag
+          o = "drag-many";
+          O = "drag-single";
         };
         cmdKeybindings = {
           "<tab>" = "cmd-menu-complete";
           "<backtab>" = "cmd-menu-complete-back";
+          "<esc>" = "cmd-interrupt";
         };
         previewer = {
           keybinding = "i";

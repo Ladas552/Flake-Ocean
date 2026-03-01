@@ -38,7 +38,7 @@
       ];
 
       heavy = with config.flake.modules.nvf; [
-        clang
+        # clang
         direnv
         img-clip
         # orgmode

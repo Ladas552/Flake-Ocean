@@ -7,7 +7,7 @@
         environment.systemPackages = with pkgs; [
           blender
           libreoffice-fresh
-          # shotcut
+          shotcut
           imagemagick
           wl-clipboard
           ffmpeg

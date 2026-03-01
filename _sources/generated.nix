@@ -104,44 +104,44 @@
   };
   nixos-wsl = {
     pname = "nixos-wsl";
-    version = "379d20c55f552e91fb9f3f0382e4a97d3f452943";
+    version = "be894604b2aa2184c0b3d3b44995acd0da14dc0c";
     src = fetchgit {
       url = "https://github.com/nix-community/NixOS-WSL";
-      rev = "379d20c55f552e91fb9f3f0382e4a97d3f452943";
+      rev = "be894604b2aa2184c0b3d3b44995acd0da14dc0c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-vA5hocvdGhr+jfBN7A7ogeZqIz2qx01EixXwdVsQcnE=";
+      sha256 = "sha256-sm6OpWZuoDwR53KNlsY482YOoHFWlWYwt0wHmqLkRGE=";
     };
-    date = "2026-02-20";
+    date = "2026-03-01";
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "5137c5efcac31d9aee6952b99f1dcaec9966fe21";
+    version = "cf7255b934562924c66a3fd3e9cb3ce2d128ff42";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "5137c5efcac31d9aee6952b99f1dcaec9966fe21";
+      rev = "cf7255b934562924c66a3fd3e9cb3ce2d128ff42";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-M3U3DdQo/5G88ULedS8BkafiXYL1NyIEer9YL4P9fxQ=";
+      sha256 = "sha256-JAu6Mn/4pzxwlKfz4LHTqz/RdF0pvBKhCrmG2Yw9Lk4=";
     };
-    date = "2026-02-26";
+    date = "2026-03-01";
   };
   sops-nix = {
     pname = "sops-nix";
-    version = "334daa7c273dd8bf7a0cd370e4e16022b64e55e9";
+    version = "dec4d8eac700dcd2fe3c020857d3ee220ec147f1";
     src = fetchgit {
       url = "https://github.com/Mic92/sops-nix";
-      rev = "334daa7c273dd8bf7a0cd370e4e16022b64e55e9";
+      rev = "dec4d8eac700dcd2fe3c020857d3ee220ec147f1";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/wA0OaH6kZ/pFA+nXR/tvg5oupOmEDmMS5us79JT60o=";
+      sha256 = "sha256-1nq7+Kt5IUBD8Hu3nptVPbMf+22rNJoHT0t9L1X+GKA=";
     };
-    date = "2026-02-25";
+    date = "2026-03-01";
   };
 }
