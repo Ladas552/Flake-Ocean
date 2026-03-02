@@ -612,7 +612,7 @@
           environment.systemPackages = with pkgs; [
             xwayland-satellite
             brightnessctl
-            xfce4-power-manager
+            # xfce4-power-manager
             # self.packages.${pkgs.stdenv.hostPlatform.system}.rofi-powermenu
             # self.packages.${pkgs.stdenv.hostPlatform.system}.wpick
           ];
