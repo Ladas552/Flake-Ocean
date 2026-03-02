@@ -191,13 +191,33 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "cf7255b934562924c66a3fd3e9cb3ce2d128ff42",
-            "sha256": "sha256-JAu6Mn/4pzxwlKfz4LHTqz/RdF0pvBKhCrmG2Yw9Lk4=",
+            "rev": "6eb4370f073518691972c7dad6bbf8cecdda9f2e",
+            "sha256": "sha256-MxRMuvkvyoZKJtePKHn4kKORNP0CDvm5XkL+rhPjBzs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/noctalia-dev/noctalia-shell"
         },
-        "version": "cf7255b934562924c66a3fd3e9cb3ce2d128ff42"
+        "version": "6eb4370f073518691972c7dad6bbf8cecdda9f2e"
+    },
+    "noctalia-qs": {
+        "cargoLock": null,
+        "date": "2026-02-27",
+        "extract": null,
+        "name": "noctalia-qs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "0741d27d2f7db567270f139c5d1684614ecf9863",
+            "sha256": "sha256-f821ZSoGpa/aXrWq0gPpea9qBnX8KDyavGKkptz2Mog=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/noctalia-dev/noctalia-qs"
+        },
+        "version": "0741d27d2f7db567270f139c5d1684614ecf9863"
     },
     "sops-nix": {
         "cargoLock": null,
@@ -211,12 +231,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "dec4d8eac700dcd2fe3c020857d3ee220ec147f1",
-            "sha256": "sha256-1nq7+Kt5IUBD8Hu3nptVPbMf+22rNJoHT0t9L1X+GKA=",
+            "rev": "d8be5ea4cd3bc363492ab5bc6e874ccdc5465fe4",
+            "sha256": "sha256-YHykQg0h9hrlZGpMcywnaFzQ1Kn/5YNCCOSaaAl6z7Q=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Mic92/sops-nix"
         },
-        "version": "dec4d8eac700dcd2fe3c020857d3ee220ec147f1"
+        "version": "d8be5ea4cd3bc363492ab5bc6e874ccdc5465fe4"
     }
 }

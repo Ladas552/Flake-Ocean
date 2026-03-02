@@ -1,5 +1,5 @@
 {
-  "settingsVersion": 53,
+  "settingsVersion": 54,
   "bar": {
     "barType": "simple",
     "position": "left",
@@ -9,6 +9,9 @@
     "showCapsule": false,
     "capsuleOpacity": 1,
     "capsuleColorKey": "none",
+    "widgetSpacing": 6,
+    "contentPadding": 2,
+    "fontScale": 1,
     "backgroundOpacity": 1,
     "useSeparateOpacity": true,
     "floating": false,
@@ -21,6 +24,7 @@
     "displayMode": "always_visible",
     "autoHideDelay": 500,
     "autoShowDelay": 150,
+    "showOnWorkspaceSwitch": true,
     "widgets": {
       "left": [
         {
@@ -37,9 +41,13 @@
           "id": "SessionMenu"
         },
         {
+          "colorizeSystemIcon": "none",
+          "customIconPath": "",
+          "enableColorization": false,
           "icon": "rocket",
           "iconColor": "none",
-          "id": "Launcher"
+          "id": "Launcher",
+          "useDistroLogo": false
         },
         {
           "defaultSettings": {
@@ -66,14 +74,11 @@
         },
         {
           "compactMode": false,
-          "compactShowAlbumArt": true,
-          "compactShowVisualizer": false,
           "hideMode": "hidden",
           "hideWhenIdle": false,
           "id": "MediaMini",
           "maxWidth": 145,
           "panelShowAlbumArt": true,
-          "panelShowVisualizer": true,
           "scrollingMode": "hover",
           "showAlbumArt": true,
           "showArtistFirst": true,
@@ -175,6 +180,9 @@
         }
       ]
     },
+    "mouseWheelAction": "none",
+    "reverseScroll": false,
+    "mouseWheelWrap": true,
     "screenOverrides": []
   },
   "general": {
@@ -194,6 +202,7 @@
     "lockOnSuspend": true,
     "showSessionButtonsOnLockScreen": true,
     "showHibernateOnLockScreen": false,
+    "enableLockScreenMediaControls": true,
     "enableShadows": false,
     "shadowDirection": "bottom_right",
     "shadowOffsetX": 2,
@@ -208,7 +217,7 @@
     "allowPasswordWithFprintd": false,
     "clockStyle": "digital",
     "clockFormat": "hh\\nmm",
-    "passwordChars": false,
+    "passwordChars": true,
     "lockScreenMonitors": [],
     "lockScreenBlur": 0.8,
     "lockScreenTint": 0.8,
@@ -226,7 +235,8 @@
         "Right"
       ],
       "keyEnter": [
-        "Return"
+        "Return",
+        "Enter"
       ],
       "keyEscape": [
         "Esc"
@@ -243,14 +253,11 @@
     "fontDefaultScale": 1,
     "fontFixedScale": 1,
     "tooltipsEnabled": true,
+    "boxBorderEnabled": false,
     "panelBackgroundOpacity": 0.8,
     "panelsAttachedToBar": true,
     "settingsPanelMode": "centered",
-    "wifiDetailsViewMode": "grid",
-    "bluetoothDetailsViewMode": "grid",
-    "networkPanelView": "wifi",
-    "bluetoothHideUnnamedDevices": false,
-    "boxBorderEnabled": false
+    "settingsPanelSideBarCardStyle": false
   },
   "location": {
     "name": "Astana",
@@ -264,7 +271,7 @@
     "analogClockInCalendar": false,
     "firstDayOfWeek": 1,
     "hideWeatherTimezone": false,
-    "hideWeatherCityName": false
+    "hideWeatherCityName": true
   },
   "calendar": {
     "cards": [
@@ -306,11 +313,11 @@
     "hideWallpaperFilenames": true,
     "overviewBlur": 0.4,
     "overviewTint": 0.6,
-    "useWallhaven": false,
+    "useWallhaven": true,
     "wallhavenQuery": "",
     "wallhavenSorting": "relevance",
     "wallhavenOrder": "desc",
-    "wallhavenCategories": "111",
+    "wallhavenCategories": "010",
     "wallhavenPurity": "100",
     "wallhavenRatios": "",
     "wallhavenApiKey": "",
@@ -348,6 +355,7 @@
   },
   "controlCenter": {
     "position": "close_to_bar_button",
+    "openAtMouseOnBarRightClick": true,
     "diskPath": "/persist",
     "shortcuts": {
       "left": [
@@ -435,22 +443,33 @@
     "monitors": [],
     "pinnedApps": [],
     "colorizeIcons": false,
+    "showLauncherIcon": false,
+    "launcherPosition": "end",
+    "launcherIconColor": "none",
     "pinnedStatic": false,
     "inactiveIndicators": false,
+    "groupApps": false,
+    "groupContextMenuMode": "extended",
+    "groupClickAction": "cycle",
+    "groupIndicatorStyle": "dots",
     "deadOpacity": 0.6,
     "animationSpeed": 1,
     "sitOnFrame": false,
-    "showFrameIndicator": true
+    "showDockIndicator": false,
+    "indicatorThickness": 3,
+    "indicatorColor": "primary",
+    "indicatorOpacity": 0.6
   },
   "network": {
     "wifiEnabled": true,
     "airplaneModeEnabled": false,
     "bluetoothRssiPollingEnabled": false,
     "bluetoothRssiPollIntervalMs": 10000,
+    "networkPanelView": "wifi",
     "wifiDetailsViewMode": "grid",
     "bluetoothDetailsViewMode": "grid",
-    "bluetoothHideUnnamedDevices": false,
-    "disableDiscoverability": false
+    "bluetoothHideUnnamedDevices": true,
+    "disableDiscoverability": true
   },
   "sessionMenu": {
     "enableCountdown": false,
@@ -551,8 +570,7 @@
     "backgroundOpacity": 1,
     "enabledTypes": [
       0,
-      2,
-      1
+      2
     ],
     "monitors": []
   },
@@ -563,12 +581,14 @@
     "visualizerType": "wave",
     "mprisBlacklist": [],
     "preferredPlayer": "mpd",
-    "volumeFeedback": false
+    "volumeFeedback": false,
+    "volumeFeedbackSoundFile": ""
   },
   "brightness": {
     "brightnessStep": 5,
     "enforceMinimum": false,
-    "enableDdcSupport": false
+    "enableDdcSupport": false,
+    "backlightDeviceMappings": []
   },
   "colorSchemes": {
     "useWallpaperColors": false,
@@ -593,6 +613,10 @@
       {
         "enabled": true,
         "id": "cava"
+      },
+      {
+        "enabled": true,
+        "id": "steam"
       }
     ],
     "enableUserTheming": false
@@ -601,7 +625,7 @@
     "enabled": false,
     "forced": false,
     "autoSchedule": true,
-    "nightTemp": "4000",
+    "nightTemp": "3999",
     "dayTemp": "6500",
     "manualSunrise": "06:30",
     "manualSunset": "18:30"
@@ -620,8 +644,23 @@
   "plugins": {
     "autoUpdate": true
   },
+  "idle": {
+    "enabled": true,
+    "screenOffTimeout": 600,
+    "lockTimeout": 660,
+    "suspendTimeout": 1800,
+    "fadeDuration": 5,
+    "screenOffCommand": "",
+    "lockCommand": "",
+    "suspendCommand": "",
+    "resumeScreenOffCommand": "",
+    "resumeLockCommand": "",
+    "resumeSuspendCommand": "",
+    "customCommands": "[]"
+  },
   "desktopWidgets": {
     "enabled": false,
+    "overviewEnabled": true,
     "gridSnap": false,
     "monitorWidgets": [
       {
