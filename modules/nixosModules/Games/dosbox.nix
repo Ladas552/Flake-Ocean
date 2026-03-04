@@ -1,9 +1,9 @@
 {
-  flake.modules.homeManager.dosbox =
+  flake.modules.hjem.dosbox =
     { pkgs, ... }:
     {
-      home.packages = [ pkgs.dosbox ];
-      home.file.".dosbox/dosbox-0.74-3.conf" = {
+      packages = [ pkgs.dosbox ];
+      files.".dosbox/dosbox-0.74-3.conf" = {
         enable = true;
         recursive = true;
         text = ''
@@ -100,7 +100,6 @@
           c:
           dir
         '';
-
       };
     };
 }

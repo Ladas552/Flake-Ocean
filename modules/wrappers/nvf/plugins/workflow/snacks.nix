@@ -1,6 +1,6 @@
 {
   flake.modules.nvf.snacks =
-    { pkgs, config, ... }:
+    { pkgs, ... }:
     {
       vim = {
         extraPackages = [ pkgs.sqlite ];
@@ -9,7 +9,7 @@
           setupOpts = {
             bigfile.enabled = true;
             image = {
-              enabled = (!config.custom.meta.isTermux);
+              enabled = true;
               doc.inline = false;
               doc.float = true;
               convert.notify = false;

@@ -52,9 +52,6 @@
             ];
             right = [
               "diagnostics"
-              # ]
-              # ++ lib.optionals (!meta.isTermux) [ "current-working-directory" ]
-              # ++ [
               "register"
               "position"
               "total-line-numbers"
@@ -78,10 +75,6 @@
           trim-trailing-whitespace = true;
           trim-final-newlines = true;
         };
-        # // lib.optionalAttrs (!meta.isTermux) {
-        #   rainbow-brackets = true;
-        #   word-completion.trigger-length = 4;
-        # };
       };
     };
 }

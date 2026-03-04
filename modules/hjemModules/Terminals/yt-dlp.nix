@@ -13,10 +13,6 @@
       };
     in
     {
-      homeManager.yt-dlp = {
-        programs.yt-dlp.enable = true;
-        home.shellAliases = { } // aliases;
-      };
       hjem.yt-dlp =
         { pkgs, ... }:
         {

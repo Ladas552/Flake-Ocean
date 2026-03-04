@@ -61,8 +61,6 @@
         extraPlugins = {
           "neorg-interim-ls".package = neorg-interim-ls;
           "neorg-conceal-wrap".package = neorg-conceal-wrap;
-        }
-        // lib.optionalAttrs (!config.custom.meta.isTermux) {
           "neorg_query".package = neorg-query;
         };
         notes.neorg = {
@@ -70,7 +68,7 @@
           treesitter.enable = true;
           setupOpts.load = {
             # Extra modules
-            "external.query" = lib.mkIf (!config.custom.meta.isTermux) {
+            "external.query" = {
               config = {
                 index_on_launch = true;
                 update_on_change = true;

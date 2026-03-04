@@ -118,44 +118,44 @@
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "6eb4370f073518691972c7dad6bbf8cecdda9f2e";
+    version = "57b208f04e557b62728b1ca720c260c271a196b3";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "6eb4370f073518691972c7dad6bbf8cecdda9f2e";
+      rev = "57b208f04e557b62728b1ca720c260c271a196b3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-MxRMuvkvyoZKJtePKHn4kKORNP0CDvm5XkL+rhPjBzs=";
+      sha256 = "sha256-zzrH9t206+jHqZVZyncZg1gzHEeZ26s7QnE72SP7YFs=";
     };
-    date = "2026-03-01";
+    date = "2026-03-04";
   };
   noctalia-qs = {
     pname = "noctalia-qs";
-    version = "0741d27d2f7db567270f139c5d1684614ecf9863";
+    version = "ce01746c065db0e42519ba87254457e2b4cf8bc4";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-qs";
-      rev = "0741d27d2f7db567270f139c5d1684614ecf9863";
+      rev = "ce01746c065db0e42519ba87254457e2b4cf8bc4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-f821ZSoGpa/aXrWq0gPpea9qBnX8KDyavGKkptz2Mog=";
+      sha256 = "sha256-fd/8R9Dqf5Qsx6hu+L4LDXEnGInzKuWYazI7j0dURLw=";
     };
-    date = "2026-02-27";
+    date = "2026-03-04";
   };
   sops-nix = {
     pname = "sops-nix";
-    version = "d8be5ea4cd3bc363492ab5bc6e874ccdc5465fe4";
+    version = "1d9b98a29a45abe9c4d3174bd36de9f28755e3ff";
     src = fetchgit {
       url = "https://github.com/Mic92/sops-nix";
-      rev = "d8be5ea4cd3bc363492ab5bc6e874ccdc5465fe4";
+      rev = "1d9b98a29a45abe9c4d3174bd36de9f28755e3ff";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-YHykQg0h9hrlZGpMcywnaFzQ1Kn/5YNCCOSaaAl6z7Q=";
+      sha256 = "sha256-hmIvE/slLKEFKNEJz27IZ8BKlAaZDcjIHmkZ7GCEjfw=";
     };
-    date = "2026-03-01";
+    date = "2026-03-02";
   };
 }

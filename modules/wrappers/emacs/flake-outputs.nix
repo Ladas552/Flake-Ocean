@@ -12,15 +12,6 @@
           package = self.packages.${pkgs.stdenv.hostPlatform.system}.emacs;
         };
       };
-    homeManager.emacs =
-      { pkgs, ... }:
-      {
-        programs.emacs = {
-          enable = true;
-          package = self.packages.${pkgs.stdenv.hostPlatform.system}.emacs;
-        };
-        services.emacs.enable = true;
-      };
   };
 
   # define emacs package for `nix run`

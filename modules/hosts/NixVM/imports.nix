@@ -3,7 +3,6 @@ let
   custom.meta = {
     hostname = "NixVm";
     self = "~/Flake-Ocean";
-    isTermux = false;
     norg = "~/Documents/Norg";
   };
 in

@@ -12,10 +12,6 @@
         type = lib.types.str;
         default = config.custom.meta.user;
       };
-      isTermux = lib.mkOption {
-        type = lib.types.bool;
-        description = "Is host nixOnDroid";
-      };
       hostname = lib.mkOption {
         type = lib.types.str;
         description = "Hostname";
@@ -35,7 +31,6 @@
         options.custom.meta = {
           inherit
             user
-            isTermux
             hostname
             self
             norg

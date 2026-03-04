@@ -1,7 +1,9 @@
 {
   flake.modules.homeManager.thunderbird =
-    { config, ... }:
+    { config, modulesPath, ... }:
     {
+      imports = [ "${modulesPath}/programs/thunderbird.nix" ];
+
       programs.thunderbird = {
         enable = true;
         profiles."${config.custom.meta.user}" = {

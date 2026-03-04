@@ -1,5 +1,5 @@
 {
-  "settingsVersion": 54,
+  "settingsVersion": 55,
   "bar": {
     "barType": "simple",
     "position": "left",
@@ -41,9 +41,9 @@
           "id": "SessionMenu"
         },
         {
-          "colorizeSystemIcon": "none",
+          "colorizeSystemIcon": "tertiary",
           "customIconPath": "",
-          "enableColorization": false,
+          "enableColorization": true,
           "icon": "rocket",
           "iconColor": "none",
           "id": "Launcher",
@@ -183,6 +183,12 @@
     "mouseWheelAction": "none",
     "reverseScroll": false,
     "mouseWheelWrap": true,
+    "middleClickAction": "none",
+    "middleClickFollowMouse": false,
+    "middleClickCommand": "",
+    "rightClickAction": "controlCenter",
+    "rightClickFollowMouse": true,
+    "rightClickCommand": "",
     "screenOverrides": []
   },
   "general": {
@@ -355,7 +361,6 @@
   },
   "controlCenter": {
     "position": "close_to_bar_button",
-    "openAtMouseOnBarRightClick": true,
     "diskPath": "/persist",
     "shortcuts": {
       "left": [
@@ -469,7 +474,8 @@
     "wifiDetailsViewMode": "grid",
     "bluetoothDetailsViewMode": "grid",
     "bluetoothHideUnnamedDevices": true,
-    "disableDiscoverability": true
+    "disableDiscoverability": true,
+    "bluetoothAutoConnect": true
   },
   "sessionMenu": {
     "enableCountdown": false,
@@ -527,6 +533,13 @@
         "command": "",
         "countdownEnabled": true,
         "enabled": true,
+        "keybind": ""
+      },
+      {
+        "action": "userspaceReboot",
+        "command": "",
+        "countdownEnabled": true,
+        "enabled": false,
         "keybind": ""
       }
     ]

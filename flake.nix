@@ -4,7 +4,6 @@
   inputs = {
     # nixpkgs links
     nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
-    nixpkgs-termux.url = "github:NixOS/nixpkgs/88d3861";
 
     # Home-manager
     home-manager = {
@@ -31,17 +30,6 @@
       inputs.treefmt-nix.follows = "";
     };
 
-    nix-on-droid = {
-      url = "github:t184256/nix-on-droid";
-      # No useless inputs
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.home-manager.follows = "home-manager";
-      inputs.nix-formatter-pack.follows = "";
-      inputs.nixpkgs-docs.follows = "";
-      inputs.nmd.follows = "";
-      inputs.nixpkgs-for-bootstrap.follows = ""; # I don't boot strap from my config
-    };
-
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       # No useless inputs
@@ -57,14 +45,6 @@
       inputs.flake-parts.follows = "flake-parts";
       inputs.flake-compat.follows = "";
       inputs.ndg.follows = "";
-    };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      # No useless inputs
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.systems.follows = "systems";
     };
 
     # Niri
@@ -88,6 +68,7 @@
       inputs.inter-fonts-src.follows = "";
       inputs.actor-typeahead-src.follows = "";
       inputs.ibm-plex-mono-src.follows = "";
+      inputs.mermaid-src.follows = "";
       # inputs.sqlite-lib-src.follows = "";
     };
 

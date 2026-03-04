@@ -72,9 +72,6 @@
           };
           environment.shellAliases = { } // aliases;
         };
-      homeManager.zfs = {
-        home.shellAliases = { } // aliases;
-      };
       hjem.zfs = {
         rum.programs.fish.aliases = { } // aliases;
       };

@@ -31,8 +31,7 @@
         # head -c 8 /etc/machine-id
         networking.hostId = "98d7caca";
 
-        #build machine for termux
-        # Termux builder
+        # Build machine for NixWool
         boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 
         # Linux sheduler, works post 6.12

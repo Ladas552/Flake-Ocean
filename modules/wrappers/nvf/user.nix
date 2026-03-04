@@ -1,16 +1,7 @@
 { lib, self, ... }:
-# define nvf modules for homeManager and hjem
+# define nvf modules for systems so that they don't collide their inherited options
 {
   flake.modules = {
-    # I only use this home-manager in Nix-On-Droid, so no logic in making this one modular
-    homeManager.nvf =
-      let
-        nvf-NixMux = self.packages."aarch64-linux".nvf-NixMux;
-      in
-      {
-        home.packages = [ nvf-NixMux ];
-        home.sessionVariables.EDITOR = "neovim";
-      };
     hjem.nvf =
       { config, ... }:
       let

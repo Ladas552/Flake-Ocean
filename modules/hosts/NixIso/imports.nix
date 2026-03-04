@@ -3,7 +3,6 @@ let
   custom.meta = {
     hostname = "NixIso";
     self = "~/Flake-Ocean";
-    isTermux = false;
     norg = null;
   };
 in

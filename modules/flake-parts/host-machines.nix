@@ -8,7 +8,6 @@
   flake =
     let
       prefix = "hosts/";
-      prefixAndroid = "nixOnDroidConfigurations/";
     in
     {
       nixosConfigurations = lib.pipe config.flake.modules.nixos [
@@ -31,27 +30,8 @@
                   home-manager.sharedModules = [
                     config.flake.modules.generic.options
                     config.flake.modules.homeManager.base
-                    # minimal as different module only exists because I am not bothered to add minimal = true; to nix-on-droid
-                    config.flake.modules.homeManager.homeManager-minimal
                   ];
                 }
-              ];
-            };
-          }
-        ))
-      ];
-
-      # Having a let in for `prefix` breaks treesitter for some reason
-      nixOnDroidConfigurations = lib.pipe config.flake.modules.nixOnDroid [
-        (lib.filterAttrs (name: _: lib.hasPrefix prefixAndroid name))
-        (lib.mapAttrs' (
-          name: module: {
-            name = lib.removePrefix prefixAndroid name;
-            value = inputs.nix-on-droid.lib.nixOnDroidConfiguration {
-              pkgs = import inputs.nixpkgs-termux { system = "aarch64-linux"; };
-              modules = [
-                module
-                config.flake.modules.generic.options
               ];
             };
           }

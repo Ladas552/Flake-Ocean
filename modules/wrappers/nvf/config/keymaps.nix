@@ -96,8 +96,6 @@
               key = "<A-Right>";
               mode = "n";
             }
-          ]
-          ++ lib.optionals (!config.custom.meta.isTermux) [
             #Buffer Navigation Desktop
             {
               action = "<cmd>bprevious<CR>";
@@ -111,23 +109,6 @@
               mode = "n";
               desc = "Right Buffer";
             }
-          ]
-          ++ lib.optionals config.custom.meta.isTermux [
-            #Buffer Navigation Termux
-            {
-              action = "<cmd>bprevious<CR>";
-              key = "<leader>.";
-              mode = "n";
-              desc = "Left Buffer";
-            }
-            {
-              action = "<cmd>bnext<CR>";
-              key = "<leader>,";
-              mode = "n";
-              desc = "Right Buffer";
-            }
-          ]
-          ++ [
             # Close Buffer
             {
               action = "<cmd>bdelete<CR>";

@@ -3,7 +3,6 @@ let
   custom.meta = {
     hostname = "NixPort";
     self = "/persist/home/${config.custom.meta.user}/Projects/my_repos/Flake-Ocean";
-    isTermux = false;
     norg = "~/Documents/Norg";
   };
 in
