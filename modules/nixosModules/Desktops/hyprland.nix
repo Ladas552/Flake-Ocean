@@ -2,28 +2,9 @@
 {
   # Hyprland
   flake.modules = {
-    # autologin into hyprland
-    nixos.hyprland-greetd =
-      { pkgs, config, ... }:
-      {
-        services.displayManager.autoLogin.enable = true;
-        services.displayManager.autoLogin.user = "${config.custom.meta.user}";
-        services.greetd = {
-          enable = true;
-          settings = rec {
-            # initial session for autologin
-            # https://wiki.archlinux.org/title/Greetd#Enabling_autologin
-            initial_session = {
-              command = "uwsm start ${pkgs.hyprland}/share/wayland-sessions/hyprland.desktop";
-              user = "${config.custom.meta.user}";
-            };
-            default_session = initial_session;
-          };
-        };
-      };
     # hyprland
     nixos.hyprland =
-      { pkgs, ... }:
+      { pkgs, config, ... }:
       {
         programs.hyprland = {
           enable = true;
@@ -44,6 +25,22 @@
 
         # persist for Impermanence
         custom.imp.home.cache.directories = [ ".cache/hyprland" ];
+
+        # Autologin into hyprland
+        services.displayManager.autoLogin.enable = true;
+        services.displayManager.autoLogin.user = "${config.custom.meta.user}";
+        services.greetd = {
+          enable = true;
+          settings = rec {
+            # initial session for autologin
+            # https://wiki.archlinux.org/title/Greetd#Enabling_autologin
+            initial_session = {
+              command = "uwsm start ${pkgs.hyprland}/share/wayland-sessions/hyprland.desktop";
+              user = "${config.custom.meta.user}";
+            };
+            default_session = initial_session;
+          };
+        };
       };
 
     # hyprland dotfiles
@@ -104,7 +101,7 @@
             # Keybinds
             bind = [
               "SUPER, T, exec, ghostty"
-              "SUPER, W, exec, floorp"
+              "SUPER, W, exec, librewolf"
               "SUPER, space, exec, rofi -show"
               "SUPER, 1, workspace, 1"
               "SUPER, 2, workspace, 2"

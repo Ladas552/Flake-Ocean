@@ -1,9 +1,4 @@
-{
-  self,
-  config,
-  inputs,
-  ...
-}:
+{ inputs, ... }:
 {
   flake.modules =
     let
@@ -582,11 +577,10 @@
     in
     {
       nixos.niri-flake =
-        { pkgs, ... }:
+        { pkgs, config, ... }:
         {
           imports = [
             inputs.niri.nixosModules.default
-            config.flake.modules.nixos.niri-greetd
           ];
 
           # To use master branch niri without building rust
@@ -637,6 +631,22 @@
               niri.default = "gnome";
               common.default = "gnome";
               obs.default = "gnome";
+            };
+          };
+
+          # Autologin
+          services.displayManager.autoLogin.enable = true;
+          services.displayManager.autoLogin.user = "${config.custom.meta.user}";
+          services.greetd = {
+            enable = true;
+            settings = rec {
+              # initial session for autologin
+              # https://wiki.archlinux.org/title/Greetd#Enabling_autologin
+              initial_session = {
+                command = "niri-session";
+                user = "${config.custom.meta.user}";
+              };
+              default_session = initial_session;
             };
           };
         };

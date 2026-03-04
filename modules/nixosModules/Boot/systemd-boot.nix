@@ -9,7 +9,7 @@
     {
       boot = {
         initrd.systemd.enable = true;
-        supportedFilesystems.ntfs = true;
+        supportedFilesystems.ntfs = lib.mkIf (config.custom.meta.hostname == "NixPort") true;
         loader = {
           systemd-boot = {
             enable = true;
