@@ -1,13 +1,12 @@
 {
-  flake.modules.homeManager.helix =
+  flake.modules.hjem.helix-tinymist =
     { pkgs, ... }:
     {
-
-      programs.helix = {
-        extraPackages = [
-          pkgs.tinymist
-          pkgs.typstyle
-        ];
+      packages = [
+        pkgs.tinymist
+        pkgs.typstyle
+      ];
+      rum.programs.helix = {
         languages = {
           language-server.tinymist = {
             command = "tinymist";

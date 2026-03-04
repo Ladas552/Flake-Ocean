@@ -1,12 +1,12 @@
 {
-  flake.modules.homeManager.helix =
+  flake.modules.hjem.helix-nixd =
     { pkgs, ... }:
     {
-      programs.helix = {
-        extraPackages = [
-          pkgs.nixd
-          pkgs.nixfmt
-        ];
+      packages = [
+        pkgs.nixd
+        pkgs.nixfmt
+      ];
+      rum.programs.helix = {
         languages = {
           language-server.nixd = {
             command = "nixd";
