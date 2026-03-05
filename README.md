@@ -62,6 +62,11 @@ I also use nvfetcher to fetch nixos modules, the method described in the `flake.
 ## Name
 
 Yes, it is a [JoJo's reference](https://github.com/user-attachments/assets/7c467d52-a430-4bb3-9493-a5ffa0d69dd4)
+## Mirrors
+Code is hosted in two repositories for your and my convenience:
+- Main Tangled: https://tangled.org/ladas552.me/Flake-ocean
+- Read-only GitHub: https://github.com/Ladas552/Flake-Ocean
+- My older archived config: https://github.com/Ladas552/Nix-Is-Unbreakable
 
 # Credits
 I take a lot of things from the internet and different configs too. So I credit people in comments to snippets that I stole.
