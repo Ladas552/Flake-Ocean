@@ -32,6 +32,14 @@
         glibcLocales
       ];
 
+      environment = {
+        shellAliases = {
+          wget-install = "${lib.getExe' pkgs.wget "wget"} https://raw.githubusercontent.com/Ladas552/Flake-Ocean/refs/heads/master/docs/zfs.norg";
+          wget-impermanence = "${lib.getExe' pkgs.wget "wget"} https://raw.githubusercontent.com/Ladas552/Flake-Ocean/refs/heads/master/docs/impermanence.norg";
+          git-install = "${lib.getExe' pkgs.git "git"} clone https://github.com/Ladas552/Flake-Ocean.git";
+        };
+      };
+
       # Environmental Variables
       environment.variables = {
         BROWSER = "ungoogled-chromium";

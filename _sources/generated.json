@@ -191,13 +191,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "57b208f04e557b62728b1ca720c260c271a196b3",
-            "sha256": "sha256-zzrH9t206+jHqZVZyncZg1gzHEeZ26s7QnE72SP7YFs=",
+            "rev": "c77497f8aaf2f2ed7ad8d52874c6ca0ed482fd2b",
+            "sha256": "sha256-aUrGXbVqB4crb+cMIwo2BwwIQInmOjroqaVe0yYAips=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/noctalia-dev/noctalia-shell"
         },
-        "version": "57b208f04e557b62728b1ca720c260c271a196b3"
+        "version": "c77497f8aaf2f2ed7ad8d52874c6ca0ed482fd2b"
     },
     "noctalia-qs": {
         "cargoLock": null,
@@ -211,13 +211,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "ce01746c065db0e42519ba87254457e2b4cf8bc4",
-            "sha256": "sha256-fd/8R9Dqf5Qsx6hu+L4LDXEnGInzKuWYazI7j0dURLw=",
+            "rev": "f8531192cd09b9ea2e78d18e9cfc9d3dba498690",
+            "sha256": "sha256-TLHXPoELZA6VeuzC1Zpx+MnSsYzrJs+DSieMgfjAOJc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/noctalia-dev/noctalia-qs"
         },
-        "version": "ce01746c065db0e42519ba87254457e2b4cf8bc4"
+        "version": "f8531192cd09b9ea2e78d18e9cfc9d3dba498690"
     },
     "sops-nix": {
         "cargoLock": null,
