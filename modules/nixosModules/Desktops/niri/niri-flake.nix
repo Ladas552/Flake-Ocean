@@ -18,6 +18,11 @@
           #   ]
           # [ "wpaperd" ]
           [
+            "brightnessctl"
+            "set"
+            "27%"
+          ]
+          [
             "thunar"
             "-d"
           ]

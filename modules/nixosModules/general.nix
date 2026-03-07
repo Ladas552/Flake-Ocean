@@ -13,6 +13,8 @@
       boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_xanmod;
       # boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
+      # I am not deaf yet
+      services.speechd.enable = false;
       # Updates firmware directly from vendors
       services.fwupd.enable = true;
       # clear out journalctl logs

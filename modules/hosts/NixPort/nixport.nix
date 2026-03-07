@@ -32,6 +32,7 @@
         # Environmental Variables
         environment.variables = {
           BROWSER = "librewolf";
+          EDITOR = "nvim";
         };
 
         # ZFS needs it

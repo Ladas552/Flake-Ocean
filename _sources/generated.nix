@@ -118,31 +118,31 @@
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "c77497f8aaf2f2ed7ad8d52874c6ca0ed482fd2b";
+    version = "77de0b0ade368387264c209d989eae00af864f72";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "c77497f8aaf2f2ed7ad8d52874c6ca0ed482fd2b";
+      rev = "77de0b0ade368387264c209d989eae00af864f72";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-aUrGXbVqB4crb+cMIwo2BwwIQInmOjroqaVe0yYAips=";
+      sha256 = "sha256-XPGPM5rAeaRCwn8Ux4TsZV3YbxqyHtMfJyHpJi5OMmc=";
     };
-    date = "2026-03-04";
+    date = "2026-03-06";
   };
   noctalia-qs = {
     pname = "noctalia-qs";
-    version = "f8531192cd09b9ea2e78d18e9cfc9d3dba498690";
+    version = "04689c17134702a914c911db42d71cac3c32419b";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-qs";
-      rev = "f8531192cd09b9ea2e78d18e9cfc9d3dba498690";
+      rev = "04689c17134702a914c911db42d71cac3c32419b";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-TLHXPoELZA6VeuzC1Zpx+MnSsYzrJs+DSieMgfjAOJc=";
+      sha256 = "sha256-GJbFfwZSifrgLSr+13tAq/NDw6RxcP7357ij/sfHloQ=";
     };
-    date = "2026-03-04";
+    date = "2026-03-06";
   };
   sops-nix = {
     pname = "sops-nix";
