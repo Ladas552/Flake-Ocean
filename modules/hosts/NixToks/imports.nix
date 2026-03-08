@@ -16,7 +16,8 @@ in
       cat-mocha
       general
       cache
-      grub-efi
+      # grub-efi
+      systemd-boot
       nix
       sops
       tailscale

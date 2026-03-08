@@ -45,7 +45,7 @@
 
       services.nextcloud = {
         enable = true;
-        package = pkgs.nextcloud32;
+        package = pkgs.nextcloud33;
         configureRedis = true;
         maxUploadSize = "50G";
         hostName = "nextcloud.ladas552.me";
