@@ -45,3 +45,5 @@ version: 1.1.1
 *** Configs to steal
     - {https://github.com/llakala/nixos}[llakala] - adios, wrappers, uses base values and specialArgs
     - {https://github.com/hercules-ci/flake-parts/blob/main/extras/modules.nix}[Flake-parts] - This file in particular defines modules and classes in `flake.modules`. So theoretically I can just adopt this into my config without fucking with flake-parts
+    - {https://github.com/everviolet/nix/blob/9ec0548cfded2f1883147ab184b812a315e2272d/flake.nix#L28}[flake.nix] - sets modules without use of flake-parts. interesting to see it trough
+    - {https://github.com/equals03/baile}[some framework] - just to check how the use flake-parts
