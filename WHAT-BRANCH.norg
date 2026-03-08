@@ -1,0 +1,47 @@
+@document.meta
+title: WHAT-BRANCH
+description: What this PR will be about
+authors: ladas552
+categories: [
+  nix
+]
+created: 2026-03-08T12:33:21
+updated: 2026-03-08T18:25:52
+version: 1.1.1
+@end
+
+* What I want
+ - Remove flake-parts dependency
+** Additonal ideas to implement
+   - Go flake inputless. 
+     Get everything from nvfetcher. Yes, even nixpkgs. I don't have a reason to, other than that I hate how flake inputs work. not having a good way to import modules. Also need to find a way to make a nvf config. 
+   - Switch to Adios
+     For the fun of it. I think I can use adios with Flakes. Need to check. There is no practical reason, other than it will be fun and Uniq.
+* How
+** My current setup
+   ~ Utilises generic module class to set options for every flake parts module, including the wrappers.
+   ~ nixosConfiguration function to combine all the modules into a host
+   ~ If I don't import a module into host, it doesn't exist. As in doesn't apply changes
+   
+** How Can I reapply this setup on non Flake-Parts config
+   ~ Generic modules, are just normal modules because normal modules don't type check. So theoretically I can import the normal option modules under any scope.
+   ~ I can just use the default flake outputs with a let in
+   ~ I think options will work just fine. But I need to take out all the boilerplate from it. make it as simple as `mkIfModule` at the top of the config or something.
+
+** Materials
+*** Classes without flake-parts
+    from @boomshroom on nixos unofficial discord, this way whichever module loads the config will determine under what class it will load.
+    @code nix
+{ _class, ...}:
+{
+  nixos = { /* nixos config */ };
+  homeManager = { /* home-manager config */ };
+  nixOnDroid = { /* droid config */ };
+  darwin = { /* macos config */ };
+  nixbsd = { /* bsd config */ };
+}.${_class}
+    @end
+
+*** Configs to steal
+    - {https://github.com/llakala/nixos}[llakala] - adios, wrappers, uses base values and specialArgs
+    - {https://github.com/hercules-ci/flake-parts/blob/main/extras/modules.nix}[Flake-parts] - This file in particular defines modules and classes in `flake.modules`. So theoretically I can just adopt this into my config without fucking with flake-parts

@@ -30,12 +30,6 @@
       inputs.treefmt-nix.follows = "";
     };
 
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      # No useless inputs
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-
     # Neovim
     nvf = {
       url = "github:notashelf/nvf";
