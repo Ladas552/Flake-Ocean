@@ -6,7 +6,10 @@
       let
         noct = pkgs.callPackage "${modules.noctalia-dev.src}/nix/package.nix" {
           calendarSupport = true;
-          quickshell = pkgs.callPackage "${modules.noctalia-qs.src}" { };
+          quickshell = pkgs.callPackage "${modules.noctalia-qs.src}/nix/package.nix" {
+            gitRev = "dirty";
+            version = "dirty";
+          };
         };
       in
       {
