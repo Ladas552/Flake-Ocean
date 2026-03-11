@@ -6,7 +6,7 @@
         # Launchers
         bottles
         # heroic
-        # prismlauncher
+        prismlauncher
         # PC games
         osu-lazer-bin
         # arx-libertatis
