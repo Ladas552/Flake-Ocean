@@ -32,6 +32,7 @@ in
       karakeep
       kavita
       miniflux
+      minecraft-server
       nextcloud
       qbittorrent
       distrobox

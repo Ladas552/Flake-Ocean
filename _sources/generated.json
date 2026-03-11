@@ -50,11 +50,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-qXuDUtank46O87jASxczmVMk0iD4JaZi2j9LSBe9VCM=",
+            "sha256": "sha256-4Qz3yqb9BTisd8XvGvgILvmRNgYBQgJarw5F3fZeLlY=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.9.4.1/helium-0.9.4.1-x86_64_linux.tar.xz"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.10.1.1/helium-0.10.1.1-x86_64_linux.tar.xz"
         },
-        "version": "0.9.4.1"
+        "version": "0.10.1.1"
     },
     "impermanence": {
         "cargoLock": null,
@@ -139,6 +139,26 @@
         },
         "version": "e32b2dec08ec5a3ac3c7b0b4a500343886816e85"
     },
+    "nix-minecraft": {
+        "cargoLock": null,
+        "date": "2026-03-11",
+        "extract": null,
+        "name": "nix-minecraft",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "rev": "4d744dff3d8e0d9e7f85e06244ad353bdcf424ff",
+            "sha256": "sha256-GvveRb/AiCb/dKXculKiNiAMW4CXMPwpeyi6c/S/a7o=",
+            "sparseCheckout": [],
+            "type": "git",
+            "url": "https://github.com/Infinidoge/nix-minecraft"
+        },
+        "version": "4d744dff3d8e0d9e7f85e06244ad353bdcf424ff"
+    },
     "nixos-hardware": {
         "cargoLock": null,
         "date": "2026-03-08",
@@ -181,7 +201,7 @@
     },
     "noctalia-dev": {
         "cargoLock": null,
-        "date": "2026-03-08",
+        "date": "2026-03-11",
         "extract": null,
         "name": "noctalia-dev",
         "passthru": null,
@@ -191,17 +211,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "1fd0b187b50eff28f4f5fe7d93210d6c98b80e6c",
-            "sha256": "sha256-4iNQ9Up6yRWnjtSfScXJBXICoJ9ZJjj5914W+keAc9c=",
+            "rev": "13f0b8fce4588bd17c99b53d9cba6d73defed0c2",
+            "sha256": "sha256-2+oZquEDg+5YLxXmEF3R0Kz40gJNLast6JLRgXFGzjs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/noctalia-dev/noctalia-shell"
         },
-        "version": "1fd0b187b50eff28f4f5fe7d93210d6c98b80e6c"
+        "version": "13f0b8fce4588bd17c99b53d9cba6d73defed0c2"
     },
     "noctalia-qs": {
         "cargoLock": null,
-        "date": "2026-03-07",
+        "date": "2026-03-10",
         "extract": null,
         "name": "noctalia-qs",
         "passthru": null,
@@ -211,17 +231,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b58414209fce1669cff818e50468e926613baa10",
-            "sha256": "sha256-VwM1+5dwxIhZ0ahTlHnlMOC/Mgn8wGwcPKhM93Q+w9s=",
+            "rev": "6b9eceefde3d47ca83c544b54bcdd358be4cbd2f",
+            "sha256": "sha256-YOkWzVq7opym1ovJvSCvqpG6OCDGJwPo/EPeRxcGay4=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/noctalia-dev/noctalia-qs"
         },
-        "version": "b58414209fce1669cff818e50468e926613baa10"
+        "version": "6b9eceefde3d47ca83c544b54bcdd358be4cbd2f"
     },
     "sops-nix": {
         "cargoLock": null,
-        "date": "2026-03-08",
+        "date": "2026-03-09",
         "extract": null,
         "name": "sops-nix",
         "passthru": null,
@@ -231,12 +251,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c8e69670b316d6788e435a3aa0bda74eb1b82cc0",
-            "sha256": "sha256-xTzsSd3r5HBeufSZ3fszAn0ldfKctvsYG7tT2YJg5gY=",
+            "rev": "d1ff3b1034d5bab5d7d8086a7803c5a5968cd784",
+            "sha256": "sha256-M3zEnq9OElB7zqc+mjgPlByPm1O5t2fbUrH3t/Hm5Ag=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Mic92/sops-nix"
         },
-        "version": "c8e69670b316d6788e435a3aa0bda74eb1b82cc0"
+        "version": "d1ff3b1034d5bab5d7d8086a7803c5a5968cd784"
     }
 }

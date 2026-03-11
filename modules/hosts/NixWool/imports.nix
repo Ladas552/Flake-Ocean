@@ -7,7 +7,6 @@ let
   };
 in
 {
-  flake.modules.nixvim.NixWool.imports = [ { inherit custom; } ];
   flake.modules.nvf.NixWool.imports = [ { inherit custom; } ];
   flake.modules.nixos."hosts/NixWool".imports =
     with config.flake.modules.nixos;
@@ -30,6 +29,7 @@ in
       bluesky-pds
       tangled
       run0
+      minecraft-relay
       # Users
       root
       ladas552

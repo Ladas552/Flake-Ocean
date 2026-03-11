@@ -49,3 +49,7 @@ fetch.git = "https://github.com/noctalia-dev/noctalia-qs"
 [nixos-hardware]
 src.git = "https://github.com/nixos/nixos-hardware"
 fetch.git = "https://github.com/nixos/nixos-hardware"
+
+[nix-minecraft]
+src.git = "https://github.com/Infinidoge/nix-minecraft"
+fetch.git = "https://github.com/Infinidoge/nix-minecraft"
