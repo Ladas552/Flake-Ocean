@@ -18,9 +18,15 @@
           nuspell
           python3
           typst
+          rcon-cli
           # custom.Subtitlenator
           nvtopPackages.nvidia
         ];
+
+        # Environmental Variables
+        environment.variables = {
+          EDITOR = "nvim";
+        };
 
         sops.age.keyFile = "/home/ladas552/.config/sops/age/keys.txt";
         sops.age.sshKeyPaths = [

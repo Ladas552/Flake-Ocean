@@ -24,12 +24,14 @@
               accepts-transfers = false;
               allow-flight = false;
               broadcast-console-to-ops = true;
-              broadcast-rcon-to-ops = true;
+              broadcast-rcon-to-ops = false;
               difficulty = "hard";
               enable-code-of-conduct = false;
               enable-jmx-monitoring = false;
               enable-query = false;
-              enable-rcon = false;
+              enable-rcon = true;
+              # please don't hack me
+              "rcon.password" = "password";
               enable-status = true;
               enforce-secure-profile = false;
               enforce-whitelist = false;
