@@ -92,6 +92,7 @@
         networking.firewall.allowedUDPPorts = [
           443
           22
+          25565
         ];
 
         environment.persistence."/cache".directories = [

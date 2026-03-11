@@ -19,7 +19,34 @@
             autoStart = true;
             enableReload = true;
             # https://docs.papermc.io/paper/aikars-flags/
-            jvmOpts = "-Xms4G -Xmx6G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true";
+            jvmOpts = "-Xms6G -Xmx6G -XX:+UseG1GC -XX:+ParallelRefProcEnabled -XX:MaxGCPauseMillis=200 -XX:+UnlockExperimentalVMOptions -XX:+DisableExplicitGC -XX:+AlwaysPreTouch -XX:G1NewSizePercent=30 -XX:G1MaxNewSizePercent=40 -XX:G1HeapRegionSize=8M -XX:G1ReservePercent=20 -XX:G1HeapWastePercent=5 -XX:G1MixedGCCountTarget=4 -XX:InitiatingHeapOccupancyPercent=15 -XX:G1MixedGCLiveThresholdPercent=90 -XX:G1RSetUpdatingPauseTimePercent=5 -XX:SurvivorRatio=32 -XX:+PerfDisableSharedMem -XX:MaxTenuringThreshold=1 -Dusing.aikars.flags=https://mcflags.emc.gs -Daikars.new.flags=true";
+            symlinks = {
+              # skins for offline mode
+              "plugins/SkinsRestorer.jar" = pkgs.fetchurl {
+                url = "https://hangarcdn.papermc.io/plugins/SRTeam/SkinsRestorer/versions/15.11.0/PAPER/SkinsRestorer.jar";
+                hash = "sha256-CHDE4oEvb7Z07GXMbK3LctZK/GCeCmFm9yy1BOL9T+A=";
+              };
+              # Proximity chat
+              "plugins/PlasmoVoice-Paper-2.1.8.jar" = pkgs.fetchurl {
+                url = "https://cdn.modrinth.com/data/1bZhdhsH/versions/SKgeYMeH/PlasmoVoice-Paper-2.1.8.jar";
+                hash = "sha256-ZtRhxsvkEGBJzUtRV+bqO91RgRzIFge1aOjh97rTPZ8=";
+              };
+              # preload chunks with a command
+              "plugins/Chunky-Bukkit-1.4.40.jar" = pkgs.fetchurl {
+                url = "https://hangarcdn.papermc.io/plugins/pop4959/Chunky/versions/1.4.40/PAPER/Chunky-Bukkit-1.4.40.jar";
+                hash = "sha256-KlR3/ID3EBLhWt4c402+uDbhdiOyjbESSSwPFEPAlyE=";
+              };
+              # Save items after death
+              "plugins/AxGraves-1.26.2.jar" = pkgs.fetchurl {
+                url = "https://hangarcdn.papermc.io/plugins/Artillex-Studios/AxGraves/versions/1.26.2/PAPER/AxGraves-1.26.2.jar";
+                hash = "sha256-w6qfCukLy2fdAmllCCcrCZW4Aw/bMM2Nyrl7DSsQt58=";
+              };
+              # Leaves cleaner
+              "plugins/RHLeafDecay-Paper-1.21_R3.jar" = pkgs.fetchurl {
+                url = "https://hangarcdn.papermc.io/plugins/X0R3/RHLeafDecay/versions/1.21_R3/PAPER/RHLeafDecay-Paper-1.21_R3.jar";
+                hash = "sha256-TgpYqJGEIm11rBJMBRgnWlHKgAs3vDnuqEP9DAntdgY=";
+              };
+            };
             serverProperties = {
               accepts-transfers = false;
               allow-flight = false;
@@ -72,39 +99,35 @@
 
         # Only allow Tailscale
         networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 25565 ];
+        networking.firewall.interfaces.tailscale0.allowedUDPPorts = [ 25565 ];
 
         # persist for Impermanence
         custom.imp.root.directories = [ "/srv/minecraft" ];
       };
     minecraft-relay = {
-      services.haproxy = {
+      services.nginx = {
         enable = true;
-        config = ''
-          defaults
-                  mode tcp
-                  log global
-                  retries 3
-                  timeout connect 5s
-                  timeout client 2h
-                  timeout server 2h
-
-          frontend minecraft_front
-                  bind *:25565
-                  mode tcp
-                  default_backend minecraft_back
-
-          backend minecraft_back
-                  mode tcp
-                  server mc 100.74.112.27:25565 check
+        streamConfig = ''
+          server {
+            listen 25565;
+            proxy_pass 100.74.112.27:25565;
+          }
+          server {
+            listen 25565 udp;
+            proxy_pass 100.74.112.27:25565;
+            proxy_timeout 15s;
+          }
         '';
       };
       # Reverse proxy
-      services.caddy.virtualHosts."minecraft.ladas552.me" = {
-        extraConfig = ''
-          handle {
-            reverse_proxy http://127.0.0.1:25565
-          }
-        '';
+      services.caddy.virtualHosts = {
+        "minecraft.ladas552.me" = {
+          extraConfig = ''
+            handle {
+              reverse_proxy http://127.0.0.1:25565
+            }
+          '';
+        };
       };
     };
   };
