@@ -46,6 +46,16 @@
                 url = "https://hangarcdn.papermc.io/plugins/X0R3/RHLeafDecay/versions/1.21_R3/PAPER/RHLeafDecay-Paper-1.21_R3.jar";
                 hash = "sha256-TgpYqJGEIm11rBJMBRgnWlHKgAs3vDnuqEP9DAntdgY=";
               };
+              # Auth to kill off bots
+              "plugins/AuthMe-5.7.0-FORK-Universal.jar" = pkgs.fetchurl {
+                url = "https://cdn.modrinth.com/data/3IEZ9vol/versions/oezVemzR/AuthMe-5.7.0-FORK-Universal.jar";
+                hash = "sha256-C/uW2T8LZZeR303yuYuV3C1twashF4fw8byXpgTWEi4=";
+              };
+              # Sleep with just 1 player
+              "plugins/Sleeper-1.10.5.jar" = pkgs.fetchurl {
+                url = "https://cdn.modrinth.com/data/Kt3eUOUy/versions/The62i8h/Sleeper-1.10.5.jar";
+                hash = "sha256-wG0fQxRZRRSjJrR7StqLElGbQ51ig/mN2gob+qBc5Vw=";
+              };
             };
             serverProperties = {
               accepts-transfers = false;

@@ -69,6 +69,7 @@
       inputs.actor-typeahead-src.follows = "";
       inputs.ibm-plex-mono-src.follows = "";
       inputs.mermaid-src.follows = "";
+      inputs.fenix.follows = "";
       # inputs.sqlite-lib-src.follows = "";
     };
 

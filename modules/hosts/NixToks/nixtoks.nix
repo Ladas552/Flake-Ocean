@@ -19,6 +19,8 @@
           python3
           typst
           rcon-cli
+          nvfetcher
+          sqlite
           # custom.Subtitlenator
           nvtopPackages.nvidia
         ];
