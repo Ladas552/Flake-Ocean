@@ -603,13 +603,13 @@
           programs.niri = {
             enable = true;
             useNautilus = false;
-            # package = pkgs.niri-unstable;
+            package = pkgs.niri-unstable;
             # I use my own portal settings
             withXDG = false;
           };
 
           environment.systemPackages = with pkgs; [
-            xwayland-satellite
+            inputs.niri.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable
             brightnessctl
             # xfce4-power-manager
             # self.packages.${pkgs.stdenv.hostPlatform.system}.rofi-powermenu
