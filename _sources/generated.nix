@@ -32,10 +32,10 @@
   };
   helium = {
     pname = "helium";
-    version = "0.10.2.1";
+    version = "0.10.5.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.10.2.1/helium-0.10.2.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-lq2ckkH/n4AoVwYg7uUO6ZYO4pcLINwKGxrv0uXdMuE=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.10.5.1/helium-0.10.5.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-3hOM9PfuwtdTyQUVOzpAydv6LQHGCKlfKm8TZsdJs20=";
     };
   };
   impermanence = {
@@ -90,86 +90,86 @@
   };
   nix-minecraft = {
     pname = "nix-minecraft";
-    version = "4d744dff3d8e0d9e7f85e06244ad353bdcf424ff";
+    version = "41870283e080c46a6d33b6c3b3923e90348254c3";
     src = fetchgit {
       url = "https://github.com/Infinidoge/nix-minecraft";
-      rev = "4d744dff3d8e0d9e7f85e06244ad353bdcf424ff";
+      rev = "41870283e080c46a6d33b6c3b3923e90348254c3";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-GvveRb/AiCb/dKXculKiNiAMW4CXMPwpeyi6c/S/a7o=";
+      sha256 = "sha256-luPLLgS8VR2fHo3xT04KbJm0RU2wep6SDh3smwF8e5E=";
     };
-    date = "2026-03-11";
+    date = "2026-03-18";
   };
   nixos-hardware = {
     pname = "nixos-hardware";
-    version = "3966ce987e1a9a164205ac8259a5fe8a64528f72";
+    version = "f8e82243fd601afb9f59ad230958bd073795cbfe";
     src = fetchgit {
       url = "https://github.com/nixos/nixos-hardware";
-      rev = "3966ce987e1a9a164205ac8259a5fe8a64528f72";
+      rev = "f8e82243fd601afb9f59ad230958bd073795cbfe";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-mUJxsNOrBMNOUJzN0pfdVJ1r2pxeqm9gI/yIKXzVVbk=";
+      sha256 = "sha256-qonGfS2lzCgCl59Zl63jF6dIRRpvW3AJooBGMaXjHiY=";
     };
-    date = "2026-03-08";
+    date = "2026-03-15";
   };
   nixos-wsl = {
     pname = "nixos-wsl";
-    version = "be894604b2aa2184c0b3d3b44995acd0da14dc0c";
+    version = "0efe7af73d6e4a8d447a22936c5526d73822b0a7";
     src = fetchgit {
       url = "https://github.com/nix-community/NixOS-WSL";
-      rev = "be894604b2aa2184c0b3d3b44995acd0da14dc0c";
+      rev = "0efe7af73d6e4a8d447a22936c5526d73822b0a7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-sm6OpWZuoDwR53KNlsY482YOoHFWlWYwt0wHmqLkRGE=";
+      sha256 = "sha256-oXSEbMR/IuHYk9nvrbRhaYBxVK5s63DH2UGOZT2ok48=";
     };
-    date = "2026-03-01";
+    date = "2026-03-15";
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "786ca2c80f4ffa6b6cd4bd7f7cc68c972b0ee970";
+    version = "e6ca3889c04c62bf0b30f4251df6379fd5141294";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "786ca2c80f4ffa6b6cd4bd7f7cc68c972b0ee970";
+      rev = "e6ca3889c04c62bf0b30f4251df6379fd5141294";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-OWnfCulMgB0xodh1/y8J6O5J3ijyhVfWZwt6D0QrLIs=";
+      sha256 = "sha256-4rnTX8u2BR3e/s3juf7CJa7NmDM1sh/sz/Rx6PdFoSY=";
     };
-    date = "2026-03-13";
+    date = "2026-03-18";
   };
   noctalia-qs = {
     pname = "noctalia-qs";
-    version = "d5209a6b5fe8c6dff8d530e820c96f09830011e3";
+    version = "3962ff1e0b59ef067c57199d31271ddbf23b29cd";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-qs";
-      rev = "d5209a6b5fe8c6dff8d530e820c96f09830011e3";
+      rev = "3962ff1e0b59ef067c57199d31271ddbf23b29cd";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-pK01O5J9ogI4rVtDI+PVxckaXqpYZ4uthY0vgVWdyl8=";
+      sha256 = "sha256-oRqz+5AbNKfUWWwN5c83CsSOsUWVGITh0HZg+wX5Q/8=";
     };
-    date = "2026-03-11";
+    date = "2026-03-18";
   };
   sops-nix = {
     pname = "sops-nix";
-    version = "d1ff3b1034d5bab5d7d8086a7803c5a5968cd784";
+    version = "8237de83e8200d16fe0c4467b02a1c608ff28044";
     src = fetchgit {
       url = "https://github.com/Mic92/sops-nix";
-      rev = "d1ff3b1034d5bab5d7d8086a7803c5a5968cd784";
+      rev = "8237de83e8200d16fe0c4467b02a1c608ff28044";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-M3zEnq9OElB7zqc+mjgPlByPm1O5t2fbUrH3t/Hm5Ag=";
+      sha256 = "sha256-VCiDjE8kNs8uCAK73Ezk1r3fFuc4JepvW07YFqaN968=";
     };
-    date = "2026-03-09";
+    date = "2026-03-16";
   };
 }

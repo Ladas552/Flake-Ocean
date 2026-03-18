@@ -23,7 +23,7 @@
         splitright = true; # split vertical window to the right
         splitbelow = true; # split horizontal window to the bottom
         #Scroll
-        scrolloff = 8;
+        scrolloff = 999;
         #Update
         updatetime = 50;
         #Soft Wrap

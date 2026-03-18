@@ -11,7 +11,6 @@ I also declare configuration as packages/wrappers that you can try with `nix run
 github:Ladas552/Flake-Ocean#app`, replace `app` with:
 
 - [nvf](https://github.com/NotAShelf/nvf) - Nix declared Neovim (current daily driver)
-- [nixvim](https://github.com/nix-community/nixvim) - another Nix declared Neovim
 - rofi-powermenu - power menu made of Rofi with a [nice theme](https://github.com/adi1090x/rofi)
 - all the other scripts in [pkgs directory](./pkgs/default.nix)
 - [wrappers directory](./modules/wrappers) for apps
@@ -29,7 +28,7 @@ github:Ladas552/Flake-Ocean#app`, replace `app` with:
 I adopted [Dendritic layout](https://github.com/mightyiam/dendritic) for my config. 
 Making all files their own modules that I can import, and if module isn't imported, it doesn't exist. This way most of my config is fairy atomic and you can pop in and out modules as you wish.
 
-Also I made `custom.meta` options on every host, and depending on host, different variables are used. Options defined in `modules/flake-parts/options`. And host variables are defined at `imports.nix` of every host. Even for nvf and nixvim configs.
+Also I made `custom.meta` options on every host, and depending on host, different variables are used. Options defined in `modules/flake-parts/options`. And host variables are defined at `imports.nix` of every host. Even for nvf config.
 
 I also have a lot of unused code that I can import if need be, for example my niri can be managed with hjem and home-manager and result will be identical. 
 
