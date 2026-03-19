@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   flake.modules = {
     nixos.NixToks =
@@ -13,7 +14,7 @@
           imagemagick
           ffmpeg
           gst_all_1.gst-libav
-          libqalculate
+          self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
           lshw
           nuspell
           python3

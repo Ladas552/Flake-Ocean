@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   flake.modules = {
     nixos.NixPort =
@@ -17,7 +18,7 @@
           hunspellDicts.en-us-large
           hunspellDicts.ru-ru
           keepassxc
-          libqalculate
+          self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
           lshw
           pamixer
           pwvucontrol

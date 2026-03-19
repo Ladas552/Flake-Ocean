@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   flake.modules.homeManager.NixVm =
     { pkgs, ... }:
@@ -7,7 +8,7 @@
       # Standalone Packages for user
       home.packages = with pkgs; [
         #pgks-master.
-        libqalculate
+        self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
         lshw
         gparted
       ];

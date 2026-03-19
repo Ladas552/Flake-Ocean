@@ -21,7 +21,7 @@
       environment.systemPackages = with pkgs; [
         ungoogled-chromium
         wl-clipboard
-        libqalculate
+        self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
         wget
         lshw
         telegram-desktop

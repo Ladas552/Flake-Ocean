@@ -1,3 +1,4 @@
+{ self, ... }:
 {
   flake.modules = {
     nixos.NixWool =
@@ -31,7 +32,7 @@
         };
         # Standalone Packages
         environment.systemPackages = with pkgs; [
-          libqalculate
+          self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
           lshw
         ];
 
