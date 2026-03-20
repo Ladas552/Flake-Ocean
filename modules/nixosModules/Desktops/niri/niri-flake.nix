@@ -166,7 +166,7 @@
           }
           {
             _children = [
-              { match._props.app-id = "librewolf"; }
+              { match._props.app-id = "firefox"; }
               { match._props.app-id = "thunderbird"; }
               { match._props.app-id = "vesktop"; }
               { match._props.app-id = "legcord"; }
@@ -275,7 +275,7 @@
           ];
           # GUI apps
           "Super+F".spawn = "thunar";
-          "Super+W".spawn = "librewolf";
+          "Super+W".spawn = "firefox";
           "Shift+Super+W".spawn-sh = "helium &";
           # MPD
           "Shift+Alt+P" = {

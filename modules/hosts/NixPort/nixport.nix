@@ -13,7 +13,6 @@
           wl-clipboard
           ffmpeg
           gst_all_1.gst-libav
-          librewolf
           hunspell
           hunspellDicts.en-us-large
           hunspellDicts.ru-ru
@@ -32,7 +31,7 @@
 
         # Environmental Variables
         environment.variables = {
-          BROWSER = "librewolf";
+          BROWSER = "firefox";
           EDITOR = "nvim";
         };
 

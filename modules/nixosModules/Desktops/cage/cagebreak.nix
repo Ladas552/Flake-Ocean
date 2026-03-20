@@ -53,7 +53,7 @@
         bind A-Tab focusprev
         bind n next
         bind p prev
-        bind w exec librewolf
+        bind w exec firefox
         bind R setmode resize
         bind N nextscreen
         bind P prevscreen

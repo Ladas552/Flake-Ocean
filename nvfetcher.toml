@@ -53,3 +53,13 @@ fetch.git = "https://github.com/nixos/nixos-hardware"
 [nix-minecraft]
 src.git = "https://github.com/Infinidoge/nix-minecraft"
 fetch.git = "https://github.com/Infinidoge/nix-minecraft"
+
+# adios
+[adifox]
+src.git = "https://github.com/NotAShelf/adifox"
+fetch.git = "https://github.com/NotAShelf/adifox"
+
+[adios]
+src.git = "https://github.com/adisbladis/adios"
+fetch.git = "https://github.com/adisbladis/adios"
+

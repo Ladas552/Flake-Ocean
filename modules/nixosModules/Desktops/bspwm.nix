@@ -96,7 +96,7 @@
             "super + space" = "rofi -show";
             "super + x" = "xfce4-session-logout";
             # Gui apps
-            "super + {w,f}" = "{librewolf,thunar}";
+            "super + {w,f}" = "{firefox,thunar}";
             # Tuu apps
             "super + {g,m,h,n}" = "ghostty -e {qalc,rmpc,btop,nvim}";
             # Screenshot

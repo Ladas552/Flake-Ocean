@@ -47,6 +47,7 @@ in
       network-manager
       fish
       yt-dlp
+      firefox
       # Users
       root
       ladas552

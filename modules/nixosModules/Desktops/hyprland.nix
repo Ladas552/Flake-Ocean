@@ -101,7 +101,7 @@
             # Keybinds
             bind = [
               "SUPER, T, exec, ghostty"
-              "SUPER, W, exec, librewolf"
+              "SUPER, W, exec, firefox"
               "SUPER, space, exec, rofi -show"
               "SUPER, 1, workspace, 1"
               "SUPER, 2, workspace, 2"
