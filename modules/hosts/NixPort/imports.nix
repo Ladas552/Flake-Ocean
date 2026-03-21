@@ -48,6 +48,7 @@ in
       fish
       yt-dlp
       firefox
+      thunderbird
       # Users
       root
       ladas552
@@ -62,7 +63,6 @@ in
           gh
           lf
           manual
-          thunderbird
           vesktop
           git
           zathura
