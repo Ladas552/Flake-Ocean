@@ -10,8 +10,8 @@
       # persist for impermanence
       custom.imp.home.cache.directories = [
         # All the extensions/settings are in the wrapper, but cookies and history still will be in these
-        ".config/mozzila/firefox"
-        ".cache/mozzila/firefox"
+        ".config/mozilla/firefox"
+        ".cache/mozilla/firefox"
       ];
     };
   perSystem =
@@ -178,6 +178,7 @@
                 pref("browser.engagement.downloads-button.has-used", true);
                 pref("browser.engagement.sidebar-button.has-used", true);
                 pref("browser.formfill.enable", true);
+                pref("browser.link.open_newwindow.override.external", 7);
                 pref("browser.ml.enable", false);
                 pref("browser.ml.linkPreview.onboardingTimes", "");
                 pref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/\",\"baseDomain\":\"github.com\"},{\"url\":\"https://tangled.sh\",\"label\":\"Tangled\"},{\"url\":\"https://rutracker.me\",\"label\":\"rutracker\"},{\"url\":\"https://www.southparkstudios.com/\"},{\"url\":\"https://nixtoks.taila7a93b.ts.net\",\"label\":\"Homepage\"},{\"url\":\"https://search.nixos.org/options\",\"label\":\"search.nixos\"},{\"url\":\"https://home-manager-options.extranix.com/?query=&release=master\",\"label\":\"Home Manager - Option Search\"}]");
@@ -298,7 +299,7 @@
                 pref("privacy.clearOnShutdown_v2.cache", false);
                 pref("privacy.clearOnShutdown_v2.cookiesAndStorage", false);
                 pref("privacy.fingerprintingProtection", true);
-                pref("privacy.globalprivacycontrol.was_ever_enabled", true);
+                pref("privacy.globalprivacycontrol.enabled", true);
                 pref("privacy.history.custom", true);
                 pref("privacy.purge_trackers.date_in_cookie_database", "0");
                 pref("privacy.query_stripping.enabled", true);
