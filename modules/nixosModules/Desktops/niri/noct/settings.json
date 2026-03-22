@@ -1,5 +1,5 @@
 {
-  "settingsVersion": 55,
+  "settingsVersion": 59,
   "bar": {
     "barType": "simple",
     "position": "left",
@@ -12,9 +12,9 @@
     "widgetSpacing": 6,
     "contentPadding": 2,
     "fontScale": 1,
+    "enableExclusionZoneInset": true,
     "backgroundOpacity": 1,
     "useSeparateOpacity": true,
-    "floating": false,
     "marginVertical": 7,
     "marginHorizontal": 5,
     "frameThickness": 4,
@@ -97,6 +97,7 @@
           "enableScrollWheel": true,
           "focusedColor": "primary",
           "followFocusedScreen": false,
+          "fontWeight": "bold",
           "groupedBorderOpacity": 0,
           "hideUnoccupied": true,
           "iconScale": 1,
@@ -105,13 +106,14 @@
           "occupiedColor": "secondary",
           "pillSize": 0.6,
           "showApplications": true,
+          "showApplicationsHover": false,
           "showBadge": true,
           "showLabelsOnlyWhenOccupied": true,
           "unfocusedIconsOpacity": 1
         },
         {
           "colorName": "tertiary",
-          "hideWhenIdle": false,
+          "hideWhenIdle": true,
           "id": "AudioVisualizer",
           "width": 200
         }
@@ -122,7 +124,7 @@
           "chevronColor": "none",
           "colorizeIcons": true,
           "drawerEnabled": true,
-          "hidePassive": false,
+          "hidePassive": true,
           "id": "Tray",
           "pinned": []
         },
@@ -210,6 +212,7 @@
     "showHibernateOnLockScreen": false,
     "enableLockScreenMediaControls": true,
     "enableShadows": false,
+    "enableBlurBehind": true,
     "shadowDirection": "bottom_right",
     "shadowOffsetX": 2,
     "shadowOffsetY": 3,
@@ -259,8 +262,10 @@
     "fontDefaultScale": 1,
     "fontFixedScale": 1,
     "tooltipsEnabled": true,
+    "scrollbarAlwaysVisible": true,
     "boxBorderEnabled": false,
     "panelBackgroundOpacity": 0.8,
+    "translucentWidgets": false,
     "panelsAttachedToBar": true,
     "settingsPanelMode": "centered",
     "settingsPanelSideBarCardStyle": false
@@ -299,7 +304,13 @@
     "enabled": true,
     "overviewEnabled": true,
     "directory": "/home/ladas552/Pictures/backgrounds",
-    "monitorDirectories": [],
+    "monitorDirectories": [
+      {
+        "directory": "/home/ladas552/Pictures/backgrounds",
+        "name": "eDP-1",
+        "wallpaper": ""
+      }
+    ],
     "enableMultiMonitorDirectories": false,
     "showHiddenFiles": false,
     "viewMode": "single",
@@ -312,7 +323,14 @@
     "wallpaperChangeMode": "random",
     "randomIntervalSec": 600,
     "transitionDuration": 1500,
-    "transitionType": "random",
+    "transitionType": [
+      "fade",
+      "disc",
+      "stripes",
+      "wipe",
+      "pixelate",
+      "honeycomb"
+    ],
     "skipStartupTransition": true,
     "transitionEdgeSmoothness": 0.05,
     "panelPosition": "top_left",
@@ -323,7 +341,7 @@
     "wallhavenQuery": "",
     "wallhavenSorting": "relevance",
     "wallhavenOrder": "desc",
-    "wallhavenCategories": "010",
+    "wallhavenCategories": "100",
     "wallhavenPurity": "100",
     "wallhavenRatios": "",
     "wallhavenApiKey": "",
@@ -338,18 +356,19 @@
     "autoPasteClipboard": false,
     "enableClipPreview": true,
     "clipboardWrapText": true,
+    "enableClipboardSmartIcons": true,
+    "enableClipboardChips": true,
     "clipboardWatchTextCommand": "wl-paste --type text --watch cliphist store",
     "clipboardWatchImageCommand": "wl-paste --type image --watch cliphist store",
     "position": "center",
     "pinnedApps": [],
-    "useApp2Unit": false,
     "sortByMostUsed": true,
     "terminalCommand": "ghostty -e",
     "customLaunchPrefixEnabled": false,
     "customLaunchPrefix": "",
     "viewMode": "list",
     "showCategories": true,
-    "iconMode": "tabler",
+    "iconMode": "native",
     "showIconBackground": false,
     "enableSettingsSearch": false,
     "enableWindowsSearch": true,
@@ -436,6 +455,10 @@
     "criticalColor": "#f38ba8",
     "externalMonitor": "resources || missioncenter || jdsystemmonitor || corestats || system-monitoring-center || gnome-system-monitor || plasma-systemmonitor || mate-system-monitor || ukui-system-monitor || deepin-system-monitor || pantheon-system-monitor"
   },
+  "noctaliaPerformance": {
+    "disableWallpaper": true,
+    "disableDesktopWidgets": true
+  },
   "dock": {
     "enabled": false,
     "position": "bottom",
@@ -450,6 +473,8 @@
     "colorizeIcons": false,
     "showLauncherIcon": false,
     "launcherPosition": "end",
+    "launcherUseDistroLogo": false,
+    "launcherIcon": "",
     "launcherIconColor": "none",
     "pinnedStatic": false,
     "inactiveIndicators": false,
@@ -533,7 +558,7 @@
         "command": "",
         "countdownEnabled": true,
         "enabled": true,
-        "keybind": ""
+        "keybind": "5"
       },
       {
         "action": "userspaceReboot",
@@ -547,8 +572,10 @@
   "notifications": {
     "enabled": true,
     "enableMarkdown": false,
-    "density": "default",
-    "monitors": [],
+    "density": "compact",
+    "monitors": [
+      "eDP-1"
+    ],
     "location": "top_right",
     "overlayLayer": true,
     "backgroundOpacity": 1,
@@ -585,13 +612,16 @@
       0,
       2
     ],
-    "monitors": []
+    "monitors": [
+      "eDP-1"
+    ]
   },
   "audio": {
     "volumeStep": 5,
     "volumeOverdrive": false,
-    "cavaFrameRate": 30,
+    "spectrumFrameRate": 30,
     "visualizerType": "wave",
+    "spectrumMirrored": true,
     "mprisBlacklist": [],
     "preferredPlayer": "mpd",
     "volumeFeedback": false,
@@ -630,6 +660,10 @@
       {
         "enabled": true,
         "id": "steam"
+      },
+      {
+        "enabled": true,
+        "id": "telegram"
       }
     ],
     "enableUserTheming": false
@@ -652,10 +686,12 @@
     "performanceModeEnabled": "",
     "performanceModeDisabled": "",
     "startup": "",
-    "session": ""
+    "session": "",
+    "colorGeneration": ""
   },
   "plugins": {
-    "autoUpdate": true
+    "autoUpdate": true,
+    "notifyUpdates": true
   },
   "idle": {
     "enabled": true,
@@ -675,6 +711,7 @@
     "enabled": false,
     "overviewEnabled": true,
     "gridSnap": false,
+    "gridSnapScale": false,
     "monitorWidgets": [
       {
         "name": "eDP-1",

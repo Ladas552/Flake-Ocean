@@ -17,11 +17,11 @@
 
       programs.git = {
         enable = true;
+        signing.format = "ssh";
         settings = {
           user = {
             name = "Ladas552";
             email = "me@ladas552.me";
-            # chmod 400
             signingkey = "~/.ssh/NixToks";
           };
           init.defaultBranch = "master";

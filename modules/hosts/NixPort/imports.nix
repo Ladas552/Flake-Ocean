@@ -60,11 +60,10 @@ in
           { inherit custom; }
           NixPort
           cat-mocha
-          gh
+          # gh
           lf
           manual
           vesktop
-          git
           zathura
           openssh
         ];
@@ -76,7 +75,7 @@ in
           { inherit custom; }
           direnv
           obs
-          # git
+          git
           neovide
           ghostty
           cat-mocha

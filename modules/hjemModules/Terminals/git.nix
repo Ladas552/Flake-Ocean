@@ -7,12 +7,12 @@
         user = {
           name = "Ladas552";
           email = "me@ladas552.me";
+          # chmod 400
+          signingkey = "~/.ssh/NixToks";
         };
         init.defaultBranch = "master";
         gpg.format = "ssh";
-        #it can't read it. permission error or something
-        user.signingkey = "~/.ssh/NixToks";
-        # commit.gpgsign = true;
+        commit.gpgsign = true;
         aliases = {
           cm = "commit -m";
           al = "add ./*";
