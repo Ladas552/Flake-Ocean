@@ -14,7 +14,7 @@
     in
     {
       options.services.syncthing = {
-        enable = mkEnableOption "mpdris2";
+        enable = mkEnableOption "syncthing";
 
         package = mkPackageOption pkgs "syncthing" { };
 
