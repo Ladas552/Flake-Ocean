@@ -38,7 +38,6 @@ in
           ghostty
           direnv
           cat-mocha
-          git
         ];
       }
     ];

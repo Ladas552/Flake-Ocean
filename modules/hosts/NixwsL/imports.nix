@@ -17,6 +17,10 @@ in
       nix
       general
       cat-mocha
+      cache
+      nh
+      openssh
+      run0
       fish
       # Users
       root
@@ -28,13 +32,20 @@ in
         home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
           { inherit custom; }
           NixwsL
-          git
-          cat-mocha
           lf
-          gh
+          manual
+        ];
+      }
+    ]
+    ++ [
+      {
+        hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
+          { inherit custom; }
+          cat-mocha
           direnv
           fastfetch
           foot
+          git
         ];
       }
     ];

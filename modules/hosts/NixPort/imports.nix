@@ -60,7 +60,6 @@ in
           { inherit custom; }
           NixPort
           cat-mocha
-          # gh
           lf
           manual
           vesktop

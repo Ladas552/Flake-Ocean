@@ -42,7 +42,7 @@
           };
         };
       homeManager.cat-mocha =
-        { pkgs, ... }:
+        { pkgs, config, ... }:
         {
           inherit custom;
 
@@ -55,6 +55,7 @@
           };
           gtk = {
             enable = true;
+            gtk4.theme = config.gtk.theme;
             theme = {
               name = "adw-gtk3";
               package = pkgs.adw-gtk3;

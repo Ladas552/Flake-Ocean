@@ -34,13 +34,11 @@ in
         home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
           { inherit custom; }
           NixIso
-          gh
           lf
           vesktop
           zathura
           manual
           cat-mocha
-          git
         ];
       }
     ]
@@ -50,7 +48,7 @@ in
           { inherit custom; }
           direnv
           obs
-          # git
+          git
           helix
           mpv
           ghostty
