@@ -16,8 +16,8 @@ in
       # Modules
       ## Games
       games
-      emulators
-      steam
+      # emulators
+      # steam
       bluetooth
       cache
       cat-mocha

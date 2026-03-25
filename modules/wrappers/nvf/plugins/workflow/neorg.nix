@@ -15,7 +15,7 @@
         src = sources.neorg-query.src;
         name = "neorg_query";
         # change this to cargoLock somehow
-        cargoHash = "sha256-m/QhtE6e2wmTRBQ8xrWfgsmvDaaR1s9z/BLoFgFz/Do=";
+        cargoHash = "sha256-Kj4KOGdgLh8HYDUqg17AvRKLAcEKI71ASF/jPj95l0w=";
         nativeBuildInputs = [ pkgs.gitMinimal ];
         doCheck = false;
       };

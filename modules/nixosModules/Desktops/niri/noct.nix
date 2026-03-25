@@ -5,7 +5,7 @@
       { pkgs, lib, ... }:
       let
         noct = pkgs.callPackage "${modules.noctalia-dev.src}/nix/package.nix" {
-          calendarSupport = true;
+          calendarSupport = false;
           quickshell = pkgs.callPackage "${modules.noctalia-qs.src}/nix/package.nix" {
             gitRev = "dirty";
             version = "dirty";
@@ -28,20 +28,20 @@
         };
 
         # make calendar events work
-        services.gnome.evolution-data-server.enable = true;
-        environment.sessionVariables = {
-          GI_TYPELIB_PATH = lib.makeSearchPath "lib/girepository-1.0" (
-            with pkgs;
-            [
-              evolution-data-server
-              libical
-              glib.out
-              libsoup_3
-              json-glib
-              gobject-introspection
-            ]
-          );
-        };
+        # services.gnome.evolution-data-server.enable = true;
+        # environment.sessionVariables = {
+        #   GI_TYPELIB_PATH = lib.makeSearchPath "lib/girepository-1.0" (
+        #     with pkgs;
+        #     [
+        #       evolution-data-server
+        #       libical
+        #       glib.out
+        #       libsoup_3
+        #       json-glib
+        #       gobject-introspection
+        #     ]
+        #   );
+        # };
       };
     homeManager.noct = {
       imports = [

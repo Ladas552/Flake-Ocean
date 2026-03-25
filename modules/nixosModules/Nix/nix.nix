@@ -23,7 +23,8 @@
         daemonCPUSchedPolicy = "idle";
         daemonIOSchedClass = "idle";
         # Better Error messages
-        package = pkgs.lixPackageSets.git.lix;
+        # package = pkgs.lixPackageSets.git.lix;
+        package = pkgs.nixVersions.latest;
         # Optimize nix experience by removing cache and store garbage, on timer
         optimise.automatic = true;
         # disable channels completely

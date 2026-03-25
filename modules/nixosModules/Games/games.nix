@@ -4,7 +4,7 @@
     {
       environment.systemPackages = with pkgs; [
         # Launchers
-        bottles
+        # bottles
         # heroic
         prismlauncher
         # PC games
@@ -15,7 +15,7 @@
         # daggerfall-unity
         # luanti
         # mindustry
-        steam-run
+        # steam-run
         antimatter-dimensions
       ];
       # persist games

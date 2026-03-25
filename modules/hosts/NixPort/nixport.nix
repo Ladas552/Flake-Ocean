@@ -6,16 +6,16 @@
       {
         # Standalone Packages
         environment.systemPackages = with pkgs; [
-          blender
+          # blender
           libreoffice-fresh
           shotcut
           imagemagick
           wl-clipboard
           ffmpeg
-          gst_all_1.gst-libav
-          hunspell
-          hunspellDicts.en-us-large
-          hunspellDicts.ru-ru
+          # gst_all_1.gst-libav
+          # hunspell
+          # hunspellDicts.en-us-large
+          # hunspellDicts.ru-ru
           keepassxc
           self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
           lshw
