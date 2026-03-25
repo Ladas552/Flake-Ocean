@@ -59,9 +59,11 @@
             };
             "nix.ladas552.me" = {
               extraConfig = ''
-                root * /var/www/nix
-                file_server
-                encode gzip
+                @posts path_regexp posts ^/posts/(.*)$
+                redir @posts https://blog.ladas552.me/nix/{re.posts.1} permanent
+                handle {
+                  redir https://blog.ladas552.me/nix{uri} permanent
+                }
               '';
             };
             "ladas552.me" = {
