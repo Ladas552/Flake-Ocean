@@ -1,12 +1,7 @@
-{ lib, ... }:
 {
-  flake.modules.homeManager.kitty = {
-    programs.kitty = {
+  flake.modules.hjem.kitty = {
+    rum.programs.kitty = {
       enable = true;
-      font = lib.mkForce {
-        name = "JetBrainsMonoNL Nerd Font Mono";
-        size = 16.0;
-      };
       settings = {
         #kitty.conf
         enable_audio_bell = false;
@@ -15,7 +10,6 @@
         cursor_shape = "block";
         scrollback_lines = 2000;
         confirm_os_window_close = 0;
-        font_size = 11;
         background = "#181B28";
         foreground = "#F8F8F2";
         selection_foreground = "#1E1F28";
@@ -49,10 +43,5 @@
         tab_bar_background = "#181926";
       };
     };
-    # Breaks ssh
-    #   home.sessionVariables = {
-    #  TERMINAL = "kitty";
-    #   TERM = "kitty";
-    #  };
   };
 }

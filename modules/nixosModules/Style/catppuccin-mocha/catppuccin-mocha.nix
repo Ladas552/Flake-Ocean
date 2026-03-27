@@ -35,10 +35,16 @@
         { config, ... }:
         {
           inherit custom;
-          rum.programs.ghostty.settings = {
-            theme = "dracata";
-            font-size = 13;
-            font-family = config.custom.style.font.font-family;
+          rum.programs = {
+            ghostty.settings = {
+              theme = "dracata";
+              font-size = 13;
+              font-family = config.custom.style.font.font-family;
+            };
+            kitty.settings = {
+              font_family = config.custom.style.font.font-family;
+              font-size = 13;
+            };
           };
         };
       homeManager.cat-mocha =
