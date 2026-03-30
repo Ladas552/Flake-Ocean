@@ -4,13 +4,22 @@
     nixos.noct =
       { pkgs, lib, ... }:
       let
-        noct = pkgs.callPackage "${modules.noctalia-dev.src}/nix/package.nix" {
-          calendarSupport = false;
-          quickshell = pkgs.callPackage "${modules.noctalia-qs.src}/nix/package.nix" {
-            gitRev = "dirty";
-            version = "dirty";
-          };
-        };
+        noct =
+          (pkgs.callPackage "${modules.noctalia-dev.src}/nix/package.nix" {
+            calendarSupport = false;
+            quickshell = pkgs.callPackage "${modules.noctalia-qs.src}/nix/package.nix" {
+              gitRev = "dirty";
+              version = "dirty";
+            };
+            # Use my icon set in noctalia, thanks @iynaix
+          }).overrideAttrs
+            (o: {
+              preFixup = (o.preFixup or "") + /* sh */ ''
+                qtWrapperArgs+=(
+                  --set QT_QPA_PLATFORMTHEME gtk3
+                )
+              '';
+            });
       in
       {
         environment.systemPackages = with pkgs; [

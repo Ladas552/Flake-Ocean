@@ -93,6 +93,12 @@
             pref("toolkit.telemetry.shutdownPingSender.enabled", false);
             pref("toolkit.telemetry.unified", false);
             pref("toolkit.telemetry.updatePing.enabled", false);
+            // prefferences
+            /// start week on monday
+            pref("calendar.week.start", 1);
+            /// no sound
+            pref("calendar.alarms.playsound", false);
+            pref("mail.biff.play_sound", false);
           '';
       };
 
@@ -146,7 +152,7 @@
                 (b "AD Spreadsheet" "docs.google.com/spreadsheets/d/1NrYADsW4s7wRYTE91Z0EFHbXcHaswuuMzG9a2WyGG0A")
                 (f "OSU!" [
                   (b "you suck at streaming" "ckrisirkc.github.io/osuStreamSpeed.js/newindex.html")
-                  (b "Osu Achivments" "haitai.jp")
+                  (b "Osu Achivments" "inex.osekai.net/medals")
                 ])
                 (b "Mahjong Soul" "mahjongsoul.game.yo-star.com")
               ])

@@ -25,7 +25,7 @@ in
       firewall
       general
       imp
-      kdeconnect
+      # kdeconnect
       nh
       niri-flake
       nuphy
