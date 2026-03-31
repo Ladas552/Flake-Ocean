@@ -20,7 +20,7 @@
           [
             "brightnessctl"
             "set"
-            "27%"
+            "37%"
           ]
           [
             "thunar"
@@ -65,7 +65,7 @@
         # Environmental Variables
         environment = {
           DISPLAY = ":0";
-          TERMINAL = "ghostty";
+          TERMINAL = "kitty";
           __NV_PRIME_RENDER_OFFLOAD = "1";
           __GLX_VENDOR_LIBRARY_NAME = "nvidia";
           # make flameshot scale with 1.5 niri scale
@@ -239,7 +239,7 @@
             "toggle"
           ];
           # Apps
-          "Super+T".spawn = "ghostty";
+          "Super+T".spawn = "kitty";
           # "Super+Space" .spawn =[
           #   "rofi"
           #   "-show"
@@ -247,29 +247,29 @@
           # "Super+L" .spawn ="swaylock";
           # "Super+E" .spawn ="emacs";
           "Super+N".spawn = [
-            "ghostty"
+            "kitty"
             "-e"
             "nvim"
           ];
           "Super+J".spawn = [
-            "ghostty"
+            "kitty"
             "-e"
             "nvim"
             "-c"
             "Neorg journal today"
           ];
           "Super+M".spawn = [
-            "ghostty"
+            "kitty"
             "-e"
             "rmpc"
           ];
           "Super+H".spawn = [
-            "ghostty"
+            "kitty"
             "-e"
             "btop"
           ];
           "Super+G".spawn = [
-            "ghostty"
+            "kitty"
             "-e"
             "qalc"
           ];

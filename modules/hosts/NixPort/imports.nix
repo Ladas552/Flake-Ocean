@@ -61,6 +61,7 @@ in
           NixPort
           cat-mocha
           lf
+          lf-kitty
           manual
           vesktop
           zathura
@@ -76,14 +77,14 @@ in
           obs
           git
           neovide
-          ghostty
+          kitty
           cat-mocha
           imv
           chawan
           nvf
           mpv
           # flameshot
-          helium
+          # helium
           niri-flake
           noct
           bluetooth

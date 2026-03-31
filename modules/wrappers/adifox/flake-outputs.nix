@@ -330,7 +330,7 @@
             pref("browser.link.open_newwindow.override.external", 7);
             pref("browser.ml.enable", false);
             pref("browser.ml.linkPreview.onboardingTimes", "");
-            pref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/\",\"baseDomain\":\"github.com\"},{\"url\":\"https://tangled.sh\",\"label\":\"Tangled\"},{\"url\":\"https://rutracker.me\",\"label\":\"rutracker\"},{\"url\":\"https://www.southparkstudios.com/\"},{\"url\":\"https://nixtoks.taila7a93b.ts.net\",\"label\":\"Homepage\"},{\"url\":\"https://search.nixos.org/options\",\"label\":\"search.nixos\"},{\"url\":\"https://home-manager-options.extranix.com/?query=&release=master\",\"label\":\"Home Manager - Option Search\"}]");
+            pref("browser.newtabpage.pinned", "[{\"url\":\"https://github.com/\",\"baseDomain\":\"github.com\"},{\"url\":\"https://tangled.org\",\"label\":\"Tangled\"},{\"url\":\"https://rutracker.me\",\"label\":\"rutracker\"},{\"url\":\"https://www.southparkstudios.com/\"},{\"url\":\"https://nixtoks.taila7a93b.ts.net\",\"label\":\"Homepage\"},{\"url\":\"https://search.nixos.org/options\",\"label\":\"search.nixos\"},{\"url\":\"https://home-manager-options.extranix.com/?query=&release=master\",\"label\":\"Home Manager - Option Search\"}]");
             pref("browser.newtabpage.storageVersion", 1);
             pref("browser.newtabpage.activity-stream.showSponsored", false); // [FF58+] Sponsored stories
             pref("browser.newtabpage.activity-stream.showSponsoredTopSites", false); // [FF83+] Sponsored shortcuts

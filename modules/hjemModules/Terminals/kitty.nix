@@ -6,10 +6,13 @@
         #kitty.conf
         enable_audio_bell = false;
         shell = "fish";
-        url_style = "single";
+        url_style = "straight";
         cursor_shape = "block";
         scrollback_lines = 2000;
         confirm_os_window_close = 0;
+        cursor_trail = 0; # uses 10% of my GPU
+        scrollbar = "scrolled-and-hovered";
+        # Colors
         background = "#181B28";
         foreground = "#F8F8F2";
         selection_foreground = "#1E1F28";

@@ -64,10 +64,8 @@
             ++ cfg.root.directories
           );
           users."${config.custom.meta.user}" = {
-            files = lib.unique ([ ] ++ cfghm.home.files ++ cfghj.home.files);
-            directories = lib.unique (
-              [ ] ++ cfg.home.directories ++ cfghm.home.directories ++ cfghj.home.directories
-            );
+            files = lib.unique (cfghm.home.files ++ cfghj.home.files);
+            directories = lib.unique (cfg.home.directories ++ cfghm.home.directories ++ cfghj.home.directories);
           };
         };
         "/cache" = {

@@ -6,7 +6,7 @@
       custom.style = {
         font = {
           name = "JetBrainsMono Nerd Font Mono";
-          font-family = "JetBrainsMono NFM SemiBold";
+          font-family = "JetBrainsMono NFM";
         };
         colors = {
           helix-theme = "catppuccin_macchiato";
@@ -43,7 +43,7 @@
             };
             kitty.settings = {
               font_family = config.custom.style.font.font-family;
-              font-size = 13;
+              font_size = 13;
             };
           };
         };
