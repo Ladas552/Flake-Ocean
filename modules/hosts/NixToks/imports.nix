@@ -35,12 +35,12 @@ in
       minecraft-server
       nextcloud
       qbittorrent
-      distrobox
+      # distrobox
       nh
       openssh
       pipewire
       plymouth
-      qemu
+      # qemu
       tlp
       xkb
       fish
@@ -62,6 +62,7 @@ in
           NixToks
           cat-mocha
           lf
+          lf-ctpv
           manual
           openssh
         ];

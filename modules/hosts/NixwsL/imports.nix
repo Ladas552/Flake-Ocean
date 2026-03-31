@@ -33,6 +33,7 @@ in
           { inherit custom; }
           NixwsL
           lf
+          lf-ctpv
           manual
         ];
       }

@@ -41,6 +41,7 @@ in
           { inherit custom; }
           NixWool
           lf
+          lf-ctpv
         ];
       }
     ]

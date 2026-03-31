@@ -35,6 +35,7 @@ in
           { inherit custom; }
           NixIso
           lf
+          lf-kitty
           vesktop
           zathura
           manual
@@ -51,7 +52,7 @@ in
           git
           helix
           mpv
-          ghostty
+          kitty
           cat-mocha
           imv
           chawan
