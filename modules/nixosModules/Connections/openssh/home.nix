@@ -1,0 +1,37 @@
+{
+  flake.modules.homeManager.openssh =
+    { modulesPath, ... }:
+    {
+      imports = [ "${modulesPath}/programs/ssh.nix" ];
+
+      programs.ssh = {
+        enable = true;
+        # shut that warning up god dammit
+        enableDefaultConfig = false;
+        matchBlocks."*" = {
+          compression = false;
+          serverAliveInterval = 0;
+          serverAliveCountMax = 3;
+          hashKnownHosts = false;
+          userKnownHostsFile = "~/.ssh/known_hosts";
+          controlPath = "~/.ssh/master-%r@%n:%p";
+          forwardAgent = true;
+          addKeysToAgent = "yes";
+          controlMaster = "auto";
+          controlPersist = "10m";
+        };
+
+        matchBlocks."github.com" = {
+          host = "github.com";
+          user = "Ladas552";
+          identityFile = [ "~/.ssh/NixToks.pub" ];
+        };
+
+        matchBlocks."aur.archlinux.org" = {
+          host = "aur.archlinux.org";
+          user = "aur";
+          identityFile = [ "~/.ssh/aur" ];
+        };
+      };
+    };
+}

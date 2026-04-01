@@ -1,0 +1,65 @@
+# helium
+[helium]
+src.github_tag = "imputnet/helium-linux"
+fetch.url = "https://github.com/imputnet/helium-linux/releases/download/$ver/helium-$ver-x86_64_linux.tar.xz"
+
+# neorg
+[neorg-interim-ls]
+src.git = "https://github.com/benlubas/neorg-interim-ls"
+fetch.github = "benlubas/neorg-interim-ls"
+
+[neorg-conceal-wrap]
+src.git = "https://github.com/benlubas/neorg-conceal-wrap"
+fetch.github = "benlubas/neorg-conceal-wrap"
+
+[neorg-query]
+src.git = "https://github.com/benlubas/neorg-query"
+fetch.github = "benlubas/neorg-query"
+
+# neovim plugins
+[heirline-components]
+src.git = "https://github.com/Zeioth/heirline-components.nvim"
+fetch.github = "Zeioth/heirline-components.nvim"
+
+[cyrillic]
+src.git = "https://github.com/nativerv/cyrillic.nvim"
+fetch.github = "nativerv/cyrillic.nvim"
+
+# NixOS modules
+[impermanence]
+src.git = "https://github.com/nix-community/impermanence"
+fetch.git = "https://github.com/nix-community/impermanence"
+
+[sops-nix]
+src.git = "https://github.com/Mic92/sops-nix"
+fetch.git = "https://github.com/Mic92/sops-nix"
+
+[nixos-wsl]
+src.git = "https://github.com/nix-community/NixOS-WSL"
+fetch.git = "https://github.com/nix-community/NixOS-WSL"
+
+[noctalia-dev]
+src.git = "https://github.com/noctalia-dev/noctalia-shell"
+fetch.git = "https://github.com/noctalia-dev/noctalia-shell"
+
+[noctalia-qs]
+src.git = "https://github.com/noctalia-dev/noctalia-qs"
+fetch.git = "https://github.com/noctalia-dev/noctalia-qs"
+
+[nixos-hardware]
+src.git = "https://github.com/nixos/nixos-hardware"
+fetch.git = "https://github.com/nixos/nixos-hardware"
+
+[nix-minecraft]
+src.git = "https://github.com/Infinidoge/nix-minecraft"
+fetch.git = "https://github.com/Infinidoge/nix-minecraft"
+
+# adios
+[adifox]
+src.git = "https://github.com/NotAShelf/adifox"
+fetch.git = "https://github.com/NotAShelf/adifox"
+
+[adios]
+src.git = "https://github.com/adisbladis/adios"
+fetch.git = "https://github.com/adisbladis/adios"
+

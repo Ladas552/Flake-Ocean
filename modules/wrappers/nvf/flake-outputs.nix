@@ -1,0 +1,90 @@
+{ config, inputs, ... }:
+# plugins to add
+# - add auto-save-nvim module
+# - cord.nvim
+# - parinfer-rust
+# - module for numb.nvim
+# - module for blink-pairs
+{
+  perSystem =
+    { pkgs, ... }:
+    let
+      base = with config.flake.modules.nvf; [
+        auto-save
+        autocmd
+        blink-cmp
+        blink-pairs
+        cat-mocha
+        colorizer
+        cyrillic
+        dashboard
+        diagnostics
+        heirline
+        keymaps
+        lsp-config
+        luasnip
+        neogit
+        neorg
+        numb
+        nvim-surround
+        oil
+        options
+        rainbow
+        snacks
+        treesitter
+        web-devicons
+        which-key
+        config.flake.modules.generic.options
+      ];
+
+      heavy = with config.flake.modules.nvf; [
+        # clang
+        direnv
+        img-clip
+        # orgmode
+        python
+        rust
+        typst
+        otter
+        nix
+      ];
+    in
+    {
+      # my nvf config
+      packages = {
+        nvf-NixPort =
+          (inputs.nvf.lib.neovimConfiguration {
+            inherit pkgs;
+            modules =
+              with config.flake.modules.nvf;
+              base
+              ++ heavy
+              ++ [
+                NixPort
+              ];
+          }).neovim;
+
+        nvf-NixToks =
+          (inputs.nvf.lib.neovimConfiguration {
+            inherit pkgs;
+            modules =
+              with config.flake.modules.nvf;
+              base
+              ++ heavy
+              ++ [
+                NixToks
+              ];
+          }).neovim;
+        nvf-NixWool =
+          (inputs.nvf.lib.neovimConfiguration {
+            inherit pkgs;
+            modules =
+              with config.flake.modules.nvf;
+              base
+              ++ [
+                NixWool
+              ];
+          }).neovim;
+      };
+    };
+}

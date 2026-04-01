@@ -1,0 +1,86 @@
+{ config, ... }:
+let
+  custom.meta = {
+    hostname = "NixToks";
+    self = "/home/${config.custom.meta.user}/Flake-Ocean";
+    norg = "~/Documents/Norg";
+  };
+in
+{
+  flake.modules.nvf.NixToks.imports = [ { inherit custom; } ];
+  flake.modules.nixos."hosts/NixToks".imports =
+    with config.flake.modules.nixos;
+    [
+      { inherit custom; }
+      NixToks
+      cat-mocha
+      general
+      cache
+      # grub-efi
+      systemd-boot
+      nix
+      sops
+      tailscale
+      zfs
+      dashboard
+      # incus
+      # ollama
+      # open-webui
+      searxng
+      # immich
+      jellyfin
+      karakeep
+      kavita
+      miniflux
+      minecraft-server
+      nextcloud
+      qbittorrent
+      # distrobox
+      nh
+      openssh
+      pipewire
+      plymouth
+      # qemu
+      tlp
+      xkb
+      fish
+      yt-dlp-NixToks
+      run0
+
+      # temporary
+      # tangled
+      # Modules
+      # Users
+      root
+      ladas552
+    ]
+    # Specific Home-Manager modules
+    ++ [
+      {
+        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
+          { inherit custom; }
+          NixToks
+          cat-mocha
+          lf
+          lf-ctpv
+          manual
+          openssh
+        ];
+      }
+    ]
+    ++ [
+      {
+        hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
+          { inherit custom; }
+          git
+          nvf
+          mpd
+          syncthing
+          helix
+          direnv
+          fastfetch
+          cat-mocha
+        ];
+      }
+    ];
+}
