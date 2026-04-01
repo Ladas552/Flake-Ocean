@@ -116,11 +116,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1774898676,
-        "narHash": "sha256-0Utnqo+FbB+0CVUi0MI3oonF0Kuzy9VcgRkxl53Euvk=",
+        "lastModified": 1774991950,
+        "narHash": "sha256-kScKj3qJDIWuN9/6PMmgy5esrTUkYinrO5VvILik/zw=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "a184bd2f8426087bae93f203403cd4b86c99e57d",
+        "rev": "f2d3e04e278422c7379e067e323734f3e8c585a7",
         "type": "github"
       },
       "original": {
@@ -152,11 +152,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1774916065,
-        "narHash": "sha256-BPJuYgkzMsWZ4SQEaP57XGgANYyn0gHdyWlsymtqJVs=",
+        "lastModified": 1775002288,
+        "narHash": "sha256-LoEpraICbZVnNnH7vBL7mXhzK/55yqrkmdZaVPHidgY=",
         "ref": "refs/heads/main",
-        "rev": "c3a896513f537807de670cffe8faa1d308f14e53",
-        "revCount": 79,
+        "rev": "777a8609d0982d77f0e6bf1d36e6bf4e688d59bf",
+        "revCount": 80,
         "type": "git",
         "url": "https://codeberg.org/BANanaD3V/niri-nix"
       },
@@ -360,11 +360,11 @@
         "sqlite-lib-src": "sqlite-lib-src"
       },
       "locked": {
-        "lastModified": 1774894105,
-        "narHash": "sha256-WXejyCk4vEFxtw2BvqXNXc4HNHW2KKrjaq/0LzKi2so=",
+        "lastModified": 1775038772,
+        "narHash": "sha256-1Rb6LzX0OnhFUQj1Sd7zqCeWlnGoKi0b7OFHADrRw4s=",
         "ref": "refs/heads/master",
-        "rev": "3f9d23a5093ebe7bc8e654f46324d7f698092e5b",
-        "revCount": 2135,
+        "rev": "8d4ecbb97951a9c0b35f582c50b4f95b2b5f5297",
+        "revCount": 2142,
         "type": "git",
         "url": "https://tangled.org/@tangled.org/core"
       },

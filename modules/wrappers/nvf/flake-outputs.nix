@@ -61,6 +61,7 @@
               ++ heavy
               ++ [
                 NixPort
+                niri-nvim-colors
               ];
           }).neovim;
 

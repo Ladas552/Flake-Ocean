@@ -139,6 +139,7 @@
             mcm = "lf ~/Music";
             mcc = "lf ~/.config/";
             mcp = "lf ~/Pictures";
+            ssh = "kitten ssh"; # for kitty terminal
           };
         };
         programs.fish = {

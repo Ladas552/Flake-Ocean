@@ -12,6 +12,7 @@
         confirm_os_window_close = 0;
         cursor_trail = 0; # uses 10% of my GPU
         scrollbar = "scrolled-and-hovered";
+        window_padding_width = 0;
         # Colors
         background = "#181B28";
         foreground = "#F8F8F2";

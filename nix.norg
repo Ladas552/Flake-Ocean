@@ -7,6 +7,10 @@ authors: ladas552
 I start to have a life other than computers so I kinda begin to forget what I did and didn't. So here we are, there will be notes, todos, plans and tips(mostly for myself)
 
 * Notes
+** Flake-schema
+   You can use `?ref=` to specify a git branch on a repository that isn't on github or gitlab. And you can use it on github and gitlab repos too
+
+   Example: `niri.url = "git+https://codeberg.org/BANanaD3V/niri-nix?ref=feat/top-level-children";`. Where everything after `?ref=` if a branch name or commit rev.
 ** Scripts
    I declare scripts with packages that allow to have them in nix format. It allows me to not hold dependencies for certain scripts, like `libnotify` for scripts that send notifications. There are several ways to do this, I prefer bash, but it isn't sufficient in certain places.
 

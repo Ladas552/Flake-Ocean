@@ -2,6 +2,11 @@
 {
   flake.modules =
     let
+      # extraConfig will get merged into final config
+      extraConfig = # kdl
+        ''
+          include optional=true "niri-nvim-colors.kdl"
+        '';
       settings = {
         #one liners
         hotkey-overlay.skip-at-startup = true;
@@ -247,9 +252,7 @@
           # "Super+L" .spawn ="swaylock";
           # "Super+E" .spawn ="emacs";
           "Super+N".spawn = [
-            "kitty"
-            "-e"
-            "nvim"
+            "neovide"
           ];
           "Super+J".spawn = [
             "kitty"
@@ -660,12 +663,12 @@
         imports = [ inputs.niri.homeModules.default ];
         wayland.windowManager.niri = {
           enable = true;
-          inherit settings;
+          inherit settings extraConfig;
         };
       };
 
       hjem.niri-flake = {
-        xdg.config.files."niri/config.kdl".text = inputs.niri.lib.mkNiriKDL settings;
+        xdg.config.files."niri/config.kdl".text = (inputs.niri.lib.mkNiriKDL settings + extraConfig);
       };
     };
 }

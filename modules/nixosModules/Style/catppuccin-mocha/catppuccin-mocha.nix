@@ -45,6 +45,10 @@
               font_family = config.custom.style.font.font-family;
               font_size = 13;
             };
+            neovide.settings.font = {
+              size = 13;
+              normal = config.custom.style.font.font-family;
+            };
           };
         };
       homeManager.cat-mocha =

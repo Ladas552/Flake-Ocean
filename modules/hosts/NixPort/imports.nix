@@ -86,6 +86,7 @@ in
           # flameshot
           # helium
           niri-flake
+          niri-nvim-colors
           noct
           bluetooth
           mpd
