@@ -33,6 +33,7 @@
         guicursor = "n-v-c:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor25-Cursor";
         cursorline = true;
         cursorlineopt = "number";
+        fillchars = "eob: ";
       };
       # nvf modules that modify native neovim options
       spellcheck = {

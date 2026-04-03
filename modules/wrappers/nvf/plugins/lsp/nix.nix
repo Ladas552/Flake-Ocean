@@ -10,6 +10,7 @@
       vim = {
         languages.nix = {
           enable = true;
+          format.enable = false; # It's annoying when a repo uses Alejandro instead
           format.type = [ "nixfmt" ];
           lsp.servers = [ "nixd" ];
           treesitter.enable = true;

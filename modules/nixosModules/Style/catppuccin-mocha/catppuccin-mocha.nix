@@ -47,7 +47,7 @@
             };
             neovide.settings.font = {
               size = 13;
-              normal = config.custom.style.font.font-family;
+              normal = config.custom.style.font.name;
             };
           };
         };
