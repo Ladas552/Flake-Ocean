@@ -29,6 +29,10 @@
           nvfetcher
         ];
 
+        environment.shellAliases = {
+          ssh = "kitten ssh"; # for kitty terminal
+        };
+
         # Environmental Variables
         environment.variables = {
           BROWSER = "firefox";

@@ -54,6 +54,10 @@ fetch.git = "https://github.com/nixos/nixos-hardware"
 src.git = "https://github.com/Infinidoge/nix-minecraft"
 fetch.git = "https://github.com/Infinidoge/nix-minecraft"
 
+[copyparty]
+src.git = "https://github.com/9001/copyparty"
+fetch.git = "https://github.com/9001/copyparty"
+
 # adios
 [adifox]
 src.git = "https://github.com/NotAShelf/adifox"

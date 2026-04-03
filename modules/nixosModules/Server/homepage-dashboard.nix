@@ -45,10 +45,16 @@
                 href = "http://100.74.112.27:2283";
               };
             }
+            # {
+            #   "NextCloud" = {
+            #     description = "Drive";
+            #     href = "http://100.74.112.27:8080";
+            #   };
+            # }
             {
-              "NextCloud" = {
-                description = "Drive";
-                href = "http://100.74.112.27:8080";
+              "Copyparty" = {
+                description = "File transfere";
+                href = "http://100.74.112.27:3210";
               };
             }
             {

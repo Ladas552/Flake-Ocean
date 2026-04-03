@@ -33,8 +33,9 @@ in
       kavita
       miniflux
       minecraft-server
-      nextcloud
+      # nextcloud
       qbittorrent
+      copyparty
       # distrobox
       nh
       openssh
