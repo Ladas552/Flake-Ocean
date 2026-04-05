@@ -36,6 +36,7 @@ in
       # nextcloud
       qbittorrent
       copyparty
+      gonic
       # distrobox
       nh
       openssh

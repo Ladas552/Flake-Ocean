@@ -32,6 +32,10 @@
             path = "/srv/media";
             access.A = "admin";
           };
+          "/docs" = {
+            path = "/home/ladas552/Documents";
+            access.A = "admin";
+          };
         };
       };
 
