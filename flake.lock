@@ -71,11 +71,11 @@
         "smfh": "smfh"
       },
       "locked": {
-        "lastModified": 1773801621,
-        "narHash": "sha256-hOweDMc/uNFeliSVuNXZ4qa6WC8AbmRV8pNSAD/h4S0=",
+        "lastModified": 1775446397,
+        "narHash": "sha256-Im0ZgWCO24H2z2RlQxK/Fu/y2c7AIjcKl9++cAk1wUQ=",
         "owner": "feel-co",
         "repo": "hjem",
-        "rev": "d51b2e524794a61762453be5bf7b4fe259150191",
+        "rev": "136908c4b336970d3c782026bcd6e3aafd88e264",
         "type": "github"
       },
       "original": {
@@ -116,11 +116,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775143651,
-        "narHash": "sha256-S0RqAyDPMTcv9vASMaE8eY1QexFysAOdnxUxFHIPOyE=",
+        "lastModified": 1775457580,
+        "narHash": "sha256-ikws/ssAmG20AGrEwBuwspwPlkubJu34mB+Uz2fJBJs=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "d166a078541982a76f14d3e06e9665fa5c9ed85e",
+        "rev": "5de7dbd151b0bd65d45785553d4a22d832733ffc",
         "type": "github"
       },
       "original": {
@@ -199,11 +199,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1775036866,
-        "narHash": "sha256-ByAX1LkhCwZ94+KnFAmnJSMAvui7kgCxjHgUHsWAbfI=",
-        "rev": "6201e203d09599479a3b3450ed24fa81537ebc4e",
+        "lastModified": 1775423009,
+        "narHash": "sha256-hvNLo3SaIwi6+Cm5NMLyFQYJrYagpsYap4EfQe9CQpc=",
+        "rev": "68d8aa3d661f0e6bd5862291b5bb263b2a6595c9",
         "type": "tarball",
-        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre972949.6201e203d095/nixexprs.tar.xz"
+        "url": "https://releases.nixos.org/nixos/unstable/nixos-26.05pre975402.68d8aa3d661f/nixexprs.tar.xz"
       },
       "original": {
         "type": "tarball",
@@ -240,11 +240,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1775122065,
-        "narHash": "sha256-ZlowJNkQOhpsXDuWbHgB1xY6W8kyzYn9coK9nJsqqNg=",
+        "lastModified": 1775424406,
+        "narHash": "sha256-ENSQFUK6zs4C5brC4MlrNRM2Krn8OsHdoxPLtezhFyU=",
         "owner": "notashelf",
         "repo": "nvf",
-        "rev": "d3304af3d5771e8d5bac6ee9bbdbce56086d54f7",
+        "rev": "3ffc800a01cbd1f2e68e78b527bb7d56078c6351",
         "type": "github"
       },
       "original": {
@@ -360,11 +360,11 @@
         "sqlite-lib-src": "sqlite-lib-src"
       },
       "locked": {
-        "lastModified": 1775158647,
-        "narHash": "sha256-anV49x4tuM2psfy0Is/bp9uz/9WFiCRBniBntbJrSoU=",
+        "lastModified": 1775537123,
+        "narHash": "sha256-3GWCXObcr5M2Y6Z5v9xn9HcQ9xsfp9eH/lFcWb0JVEs=",
         "ref": "refs/heads/master",
-        "rev": "13ec3ea83b075975ecb899be4f0e9d990b5bec61",
-        "revCount": 2162,
+        "rev": "ece9426e1fc22e1a4a5ee1b5100cc4ae35043393",
+        "revCount": 2183,
         "type": "git",
         "url": "https://tangled.org/@tangled.org/core"
       },

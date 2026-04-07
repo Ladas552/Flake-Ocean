@@ -36,17 +36,17 @@
   };
   copyparty = {
     pname = "copyparty";
-    version = "fb5384f4122f714ed1b8d15a7e0d3da261bcdae2";
+    version = "ede692925edfc6fca7a52f483414d543e9303237";
     src = fetchgit {
       url = "https://github.com/9001/copyparty";
-      rev = "fb5384f4122f714ed1b8d15a7e0d3da261bcdae2";
+      rev = "ede692925edfc6fca7a52f483414d543e9303237";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-HN5IRG7hbvcgzFodp6KCmAK711woYb7pOl7DbqgQHf4=";
+      sha256 = "sha256-dUopEMj5KhH1vnv43o29kMsayp0Ki+9EfIn4UAE9sAU=";
     };
-    date = "2026-04-02";
+    date = "2026-04-04";
   };
   cyrillic = {
     pname = "cyrillic";
@@ -94,6 +94,18 @@
     };
     date = "2026-01-27";
   };
+  neorg = {
+    pname = "neorg";
+    version = "4189ef69777996420715aaef9351353e78f7104b";
+    src = fetchFromGitHub {
+      owner = "benlubas";
+      repo = "neorg";
+      rev = "4189ef69777996420715aaef9351353e78f7104b";
+      fetchSubmodules = false;
+      sha256 = "sha256-ic8aXxiVhQeTgg4mpOyCwBhWa56beTloCx6MfMIyMxA=";
+    };
+    date = "2026-04-05";
+  };
   neorg-conceal-wrap = {
     pname = "neorg-conceal-wrap";
     version = "447a76e4abf07ccc5eeb8cc3ee5fae241b434f5a";
@@ -108,15 +120,15 @@
   };
   neorg-interim-ls = {
     pname = "neorg-interim-ls";
-    version = "e2f86982ba5857ed5581ff5814edd57b5c2c67e0";
+    version = "898898f48fe7a2364d99d32f0dfd95dab5f8591f";
     src = fetchFromGitHub {
       owner = "benlubas";
       repo = "neorg-interim-ls";
-      rev = "e2f86982ba5857ed5581ff5814edd57b5c2c67e0";
+      rev = "898898f48fe7a2364d99d32f0dfd95dab5f8591f";
       fetchSubmodules = false;
-      sha256 = "sha256-EdKEaxdme4tODtoJv8Yw/x3YtQoDLK0pmTT7xgE1LYQ=";
+      sha256 = "sha256-R/xxBIHbj8DxgT+79iuAuKTXYPI/IYctrYqsqq50/zo=";
     };
-    date = "2025-10-16";
+    date = "2026-04-04";
   };
   neorg-query = {
     pname = "neorg-query";
@@ -132,31 +144,31 @@
   };
   nix-minecraft = {
     pname = "nix-minecraft";
-    version = "f5d7077eb578b9e321b74329bd0625d5569dc90e";
+    version = "8c7693880cb861e60adeab5480f02dc3e7a390f6";
     src = fetchgit {
       url = "https://github.com/Infinidoge/nix-minecraft";
-      rev = "f5d7077eb578b9e321b74329bd0625d5569dc90e";
+      rev = "8c7693880cb861e60adeab5480f02dc3e7a390f6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-3d9gBmLMfI9d5xwfbd9Zr5JwpQzZ27qw9NiRjJ2aB28=";
+      sha256 = "sha256-3NIpnV1HxBCwi00iMvj9KcqXkM0VNA72KABj8g0cFFs=";
     };
-    date = "2026-04-03";
+    date = "2026-04-07";
   };
   nixos-hardware = {
     pname = "nixos-hardware";
-    version = "f4c4c2c0c923d7811ac2a63ccc154767e4195337";
+    version = "c775c2772ba56e906cbeb4e0b2db19079ef11ff7";
     src = fetchgit {
       url = "https://github.com/nixos/nixos-hardware";
-      rev = "f4c4c2c0c923d7811ac2a63ccc154767e4195337";
+      rev = "c775c2772ba56e906cbeb4e0b2db19079ef11ff7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-OrnCQeUO2bqaWUl0lkDWyGWjKsOhtCyd7JSfTedQNUE=";
+      sha256 = "sha256-2ZBhDNZZwYkRmefK5XLOusCJHnoeKkoN95hoSGgMxWM=";
     };
-    date = "2026-03-31";
+    date = "2026-04-06";
   };
   nixos-wsl = {
     pname = "nixos-wsl";
@@ -174,44 +186,44 @@
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "0d59c6c7b36e4be516c673a6dba88c66f9a2a9f8";
+    version = "57cdcb7ad05f1d93fed8451bbc42622367a255e2";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "0d59c6c7b36e4be516c673a6dba88c66f9a2a9f8";
+      rev = "57cdcb7ad05f1d93fed8451bbc42622367a255e2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-QWHv3jdNLh4/mSllvoY9YcCkeAWiSvTFkSNmvb22Tqc=";
+      sha256 = "sha256-JxcRxK3XPDcduDuoTDlPbsv4p3LxMkhecnB4M/mHFak=";
     };
-    date = "2026-04-03";
+    date = "2026-04-07";
   };
   noctalia-qs = {
     pname = "noctalia-qs";
-    version = "e7224b756dcd10eec040df818a4c7a0fda5d6eff";
+    version = "9e2736531ef7a1a336abf7ec72255d0b192273b6";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-qs";
-      rev = "e7224b756dcd10eec040df818a4c7a0fda5d6eff";
+      rev = "9e2736531ef7a1a336abf7ec72255d0b192273b6";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-79JP2QTdvp1jg7HGxAW+xzhzhLnlKUi8yGXq9nDCeH0=";
+      sha256 = "sha256-elzmRpudiwtYQNCKk9TAEhlYQV0+yUM81poo01Z7FfQ=";
     };
-    date = "2026-04-02";
+    date = "2026-04-06";
   };
   sops-nix = {
     pname = "sops-nix";
-    version = "8f093d0d2f08f37317778bd94db5951d6cce6c46";
+    version = "a4ee2de76efb759fe8d4868c33dec9937897916f";
     src = fetchgit {
       url = "https://github.com/Mic92/sops-nix";
-      rev = "8f093d0d2f08f37317778bd94db5951d6cce6c46";
+      rev = "a4ee2de76efb759fe8d4868c33dec9937897916f";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-/0BoSi0Dg0ON7IW0oscM12WSPBaMSCn36XTt0lHZoy8=";
+      sha256 = "sha256-f50qrK0WwZ9z5EdaMGWOTtALgSF7yb7XwuE7LjCuDmw=";
     };
-    date = "2026-04-03";
+    date = "2026-04-05";
   };
 }

@@ -66,7 +66,6 @@ in
           lf
           lf-ctpv
           manual
-          openssh
         ];
       }
     ]
@@ -82,6 +81,7 @@ in
           direnv
           fastfetch
           cat-mocha
+          openssh
         ];
       }
     ];

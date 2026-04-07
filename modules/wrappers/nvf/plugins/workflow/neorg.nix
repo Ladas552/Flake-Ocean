@@ -55,9 +55,16 @@
           "neorg.modules.external.conceal-wrap.module"
         ];
       };
+      neorg = pkgs.vimUtils.buildVimPlugin {
+        name = "neorg";
+        src = sources.neorg.src;
+      };
     in
     {
       vim = {
+        lazy.plugins.vimplugin-neorg = {
+          package = lib.mkForce (neorg.overrideAttrs { doCheck = false; });
+        };
         extraPlugins = {
           "neorg-interim-ls".package = neorg-interim-ls;
           "neorg-conceal-wrap".package = neorg-conceal-wrap;
@@ -99,7 +106,20 @@
             "core.journal" = lib.mkIf (lib.isString config.custom.meta.norg) {
               config = {
                 workspace = "journal";
-                journal_folder = "/./";
+                journal_folder = "./";
+                journals = lib.generators.mkLuaInline ''
+                  {sprint = {
+                     start_date = os.time({ year = 2026, month = 06, day = 17 }), -- a Monday
+                        period = { day = 14 },
+                     path_format_strategy = "%Y/%m/sprint-%d.norg",
+                     parse_journal_path = nil,
+                   }}
+                '';
+                holidays = lib.generators.mkLuaInline ''
+                  {
+                  os.time({ month = 4, day = 8, year = 2026 }),
+                  }
+                '';
               };
             };
             "core.dirman" = lib.mkIf (lib.isString config.custom.meta.norg) {
