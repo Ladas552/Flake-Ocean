@@ -29,6 +29,7 @@
         nvim-surround
         oil
         options
+        ui2
         rainbow
         snacks
         treesitter

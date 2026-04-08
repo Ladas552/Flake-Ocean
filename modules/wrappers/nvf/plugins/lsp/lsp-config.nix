@@ -6,7 +6,7 @@
     };
     lsp = {
       enable = true;
-      formatOnSave = true;
+      formatOnSave = false;
       inlayHints.enable = true;
       lspconfig.enable = true;
       lspkind.enable = true;

@@ -4,27 +4,17 @@
       enable = true;
       friendly-snippets.enable = true;
       setupOpts = {
-        keymap = {
-          preset = "enter";
-          "<Tab>" = [
-            "select_next"
-            "fallback"
-          ];
-          "<S-Tab>" = [
-            "select_prev"
-            "accept"
-            "fallback"
-          ];
-        };
+        cmdline.enabled = false;
+        keymap.preset = "enter";
         signature = {
           enabled = true;
-          window.border = "rounded";
+          window.border = "single";
         };
         completion = {
           documentation = {
             auto_show = true;
-            auto_show_delay_ms = 1000;
-            window.border = "rounded";
+            auto_show_delay_ms = 500;
+            window.border = "single";
           };
           list.selection = {
             preselect = false;
@@ -39,7 +29,7 @@
             # };
           };
           ghost_text.enabled = true;
-          keyword.range = "prefix"; # can also be `full`
+          keyword.range = "full"; # can also be `full`
         };
         sources = {
           providers = {

@@ -2,7 +2,7 @@
 let
   custom.meta = {
     hostname = "NixWool";
-    self = "git+https://tangled.org/ladas552.me/Flake-ocean";
+    self = "git+https://tangled.org/ladas552.me/Flake-ocean?rev=";
     norg = null;
   };
 in
