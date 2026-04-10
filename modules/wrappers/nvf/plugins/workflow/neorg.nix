@@ -107,17 +107,19 @@
               config = {
                 workspace = "journal";
                 journal_folder = "./";
-                journals = lib.generators.mkLuaInline ''
-                  {sprint = {
-                     start_date = os.time({ year = 2026, month = 06, day = 17 }), -- a Monday
-                        period = { day = 14 },
-                     path_format_strategy = "%Y/%m/sprint-%d.norg",
-                     parse_journal_path = nil,
-                   }}
-                '';
+                journals =
+                  lib.generators.mkLuaInline # lua
+                    ''
+                      {lab = {
+                         start_date = os.time({ year = 2026, month = 04, day = 6 }), -- a Monday
+                         period = { day = 1 },
+                         path_format_strategy = "%Y/%m/%d-lab.norg",
+                         parse_journal_path = nil,
+                       }}
+                    '';
                 holidays = lib.generators.mkLuaInline ''
                   {
-                  os.time({ month = 4, day = 8, year = 2026 }),
+                  os.time({ month = 1, day = 1, year = 2026 }),
                   }
                 '';
               };

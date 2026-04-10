@@ -30,6 +30,7 @@
         {
           "colorizeDistroLogo": false,
           "colorizeSystemIcon": "primary",
+          "colorizeSystemText": "none",
           "customIconPath": "",
           "enableColorization": true,
           "icon": "",
@@ -42,6 +43,7 @@
         },
         {
           "colorizeSystemIcon": "tertiary",
+          "colorizeSystemText": "none",
           "customIconPath": "",
           "enableColorization": true,
           "icon": "rocket",
@@ -154,8 +156,8 @@
           "hideIfIdle": true,
           "hideIfNotDetected": true,
           "id": "Battery",
-          "showNoctaliaPerformance": false,
-          "showPowerProfiles": false
+          "showNoctaliaPerformance": true,
+          "showPowerProfiles": true
         },
         {
           "displayMode": "onhover",
@@ -194,7 +196,7 @@
     "screenOverrides": []
   },
   "general": {
-    "avatarImage": "/home/ladas552/Pictures/__original_drawn_by_gaku__0b0f525d30fe1ebb38d8b69d7d37463b.png",
+    "avatarImage": "/home/ladas552/Pictures/backgrounds/Sacrifice.jpg",
     "dimmerOpacity": 0.4,
     "showScreenCorners": false,
     "forceBlackScreenCorners": false,
@@ -254,7 +256,8 @@
         "Del"
       ]
     },
-    "reverseScroll": false
+    "reverseScroll": false,
+    "smoothScrollEnabled": true
   },
   "ui": {
     "fontDefault": "JetBrainsMono Nerd Font Mono",
@@ -274,6 +277,7 @@
     "name": "Astana",
     "weatherEnabled": true,
     "weatherShowEffects": true,
+    "weatherTaliaMascotAlways": false,
     "useFahrenheit": false,
     "use12hourFormat": false,
     "showWeekNumberInCalendar": true,
@@ -282,7 +286,8 @@
     "analogClockInCalendar": false,
     "firstDayOfWeek": 1,
     "hideWeatherTimezone": false,
-    "hideWeatherCityName": true
+    "hideWeatherCityName": true,
+    "autoLocate": false
   },
   "calendar": {
     "cards": [
@@ -315,6 +320,7 @@
     "showHiddenFiles": false,
     "viewMode": "single",
     "setWallpaperOnAllMonitors": true,
+    "linkLightAndDarkWallpapers": true,
     "fillMode": "crop",
     "fillColor": "#4c4f69",
     "useSolidColor": false,
@@ -335,6 +341,7 @@
     "transitionEdgeSmoothness": 0.05,
     "panelPosition": "top_left",
     "hideWallpaperFilenames": true,
+    "useOriginalImages": false,
     "overviewBlur": 0.4,
     "overviewTint": 0.6,
     "useWallhaven": true,
@@ -491,8 +498,6 @@
     "indicatorOpacity": 0.6
   },
   "network": {
-    "wifiEnabled": true,
-    "airplaneModeEnabled": false,
     "bluetoothRssiPollingEnabled": false,
     "bluetoothRssiPollIntervalMs": 10000,
     "networkPanelView": "wifi",
@@ -641,7 +646,8 @@
     "manualSunrise": "06:30",
     "manualSunset": "18:30",
     "generationMethod": "tonal-spot",
-    "monitorForColors": ""
+    "monitorForColors": "",
+    "syncGsettings": true
   },
   "templates": {
     "activeTemplates": [

@@ -39,7 +39,8 @@ in
       systemd-boot
       tailscale
       thunar
-      tlp
+      # tlp
+      lact
       noct
       xkb
       zfs
