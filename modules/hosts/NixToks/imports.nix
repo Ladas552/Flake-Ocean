@@ -42,6 +42,7 @@ in
       openssh
       pipewire
       plymouth
+      matrix-conduit
       # qemu
       tlp
       xkb

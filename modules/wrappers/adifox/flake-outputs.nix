@@ -125,6 +125,7 @@
               (f "Сантехник" [
                 (b "Hetzner" "console.hetzner.com")
                 (b "Tailscale" "login.tailscale.com/admin/machines")
+                (b "Cloudflare" "dash.cloudflare.com")
               ])
               (f "Социопат" [
                 (b "Gmail" "mail.google.com/mail/u/0/#inbox")
