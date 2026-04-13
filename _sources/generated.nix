@@ -36,17 +36,17 @@
   };
   copyparty = {
     pname = "copyparty";
-    version = "ed516ddc20493e670c141c4a3811f93632be046e";
+    version = "a5d859d2b18f53ccf236bc6229856f79139d531c";
     src = fetchgit {
       url = "https://github.com/9001/copyparty";
-      rev = "ed516ddc20493e670c141c4a3811f93632be046e";
+      rev = "a5d859d2b18f53ccf236bc6229856f79139d531c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-qEYbkG9vhwCSDydV8o/RrSM5TjDafJdlcCwRqFlRnMk=";
+      sha256 = "sha256-NfzRZ5DZo8Mwb31ocimy3IMhr3kmYGQ3/ImfnEQkQLw=";
     };
-    date = "2026-04-09";
+    date = "2026-04-11";
   };
   cyrillic = {
     pname = "cyrillic";
@@ -74,10 +74,10 @@
   };
   helium = {
     pname = "helium";
-    version = "0.10.9.1";
+    version = "0.11.1.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.10.9.1/helium-0.10.9.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-ob1iSE+4IrsHthEpEypgSkZs2LT4H2YXknjD1FKn3sc=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.11.1.1/helium-0.11.1.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-1y6ndVGeqa61KpmRv9dukffpCxdrOy97jMeQcymB0bc=";
     };
   };
   impermanence = {
@@ -144,17 +144,17 @@
   };
   nix-minecraft = {
     pname = "nix-minecraft";
-    version = "c4c6a33affcc15cde3df06083e96cda87f9a7627";
+    version = "c5eb01b60873e331265779028a839cd2b5237874";
     src = fetchgit {
       url = "https://github.com/Infinidoge/nix-minecraft";
-      rev = "c4c6a33affcc15cde3df06083e96cda87f9a7627";
+      rev = "c5eb01b60873e331265779028a839cd2b5237874";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-3BS1Hw+3A3uf4G/8zwts3ZgxSnYq0y+QntbwO+b6KEw=";
+      sha256 = "sha256-zqDhVyUtctq7HlpMC9cdR277ner0L/f7SkC3oKbZwy0=";
     };
-    date = "2026-04-10";
+    date = "2026-04-13";
   };
   nixos-hardware = {
     pname = "nixos-hardware";
@@ -186,44 +186,44 @@
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "e85ce902cb5336ca2ab68bbb919d9a9f6670aec4";
+    version = "e56a9db57ed61ea248f109edd60965faf56d3da2";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "e85ce902cb5336ca2ab68bbb919d9a9f6670aec4";
+      rev = "e56a9db57ed61ea248f109edd60965faf56d3da2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-nV0BDaByz4qhvgQ8KuTvVXIKwphiQWA4gvK2kc+xp8k=";
+      sha256 = "sha256-ie3vFwg0eZTTHBDCRm+ee/PecbtdPn/pyL6hlotAfeQ=";
     };
-    date = "2026-04-09";
+    date = "2026-04-13";
   };
   noctalia-qs = {
     pname = "noctalia-qs";
-    version = "9e2736531ef7a1a336abf7ec72255d0b192273b6";
+    version = "68e82fe34c68ee839a9c37e3466820e266af0c86";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-qs";
-      rev = "9e2736531ef7a1a336abf7ec72255d0b192273b6";
+      rev = "68e82fe34c68ee839a9c37e3466820e266af0c86";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-elzmRpudiwtYQNCKk9TAEhlYQV0+yUM81poo01Z7FfQ=";
+      sha256 = "sha256-d4CVRtAty2GzDYXx4xYQmR+nlOjjKovyprQfZhgLckU=";
     };
-    date = "2026-04-06";
+    date = "2026-04-12";
   };
   sops-nix = {
     pname = "sops-nix";
-    version = "d2e8438d5886e92bc5e7c40c035ab6cae0c41f76";
+    version = "31ac5fe5d015f76b54058c69fcaebb66a55871a4";
     src = fetchgit {
       url = "https://github.com/Mic92/sops-nix";
-      rev = "d2e8438d5886e92bc5e7c40c035ab6cae0c41f76";
+      rev = "31ac5fe5d015f76b54058c69fcaebb66a55871a4";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-0E9PohY/VuESLq0LR4doaH7hTag513sDDW5n5qmHd1Q=";
+      sha256 = "sha256-VKp9bhVSm0bT6JWctFy06ocqxGGnWHi1NfoE90IgIcY=";
     };
-    date = "2026-04-08";
+    date = "2026-04-12";
   };
 }

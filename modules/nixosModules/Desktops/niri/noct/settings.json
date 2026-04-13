@@ -398,6 +398,12 @@
         },
         {
           "id": "WallpaperSelector"
+        },
+        {
+          "id": "PowerProfile"
+        },
+        {
+          "id": "NoctaliaPerformance"
         }
       ],
       "right": [

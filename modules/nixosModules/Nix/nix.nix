@@ -44,6 +44,9 @@
           ];
           nix-path = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
           flake-registry = ""; # optional, ensures flakes are truly self-contained
+          # some options
+          lint-short-path-literals = "warn";
+          lint-url-literals = "warn";
         };
       };
       # nixpkgs options

@@ -28,6 +28,7 @@
             ".cache/keepassxc"
             ".config/keepassxc"
             ".config/qBittorrent"
+            ".config/Element"
             ".local/share/qBittorrent"
             ".cache/nix"
             ".cache/nix-index"
