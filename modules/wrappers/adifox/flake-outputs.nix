@@ -127,6 +127,30 @@
                 (b "Tailscale" "login.tailscale.com/admin/machines")
                 (b "Cloudflare" "dash.cloudflare.com")
               ])
+              (f "Материалы для Учебы" [
+                (f "Статьи" [
+                  (b "PubMed для статей" "pubmed.ncbi.nlm.nih.gov")
+                  (b "Anna’s Archive" "annas-archive.gl")
+                  (b "Shihub" "sci-hub.pub")
+                  (b "Русская Литература PDF" "a4format.ru")
+                  (b "Zotero Bib generator" "zbib.org")
+                  (b "Academic Torrents" "academictorrents.com")
+                  (b "Zotero Library" "zotero.org/ladas552/library")
+                  (b "Google Scholar" "scholar.google.com")
+                ])
+                (b "NCBI для генов и белков" "ncbi.nlm.nih.gov")
+                (b "Biology Dictionary" "biologydictionary.net")
+                (b "Biology Library" "bio.libretexts.org")
+                (b "PubChem" "pubchem.ncbi.nlm.nih.gov")
+                (f "Bioinformatics" [
+                  (b "Primer3" "pubchem.ncbi.nlm.nih.gov")
+                  (b "Oligo Analyzer" "idtdna.com/pages/tools/oligoanalyzer")
+                  (b "Rosie2 Разные Инструменты" "r2.graylab.jhu.edu")
+                ])
+                (b "Калькуляторы" "molbiol.ru/eng/scripts/index.html")
+                (b "Stanford Medicine" "stanfordhealthcare.org")
+                (b "Real Time PCR guides" "gene-quantification.de/main-bioinf.shtml")
+              ])
               (f "Социопат" [
                 (b "Gmail" "mail.google.com/mail/u/0/#inbox")
                 (b "Blog" "blog.ladas552.me")
@@ -171,30 +195,6 @@
                 (b "Lucky Star Drama CD Translations" "heavens-feel.com/luckystardramacdtranslation_part1.html")
                 (b "Typesetting Anime Guide" "unanimated.github.io/ts/ts-basics.htm")
               ])
-              (f "Материалы для Учебы" [
-                (f "Статьи" [
-                  (b "PubMed для статей" "pubmed.ncbi.nlm.nih.gov")
-                  (b "Anna’s Archive" "annas-archive.gl")
-                  (b "Shihub" "sci-hub.pub")
-                  (b "Русская Литература PDF" "a4format.ru")
-                  (b "Zotero Bib generator" "zbib.org")
-                  (b "Academic Torrents" "academictorrents.com")
-                  (b "Zotero Library" "zotero.org/ladas552/library")
-                  (b "Google Scholar" "scholar.google.com")
-                ])
-                (b "NCBI для генов и белков" "ncbi.nlm.nih.gov")
-                (b "Biology Dictionary" "biologydictionary.net")
-                (b "Biology Library" "bio.libretexts.org")
-                (b "PubChem" "pubchem.ncbi.nlm.nih.gov")
-                (f "Bioinformatics" [
-                  (b "Primer3" "pubchem.ncbi.nlm.nih.gov")
-                  (b "Oligo Analyzer" "idtdna.com/pages/tools/oligoanalyzer")
-                  (b "Rosie2 Разные Инструменты" "r2.graylab.jhu.edu")
-                ])
-                (b "Калькуляторы" "molbiol.ru/eng/scripts/index.html")
-                (b "Stanford Medicine" "stanfordhealthcare.org")
-                (b "Real Time PCR guides" "gene-quantification.de/main-bioinf.shtml")
-              ])
               (f "Music" [
                 (f "Radio" [
                   (b "r/a/dio" "r-a-d.io")
@@ -206,6 +206,9 @@
                 (b "tldraw" "tldraw.com")
                 (b "Make Ascii Banners" "patorjk.com/software/taag")
                 (b "Convertion tools" "inettools.net")
+                (f "Nix-Tools" [
+                  (b "Nix-evaluator-stats" "notashelf.github.io/nix-evaluator-stats")
+                ])
               ])
             ];
           # stolen from @heisfer

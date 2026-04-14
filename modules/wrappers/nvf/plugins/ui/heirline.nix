@@ -16,7 +16,25 @@
       vim = {
         extraPlugins = {
           "heirline-nvim".package = pkgs.vimPlugins.heirline-nvim;
-          "heirline-components".package = heirline-components;
+          "heirline-components".package = heirline-components.overrideAttrs {
+            patches = [
+              (pkgs.writeTextFile {
+                name = "wordcount.patch";
+                text = ''
+                  diff --git a/lua/heirline-components/core/provider.lua b/lua/heirline-components/core/provider.lua
+                  @@ -323,7 +323,7 @@ function M.ruler(opts)
+                     local padding_str =
+                         string.format("%%%dd:%%-%dd", opts.pad_ruler.line, opts.pad_ruler.char)
+                     return function()
+                  -    local line = vim.fn.line "."
+                  +    local line = vim.fn.wordcount().words
+                       local char = vim.fn.virtcol "."
+                       return core_utils.stylize(string.format(padding_str, line, char), opts)
+                     end
+                '';
+              })
+            ];
+          };
         };
         luaConfigPost = # lua
           ''

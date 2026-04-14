@@ -25,6 +25,7 @@
         result-man
         target
         .direnv
+        *.pdf
       '';
     };
   };

@@ -93,9 +93,9 @@
               };
             }
             {
-              "Open-WebUI" = {
-                description = "My Ollama instance";
-                href = "http://100.74.112.27:1212";
+              "Gonic" = {
+                description = "My Sonic boom serivce";
+                href = "http://100.74.112.27:4747";
               };
             }
           ];
