@@ -52,7 +52,7 @@
           "(.*\.)?wikipedia.com$"
           "(.*\.)?reddit.com$"
           "(.*\.)?github.com$"
-          "(.*\.)?nixos.com$"
+          "(.*\.)?nixos.org$"
           "(.*\.)?archlinux.org$"
         ];
       };

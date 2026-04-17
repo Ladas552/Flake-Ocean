@@ -56,7 +56,7 @@
 
     # Tangled, git hosting
     tangled = {
-      url = "git+https://tangled.org/@tangled.org/core";
+      url = "git+https://tangled.org/tangled.org/core";
       # No useless inputs
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.gomod2nix.inputs.flake-utils.inputs.systems.follows = "systems";

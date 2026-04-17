@@ -85,19 +85,22 @@
           max-jobs = lib.mkForce 1;
         };
 
+        # Make the VPS an exit-node
+        services.tailscale.extraDaemonFlags = [ "--advertise-exit-node" ];
+
         # I don't have firewall enabled, firewall is managed by hetzner, but just to be sure I added these ports
         networking.firewall.allowedTCPPorts = [
           80
           443
-          22
           3000
           25565
         ];
         networking.firewall.allowedUDPPorts = [
           443
-          22
           25565
         ];
+
+        networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 22 ];
 
         environment.persistence."/cache".directories = [
           {

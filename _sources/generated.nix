@@ -36,17 +36,17 @@
   };
   copyparty = {
     pname = "copyparty";
-    version = "a5d859d2b18f53ccf236bc6229856f79139d531c";
+    version = "a997455b5a3d937f53ad40f431534a0e3865e9f7";
     src = fetchgit {
       url = "https://github.com/9001/copyparty";
-      rev = "a5d859d2b18f53ccf236bc6229856f79139d531c";
+      rev = "a997455b5a3d937f53ad40f431534a0e3865e9f7";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-NfzRZ5DZo8Mwb31ocimy3IMhr3kmYGQ3/ImfnEQkQLw=";
+      sha256 = "sha256-6V6fHUYCwM8SajDQVp9/X3AwLZGltve32mVqbin3awA=";
     };
-    date = "2026-04-11";
+    date = "2026-04-16";
   };
   cyrillic = {
     pname = "cyrillic";
@@ -74,10 +74,10 @@
   };
   helium = {
     pname = "helium";
-    version = "0.11.1.1";
+    version = "0.11.2.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.11.1.1/helium-0.11.1.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-1y6ndVGeqa61KpmRv9dukffpCxdrOy97jMeQcymB0bc=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.11.2.1/helium-0.11.2.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-7m4j0r1yQP5n2ww/+947ffR/PlcZPgvT29SyBo/qzZw=";
     };
   };
   impermanence = {
@@ -144,17 +144,17 @@
   };
   nix-minecraft = {
     pname = "nix-minecraft";
-    version = "c5eb01b60873e331265779028a839cd2b5237874";
+    version = "74abd91054e2655d6c392428a27e5d27edd5e6bf";
     src = fetchgit {
       url = "https://github.com/Infinidoge/nix-minecraft";
-      rev = "c5eb01b60873e331265779028a839cd2b5237874";
+      rev = "74abd91054e2655d6c392428a27e5d27edd5e6bf";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-zqDhVyUtctq7HlpMC9cdR277ner0L/f7SkC3oKbZwy0=";
+      sha256 = "sha256-xMFl+umxGmo5VEgcZcXT5Dk9sXU5WyTRz1Olpywr/60=";
     };
-    date = "2026-04-13";
+    date = "2026-04-16";
   };
   nixos-hardware = {
     pname = "nixos-hardware";
@@ -172,31 +172,31 @@
   };
   nixos-wsl = {
     pname = "nixos-wsl";
-    version = "d97e078f4788cddb8d11c3c99f72a4bb9ddec221";
+    version = "9a8c2a85f1ffdcecfb0f9c52c5a73c49ceb43911";
     src = fetchgit {
       url = "https://github.com/nix-community/NixOS-WSL";
-      rev = "d97e078f4788cddb8d11c3c99f72a4bb9ddec221";
+      rev = "9a8c2a85f1ffdcecfb0f9c52c5a73c49ceb43911";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-DnLIpFxznohpLkIFs390uZ0gxwkVyhtknhKNu+lQJK8=";
+      sha256 = "sha256-LQjlc0VEn55WAT4BiI8sIsokb/2FNlcbBD+Xr3MTE24=";
     };
-    date = "2026-03-31";
+    date = "2026-04-15";
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "e56a9db57ed61ea248f109edd60965faf56d3da2";
+    version = "a7c724181fca5d1aff2d47b18fa733504cfdbda2";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "e56a9db57ed61ea248f109edd60965faf56d3da2";
+      rev = "a7c724181fca5d1aff2d47b18fa733504cfdbda2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-ie3vFwg0eZTTHBDCRm+ee/PecbtdPn/pyL6hlotAfeQ=";
+      sha256 = "sha256-xZc9o1JLQpmWn2Dqui323+Tq2Ai4sSdtdvbFZCs4qLo=";
     };
-    date = "2026-04-13";
+    date = "2026-04-16";
   };
   noctalia-qs = {
     pname = "noctalia-qs";
@@ -214,16 +214,16 @@
   };
   sops-nix = {
     pname = "sops-nix";
-    version = "31ac5fe5d015f76b54058c69fcaebb66a55871a4";
+    version = "d4971dd58c6627bfee52a1ad4237637c0a2fb0cd";
     src = fetchgit {
       url = "https://github.com/Mic92/sops-nix";
-      rev = "31ac5fe5d015f76b54058c69fcaebb66a55871a4";
+      rev = "d4971dd58c6627bfee52a1ad4237637c0a2fb0cd";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-VKp9bhVSm0bT6JWctFy06ocqxGGnWHi1NfoE90IgIcY=";
+      sha256 = "sha256-Zm6bxLNnEOYuS/SzrAGsYuXSwk3cbkRQZY0fJnk8a5M=";
     };
-    date = "2026-04-12";
+    date = "2026-04-13";
   };
 }
