@@ -39,6 +39,9 @@
       };
       ## Supposedly faster dbus
       services.dbus.implementation = "broker";
+      # Prevent systemd from waiting for network online
+      systemd.network.wait-online.enable = false;
+      boot.initrd.systemd.network.wait-online.enable = false;
 
       # Set your time zone.
       time.timeZone = "Asia/Almaty";

@@ -15,6 +15,8 @@
         permitCertUid = "caddy";
         disableUpstreamLogging = true;
       };
+      # https://wiki.nixos.org/wiki/Tailscale#No_internet_when_using_exit_node
+      # networking.firewall.checkReversePath = "loose";
 
       # persist for Impermanence
       custom.imp.root.directories = [ "/var/lib/tailscale/" ];

@@ -94,13 +94,13 @@
           443
           3000
           25565
+          22 # don't change it to tailscale only, I handled that on hetzner firewall level anyways
         ];
         networking.firewall.allowedUDPPorts = [
+          22
           443
           25565
         ];
-
-        networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 22 ];
 
         environment.persistence."/cache".directories = [
           {
