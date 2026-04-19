@@ -85,22 +85,20 @@
           max-jobs = lib.mkForce 1;
         };
 
-        # Make the VPS an exit-node
-        services.tailscale.extraDaemonFlags = [ "--advertise-exit-node" ];
-
         # I don't have firewall enabled, firewall is managed by hetzner, but just to be sure I added these ports
         networking.firewall.allowedTCPPorts = [
           80
           443
           3000
           25565
-          22 # don't change it to tailscale only, I handled that on hetzner firewall level anyways
         ];
         networking.firewall.allowedUDPPorts = [
-          22
           443
           25565
         ];
+
+        # Only allow SSH connection with Tailscale
+        networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 22 ];
 
         environment.persistence."/cache".directories = [
           {
