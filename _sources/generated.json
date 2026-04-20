@@ -110,11 +110,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-7m4j0r1yQP5n2ww/+947ffR/PlcZPgvT29SyBo/qzZw=",
+            "sha256": "sha256-DMgy1NH2+huzDGySlCqNpgj7JnLt4OtgUeCjxMCWvFs=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.11.2.1/helium-0.11.2.1-x86_64_linux.tar.xz"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.11.3.2/helium-0.11.3.2-x86_64_linux.tar.xz"
         },
-        "version": "0.11.2.1"
+        "version": "0.11.3.2"
     },
     "impermanence": {
         "cargoLock": null,
@@ -222,7 +222,7 @@
     },
     "nix-minecraft": {
         "cargoLock": null,
-        "date": "2026-04-16",
+        "date": "2026-04-19",
         "extract": null,
         "name": "nix-minecraft",
         "passthru": null,
@@ -232,13 +232,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "74abd91054e2655d6c392428a27e5d27edd5e6bf",
-            "sha256": "sha256-xMFl+umxGmo5VEgcZcXT5Dk9sXU5WyTRz1Olpywr/60=",
+            "rev": "c36e846a0b742fda93c86d930a9c34dd2a1cb334",
+            "sha256": "sha256-+GnZ1rcrcTICvfRrUvDt0m+JFV4DYoPp3O/4Ad6VNLc=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Infinidoge/nix-minecraft"
         },
-        "version": "74abd91054e2655d6c392428a27e5d27edd5e6bf"
+        "version": "c36e846a0b742fda93c86d930a9c34dd2a1cb334"
     },
     "nixos-hardware": {
         "cargoLock": null,
@@ -282,7 +282,7 @@
     },
     "noctalia-dev": {
         "cargoLock": null,
-        "date": "2026-04-16",
+        "date": "2026-04-19",
         "extract": null,
         "name": "noctalia-dev",
         "passthru": null,
@@ -292,17 +292,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a7c724181fca5d1aff2d47b18fa733504cfdbda2",
-            "sha256": "sha256-xZc9o1JLQpmWn2Dqui323+Tq2Ai4sSdtdvbFZCs4qLo=",
+            "rev": "b8781aef49e1e5f2c094bc4b73ca146a1665d9df",
+            "sha256": "sha256-Gs4vQgD9+84qwP5WmlD1WJ4yOeX4M/a4ZdNUwrce6E0=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/noctalia-dev/noctalia-shell"
         },
-        "version": "a7c724181fca5d1aff2d47b18fa733504cfdbda2"
+        "version": "b8781aef49e1e5f2c094bc4b73ca146a1665d9df"
     },
     "noctalia-qs": {
         "cargoLock": null,
-        "date": "2026-04-12",
+        "date": "2026-04-19",
         "extract": null,
         "name": "noctalia-qs",
         "passthru": null,
@@ -312,13 +312,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "68e82fe34c68ee839a9c37e3466820e266af0c86",
-            "sha256": "sha256-d4CVRtAty2GzDYXx4xYQmR+nlOjjKovyprQfZhgLckU=",
+            "rev": "75d180c28a9ab4470e980f3d6f706ad6c5213add",
+            "sha256": "sha256-j35EWhKoGhKrfcXcAOpoRVgXEPQt41Eukji/h59cnjk=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/noctalia-dev/noctalia-qs"
         },
-        "version": "68e82fe34c68ee839a9c37e3466820e266af0c86"
+        "version": "75d180c28a9ab4470e980f3d6f706ad6c5213add"
     },
     "sops-nix": {
         "cargoLock": null,

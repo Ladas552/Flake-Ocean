@@ -66,6 +66,11 @@
         };
       };
     hjem.niri-nvim-colors = {
+      niri.extraConfig = # kdl
+        ''
+          include optional=true "niri-nvim-colors.kdl"
+        '';
+
       xdg.config.files."niri/niri-nvim-colors.kdl" = {
         type = "copy";
         permissions = "666";

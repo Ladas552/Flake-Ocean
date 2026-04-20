@@ -27,7 +27,6 @@ in
       imp
       # kdeconnect
       nh
-      niri-flake
       nuphy
       nix
       openssh
@@ -41,7 +40,7 @@ in
       thunar
       tlp
       # lact
-      noct
+      niri-noct
       xkb
       zfs
       run0
@@ -86,9 +85,8 @@ in
           mpv
           # flameshot
           # helium
-          niri-flake
+          niri-noct
           niri-nvim-colors
-          noct
           bluetooth
           mpd
           syncthing
