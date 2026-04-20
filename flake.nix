@@ -76,6 +76,13 @@
     # Boilerplate
     systems.url = "github:nix-systems/default-linux";
 
+    # Highly experimental replacment to nixos stage scripts
+    nixos-core = {
+      url = "github:feel-co/nixos-core";
+      # No useless inputs
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Also check inputs in ./nvfetcher.toml for more modules I use
   };
   outputs =

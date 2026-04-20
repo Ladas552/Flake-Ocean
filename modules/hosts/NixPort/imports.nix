@@ -41,6 +41,7 @@ in
       tlp
       # lact
       niri-noct
+      nixos-core-testing
       xkb
       zfs
       run0
