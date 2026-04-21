@@ -1,7 +1,7 @@
 {
   flake.modules = {
     nixos.openssh =
-      { lib, ... }:
+      { lib, pkgs, ... }:
       {
         # SSH connections
         services.gnome.gnome-keyring.enable = true;
@@ -24,7 +24,6 @@
           enable = true;
           ports = [ 22 ];
           openFirewall = true;
-          banner = "You shell not pass!";
           startWhenNeeded = true;
           settings = {
             # Password because I can't connect my Tablet for some reason
@@ -33,6 +32,10 @@
             UseDns = true;
             X11Forwarding = false;
             PermitRootLogin = lib.mkDefault "no"; # "yes", "without-password", "prohibit-password", "forced-commands-only", "no"
+            Banner = "${pkgs.writeTextFile {
+              name = "banner";
+              text = "You shell not pass!";
+            }}";
           };
         };
 

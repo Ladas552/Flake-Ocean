@@ -5,7 +5,7 @@
       enable = true;
       setupOpts = {
         follow_cursor = true;
-        open_cmd = "helium %s";
+        open_cmd = "firefox %s";
       };
     };
   };
