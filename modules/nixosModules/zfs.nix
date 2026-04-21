@@ -10,6 +10,11 @@
       nixos.zfs =
         { config, lib, ... }:
         {
+          # generate hostID for ZFS using hostname of the machine
+          # or you can put a string manually, from this command
+          # head -c 8 /etc/machine-id
+          networking.hostId = builtins.substring 0 8 (builtins.hashString "md5" config.custom.meta.hostname);
+
           # NOTE: zfs datasets are created manually
           # Stolen from @iynaix and @xarvex, like the whole thing
           boot = {

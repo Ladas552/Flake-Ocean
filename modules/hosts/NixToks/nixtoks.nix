@@ -36,10 +36,6 @@
           "/home/ladas552/.ssh/NixToks"
         ];
 
-        # Needed for ZFS, generated from command:
-        # head -c 8 /etc/machine-id
-        networking.hostId = "98d7caca";
-
         # Build machine for NixWool
         boot.binfmt.emulatedSystems = [ "aarch64-linux" ];
 

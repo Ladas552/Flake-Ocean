@@ -73,9 +73,6 @@
           };
         };
 
-        # ZFS needs it
-        networking.hostId = "fcb8b0b0";
-
         # No
         system.stateVersion = "26.05"; # Did you read the comment?
 

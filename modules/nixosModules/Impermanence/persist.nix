@@ -4,10 +4,12 @@
     custom.imp = {
       root = {
         directories = [
-          "/etc/NetworkManager/"
+          "/etc/NetworkManager"
           "/var/lib/NetworkManager"
           "/var/lib/iwd"
+          "/var/lib/systemd/coredump"
         ];
+        cache.files = [ "/etc/machine-id" ]; # to have systemd journal in the same file
       };
       home = {
         directories = [

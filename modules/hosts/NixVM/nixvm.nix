@@ -24,8 +24,6 @@ inputs: {
           PartOf = [ "graphical-session.target" ];
         };
       };
-      # For ZFS
-      networking.hostId = "cb82b8e4";
 
       # Enable networking
       networking.networkmanager.enable = true;

@@ -39,8 +39,6 @@
           EDITOR = "nvim";
         };
 
-        # ZFS needs it
-        networking.hostId = "f6d40058";
         # https://wiki.archlinux.org/title/Lenovo_ThinkPad_T14s_(AMD)_Gen_3#Display
         boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];
         # Radeon
