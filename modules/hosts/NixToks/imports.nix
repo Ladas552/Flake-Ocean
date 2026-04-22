@@ -41,8 +41,8 @@ in
       nh
       openssh
       pipewire
-      plymouth
-      matrix-conduit
+      # plymouth
+      # matrix-conduit
       # qemu
       tlp
       xkb
