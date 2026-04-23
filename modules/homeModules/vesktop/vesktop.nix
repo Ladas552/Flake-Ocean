@@ -4,7 +4,7 @@
     {
       imports = [
         "${modulesPath}/services/arrpc.nix"
-        "${modulesPath}/programs/vesktop.nix"
+        "${modulesPath}/programs/vesktop"
         "${modulesPath}/services/mpd-discord-rpc.nix"
       ];
 

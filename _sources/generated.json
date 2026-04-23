@@ -41,7 +41,7 @@
     },
     "copyparty": {
         "cargoLock": null,
-        "date": "2026-04-16",
+        "date": "2026-04-22",
         "extract": null,
         "name": "copyparty",
         "passthru": null,
@@ -51,13 +51,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "a997455b5a3d937f53ad40f431534a0e3865e9f7",
-            "sha256": "sha256-6V6fHUYCwM8SajDQVp9/X3AwLZGltve32mVqbin3awA=",
+            "rev": "8c7cdf8583a66f7f7d018a4c36004445787705e2",
+            "sha256": "sha256-aqwlZCVyP0OSpnj0EM8Sc+T8NB/d+qoBZAw7SLjTM6I=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/9001/copyparty"
         },
-        "version": "a997455b5a3d937f53ad40f431534a0e3865e9f7"
+        "version": "8c7cdf8583a66f7f7d018a4c36004445787705e2"
     },
     "cyrillic": {
         "cargoLock": null,
@@ -222,7 +222,7 @@
     },
     "nix-minecraft": {
         "cargoLock": null,
-        "date": "2026-04-19",
+        "date": "2026-04-23",
         "extract": null,
         "name": "nix-minecraft",
         "passthru": null,
@@ -232,17 +232,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c36e846a0b742fda93c86d930a9c34dd2a1cb334",
-            "sha256": "sha256-+GnZ1rcrcTICvfRrUvDt0m+JFV4DYoPp3O/4Ad6VNLc=",
+            "rev": "40c972ce0f45b8c05bf245d5065647b17552312c",
+            "sha256": "sha256-bYyOT3OIWIKvDV+pOVd0hdCEG8orf85QX4b21LWUSEs=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Infinidoge/nix-minecraft"
         },
-        "version": "c36e846a0b742fda93c86d930a9c34dd2a1cb334"
+        "version": "40c972ce0f45b8c05bf245d5065647b17552312c"
     },
     "nixos-hardware": {
         "cargoLock": null,
-        "date": "2026-04-06",
+        "date": "2026-04-22",
         "extract": null,
         "name": "nixos-hardware",
         "passthru": null,
@@ -252,17 +252,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "c775c2772ba56e906cbeb4e0b2db19079ef11ff7",
-            "sha256": "sha256-2ZBhDNZZwYkRmefK5XLOusCJHnoeKkoN95hoSGgMxWM=",
+            "rev": "72674a6b5599e844c045ae7449ba91f803d44ebc",
+            "sha256": "sha256-PAfvLwuHc1VOvsLcpk6+HDKgMEibvZjCNvbM1BJOA7o=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nixos/nixos-hardware"
         },
-        "version": "c775c2772ba56e906cbeb4e0b2db19079ef11ff7"
+        "version": "72674a6b5599e844c045ae7449ba91f803d44ebc"
     },
     "nixos-wsl": {
         "cargoLock": null,
-        "date": "2026-04-15",
+        "date": "2026-04-23",
         "extract": null,
         "name": "nixos-wsl",
         "passthru": null,
@@ -272,17 +272,17 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "9a8c2a85f1ffdcecfb0f9c52c5a73c49ceb43911",
-            "sha256": "sha256-LQjlc0VEn55WAT4BiI8sIsokb/2FNlcbBD+Xr3MTE24=",
+            "rev": "4e6cad241baa0115a7aae8c55b04c166da4997c9",
+            "sha256": "sha256-0ku3gW8bZ9TTpEU2fQw86oU6ZLT2vF6pacF+cLaf7VY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/nix-community/NixOS-WSL"
         },
-        "version": "9a8c2a85f1ffdcecfb0f9c52c5a73c49ceb43911"
+        "version": "4e6cad241baa0115a7aae8c55b04c166da4997c9"
     },
     "noctalia-dev": {
         "cargoLock": null,
-        "date": "2026-04-19",
+        "date": "2026-04-22",
         "extract": null,
         "name": "noctalia-dev",
         "passthru": null,
@@ -292,13 +292,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b8781aef49e1e5f2c094bc4b73ca146a1665d9df",
-            "sha256": "sha256-Gs4vQgD9+84qwP5WmlD1WJ4yOeX4M/a4ZdNUwrce6E0=",
+            "rev": "2c1808f9f8937fc0b82c54af513f7620fec56d71",
+            "sha256": "sha256-Up2F/eoMuPUsZnPVYdH5TMHe1TBP2Ue1QuWd0vWZoxY=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/noctalia-dev/noctalia-shell"
         },
-        "version": "b8781aef49e1e5f2c094bc4b73ca146a1665d9df"
+        "version": "2c1808f9f8937fc0b82c54af513f7620fec56d71"
     },
     "noctalia-qs": {
         "cargoLock": null,
@@ -322,7 +322,7 @@
     },
     "sops-nix": {
         "cargoLock": null,
-        "date": "2026-04-13",
+        "date": "2026-04-21",
         "extract": null,
         "name": "sops-nix",
         "passthru": null,
@@ -332,12 +332,12 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "d4971dd58c6627bfee52a1ad4237637c0a2fb0cd",
-            "sha256": "sha256-Zm6bxLNnEOYuS/SzrAGsYuXSwk3cbkRQZY0fJnk8a5M=",
+            "rev": "bef289e2248991f7afeb95965c82fbcd8ff72598",
+            "sha256": "sha256-DRFGPfFV6hbrfO9a1PH1FkCi7qR5FgjSqsQGGvk1rdI=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/Mic92/sops-nix"
         },
-        "version": "d4971dd58c6627bfee52a1ad4237637c0a2fb0cd"
+        "version": "bef289e2248991f7afeb95965c82fbcd8ff72598"
     }
 }

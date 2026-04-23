@@ -36,17 +36,17 @@
   };
   copyparty = {
     pname = "copyparty";
-    version = "a997455b5a3d937f53ad40f431534a0e3865e9f7";
+    version = "8c7cdf8583a66f7f7d018a4c36004445787705e2";
     src = fetchgit {
       url = "https://github.com/9001/copyparty";
-      rev = "a997455b5a3d937f53ad40f431534a0e3865e9f7";
+      rev = "8c7cdf8583a66f7f7d018a4c36004445787705e2";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-6V6fHUYCwM8SajDQVp9/X3AwLZGltve32mVqbin3awA=";
+      sha256 = "sha256-aqwlZCVyP0OSpnj0EM8Sc+T8NB/d+qoBZAw7SLjTM6I=";
     };
-    date = "2026-04-16";
+    date = "2026-04-22";
   };
   cyrillic = {
     pname = "cyrillic";
@@ -144,59 +144,59 @@
   };
   nix-minecraft = {
     pname = "nix-minecraft";
-    version = "c36e846a0b742fda93c86d930a9c34dd2a1cb334";
+    version = "40c972ce0f45b8c05bf245d5065647b17552312c";
     src = fetchgit {
       url = "https://github.com/Infinidoge/nix-minecraft";
-      rev = "c36e846a0b742fda93c86d930a9c34dd2a1cb334";
+      rev = "40c972ce0f45b8c05bf245d5065647b17552312c";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-+GnZ1rcrcTICvfRrUvDt0m+JFV4DYoPp3O/4Ad6VNLc=";
+      sha256 = "sha256-bYyOT3OIWIKvDV+pOVd0hdCEG8orf85QX4b21LWUSEs=";
     };
-    date = "2026-04-19";
+    date = "2026-04-23";
   };
   nixos-hardware = {
     pname = "nixos-hardware";
-    version = "c775c2772ba56e906cbeb4e0b2db19079ef11ff7";
+    version = "72674a6b5599e844c045ae7449ba91f803d44ebc";
     src = fetchgit {
       url = "https://github.com/nixos/nixos-hardware";
-      rev = "c775c2772ba56e906cbeb4e0b2db19079ef11ff7";
+      rev = "72674a6b5599e844c045ae7449ba91f803d44ebc";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-2ZBhDNZZwYkRmefK5XLOusCJHnoeKkoN95hoSGgMxWM=";
+      sha256 = "sha256-PAfvLwuHc1VOvsLcpk6+HDKgMEibvZjCNvbM1BJOA7o=";
     };
-    date = "2026-04-06";
+    date = "2026-04-22";
   };
   nixos-wsl = {
     pname = "nixos-wsl";
-    version = "9a8c2a85f1ffdcecfb0f9c52c5a73c49ceb43911";
+    version = "4e6cad241baa0115a7aae8c55b04c166da4997c9";
     src = fetchgit {
       url = "https://github.com/nix-community/NixOS-WSL";
-      rev = "9a8c2a85f1ffdcecfb0f9c52c5a73c49ceb43911";
+      rev = "4e6cad241baa0115a7aae8c55b04c166da4997c9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-LQjlc0VEn55WAT4BiI8sIsokb/2FNlcbBD+Xr3MTE24=";
+      sha256 = "sha256-0ku3gW8bZ9TTpEU2fQw86oU6ZLT2vF6pacF+cLaf7VY=";
     };
-    date = "2026-04-15";
+    date = "2026-04-23";
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "b8781aef49e1e5f2c094bc4b73ca146a1665d9df";
+    version = "2c1808f9f8937fc0b82c54af513f7620fec56d71";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "b8781aef49e1e5f2c094bc4b73ca146a1665d9df";
+      rev = "2c1808f9f8937fc0b82c54af513f7620fec56d71";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Gs4vQgD9+84qwP5WmlD1WJ4yOeX4M/a4ZdNUwrce6E0=";
+      sha256 = "sha256-Up2F/eoMuPUsZnPVYdH5TMHe1TBP2Ue1QuWd0vWZoxY=";
     };
-    date = "2026-04-19";
+    date = "2026-04-22";
   };
   noctalia-qs = {
     pname = "noctalia-qs";
@@ -214,16 +214,16 @@
   };
   sops-nix = {
     pname = "sops-nix";
-    version = "d4971dd58c6627bfee52a1ad4237637c0a2fb0cd";
+    version = "bef289e2248991f7afeb95965c82fbcd8ff72598";
     src = fetchgit {
       url = "https://github.com/Mic92/sops-nix";
-      rev = "d4971dd58c6627bfee52a1ad4237637c0a2fb0cd";
+      rev = "bef289e2248991f7afeb95965c82fbcd8ff72598";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Zm6bxLNnEOYuS/SzrAGsYuXSwk3cbkRQZY0fJnk8a5M=";
+      sha256 = "sha256-DRFGPfFV6hbrfO9a1PH1FkCi7qR5FgjSqsQGGvk1rdI=";
     };
-    date = "2026-04-13";
+    date = "2026-04-21";
   };
 }
