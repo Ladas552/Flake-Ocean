@@ -43,8 +43,8 @@
         direnv
         img-clip
         # orgmode
-        python
-        rust
+        # python
+        # rust
         typst
         otter
         nix

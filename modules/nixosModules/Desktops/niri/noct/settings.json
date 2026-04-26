@@ -205,7 +205,7 @@
     "iRadiusRatio": 0,
     "boxRadiusRatio": 1,
     "screenRadiusRatio": 1,
-    "animationSpeed": 1.5,
+    "animationSpeed": 2,
     "animationDisabled": false,
     "compactLockScreen": false,
     "lockScreenAnimations": true,
@@ -328,7 +328,7 @@
     "automationEnabled": true,
     "wallpaperChangeMode": "random",
     "randomIntervalSec": 600,
-    "transitionDuration": 1500,
+    "transitionDuration": 1000,
     "transitionType": [
       "fade",
       "disc",
@@ -341,7 +341,7 @@
     "transitionEdgeSmoothness": 0.05,
     "panelPosition": "top_left",
     "hideWallpaperFilenames": true,
-    "useOriginalImages": false,
+    "useOriginalImages": true,
     "overviewBlur": 0.4,
     "overviewTint": 0.6,
     "useWallhaven": true,
@@ -668,14 +668,6 @@
       {
         "enabled": true,
         "id": "cava"
-      },
-      {
-        "enabled": true,
-        "id": "steam"
-      },
-      {
-        "enabled": true,
-        "id": "telegram"
       }
     ],
     "enableUserTheming": false

@@ -36,17 +36,17 @@
   };
   copyparty = {
     pname = "copyparty";
-    version = "8c7cdf8583a66f7f7d018a4c36004445787705e2";
+    version = "6e25d648a900f65a4546a1b17a9761c0f1e9e3cb";
     src = fetchgit {
       url = "https://github.com/9001/copyparty";
-      rev = "8c7cdf8583a66f7f7d018a4c36004445787705e2";
+      rev = "6e25d648a900f65a4546a1b17a9761c0f1e9e3cb";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-aqwlZCVyP0OSpnj0EM8Sc+T8NB/d+qoBZAw7SLjTM6I=";
+      sha256 = "sha256-cEyV6jpC7pX/TNoHI+VDiTDjQc0rfYAkDLRJP2hZrzc=";
     };
-    date = "2026-04-22";
+    date = "2026-04-24";
   };
   cyrillic = {
     pname = "cyrillic";
@@ -74,10 +74,10 @@
   };
   helium = {
     pname = "helium";
-    version = "0.11.3.2";
+    version = "0.11.5.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.11.3.2/helium-0.11.3.2-x86_64_linux.tar.xz";
-      sha256 = "sha256-DMgy1NH2+huzDGySlCqNpgj7JnLt4OtgUeCjxMCWvFs=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.11.5.1/helium-0.11.5.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-wz9nqa0oU+M0Y0z8kWMCV7JCXhT4fHxhgCZB5yl78no=";
     };
   };
   impermanence = {
@@ -144,31 +144,31 @@
   };
   nix-minecraft = {
     pname = "nix-minecraft";
-    version = "40c972ce0f45b8c05bf245d5065647b17552312c";
+    version = "394d3bfd943458baf29e4798bc9b256d824a3bb9";
     src = fetchgit {
       url = "https://github.com/Infinidoge/nix-minecraft";
-      rev = "40c972ce0f45b8c05bf245d5065647b17552312c";
+      rev = "394d3bfd943458baf29e4798bc9b256d824a3bb9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-bYyOT3OIWIKvDV+pOVd0hdCEG8orf85QX4b21LWUSEs=";
+      sha256 = "sha256-9JX9msZU1NvHzjKM24PRorP76Ge8GBy6LAkJKA21mlY=";
     };
-    date = "2026-04-23";
+    date = "2026-04-24";
   };
   nixos-hardware = {
     pname = "nixos-hardware";
-    version = "72674a6b5599e844c045ae7449ba91f803d44ebc";
+    version = "2096f3f411ce46e88a79ae4eafcfc9df8ed41c61";
     src = fetchgit {
       url = "https://github.com/nixos/nixos-hardware";
-      rev = "72674a6b5599e844c045ae7449ba91f803d44ebc";
+      rev = "2096f3f411ce46e88a79ae4eafcfc9df8ed41c61";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-PAfvLwuHc1VOvsLcpk6+HDKgMEibvZjCNvbM1BJOA7o=";
+      sha256 = "sha256-ZOQyNqSvJ8UdrrqU1p7vaFcdL53idK+LOM8oRWEWh6o=";
     };
-    date = "2026-04-22";
+    date = "2026-04-23";
   };
   nixos-wsl = {
     pname = "nixos-wsl";
@@ -186,31 +186,31 @@
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "2c1808f9f8937fc0b82c54af513f7620fec56d71";
+    version = "a50c92167c8d438000270f7eca36f6eea74f388e";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "2c1808f9f8937fc0b82c54af513f7620fec56d71";
+      rev = "a50c92167c8d438000270f7eca36f6eea74f388e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Up2F/eoMuPUsZnPVYdH5TMHe1TBP2Ue1QuWd0vWZoxY=";
+      sha256 = "sha256-TvYEXwkZnRFQRuFyyqTNSfPnU2tMdhtiBOXSk2AWLJA=";
     };
-    date = "2026-04-22";
+    date = "2026-04-25";
   };
   noctalia-qs = {
     pname = "noctalia-qs";
-    version = "75d180c28a9ab4470e980f3d6f706ad6c5213add";
+    version = "697db4c14e27d841956ff76887fc312443e6fb17";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-qs";
-      rev = "75d180c28a9ab4470e980f3d6f706ad6c5213add";
+      rev = "697db4c14e27d841956ff76887fc312443e6fb17";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-j35EWhKoGhKrfcXcAOpoRVgXEPQt41Eukji/h59cnjk=";
+      sha256 = "sha256-VHdtmxVX7oF2+FxYQQPARQmtaHw23FoTBiTaH6ucOEg=";
     };
-    date = "2026-04-19";
+    date = "2026-04-26";
   };
   sops-nix = {
     pname = "sops-nix";
