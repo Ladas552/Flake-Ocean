@@ -79,6 +79,7 @@
           "Music"
           ".zotero"
           "Zotero"
+          ".config/chromium"
         ];
       };
     homeManager.NixPort = {

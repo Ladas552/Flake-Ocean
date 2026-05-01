@@ -50,8 +50,6 @@
     # Niri
     niri = {
       url = "git+https://codeberg.org/BANanaD3V/niri-nix";
-      # No useless inputs
-      inputs.git-hooks.follows = "";
     };
 
     # Tangled, git hosting

@@ -2,7 +2,7 @@
 {
   flake.modules = {
     nixos.noct =
-      { pkgs, lib, ... }:
+      { pkgs, ... }:
       let
         noct =
           (pkgs.callPackage "${modules.noctalia-dev.src}/nix/package.nix" {
@@ -29,10 +29,10 @@
       };
     hjem.noct = {
       xdg.config.files = {
-        "noctalia/settings.json".source = ./noct/settings.json;
-        "noctalia/colors.json".source = ./noct/colors.json;
-        "noctalia/plugins.json".source = ./noct/plugins.json;
-        "noctalia/plugins/screen-recorder/settings.json".source = ./noct/recorder-settings.json;
+        "noctalia/settings.json".source = ./settings.json;
+        "noctalia/colors.json".source = ./colors.json;
+        "noctalia/plugins.json".source = ./plugins.json;
+        "noctalia/plugins/screen-recorder/settings.json".source = ./recorder-settings.json;
       };
       # persist for Impermanence
       custom.imp.home.cache.directories = [
