@@ -9,12 +9,12 @@
       packages.restore =
         pkgs.writeShellScriptBin "restore.sh" # bash
           ''
-            mkfs.vfat /dev/nvme0n1p5 -n NIXBOOT
+            mkfs.vfat /dev/nvme0n1p4 -n NIXBOOT
             zpool import zroot -f
             # Need so that install doesn't run out of memory
             zfs create -o mountpoint=legacy zroot/root
             mount -t zfs zroot/root /mnt
-            mount --mkdir /dev/nvme0n1p5 /mnt/boot
+            mount --mkdir /dev/nvme0n1p4 /mnt/boot
             mount --mkdir -t zfs zroot/nix /mnt/nix
             mount --mkdir -t zfs zroot/tmp /mnt/tmp
             mount --mkdir -t zfs zroot/cache /mnt/cache
@@ -27,7 +27,7 @@
             umount /mnt/tmp
             umount /mnt/persist
             umount /mnt
-            mount --mkdir /dev/nvme0n1p5 /mnt/boot
+            mount --mkdir /dev/nvme0n1p4 /mnt/boot
             mount --mkdir -t zfs zroot/nix /mnt/nix
             mount --mkdir -t zfs zroot/tmp /mnt/tmp
             mount --mkdir -t zfs zroot/cache /mnt/cache

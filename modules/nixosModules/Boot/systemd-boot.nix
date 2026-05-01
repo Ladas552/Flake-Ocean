@@ -19,9 +19,9 @@
               sortKey = "x_edk2-uefi-shell";
             };
             windows = lib.mkIf (config.custom.meta.hostname == "NixPort") {
-              "11-home" = {
-                title = "Windows 11 Home";
-                efiDeviceHandle = "HD0b";
+              "11-iot" = {
+                title = "Windows 11 IoT";
+                efiDeviceHandle = "HD0f";
                 sortKey = "z_windows";
               };
             };
