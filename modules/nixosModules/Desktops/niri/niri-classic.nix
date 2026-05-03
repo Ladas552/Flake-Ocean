@@ -14,10 +14,8 @@
       {
         imports = [
           config.flake.modules.homeManager.rofi
-          config.flake.modules.homeManager.wpaperd
           "${modulesPath}/programs/swaylock.nix"
           "${modulesPath}/services/mako.nix"
-          "${modulesPath}/services/polkit-gnome.nix"
         ];
         services.mako = {
           enable = true;
@@ -27,7 +25,6 @@
             height = 1000;
           };
         };
-        services.polkit-gnome.enable = true;
         programs.swaylock.enable = true;
       };
     hjem.niri-classic =
@@ -39,14 +36,15 @@
         packages = [
           self.packages.${pkgs.stdenv.hostPlatform.system}.rofi-powermenu
           pkgs.xfce4-power-manager
+          pkgs.awww
         ];
         niri.settings = {
           spawn-at-startup = [
+            [ "awww-daemon" ]
             [
               "xfce4-power-manager"
               "--daemon"
             ]
-            [ "wpaperd" ]
           ];
           binds = {
             "Super+L".spawn = "swaylock";
@@ -57,6 +55,31 @@
             "Super+X".spawn = [ "powermenu.sh" ];
           };
         };
+        systemd.services.awww-change-wallpaper =
+          let
+            script = ''
+              while true; do
+                IMG=$(find ~/Pictures/backgrounds -type f | shuf -n 1)
+                [ -n "$IMG" ] && awww img -t any --transition-fps 90 "$IMG"
+                sleep 10m
+              done
+            '';
+          in
+          {
+            wantedBy = [ "graphical-session.target" ];
+            description = "Change wallpaper every 10 minutes";
+            after = [
+              "graphical-session.target"
+              "niri.service"
+            ];
+            path = [ pkgs.awww ];
+            inherit script;
+            serviceConfig = {
+              Type = "simple";
+              Restart = "on-failure";
+              RestartSec = "5s";
+            };
+          };
       };
   };
 }
