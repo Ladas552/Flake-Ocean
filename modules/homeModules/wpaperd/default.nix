@@ -1,7 +1,8 @@
 {
   flake.modules.homeManager.wpaperd =
-    { config, ... }:
+    { config, modulesPath, ... }:
     {
+      imports = [ "${modulesPath}/services/wpaperd.nix" ];
       services.wpaperd = {
         enable = true;
         settings = {

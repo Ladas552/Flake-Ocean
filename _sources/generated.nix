@@ -36,17 +36,17 @@
   };
   copyparty = {
     pname = "copyparty";
-    version = "6e25d648a900f65a4546a1b17a9761c0f1e9e3cb";
+    version = "da6e2ddca96dffc4dbe53bda25d2034428fad3d0";
     src = fetchgit {
       url = "https://github.com/9001/copyparty";
-      rev = "6e25d648a900f65a4546a1b17a9761c0f1e9e3cb";
+      rev = "da6e2ddca96dffc4dbe53bda25d2034428fad3d0";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-cEyV6jpC7pX/TNoHI+VDiTDjQc0rfYAkDLRJP2hZrzc=";
+      sha256 = "sha256-8UmzMm5wkq+z0kEMEjowoECa4qY813z747o0g+G/bbE=";
     };
-    date = "2026-04-24";
+    date = "2026-05-02";
   };
   cyrillic = {
     pname = "cyrillic";
@@ -74,10 +74,10 @@
   };
   helium = {
     pname = "helium";
-    version = "0.11.6.1";
+    version = "0.11.7.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.11.6.1/helium-0.11.6.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-rJ9PIZTHU7wzndAqddknH1Y6U1j5JLOtE1NtaqSrx7w=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.11.7.1/helium-0.11.7.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-V0drAliKB8HFkxDG9I+bPThLH0I/cJpG92v3aORaX/Y=";
     };
   };
   impermanence = {
@@ -144,17 +144,17 @@
   };
   nix-minecraft = {
     pname = "nix-minecraft";
-    version = "c34d520453c162a216b134ee21c075d4a906a890";
+    version = "0707737282f65e25ed8e6e73f8767872659b7fb8";
     src = fetchgit {
       url = "https://github.com/Infinidoge/nix-minecraft";
-      rev = "c34d520453c162a216b134ee21c075d4a906a890";
+      rev = "0707737282f65e25ed8e6e73f8767872659b7fb8";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-fpAeeLfsGnvUsQkbnsw9vSB1y/O2ZEZORFE5xQ2CqYk=";
+      sha256 = "sha256-rPszOFTm7gP9n/JGiFH4SeuEALC8FBJtXu5owvHVjaQ=";
     };
-    date = "2026-04-29";
+    date = "2026-05-02";
   };
   nixos-hardware = {
     pname = "nixos-hardware";
@@ -172,17 +172,17 @@
   };
   nixos-wsl = {
     pname = "nixos-wsl";
-    version = "d2e09229638f08f6d5c99060573f6fa4b1dde852";
+    version = "5482f113fd31ebac131d1ebeb2ae90bf0d5e41f5";
     src = fetchgit {
       url = "https://github.com/nix-community/NixOS-WSL";
-      rev = "d2e09229638f08f6d5c99060573f6fa4b1dde852";
+      rev = "5482f113fd31ebac131d1ebeb2ae90bf0d5e41f5";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-So0O9VEARU3xTRIFkBtvfzpRDxx4W2WPZPgucxdKBm8=";
+      sha256 = "sha256-2uX/XtOWZ/oy2rerRynVhqVA//ZXZ3Fo60PikLHEPQc=";
     };
-    date = "2026-04-28";
+    date = "2026-05-02";
   };
   noctalia-dev = {
     pname = "noctalia-dev";

@@ -40,7 +40,7 @@ in
       thunar
       tlp
       # lact
-      niri-noct
+      niri-classic
       nixos-core-testing
       xkb
       zfs
@@ -66,6 +66,7 @@ in
           manual
           vesktop
           zathura
+          niri-classic
         ];
       }
     ]
@@ -86,7 +87,7 @@ in
           mpv
           # flameshot
           # helium
-          niri-noct
+          niri-classic
           niri-nvim-colors
           bluetooth
           mpd

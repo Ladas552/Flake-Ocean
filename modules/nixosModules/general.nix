@@ -24,8 +24,6 @@
       systemd.coredump.enable = true;
       # Disable nano
       programs.nano.enable = false;
-      # Enable Swaylock to unlock the screen
-      security.pam.services.swaylock = { };
       # Disable X11 prompt for Git. Changes work only after Reboot for some reason
       # Here is the issue: https://github.com/NixOS/nixpkgs/issues/24311
       programs.ssh.askPassword = "";

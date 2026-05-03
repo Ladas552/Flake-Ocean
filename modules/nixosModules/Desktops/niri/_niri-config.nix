@@ -200,11 +200,6 @@
   binds = {
     # Apps
     "Super+T".spawn = "kitty";
-    # "Super+Space" .spawn =[
-    #   "rofi"
-    #   "-show"
-    # ];
-    # "Super+L" .spawn ="swaylock";
     # "Super+E" .spawn ="emacs";
     "Super+N".spawn = [
       "neovide"
@@ -281,7 +276,6 @@
 
     # Scripts
     "Super+C".spawn = [ "word-lookup.sh" ];
-    # "Super+X" .spawn =[ "powermenu.sh" ];
     #Example volume keys mappings for PipeWire & WirePlumber.
     #The allow-when-locked=true property makes them work even when the session is locked.
     "XF86AudioRaiseVolume" = {
