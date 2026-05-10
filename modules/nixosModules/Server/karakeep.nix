@@ -17,5 +17,20 @@
         9222
         9221
       ];
+
+      # Reverse proxy
+      services.caddy.virtualHosts."karakeep.ladas552.me" = {
+        useACMEHost = "ladas552.me";
+        extraConfig = ''
+          reverse_proxy localhost:9221
+        '';
+      };
+
+      # persist for Impermanence
+      custom.imp.root.directories = [
+        "/var/lib/karakeep"
+        "/var/cache/karakeep"
+        "/var/lib/meilisearch"
+      ];
     };
 }

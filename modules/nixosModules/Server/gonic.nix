@@ -13,11 +13,18 @@
     # Only allow Tailscale
     networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 4747 ];
 
+    # Reverse proxy
+    services.caddy.virtualHosts."gonic.ladas552.me" = {
+      useACMEHost = "ladas552.me";
+      extraConfig = ''
+        reverse_proxy localhost:4747
+      '';
+    };
+
     # persist for Impermanence
     custom.imp.root.directories = [
       "/var/cache/gonic"
       "/var/lib/gonic"
     ];
-
   };
 }

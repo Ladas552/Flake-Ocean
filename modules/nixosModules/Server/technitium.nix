@@ -10,9 +10,17 @@
       openFirewall = true;
     };
 
-      # persist for Impermanence
-      custom.imp.root.directories = [
-        "/var/lib/technitium-dns-server"
-      ];
+    # Reverse proxy
+    services.caddy.virtualHosts."dns.ladas552.me" = {
+      useACMEHost = "ladas552.me";
+      extraConfig = ''
+        reverse_proxy localhost:5380
+      '';
+    };
+
+    # persist for Impermanence
+    custom.imp.root.directories = [
+      "/var/lib/technitium-dns-server"
+    ];
   };
 }

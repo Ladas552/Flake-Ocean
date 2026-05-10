@@ -44,6 +44,14 @@
         config.services.copyparty.settings.p
       ];
 
+      # Reverse proxy
+      services.caddy.virtualHosts."copyparty.ladas552.me" = {
+        useACMEHost = "ladas552.me";
+        extraConfig = ''
+          reverse_proxy localhost:3210
+        '';
+      };
+
       # persist for Impermanence
       custom.imp.root.directories = [
         "/var/lib/copyparty"

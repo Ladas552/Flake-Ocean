@@ -49,7 +49,7 @@
         configureRedis = true;
         maxUploadSize = "50G";
         hostName = "nextcloud.ladas552.me";
-        settings.trusted_domains = [ "100.74.112.27" ];
+        settings.trusted_domains = [ "nextcloud.ladas552.me" ];
         config = {
           dbtype = "pgsql";
           dbuser = "nextcloud";
@@ -59,5 +59,19 @@
           adminpassFile = config.sops.secrets."mystuff/nextcloud".path;
         };
       };
+
+      # Reverse proxy
+      services.caddy.virtualHosts."nextcloud.ladas552.me" = {
+        useACMEHost = "ladas552.me";
+        extraConfig = ''
+          reverse_proxy localhost:8080
+        '';
+      };
+
+      # persist for Impermanence
+      custom.imp.root.directories = [
+        "/var/lib/nextcloud"
+        "/var/lib/redis-nextcloud"
+      ];
     };
 }

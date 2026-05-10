@@ -48,5 +48,15 @@
       #  IF GPT is right, it allows for torrents to download in readable state, But I am not sure, and I will check it later. But it just works now. 8th of August 2025
       systemd.services.qbittorrent.serviceConfig.UMask = "002"; # Sets UMask for the qbittorrent service
 
+      # Reverse proxy
+      services.caddy.virtualHosts."qbittorrent.ladas552.me" = {
+        useACMEHost = "ladas552.me";
+        extraConfig = ''
+          reverse_proxy localhost:8081
+        '';
+      };
+
+      # persist for Impermanence
+      custom.imp.root.directories = [ "/var/lib/qBittorrent" ];
     };
 }

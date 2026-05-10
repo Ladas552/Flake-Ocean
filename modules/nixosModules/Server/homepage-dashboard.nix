@@ -1,7 +1,8 @@
 {
   flake.modules.nixos.dashboard = {
-    # caddy
-    services.caddy.virtualHosts."nixtoks.taila7a93b.ts.net" = {
+    # Reverse proxy
+    services.caddy.virtualHosts."hub.ladas552.me" = {
+      useACMEHost = "ladas552.me";
       extraConfig = ''
         reverse_proxy localhost:8082
       '';
@@ -10,7 +11,7 @@
     # modules
     services.homepage-dashboard = {
       enable = true;
-      allowedHosts = "nixtoks.taila7a93b.ts.net";
+      allowedHosts = "hub.ladas552.me";
       settings = { };
       widgets = [
         {
@@ -37,86 +38,104 @@
         }
       ];
       services = [
-        {
-          "Share/Download files" = [
-            {
-              "Immich" = {
-                description = "Photos";
-                href = "http://100.74.112.27:2283";
-              };
-            }
-            # {
-            #   "NextCloud" = {
-            #     description = "Drive";
-            #     href = "http://100.74.112.27:8080";
-            #   };
-            # }
-            {
-              "Copyparty" = {
-                description = "File transfere";
-                href = "http://100.74.112.27:3210";
-              };
-            }
-            {
-              "Qbittorrent" = {
-                description = "Torrents";
-                href = "http://100.74.112.27:8081";
-              };
-            }
-            {
-              "Karakeep" = {
-                description = "Bookmark manager";
-                href = "http://100.74.112.27:9221";
-              };
-            }
-          ];
-        }
+        # I should probably make this list per module, so adding and removing modules automatically modified the dashboard. But because it's a list of attribute sets, it's hard. So I do that later, maybe. Here is someone who has done it before
+        # https://git.notthebe.ee/notthebee/nix-config/src/commit/925e20601015772b4c3048361c07b92b8f0d3f33/modules/homelab/services/homepage/default.nix
         {
           "Media" = [
             {
               "Jellyfin" = {
                 description = "Watch";
-                href = "http://100.74.112.27:8096";
-              };
-            }
-
-            {
-              "Kavita" = {
-                description = "Books";
-                href = "http://100.74.112.27:5000";
-              };
-            }
-            {
-              "Miniflux" = {
-                description = "RSS feed";
-                href = "http://100.74.112.27:8067";
+                href = "https://jellyfin.ladas552.me";
               };
             }
             {
               "Gonic" = {
                 description = "My Sonic boom serivce";
-                href = "http://100.74.112.27:4747";
+                href = "https://gonic.ladas552.me";
+              };
+            }
+            {
+              "Kavita" = {
+                description = "Books";
+                href = "https://kavita.ladas552.me";
+              };
+            }
+            {
+              "Miniflux" = {
+                description = "RSS feed";
+                href = "https://miniflux.ladas552.me";
               };
             }
           ];
         }
         {
-          "Doesn't work" = [
+          "Share/Download files" = [
             {
-              "Sonarr" = {
-                description = "TV Shows";
-                href = "http://100.74.112.27:8989";
+              "Copyparty" = {
+                description = "File transfere";
+                href = "https://copyparty.ladas552.me";
               };
             }
             {
-              "Radarr" = {
-                description = "Movies";
-                href = "http://100.74.112.27:7878";
+              "Immich" = {
+                description = "Photos";
+                href = "https://immich.ladas552.me";
+              };
+            }
+            {
+              "Karakeep" = {
+                description = "Bookmark manager";
+                href = "https://karakeep.ladas552.me";
+              };
+            }
+            {
+              "NextCloud" = {
+                description = "Drive";
+                href = "https://nextcloud.ladas552.me";
+              };
+            }
+            {
+              "Qbittorrent" = {
+                description = "Torrents";
+                href = "https://qbittorrent.ladas552.me";
               };
             }
           ];
         }
-
+        {
+          "Services" = [
+            {
+              "Searxng" = {
+                description = "My search engine";
+                href = "https://searxng.ladas552.me";
+              };
+            }
+            {
+              "Technitium" = {
+                description = "DNS";
+                href = "https://dns.ladas552.me";
+              };
+            }
+            {
+              "ncps" = {
+                description = "Proxy cache for local nixos network";
+                href = "https://ncps.ladas552.me";
+              };
+            }
+            # {
+            #   "Ollama" = {
+            #     description = "AI Models";
+            #     href = "https://ollama.ladas552.me";
+            #   };
+            # }
+            # {
+            #   "Open-Webui" = {
+            #     description = "Chat with ollama models";
+            #     href = "https://open-webui.ladas552.me";
+            #   };
+            # }
+          ];
+        }
       ];
       bookmarks = [ ];
 

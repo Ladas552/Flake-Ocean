@@ -15,7 +15,7 @@
         enable = true;
         adminCredentialsFile = "${config.sops.templates."miniflux-admin-credentials".path}";
         config = {
-          LISTEN_ADDR = "100.74.112.27:8067";
+          LISTEN_ADDR = "localhost:8067";
           CREATE_ADMIN = true;
           LOG_DATE_TIME = "1";
 
@@ -26,7 +26,18 @@
 
         };
       };
+
+      # Reverse proxy
+      services.caddy.virtualHosts."miniflux.ladas552.me" = {
+        useACMEHost = "ladas552.me";
+        extraConfig = ''
+          reverse_proxy localhost:8067
+        '';
+      };
+
       # Only allow Tailscale
       networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 8067 ];
+
+      # idk what to persist for miniflux, probably postgress
     };
 }

@@ -22,5 +22,8 @@
         };
       };
       networking.firewall.allowedTCPPorts = [ 9993 ];
+
+      # persist for Impermanence
+      custom.imp.root.directories = [ "/var/lib/zerotier-one" ];
     };
 }

@@ -10,5 +10,19 @@
       8096
       8920
     ];
+
+    # Reverse proxy
+    services.caddy.virtualHosts."jellyfin.ladas552.me" = {
+      useACMEHost = "ladas552.me";
+      extraConfig = ''
+        reverse_proxy localhost:8096
+      '';
+    };
+
+    # persist for Impermanence
+    custom.imp.root.directories = [
+      "/var/lib/jellyfin"
+      "/var/cache/jellyfin"
+    ];
   };
 }

@@ -26,14 +26,17 @@ in
       # incus
       # ollama
       # open-webui
+      # sunshine
+      technitium
       searxng
-      # immich
+      immich
       jellyfin
       karakeep
       kavita
       miniflux
       minecraft-server
-      # nextcloud
+      nextcloud
+      ncps
       qbittorrent
       copyparty
       gonic

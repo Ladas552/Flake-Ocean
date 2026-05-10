@@ -13,7 +13,19 @@
         WEBUI_AUTH = "False";
       };
     };
+
+    # Reverse proxy
+    services.caddy.virtualHosts."open-webui.ladas552.me" = {
+      useACMEHost = "ladas552.me";
+      extraConfig = ''
+        reverse_proxy localhost:1212
+      '';
+    };
+
     # Only allow Tailscale
     networking.firewall.interfaces.tailscale0.allowedTCPPorts = [ 1212 ];
+
+    # persist for Impermanence
+    custom.imp.root.cache.directories = [ "/var/lib/open-webui" ];
   };
 }
