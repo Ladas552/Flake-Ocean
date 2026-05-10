@@ -45,7 +45,6 @@
   ];
   # Input Devices
   input = {
-    mod-key = "Alt";
     workspace-auto-back-and-forth = true;
     keyboard = {
       xkb.layout = "us,kz";
@@ -94,7 +93,7 @@
       active-color = "#BA4B5D";
     };
     preset-column-widths._children = [
-      { proportion = 0.25; }
+      # { proportion = 0.25; }
       { proportion = 0.5; }
       { proportion = 0.75; }
       { proportion = 1.0; }
@@ -197,6 +196,7 @@
     ];
   };
   # Keybinds
+  input.mod-key = "Super";
   binds = {
     # Apps
     "Super+T".spawn = "kitty";
@@ -268,11 +268,11 @@
       ];
       _props.allow-when-locked = true;
     };
-    "Shift+Alt+C".spawn = [
-      "mpc"
-      "clear"
-    ];
-    "Shift+Alt+M".spawn = [ "musnow.sh" ];
+    # "Shift+Alt+C".spawn = [
+    #   "mpc"
+    #   "clear"
+    # ];
+    "Shift+Alt+C".spawn = [ "musnow.sh" ];
 
     # Scripts
     "Super+C".spawn = [ "word-lookup.sh" ];
@@ -379,15 +379,6 @@
     "Super+Shift+Right".move-column-right = [ ];
     "Super+Shift+A".move-column-left = [ ];
     "Super+Shift+S".move-column-right = [ ];
-    # "Super+Ctrl+H" .move-column-left=[];
-    # "Super+Ctrl+J" .move-window-down=[];
-    # "Super+Ctrl+K" .move-window-up=[];
-    # "Super+Ctrl+L" .move-column-right=[];
-
-    "Super+Page_Up".focus-column-first = [ ];
-    "Super+Page_Down".focus-column-last = [ ];
-    "Super+Shift+Page_Up".move-column-to-first = [ ];
-    "Super+Shift+Page_Down".move-column-to-last = [ ];
 
     "Super+Ctrl+Right".focus-monitor-right = [ ];
     "Super+Ctrl+Down".focus-monitor-down = [ ];
@@ -403,11 +394,11 @@
     "Super+Shift+K".move-column-to-monitor-up = [ ];
     "Super+Shift+L".move-column-to-monitor-right = [ ];
 
-    "Super+Ctrl+A".focus-workspace-up = [ ];
-    "Super+Ctrl+S".focus-workspace-down = [ ];
+    "Super+Page_Up".focus-workspace-up = [ ];
+    "Super+Page_Down".focus-workspace-down = [ ];
 
-    "Super+Shift+Ctrl+A".move-column-to-workspace-up = [ ];
-    "Super+Shift+Ctrl+S".move-column-to-workspace-down = [ ];
+    "Super+Shift+Page_Up".move-column-to-workspace-up = [ ];
+    "Super+Shift+Page_Down".move-column-to-workspace-down = [ ];
     # Mouse scroll
     "Super+WheelScrollDown" = {
       focus-workspace-down = [ ];
@@ -467,8 +458,9 @@
     # Resize
 
     "Super+R".switch-preset-column-width = [ ];
-    "Super+Alt+F".maximize-column = [ ];
-    "Super+Alt+C".center-column = [ ];
+    "Super+Shift+R".maximize-window-to-edges = [ ];
+    "Super+Ctrl+F".maximize-column = [ ];
+    "Super+Ctrl+C".center-column = [ ];
     "Super+Shift+F".fullscreen-window = [ ];
     "Super+Ctrl+Shift+F".toggle-windowed-fullscreen = [ ];
 

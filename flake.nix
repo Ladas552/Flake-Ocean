@@ -28,6 +28,7 @@
       # No useless inputs
       inputs.ndg.follows = "";
       inputs.treefmt-nix.follows = "";
+      inputs.nix-darwin.follows = "";
     };
 
     flake-parts = {

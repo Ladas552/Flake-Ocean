@@ -13,21 +13,60 @@
         pulse.enable = true;
         # If you want to use JACK applications, uncomment this
         #jack.enable = true;
-
-        # use the example session manager (no others are packaged yet so this is enabled by default,
-        # no need to redefine it in your config for now)
-        #media-session.enable = true;
       };
-      ### IT IS A LIE IT MAKES IT DEFAULT TO BAD CODEC I HATE THIS
-      # "Make bluetoot work better"
-      # services.pipewire.wireplumber.extraConfig.bluetoothEnhancements = {
-      #   "monitor.bluez.properties" = {
-      #     "bluez5.enable-sbc-xq" = true;
-      #     "bluez5.enable-msbc" = true;
-      #     "bluez5.enable-hw-volume" = true;
-      #     "bluez5.roles" = [ "hsp_hs" "hsp_ag" "hfp_hf" "hfp_ag" ];
-      #   };
-      # };
+
+      # Thanks #bananad3v
+      services.pipewire.extraConfig = {
+        pipewire = {
+          "10-defaults" = {
+            "context.properties" = {
+              "clock.power-of-two-quantum" = true;
+              "core.daemon" = true;
+              "core.name" = "pipewire-0";
+              "link.max-buffers" = 16;
+              "settings.check-quantum" = true;
+
+              "default.clock.rate" = 48000;
+              "default.clock.quantum" = 256;
+              "default.clock.min-quantum" = 32;
+              "default.clock.max-quantum" = 4096;
+            };
+            "stream.properties" = {
+              "resample.quality" = 10;
+            };
+          };
+
+          "90-disable-bell" = {
+            "context.properties" = {
+              "module.x11.bell" = false;
+            };
+          };
+        };
+
+        pipewire-pulse = {
+          "10-defaults" = {
+            "context.spa-libs" = {
+              "audio.convert.*" = "audioconvert/libspa-audioconvert";
+              "support.*" = "support/libspa-support";
+            };
+
+            "stream.properties" = {
+              "resample.quality" = 10;
+            };
+
+            "pulse.properties" = {
+              "server.address" = [ "unix:native" ];
+            };
+          };
+        };
+      };
+      services.pipewire.wireplumber.extraConfig = {
+        "10-disable-camera" = {
+          "wireplumber.profiles"."main" = {
+            "monitor.libcamera" = "disabled";
+          };
+        };
+      };
 
       # persist for Impermanence
       custom.imp.home.cache.directories = [ ".local/state/wireplumber" ];

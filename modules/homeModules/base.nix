@@ -5,7 +5,7 @@
       imports = [
         "${modulesPath}/programs/fish.nix"
         "${modulesPath}/programs/home-manager.nix"
-        "${modulesPath}/programs/man.nix"
+        "${modulesPath}/programs/man"
         # I hate this module `modules/misc/ssh-auth-sock.nix`
         "${modulesPath}/services/ssh-agent.nix"
         "${modulesPath}/services/ssh-tpm-agent.nix"
@@ -22,8 +22,9 @@
       xdg = {
         enable = true;
       };
-      # Let Home Manager install and manage itself.
-      programs.home-manager.enable = true;
+      # home-manager binary for Home-Manager standalone
+      # I use home-manager as a module
+      programs.home-manager.enable = false;
 
       programs.man.enable = false;
 
