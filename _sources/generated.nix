@@ -186,17 +186,17 @@
   };
   noctalia-dev = {
     pname = "noctalia-dev";
-    version = "eb2b53ddaa7564f5c93031cbe65cd5b6ef3c12a9";
+    version = "761869a561548874fe7e293b157fd7841576b367";
     src = fetchgit {
       url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "eb2b53ddaa7564f5c93031cbe65cd5b6ef3c12a9";
+      rev = "761869a561548874fe7e293b157fd7841576b367";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-+tbqLv7IW5Aem8kGF6cp4n3MtNBcwqmuGlMt6S1kQjs=";
+      sha256 = "sha256-tZRvyaKVP0DJ9DSFrr6K/l3X74Orfirk3Jjo7+br4Qs=";
     };
-    date = "2026-05-06";
+    date = "2026-05-11";
   };
   noctalia-qs = {
     pname = "noctalia-qs";

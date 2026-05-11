@@ -116,11 +116,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1778365864,
-        "narHash": "sha256-ImoT/wqmgMImf2dAC+E0MverAdA4QXsedOeES9B7Ezw=",
+        "lastModified": 1778503501,
+        "narHash": "sha256-08L/X4/do7nET4rzidJ76eV/1r+mB7DchVpdPypsghc=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "2f419037039a152448c5f4ae9494154753d1b399",
+        "rev": "85ba629c79449badf4338117c27f0ee92b4b9f1a",
         "type": "github"
       },
       "original": {
@@ -151,11 +151,11 @@
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
       },
       "locked": {
-        "lastModified": 1778372143,
-        "narHash": "sha256-UyvjXeehLZqbotLXl/MFEhCbVGV9V+8Rz51QzGcKIR4=",
+        "lastModified": 1778507339,
+        "narHash": "sha256-Ip+1QakWAU9Zja+UEqDXByUtCc09S66j48J2Apj92qM=",
         "ref": "refs/heads/main",
-        "rev": "e2d6445d9f2783a65a8a66e6a0fbefc55ae9e078",
-        "revCount": 111,
+        "rev": "e42f3dc3cd9574ea93b2375fb898598ee97a9566",
+        "revCount": 113,
         "type": "git",
         "url": "https://codeberg.org/BANanaD3V/niri-nix"
       },
@@ -167,11 +167,11 @@
     "niri-unstable": {
       "flake": false,
       "locked": {
-        "lastModified": 1778221858,
-        "narHash": "sha256-+nZlx8MKCs973N9Bm0hNzFHjY+2lmBrBOQeTALeCRhI=",
+        "lastModified": 1778389445,
+        "narHash": "sha256-9NyDMVf8ydUZGTzcPcLMQf0o1B3bte/00UGbuXHNWh8=",
         "owner": "YaLTeR",
         "repo": "niri",
-        "rev": "0200670d9ee8cfbdb154e3e14d92b5ff61aedd59",
+        "rev": "38191826cb1e5fb9051a7e141fefe4941a2b4bed",
         "type": "github"
       },
       "original": {
@@ -333,11 +333,11 @@
         "sqlite-lib-src": "sqlite-lib-src"
       },
       "locked": {
-        "lastModified": 1778394106,
-        "narHash": "sha256-z/IaSibX+c+NH7nQxwEAhkZm2N34Lg7GDzaX9Obz1jA=",
+        "lastModified": 1778509322,
+        "narHash": "sha256-NvrDoXFozBlaJHF1P8uT2iTotApjhyUN05+pSfhLJyk=",
         "ref": "refs/heads/master",
-        "rev": "4eb8cf9a5d230233c033e26dd225444d7ef991df",
-        "revCount": 2376,
+        "rev": "0e31e1247a91c90d268e98f0b5086983908df1d2",
+        "revCount": 2404,
         "type": "git",
         "url": "https://tangled.org/tangled.org/core"
       },
