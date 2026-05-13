@@ -1,5 +1,11 @@
 {
-  flake.modules.nixos.dashboard = {
+  flake.modules.nixos.dashboard = {config,...}:{
+    # secrets
+      sops.secrets."mystuff/technitium-api" = { };
+      sops.templates."homepage-vars".content = ''
+        HOMEPAGE_VAR_TECHNITIUM="${config.sops.placeholder."mystuff/technitium-api"}"
+      '';
+
     # Reverse proxy
     services.caddy.virtualHosts."hub.ladas552.me" = {
       useACMEHost = "ladas552.me";
@@ -12,6 +18,9 @@
     services.homepage-dashboard = {
       enable = true;
       allowedHosts = "hub.ladas552.me";
+      environmentFiles = [
+          config.sops.templates."homepage-vars".path
+      ];
       settings = { };
       widgets = [
         {
@@ -112,9 +121,14 @@
             }
             {
               "Technitium" = {
+                icon = "https://dns.ladas552.me/img/logo.png";
                 description = "DNS";
                 href = "https://dns.ladas552.me";
-              };
+                widget = {
+                type = "technitium";
+                url = "https://dns.ladas552.me";
+                key = "{{HOMEPAGE_VAR_TECHNITIUM}}";
+              };};
             }
             {
               "ncps" = {
