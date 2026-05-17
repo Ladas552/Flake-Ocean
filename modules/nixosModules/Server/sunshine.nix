@@ -1,4 +1,5 @@
 {
+  # This module suppousetly works, but my nvidia gpu doesn't work with it. The Software rendering works tho
   flake.modules.nixos.sunshine =
     { config, ... }:
     {
@@ -31,5 +32,19 @@
         "render"
         "uinput"
       ];
+      # Virtual display
+      # https://discourse.nixos.org/t/nixos-sunshine-setup-using-a-virtual-screen/64857/4
+      boot.kernelParams = [ "video=eDP-1:1920x1080R@60D" ];
+
+      # hardware.display.edid.packages = [
+      #   (pkgs.runCommand "edid-custom" { } ''
+      #                       mkdir -p $out/lib/firmware/edid
+      #                       base64 -d > "$out/lib/firmware/edid/custom1.bin" <<'EOF'
+      #     EDID content
+      #           EOF
+      #   '')
+      # ];
+      # hardware.display.outputs."HDMI-A-1".edid = "custom1.bin";
+
     };
 }
