@@ -42,6 +42,7 @@ in
       # lact
       niri-classic
       nixos-core-testing
+      moonlight
       xkb
       zfs
       run0
