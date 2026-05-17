@@ -32,7 +32,7 @@
         {
           search = {
             provider = "custom";
-            url = "http://100.74.112.27:3038/search?q=";
+            url = "https://searxng.ladas552.me/search?q=";
             target = "_blank";
           };
         }

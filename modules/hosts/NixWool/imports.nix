@@ -24,6 +24,7 @@ in
       sops
       tailscale
       zfs
+      nixos-core-testing
       network-manager
       fish
       bluesky-pds

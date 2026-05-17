@@ -257,7 +257,7 @@
             Add = [
               {
                 Name = "Searxng";
-                URLTemplate = "http://100.74.112.27:3038/search?q={searchTerms}";
+                URLTemplate = "https://searxng.ladas552.me/search?q={searchTerms}";
               }
               {
                 Name = "Noogle";
