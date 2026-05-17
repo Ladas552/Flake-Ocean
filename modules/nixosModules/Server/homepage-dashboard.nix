@@ -130,12 +130,12 @@
                 key = "{{HOMEPAGE_VAR_TECHNITIUM}}";
               };};
             }
-            {
-              "ncps" = {
-                description = "Proxy cache for local nixos network";
-                href = "https://ncps.ladas552.me";
-              };
-            }
+            # {
+            #   "ncps" = {
+            #     description = "Proxy cache for local nixos network";
+            #     href = "https://ncps.ladas552.me";
+            #   };
+            # }
             # {
             #   "Ollama" = {
             #     description = "AI Models";

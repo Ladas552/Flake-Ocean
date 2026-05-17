@@ -36,7 +36,7 @@ in
       miniflux
       minecraft-server
       nextcloud
-      ncps
+      # ncps
       nixos-core-testing
       qbittorrent
       copyparty
