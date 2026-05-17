@@ -37,6 +37,7 @@ in
       minecraft-server
       nextcloud
       ncps
+      nixos-core-testing
       qbittorrent
       copyparty
       gonic
