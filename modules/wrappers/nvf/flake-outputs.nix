@@ -12,8 +12,8 @@
       base = with config.flake.modules.nvf; [
         auto-save
         autocmd
-        blink-cmp
-        blink-pairs
+        # blink-cmp
+        # blink-pairs
         cat-mocha
         colorizer
         cyrillic

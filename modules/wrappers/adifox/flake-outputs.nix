@@ -501,7 +501,7 @@
             pref("privacy.spoof_english", 1);
             // block AI
             // https://askubuntu.com/questions/1556081/how-to-disable-all-the-ai-features-in-firefox-to-increase-performance
-            pref("rowser.ml.enable", false);
+            pref("browser.ml.enable", false);
             pref("browser.ml.chat.enabled", false);
             pref("browser.ml.chat.page", false);
             pref("browser.ml.linkPreview.enabled", false);

@@ -26,8 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.hjem.follows = "hjem";
       # No useless inputs
-      inputs.ndg.follows = "";
-      inputs.treefmt-nix.follows = "";
       inputs.nix-darwin.follows = "";
     };
 
@@ -41,7 +39,7 @@
     nvf = {
       url = "github:notashelf/nvf";
       # No useless inputs
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
       inputs.systems.follows = "systems";
       inputs.flake-parts.follows = "flake-parts";
       inputs.flake-compat.follows = "";
@@ -51,6 +49,8 @@
     # Niri
     niri = {
       url = "git+https://codeberg.org/BANanaD3V/niri-nix";
+      # No useless inputs
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # Tangled, git hosting

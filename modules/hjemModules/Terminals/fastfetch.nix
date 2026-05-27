@@ -4,7 +4,7 @@
     {
       rum.programs.fastfetch = {
         enable = true;
-        package = pkgs.fastfetchMinimal;
+        package = pkgs.fastfetch.minimal;
         # modified 21st example from fastfetch in nix code
         settings = {
           logo.source = "nixos_old_small";

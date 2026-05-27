@@ -9,7 +9,7 @@
       formatOnSave = false;
       inlayHints.enable = true;
       lspconfig.enable = true;
-      lspkind.enable = true;
+      # lspkind.enable = true;
       mappings = {
         goToDefinition = "<leader>LD";
         renameSymbol = "<F2>";

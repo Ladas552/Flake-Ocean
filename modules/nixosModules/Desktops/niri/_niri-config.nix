@@ -47,7 +47,7 @@
   input = {
     workspace-auto-back-and-forth = true;
     keyboard = {
-      xkb.layout = "us,kz";
+      xkb.layout = "us(colemak_dh),kz";
       xkb.options = "grp:caps_toggle";
     };
     mouse.accel-profile = "flat";
@@ -371,14 +371,14 @@
     "Super+Up".focus-window-up-or-bottom = [ ];
     "Super+Right".focus-column-right-or-first = [ ];
     "Super+A".focus-column-left-or-last = [ ];
-    "Super+S".focus-column-right-or-first = [ ];
+    "Super+R".focus-column-right-or-first = [ ];
 
     "Super+Shift+Left".move-column-left = [ ];
     "Super+Shift+Down".move-window-down = [ ];
     "Super+Shift+Up".move-window-up = [ ];
     "Super+Shift+Right".move-column-right = [ ];
     "Super+Shift+A".move-column-left = [ ];
-    "Super+Shift+S".move-column-right = [ ];
+    "Super+Shift+R".move-column-right = [ ];
 
     "Super+Ctrl+Right".focus-monitor-right = [ ];
     "Super+Ctrl+Down".focus-monitor-down = [ ];
@@ -457,8 +457,8 @@
     "Super+BracketRight".consume-or-expel-window-right = [ ];
     # Resize
 
-    "Super+R".switch-preset-column-width = [ ];
-    "Super+Shift+R".maximize-window-to-edges = [ ];
+    "Super+P".switch-preset-column-width = [ ];
+    "Super+Shift+P".maximize-window-to-edges = [ ];
     "Super+Ctrl+F".maximize-column = [ ];
     "Super+Ctrl+C".center-column = [ ];
     "Super+Shift+F".fullscreen-window = [ ];
@@ -472,7 +472,7 @@
 
     "Super+Ctrl+Shift+Q".quit = [ ];
 
-    "Super+Shift+P".power-off-monitors = [ ];
+    "Super+Shift+Y".power-off-monitors = [ ];
     # Knob binds
 
     ## Brightness with a knob

@@ -29,6 +29,7 @@
           go
           html
           ini
+          janet-simple
           javascript
           json
           # jsonc
