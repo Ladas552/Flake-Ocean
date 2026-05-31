@@ -1,4 +1,4 @@
-{ self, ... }:
+{ self, inputs, ... }:
 {
   flake.modules = {
     nixos.NixPort =
@@ -27,6 +27,7 @@
           xarchiver
           zotero
           nvfetcher
+          inputs.tack.packages.${pkgs.stdenv.hostPlatform.system}.tack
         ];
 
         environment.shellAliases = {

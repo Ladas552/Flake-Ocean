@@ -1,92 +1,13 @@
 {
   description = "Ladas552 NixOS config";
 
-  inputs = {
-    # nixpkgs links
-    nixpkgs.url = "https://channels.nixos.org/nixos-unstable/nixexprs.tar.xz";
-
-    # Home-manager
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Hjem, another home-manager
-    hjem = {
-      url = "github:feel-co/hjem";
-      inputs.nixpkgs.follows = "nixpkgs";
-      # No useless inputs
-      inputs.nix-darwin.follows = ""; # I don't use nix-darwin machine
-      # inputs.smfh.follows = "";
-      inputs.smfh.inputs.systems.follows = "systems";
-    };
-    # Modules for hjem
-    hjem-rum = {
-      url = "github:snugnug/hjem-rum";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.hjem.follows = "hjem";
-      # No useless inputs
-      inputs.nix-darwin.follows = "";
-    };
-
-    flake-parts = {
-      url = "github:hercules-ci/flake-parts";
-      # No useless inputs
-      inputs.nixpkgs-lib.follows = "nixpkgs";
-    };
-
-    # Neovim
-    nvf = {
-      url = "github:notashelf/nvf";
-      # No useless inputs
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.systems.follows = "systems";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.flake-compat.follows = "";
-      inputs.ndg.follows = "";
-    };
-
-    # Niri
-    niri = {
-      url = "git+https://codeberg.org/BANanaD3V/niri-nix";
-      # No useless inputs
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Tangled, git hosting
-    tangled = {
-      url = "git+https://tangled.org/tangled.org/core";
-      # No useless inputs
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.gomod2nix.inputs.flake-utils.inputs.systems.follows = "systems";
-      inputs.flake-compat.follows = "";
-      inputs.indigo.follows = "";
-      inputs.htmx-src.follows = "";
-      inputs.htmx-ws-src.follows = "";
-      inputs.lucide-src.follows = "";
-      inputs.inter-fonts-src.follows = "";
-      inputs.actor-typeahead-src.follows = "";
-      inputs.ibm-plex-mono-src.follows = "";
-      inputs.mermaid-src.follows = "";
-      inputs.fenix.follows = "";
-      # inputs.sqlite-lib-src.follows = "";
-    };
-
-    # Boilerplate
-    systems.url = "github:nix-systems/default-linux";
-
-    # Highly experimental replacment to nixos stage scripts
-    nixos-core = {
-      url = "github:feel-co/nixos-core";
-      # No useless inputs
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    # Also check inputs in ./nvfetcher.toml for more modules I use
-  };
   outputs =
-    inputs:
+    { self, ...}@args:
     let
+      inputs = (import ./.tack) {
+        overrides = args.tackOverrides or { };
+      };
+
       # Function to stop using `import-tree` by Vic.
       # Just to lighten the config a bit, written by @llakala https://github.com/llakala/synaptic-standard/blob/main/demo/recursivelyImport.nix
       import-tree = import ./lib/recursivelyImport.nix { lib = inputs.nixpkgs.lib; };
@@ -110,7 +31,7 @@
     in
     inputs.flake-parts.lib.mkFlake
       {
-        inherit inputs;
+        inherit inputs self;
         specialArgs = { inherit modules; };
       }
       {
@@ -121,6 +42,5 @@
         flake.templates = import ./templates;
         # aarch64 and x86_64 Linux systems
         systems = import inputs.systems;
-
       };
 }

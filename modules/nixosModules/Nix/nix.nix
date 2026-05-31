@@ -29,7 +29,7 @@
         optimise.automatic = true;
         # disable channels completely
         channel.enable = false;
-        registry = (lib.mapAttrs (_: flake: { inherit flake; }) inputs);
+        # registry = (lib.mapAttrs (_: flake: { inherit flake; }) inputs);
         nixPath = lib.mapAttrsToList (n: _: "${n}=flake:${n}") inputs;
         settings = {
           # error on IFD, It errors on using modules like Stylix tho

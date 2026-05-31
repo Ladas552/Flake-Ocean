@@ -1,0 +1,76 @@
+# tack pins. edit by hand or with tack add / rm / alias
+# nix reads pins.lock.json; this file drives tack update
+
+# shorturl schemes. scheme:rest expands rest into {path}
+[shorturls]
+gh = "github:{path}" # github
+cb = "git+https://codeberg.org/{path}" # codeberg
+td = "git+https://tangled.org/{path}" # tangled
+nixpkgs = "https://channels.nixos.org/{path}/nixexprs.tar.xz"
+
+# all_follow: input name -> top-level pin it follows wherever it appears
+# opt out per-input with exclude_follow
+[all_follow]
+# no deduplication
+nixpkgs = ["nixpkgs", "nixpkgs-lib"]
+systems = "systems"
+hjem = "hjem"
+flake-parts = "flake-parts"
+
+# no useless inputs
+nix-darwin = ""
+flake-compat = ""
+ndg = ""
+
+# [inputs.<name>] fields
+#   url             required, shorturl ok; ?rev=<sha> pins an exact commit
+#   flake           default true; false exposes the source path
+#   follows         { child = "pin" } override map
+#   exclude_follow  all_follow names to skip
+#   dir             subdir holding flake.nix
+#   submodules      fetch git submodules
+
+# nixpkgs links
+[inputs.nixpkgs]
+# url = "nixpkgs:nixos-unstable"
+url = "gh:Nixos/nixpkgs/nixos-unstable"
+
+# Home manager
+[inputs.home-manager]
+url = "gh:nix-community/home-manager"
+
+# Hjem, another home-manager
+[inputs.hjem]
+url = "gh:feel-co/hjem"
+
+# Modules for hjem
+[inputs.hjem-rum]
+url = "gh:snugnug/hjem-rum"
+
+[inputs.flake-parts]
+url = "gh:Ladas552/flake-parts"
+
+# Neovim
+[inputs.nvf]
+url = "gh:notashelf/nvf"
+
+# Niri
+[inputs.niri]
+url = "cb:BANanaD3V/niri-nix"
+
+# Tanled, git hosting
+[inputs.tangled]
+url = "td:tangled.org/core"
+follows = { gomod2nix = "", indigo = "", htmx-src = "", htmx-ws-src = "", lucide-src = "", inter-fonts-src = "", actor-typeahead-src = "", ibm-plex-mono-src = "", mermaid-src = "", fenix = "" }
+
+# Boilerplate
+[inputs.systems]
+url = "gh:nix-systems/default-linux"
+
+# Highly experimental replacment to nixos stage scripts
+[inputs.nixos-core]
+url = "gh:manic-systems/nixos-core"
+
+# Alternative pinning
+[inputs.tack]
+url = "gh:manic-systems/tack"
