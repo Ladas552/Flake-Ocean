@@ -1,4 +1,4 @@
-{ modules, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixos.imp =
     {
@@ -13,7 +13,7 @@
     in
 
     {
-      imports = [ "${modules.impermanence.src}/nixos.nix" ];
+      imports = [ inputs.impermanence.nixosModules.impermanence ];
       # persist mount
       fileSystems."/persist" = {
         device = "zroot/persist";

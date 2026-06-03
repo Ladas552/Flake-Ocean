@@ -1,4 +1,4 @@
-{ modules, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixos.copyparty =
     { config, ... }:
@@ -11,7 +11,7 @@
       };
 
       # import module
-      imports = [ "${modules.copyparty.src}/contrib/nixos/modules/copyparty.nix" ];
+      imports = [ inputs.copyparty.nixosModules.default ];
 
       # module
       services.copyparty = {

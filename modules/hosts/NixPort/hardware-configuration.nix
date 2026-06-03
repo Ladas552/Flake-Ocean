@@ -1,4 +1,4 @@
-{ modules, ... }:
+{ inputs, ... }:
 
 {
   flake.modules.nixos.NixPort =
@@ -9,8 +9,7 @@
     }:
     {
       imports = [
-        # inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
-        "${modules.nixos-hardware.src}/common/cpu/amd/zenpower.nix"
+        inputs.nixos-hardware.nixosModules.common-cpu-amd-zenpower
         (modulesPath + "/installer/scan/not-detected.nix")
       ];
 

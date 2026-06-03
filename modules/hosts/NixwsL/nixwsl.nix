@@ -1,4 +1,4 @@
-{ modules, self, ... }:
+{ inputs, self, ... }:
 {
   flake.modules = {
     nixos.NixwsL =
@@ -10,7 +10,7 @@
       }:
       {
         imports = [
-          "${modules.nixos-wsl.src}/modules"
+          inputs.nixos-wsl.nixosModules.wsl
         ];
 
         # Standalone Packages

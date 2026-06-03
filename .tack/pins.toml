@@ -67,10 +67,40 @@ follows = { gomod2nix = "", indigo = "", htmx-src = "", htmx-ws-src = "", lucide
 [inputs.systems]
 url = "gh:nix-systems/default-linux"
 
-# Highly experimental replacment to nixos stage scripts
+# Highly experimental replacement to nixos stage scripts
 [inputs.nixos-core]
 url = "gh:manic-systems/nixos-core"
 
 # Alternative pinning
 [inputs.tack]
 url = "gh:manic-systems/tack"
+
+# Other NixOS modules
+[inputs.impermanence]
+url = "gh:nix-community/impermanence"
+
+[inputs.sops-nix]
+url = "gh:Mic92/sops-nix"
+
+[inputs.nixos-wsl]
+url = "gh:nix-community/NixOS-WSL"
+
+[inputs.noctalia]
+url = "gh:noctalia-dev/noctalia-shell"
+
+[inputs.nixos-hardware]
+url = "gh:nixos/nixos-hardware"
+
+[inputs.nix-minecraft]
+url = "gh:Infinidoge/nix-minecraft"
+
+[inputs.copyparty]
+url = "gh:9001/copyparty"
+
+# idk how to run it as flakes
+[inputs.adifox]
+url = "gh:NotAShelf/adifox"
+flake = false
+[inputs.adios]
+url = "gh:adisbladis/adios"
+flake = false

@@ -1,4 +1,4 @@
-{ modules, self, ... }:
+{ inputs, self, ... }:
 {
   flake.modules.nixos = {
     firefox =
@@ -32,7 +32,7 @@
   perSystem =
     { pkgs, ... }:
     let
-      adios = import "${modules.adios.src}/adios";
+      adios = import "${inputs.adios}/adios";
 
       # Nixpkgs module
       nixpkgsModule = adios: {
@@ -55,7 +55,7 @@
             name = "root";
             modules = {
               nixpkgs = nixpkgsModule adios;
-              wrapAdifox = import "${modules.adifox.src}/wrapAdifox.nix" adios;
+              wrapAdifox = import "${inputs.adifox}/wrapAdifox.nix" adios;
             };
           }
           {

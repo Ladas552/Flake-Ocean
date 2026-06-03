@@ -1,17 +1,12 @@
-{ modules, ... }:
+{ inputs, ... }:
 {
   flake.modules = {
     nixos.noct =
       { pkgs, ... }:
       let
         noct =
-          (pkgs.callPackage "${modules.noctalia-dev.src}/nix/package.nix" {
-            calendarSupport = false;
-            quickshell = pkgs.callPackage "${modules.noctalia-qs.src}/nix/package.nix" {
-              gitRev = "dirty";
-              version = "dirty";
-            };
-            # Use my icon set in noctalia, thanks @iynaix
+          (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+            calendarSupport = true;
           }).overrideAttrs
             (o: {
               preFixup = (o.preFixup or "") + /* sh */ ''

@@ -1,4 +1,4 @@
-{ modules, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixos.sops =
     {
@@ -8,7 +8,7 @@
       ...
     }:
     {
-      imports = [ "${modules.sops-nix.src}/modules/sops" ];
+      imports = [ inputs.sops-nix.nixosModules.sops ];
 
       environment.systemPackages = [ pkgs.sops ];
 

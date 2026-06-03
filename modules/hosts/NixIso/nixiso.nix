@@ -11,6 +11,7 @@
     }:
     let
       restore = self.packages.${pkgs.stdenv.hostPlatform.system}.restore;
+      qalc = self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate;
     in
     {
       imports = [
@@ -21,7 +22,7 @@
       environment.systemPackages = with pkgs; [
         ungoogled-chromium
         wl-clipboard
-        self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
+        qalc
         wget
         lshw
         telegram-desktop

@@ -35,8 +35,6 @@ in
         home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
           { inherit custom; }
           NixVm
-          ghostty
-          direnv
           cat-mocha
         ];
       }

@@ -1,4 +1,4 @@
-{ modules, ... }:
+{ inputs, ... }:
 {
   flake.modules.nixos = {
     minecraft-server =
@@ -9,9 +9,9 @@
       in
       {
         # module
-        imports = [ "${modules.nix-minecraft.src}/modules/minecraft-servers.nix" ];
+        imports = [ inputs.nix-minecraft.nixosModules.minecraft-servers ];
         nixpkgs.overlays = [
-          (import "${modules.nix-minecraft.src}/overlay.nix")
+          inputs.nix-minecraft.overlay
         ];
 
         services = {

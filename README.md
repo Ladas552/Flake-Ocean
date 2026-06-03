@@ -31,8 +31,6 @@ Making all files their own modules that I can import, and if module isn't import
 
 Also I made `custom.meta` options on every host, and depending on host, different variables are used. Options defined in `modules/flake-parts/options`. And host variables are defined at `imports.nix` of every host. Even for nvf config.
 
-I also have a lot of unused code that I can import if need be, for example my niri can be managed with hjem and home-manager and result will be identical. 
-
 ## Docs
 I write comments on things, that might explain certain ways of doing things, or leave not working options in comments for people to find. This is to not look up one thing twice, and just look at the nix file itself.
 
@@ -52,9 +50,12 @@ sources = pkgs.callPackage "${self}/_sources/generated.nix" { };
 
 Then with `sources.<input-name>.src` you can skip manual fetching for neovim plugins for example.
 
-I also use nvfetcher to fetch nixos modules, the method described in the `flake.nix` file. 
+Also nvfetcher can be used to fetch nixos modules. Even if I don't do this currently
 
 [Check out a blog post about it](https://nix.ladas552.me/posts/Nvfetcher/)
+
+## tack
+Instead of using flake.nix to fetch files, I use [tack](https://github.com/manic-systems/tack). Basically makes flake inputs lazy without breaking flake interface.
 
 ## Screenshot if you care
 ![desktop](https://blog.ladas552.me/assets/desktop/desktop.png)
