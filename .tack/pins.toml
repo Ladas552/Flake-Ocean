@@ -32,8 +32,8 @@ ndg = ""
 
 # nixpkgs links
 [inputs.nixpkgs]
-# url = "nixpkgs:nixos-unstable"
-url = "gh:Nixos/nixpkgs/nixos-unstable"
+url = "nixpkgs:nixos-unstable"
+# url = "gh:Nixos/nixpkgs/nixos-unstable"
 
 # Home manager
 [inputs.home-manager]
