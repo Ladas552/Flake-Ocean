@@ -2,7 +2,7 @@
 {
   flake.modules = {
     nixos.NixPort =
-      { pkgs, ... }:
+      { pkgs, config, ... }:
       {
         # Standalone Packages
         environment.systemPackages = with pkgs; [
@@ -32,13 +32,19 @@
 
         environment.shellAliases = {
           ssh = "kitten ssh"; # for kitty terminal
+          scan = "scanimage -d pixma:04A92759_0149U0000342 --resolution 600 --format=pdf -o";
         };
 
         # Environmental Variables
         environment.variables = {
           BROWSER = "firefox";
           EDITOR = "nvim";
+          GITHUB_TOKEN = "cat ${config.sops.secrets."mystuff/github_token".path}";
         };
+        # secrets
+        sops.secrets."mystuff/github_token" = { };
+
+
 
         # https://wiki.archlinux.org/title/Lenovo_ThinkPad_T14s_(AMD)_Gen_3#Display
         boot.kernelParams = [ "amdgpu.dcdebugmask=0x10" ];

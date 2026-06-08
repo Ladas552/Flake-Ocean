@@ -13,7 +13,7 @@
       boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_xanmod;
       # boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
-      # I am not deaf yet
+      # I am not blind yet
       services.speechd.enable = false;
       # Updates firmware directly from vendors
       services.fwupd.enable = true;
@@ -40,6 +40,12 @@
       # Prevent systemd from waiting for network online
       systemd.network.wait-online.enable = false;
       boot.initrd.systemd.network.wait-online.enable = false;
+      networking.dhcpcd.wait = "background";
+
+      # Some programs ignore SIGTERM (notably "winedevice.exe") causing
+      # a timeout until SIGKILL. This shortens this window.
+      # thanks @saygo-png
+      systemd.user.extraConfig = "DefaultTimeoutStopSec=10s";
 
       # Set your time zone.
       time.timeZone = "Asia/Almaty";

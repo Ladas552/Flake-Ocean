@@ -13,7 +13,6 @@ in
       { inherit custom; }
       NixIso
       # Modules
-      ## Games
       openssh
       bluetooth
       tlp
@@ -21,9 +20,11 @@ in
       sops
       fish
       nix
+      xkb
       general
-      niri-flake
-      noct
+      niri-noct
+      firefox
+      thunar
       # Users
       root
       ladas552
@@ -48,9 +49,8 @@ in
         hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
           { inherit custom; }
           direnv
-          obs
           git
-          helix
+          nvf
           mpv
           kitty
           cat-mocha
@@ -59,8 +59,7 @@ in
           mpv
           # flameshot
           fastfetch
-          niri-flake
-          noct
+      niri-noct
         ];
       }
     ];

@@ -20,7 +20,6 @@ flake-parts = "flake-parts"
 # no useless inputs
 nix-darwin = ""
 flake-compat = ""
-ndg = ""
 
 # [inputs.<name>] fields
 #   url             required, shorturl ok; ?rev=<sha> pins an exact commit
@@ -73,7 +72,7 @@ url = "gh:manic-systems/nixos-core"
 
 # Alternative pinning
 [inputs.tack]
-url = "gh:manic-systems/tack"
+url = "gh:manic-systems/tack/next"
 
 # Other NixOS modules
 [inputs.impermanence]

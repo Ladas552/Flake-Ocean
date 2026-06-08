@@ -1,6 +1,6 @@
 { self, config, ... }:
 # build the image with
-# nix run nixpkgs#nixos-generators -- --format iso --flake "github:Ladas552/Flake-Ocean#NixIso" -o result
+# nixos-rebuild build-image --image-variant iso --flake "github:Ladas552/Flake-Ocean#NixIso" 
 {
   flake.modules.nixos.NixIso =
     {

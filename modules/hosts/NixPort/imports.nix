@@ -21,7 +21,7 @@ in
       bluetooth
       cache
       cat-mocha
-      cups
+      printer
       firewall
       general
       imp
@@ -43,7 +43,6 @@ in
       # niri-classic
       niri-noct
       nixos-core-testing
-      moonlight
       xkb
       zfs
       run0
