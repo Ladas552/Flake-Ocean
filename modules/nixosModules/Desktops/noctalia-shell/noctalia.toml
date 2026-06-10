@@ -1,0 +1,305 @@
+[audio]
+sound_volume = 0.0
+
+[backdrop]
+enabled = true
+
+[bar]
+order = [ "Main" ]
+
+    [bar.Main]
+    background_opacity = 0.74999998323619366
+    capsule_radius = 0
+    center = [ "taskbar", "audio_visualizer" ]
+    end = [ "tray", "notifications", "network", "bluetooth", "volume", "battery", "keyboard_layout", "clock" ]
+    margin_edge = 0
+    margin_ends = 0
+    panel_overlap = 0
+    position = "left"
+    radius = 0
+    shadow = false
+    start = [ "control-center", "launcher", "session", "media" ]
+    thickness = 42
+    widget_spacing = 12
+
+[calendar]
+refresh_minutes = 120
+
+[[control_center.shortcuts]]
+type = "wifi"
+
+[[control_center.shortcuts]]
+type = "bluetooth"
+
+[[control_center.shortcuts]]
+type = "caffeine"
+
+[[control_center.shortcuts]]
+type = "power_profile"
+
+[[control_center.shortcuts]]
+type = "screen_recorder"
+
+[[control_center.shortcuts]]
+type = "mic_mute"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 4
+
+    [idle.behavior.lock]
+    action = "lock"
+    enabled = true
+    timeout = 600
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    enabled = true
+    timeout = 1600
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    enabled = true
+    timeout = 660
+
+[location]
+auto_locate = true
+
+[lockscreen_widgets]
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000004"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 1077.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "login_box"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 160.0
+    box_width = 528.0
+    cx = 960.0
+    cy = 904.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        shadow = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 160.0
+    box_width = 480.0
+    cx = 416.0
+    cy = 904.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "media_player"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        hide_when_no_media = true
+        layout = "horizontal"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    box_height = 416.0
+    box_width = 688.0
+    cx = 944.0
+    cy = 456.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        clock_style = "digital"
+        format = "{:%H:%M}"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    box_height = 160.0
+    box_width = 448.0
+    cx = 1484.0
+    cy = 905.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "sysmon"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        stat2 = "cpu_temp"
+
+[notification]
+allowed_urgencies = [ "normal", "critical" ]
+background_opacity = 0.69999998435378075
+layer = "overlay"
+
+[osd]
+background_opacity = 0.74999998323619366
+position = "top_right"
+
+    [osd.kinds]
+    caffeine = false
+    dnd = false
+    keyboard_layout = false
+    lock_keys = false
+    volume_input = false
+
+[shell]
+clipboard_enabled = false
+corner_radius_scale = 0.0
+font_family = "JetBrainsMono Nerd Font"
+lang = "en"
+launch_apps_as_systemd_services = true
+password_style = "random"
+polkit_agent = true
+screen_time_enabled = true
+settings_show_advanced = true
+telemetry_enabled = true
+
+    [shell.animation]
+    speed = 1.5000000223517418
+
+    [shell.panel]
+    borders = false
+    open_near_click_control_center = true
+    open_near_click_wallpaper = true
+    shadow = false
+
+    [shell.screenshot]
+    copy_to_clipboard = false
+    freeze_screen = false
+    save_to_file = false
+
+    [[shell.session.actions]]
+    action = "lock"
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    enabled = false
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    enabled = true
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    enabled = true
+    shortcut = "4"
+    variant = "destructive"
+
+    [shell.shadow]
+    alpha = 0.0
+
+[system.monitor]
+enabled = false
+
+[theme]
+builtin = "Catppuccin"
+
+    [theme.templates]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/home/ladas552/Pictures/backgrounds"
+transition = [ "disc", "fade", "honeycomb", "stripes", "wipe", "zoom" ]
+
+    [wallpaper.automation]
+    enabled = true
+
+    [wallpaper.default]
+    path = "/home/ladas552/Pictures/backgrounds/2girls nichesnake night polychromatic scenic silhouette stars tsurumaki_maki vocaloid voiceroid yuzuki_yukari.jpg"
+
+    [wallpaper.last]
+    path = "/home/ladas552/Pictures/backgrounds/2girls nichesnake night polychromatic scenic silhouette stars tsurumaki_maki vocaloid voiceroid yuzuki_yukari.jpg"
+
+    [wallpaper.monitors.eDP-1]
+    path = "/home/ladas552/Pictures/backgrounds/2girls nichesnake night polychromatic scenic silhouette stars tsurumaki_maki vocaloid voiceroid yuzuki_yukari.jpg"
+
+[widget.audio_visualizer]
+bands = 79
+width = 228.0
+
+[widget.battery]
+hide_when_full = true
+hide_when_plugged = true
+
+[widget.clock]
+color = "primary"
+format = "{:%H ---:%M}"
+
+[widget.control-center]
+color = "primary"
+scale = 1.2
+
+[widget.keyboard_layout]
+show_icon = false
+
+    [widget.keyboard_layout.custom_labels]
+    "English (Colemak-DH)" = "COL"
+    Kazakh = "KZ"
+
+[widget.launcher]
+color = "tertiary"
+glyph = "rocket"
+scale = 1.25
+
+[widget.media]
+art_size = 96.0
+hide_when_no_media = true
+scale = 1.2
+
+[widget.session]
+color = "error"
+scale = 1.2
+
+[widget.taskbar]
+capsule_radius = "auto"
+group_by_workspace = true
+hide_empty_workspaces = true
+inactive_opacity = 0.75
+scale = 1.3500000000000001
+show_active_indicator = false
+
+[widget.tray]
+drawer = true
+
+[widget.workspaces]
+capsule_radius = 0
+hide_when_empty = true

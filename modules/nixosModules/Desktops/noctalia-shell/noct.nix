@@ -4,35 +4,38 @@
     nixos.noct =
       { pkgs, ... }:
       let
-        noct =
-          (inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
-            calendarSupport = true;
-          }).overrideAttrs
-            (o: {
-              preFixup = (o.preFixup or "") + /* sh */ ''
-                qtWrapperArgs+=(
-                  --set QT_QPA_PLATFORMTHEME gtk3
-                )
-              '';
-            });
+        noct = (
+          inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
+            cudaSupport = false;
+          }
+        );
       in
       {
-        environment.systemPackages = with pkgs; [
+        environment.systemPackages = [
           noct
-          gpu-screen-recorder
         ];
+        # hjem.extraModules = [
+        #   inputs.noctalia.hjemModules.default
+        # ];
+
+        # I don't want to build c++
+        nix.settings = {
+          extra-substituters = [
+            "https://noctalia.cachix.org"
+          ];
+          extra-trusted-public-keys = [
+            "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
+          ];
+        };
       };
     hjem.noct = {
-      xdg.config.files = {
-        "noctalia/settings.json".source = ./settings.json;
-        "noctalia/colors.json".source = ./colors.json;
-        "noctalia/plugins.json".source = ./plugins.json;
-        "noctalia/plugins/screen-recorder/settings.json".source = ./recorder-settings.json;
-      };
+
+      xdg.config.files."noctalia/noctalia.toml".source = ./noctalia.toml;
+
       # persist for Impermanence
       custom.imp.home.cache.directories = [
         ".cache/noctalia"
-        ".config/noctalia/plugins"
+        ".local/state/noctalia"
       ];
     };
   };

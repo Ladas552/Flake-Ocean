@@ -59,7 +59,7 @@ in
           mpv
           # flameshot
           fastfetch
-      niri-noct
+          niri-noct
         ];
       }
     ];

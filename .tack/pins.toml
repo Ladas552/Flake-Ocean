@@ -18,6 +18,7 @@ hjem = "hjem"
 flake-parts = "flake-parts"
 
 # no useless inputs
+ndg = ""
 nix-darwin = ""
 flake-compat = ""
 
@@ -85,7 +86,7 @@ url = "gh:Mic92/sops-nix"
 url = "gh:nix-community/NixOS-WSL"
 
 [inputs.noctalia]
-url = "gh:noctalia-dev/noctalia-shell"
+url = "gh:noctalia-dev/noctalia"
 
 [inputs.nixos-hardware]
 url = "gh:nixos/nixos-hardware"

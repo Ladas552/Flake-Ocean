@@ -15,13 +15,13 @@
       niri.settings = {
         # autostart noctalia-shell
         spawn-at-startup = [
-          [ "noctalia-shell" ]
+          [ "noctalia" ]
         ];
         # overview wallpaper
         layer-rule = [
           {
             # Noctalia wallpaper in overview
-            _children = [ { match._props.namespace = "^noctalia-overview*"; } ];
+            _children = [ { match._props.namespace = "^noctalia-backdrop"; } ];
             place-within-backdrop = true;
           }
         ];
@@ -29,32 +29,21 @@
         binds = {
           # Noctalia
           "Super+Space".spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
+            "noctalia"
+            "msg"
+            "panel-toggle"
             "launcher"
-            "toggle"
           ];
           "Super+X".spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "sessionMenu"
-            "toggle"
-          ];
-          "Super+L".spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "lockScreen"
-            "lock"
+            "noctalia"
+            "msg"
+            "panel-toggle"
+            "session"
           ];
           "Super+D".spawn = [
-            "noctalia-shell"
-            "ipc"
-            "call"
-            "bar"
-            "toggle"
+            "noctalia"
+            "msg"
+            "bar-toggle"
           ];
         };
       };
