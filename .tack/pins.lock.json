@@ -113,9 +113,9 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia",
-    "rev": "72b216ce2416e0904616286078b3f5be037d9f77",
-    "narHash": "sha256-X8c9DUJ85DWwiLJDBMKVpvvVXOQm/jTFiUus3PWyYOU=",
-    "lastModified": 1781066350
+    "rev": "e026a58257df69a24dfddb5d4b556d1753c58b5a",
+    "narHash": "sha256-IgWi4wiI6aQuoTGVBm55oJb7otuuthBgU/XPzI1fJng=",
+    "lastModified": 1781087391
   },
   "nvf": {
     "type": "github",
@@ -151,10 +151,10 @@
   },
   "tangled": {
     "type": "git",
-    "url": "https://tangled.org/tangled.org/core",
+    "url": "https://knot1.tangled.sh/did:plc:j5hmlfdrwkvtxm7cjmu7j2is/",
     "ref": "HEAD",
-    "rev": "d0c5d0e2936a9423efb875f61ae11319d53d6923",
-    "narHash": "sha256-D1A3IsYuvVq2ccogLT8zu3rsulfQKmIg0wATt27zA34=",
-    "lastModified": 1780820683
+    "rev": "9da42287d13f7b8105efd36af1fd820dac64c259",
+    "narHash": "sha256-lstCT3q0f5qbQG15Dix0AXmtuAK1i66kSxAA6c/WLYc=",
+    "lastModified": 1780995168
   }
 }

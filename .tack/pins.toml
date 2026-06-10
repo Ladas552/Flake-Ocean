@@ -17,11 +17,6 @@ systems = "systems"
 hjem = "hjem"
 flake-parts = "flake-parts"
 
-# no useless inputs
-ndg = ""
-nix-darwin = ""
-flake-compat = ""
-
 # [inputs.<name>] fields
 #   url             required, shorturl ok; ?rev=<sha> pins an exact commit
 #   flake           default true; false exposes the source path
@@ -60,8 +55,8 @@ url = "cb:BANanaD3V/niri-nix"
 
 # Tanled, git hosting
 [inputs.tangled]
-url = "td:tangled.org/core"
-follows = { gomod2nix = "", indigo = "", htmx-src = "", htmx-ws-src = "", lucide-src = "", inter-fonts-src = "", actor-typeahead-src = "", ibm-plex-mono-src = "", mermaid-src = "", fenix = "" }
+# url = "td:tangled.org/core"
+url = "git+https://knot1.tangled.sh/did:plc:j5hmlfdrwkvtxm7cjmu7j2is/"
 
 # Boilerplate
 [inputs.systems]
