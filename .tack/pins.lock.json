@@ -145,9 +145,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "72c6bd2741d7cdf81324db8e6bd510ffc0fa69c4",
-    "narHash": "sha256-cvMd5xSHrK7gqYK5I8pCmjfQZmImHu7e6v0embPY1J4=",
-    "lastModified": 1781070239
+    "rev": "9eaa1d8a8994dca317df417c6660a797f5fd81af",
+    "narHash": "sha256-+6ZZKVXBP4I57Sb4oR1JnVHGZjS5CWeZJ/l+poMML6Y=",
+    "lastModified": 1781076408
   },
   "tangled": {
     "type": "git",
