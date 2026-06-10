@@ -1,12 +1,4 @@
 {
-  "": {
-    "type": "github",
-    "owner": "feel-co",
-    "repo": "ndg",
-    "rev": "86f6644411a64d5413711895b7cf6e0e1be465b6",
-    "narHash": "sha256-YIKEyzh0NFQlD0O92LQQNMoVCDwV8yw1Xz0Iu+4ZC5U=",
-    "lastModified": 1779233504
-  },
   "adifox": {
     "type": "github",
     "owner": "NotAShelf",
