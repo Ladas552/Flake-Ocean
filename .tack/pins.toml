@@ -16,6 +16,11 @@ nixpkgs = ["nixpkgs", "nixpkgs-lib"]
 systems = "systems"
 hjem = "hjem"
 flake-parts = "flake-parts"
+home-manager = "home-manager"
+
+flake-compat = "flake-compat"
+flake-utils  = "flake-utils"
+nix-darwin   = "nix-darwin"
 
 # [inputs.<name>] fields
 #   url             required, shorturl ok; ?rev=<sha> pins an exact commit
@@ -95,7 +100,7 @@ url = "gh:9001/copyparty"
 # idk how to run it as flakes
 [inputs.adifox]
 url = "gh:NotAShelf/adifox"
-flake = false
+type = "fetch"
 [inputs.adios]
 url = "gh:adisbladis/adios"
-flake = false
+type = "fetch"
