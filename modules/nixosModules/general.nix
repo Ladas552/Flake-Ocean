@@ -45,7 +45,7 @@
       # Some programs ignore SIGTERM (notably "winedevice.exe") causing
       # a timeout until SIGKILL. This shortens this window.
       # thanks @saygo-png
-      systemd.user.extraConfig = "DefaultTimeoutStopSec=10s";
+      systemd.user.settings.Manager.DefaultTimeoutStopSec = "10s";
 
       # Set your time zone.
       time.timeZone = "Asia/Almaty";

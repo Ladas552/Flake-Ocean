@@ -17,9 +17,10 @@ in
       ## Games
       games
       # emulators
-      # steam
+      steam
       bluetooth
       cache
+      keyd-canary
       cat-mocha
       printer
       firewall

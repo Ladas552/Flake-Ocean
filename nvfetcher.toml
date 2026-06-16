@@ -29,3 +29,9 @@ fetch.github = "Zeioth/heirline-components.nvim"
 [cyrillic]
 src.git = "https://github.com/nativerv/cyrillic.nvim"
 fetch.github = "nativerv/cyrillic.nvim"
+
+# canary keyboard layout
+[canary]
+src.git = "https://github.com/Apsu/Canary"
+fetch.github = "Apsu/Canary"
+

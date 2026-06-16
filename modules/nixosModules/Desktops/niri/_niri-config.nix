@@ -47,7 +47,7 @@
   input = {
     workspace-auto-back-and-forth = true;
     keyboard = {
-      xkb.layout = "us(colemak_dh),kz";
+      xkb.layout = "canary,kz";
       xkb.options = "grp:caps_toggle";
     };
     mouse.accel-profile = "flat";
@@ -199,37 +199,37 @@
   input.mod-key = "Super";
   binds = {
     # Apps
-    "Super+T".spawn = "kitty";
+    "Super+K".spawn = "kitty";
     # "Super+E" .spawn ="emacs";
-    "Super+N".spawn = [
+    "Super+M".spawn = [
       "neovide"
     ];
-    "Super+J".spawn = [
+    "Super+N".spawn = [
       "kitty"
       "-e"
       "nvim"
       "-c"
       "Neorg journal today"
     ];
-    "Super+M".spawn = [
+    "Super+H".spawn = [
       "kitty"
       "-e"
       "rmpc"
     ];
-    "Super+H".spawn = [
+    "Super+F".spawn = [
       "kitty"
       "-e"
       "btop"
     ];
-    "Super+G".spawn = [
+    "Super+B".spawn = [
       "kitty"
       "-e"
       "qalc"
     ];
     # GUI apps
-    "Super+F".spawn = "thunar";
-    "Super+W".spawn = "firefox";
-    "Shift+Super+W".spawn-sh = "helium &";
+    "Super+T".spawn = "thunar";
+    "Super+L".spawn = "firefox";
+    "Shift+Super+L".spawn-sh = "helium &";
     # MPD
     "Shift+Alt+P" = {
       spawn = [
@@ -272,10 +272,10 @@
     #   "mpc"
     #   "clear"
     # ];
-    "Shift+Alt+C".spawn = [ "musnow.sh" ];
+    "Shift+Alt+D".spawn = [ "musnow.sh" ];
 
     # Scripts
-    "Super+C".spawn = [ "word-lookup.sh" ];
+    "Super+D".spawn = [ "word-lookup.sh" ];
     #Example volume keys mappings for PipeWire & WirePlumber.
     #The allow-when-locked=true property makes them work even when the session is locked.
     "XF86AudioRaiseVolume" = {
@@ -342,7 +342,7 @@
     };
 
     # shows a list of important hotkeys.
-    "Super+Shift+T".show-hotkey-overlay = [ ];
+    "Super+Shift+K".show-hotkey-overlay = [ ];
     # Screenshots
     # was testing if it got better quility
     # "Print" .spawn =[
@@ -359,25 +359,25 @@
     "Shift+Print".screenshot-screen = [ ];
     "Alt+Print".screenshot-window = [ ];
     # Window Management
-    "Super+Q".close-window = [ ];
+    "Super+W".close-window = [ ];
     # Floating Windows
-    "Ctrl+Alt+S".toggle-window-floating = [ ];
+    "Ctrl+Alt+R".toggle-window-floating = [ ];
     "Super+Tab".switch-focus-between-floating-and-tiling = [ ];
     # Tabbed layout
-    "Ctrl+Alt+A".toggle-column-tabbed-display = [ ];
+    "Ctrl+Alt+C".toggle-column-tabbed-display = [ ];
 
     "Super+Left".focus-column-left-or-last = [ ];
     "Super+Down".focus-window-down-or-top = [ ];
     "Super+Up".focus-window-up-or-bottom = [ ];
     "Super+Right".focus-column-right-or-first = [ ];
-    "Super+A".focus-column-left-or-last = [ ];
+    "Super+C".focus-column-left-or-last = [ ];
     "Super+R".focus-column-right-or-first = [ ];
 
     "Super+Shift+Left".move-column-left = [ ];
     "Super+Shift+Down".move-window-down = [ ];
     "Super+Shift+Up".move-window-up = [ ];
     "Super+Shift+Right".move-column-right = [ ];
-    "Super+Shift+A".move-column-left = [ ];
+    "Super+Shift+C".move-column-left = [ ];
     "Super+Shift+R".move-column-right = [ ];
 
     "Super+Ctrl+Right".focus-monitor-right = [ ];
@@ -389,10 +389,10 @@
     "Super+Shift+Ctrl+Down".move-column-to-monitor-down = [ ];
     "Super+Shift+Ctrl+Up".move-column-to-monitor-up = [ ];
     "Super+Shift+Ctrl+Right".move-column-to-monitor-right = [ ];
-    "Super+Shift+H".move-column-to-monitor-left = [ ];
-    "Super+Shift+J".move-column-to-monitor-down = [ ];
-    "Super+Shift+K".move-column-to-monitor-up = [ ];
-    "Super+Shift+L".move-column-to-monitor-right = [ ];
+    "Super+Shift+F".move-column-to-monitor-left = [ ];
+    "Super+Shift+N".move-column-to-monitor-down = [ ];
+    "Super+Shift+E".move-column-to-monitor-up = [ ];
+    "Super+Shift+I".move-column-to-monitor-right = [ ];
 
     "Super+Page_Up".focus-workspace-up = [ ];
     "Super+Page_Down".focus-workspace-down = [ ];
@@ -450,8 +450,8 @@
 
     # "Super+Tab" .focus-workspace-previous=[];
 
-    "Super+Comma".consume-window-into-column = [ ];
-    "Super+Period".expel-window-from-column = [ ];
+    "Super+Period".consume-window-into-column = [ ];
+    "Super+Comma".expel-window-from-column = [ ];
     # There are also commands that consume or expel a single window to the side.
     "Super+BracketLeft".consume-or-expel-window-left = [ ];
     "Super+BracketRight".consume-or-expel-window-right = [ ];
@@ -459,10 +459,10 @@
 
     "Super+P".switch-preset-column-width = [ ];
     "Super+Shift+P".maximize-window-to-edges = [ ];
-    "Super+Ctrl+F".maximize-column = [ ];
-    "Super+Ctrl+C".center-column = [ ];
-    "Super+Shift+F".fullscreen-window = [ ];
-    "Super+Ctrl+Shift+F".toggle-windowed-fullscreen = [ ];
+    "Super+Ctrl+T".maximize-column = [ ];
+    "Super+Ctrl+D".center-column = [ ];
+    "Super+Shift+T".fullscreen-window = [ ];
+    "Super+Ctrl+Shift+T".toggle-windowed-fullscreen = [ ];
 
     "Alt+Ctrl+Left".set-column-width = "-10%";
     "Alt+Ctrl+Right".set-column-width = "+10%";
@@ -470,16 +470,15 @@
     "Alt+Ctrl+Up".set-window-height = "-10%";
     "Alt+Ctrl+Down".set-window-height = "+10%";
 
-    "Super+Ctrl+Shift+Q".quit = [ ];
+    "Super+Ctrl+Shift+W".quit = [ ];
 
-    "Super+Shift+Y".power-off-monitors = [ ];
+    "Super+Shift+U".power-off-monitors = [ ];
     # Knob binds
 
     ## Brightness with a knob
     "Super+XF86AudioRaiseVolume" = {
       _props.allow-when-locked = true;
       spawn = [
-
         "brightnessctl"
         "set"
         "2%+"

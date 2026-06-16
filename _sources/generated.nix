@@ -6,47 +6,17 @@
   dockerTools,
 }:
 {
-  adifox = {
-    pname = "adifox";
-    version = "c063db1fe2c6b85365abc81d0367c14b63767a0c";
-    src = fetchgit {
-      url = "https://github.com/NotAShelf/adifox";
-      rev = "c063db1fe2c6b85365abc81d0367c14b63767a0c";
+  canary = {
+    pname = "canary";
+    version = "74b0430d31606ba82ea18faa35fd0fcd400e46bd";
+    src = fetchFromGitHub {
+      owner = "Apsu";
+      repo = "Canary";
+      rev = "74b0430d31606ba82ea18faa35fd0fcd400e46bd";
       fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-1YPdderju+1fFf5P3CnD/SSP6P8kSLE0yykEPUJMQvQ=";
+      sha256 = "sha256-DsNKYwRKT09rHiSDN2lTXAw7hTs5zYfblvOH/xPJEmQ=";
     };
-    date = "2026-02-07";
-  };
-  adios = {
-    pname = "adios";
-    version = "6a54071689ec9ec784a16e4eec8ddb864eca2982";
-    src = fetchgit {
-      url = "https://github.com/adisbladis/adios";
-      rev = "6a54071689ec9ec784a16e4eec8ddb864eca2982";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-NshyMZYZwjKMLKEX0eDf9Fcekq8MFNFk02wW5knzlZU=";
-    };
-    date = "2026-02-27";
-  };
-  copyparty = {
-    pname = "copyparty";
-    version = "6e75faa62349a59f4df328a4939ba8626d89ee1a";
-    src = fetchgit {
-      url = "https://github.com/9001/copyparty";
-      rev = "6e75faa62349a59f4df328a4939ba8626d89ee1a";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-r6e4eHEyQJEDhT6gkW3B9+OgB0pZebw2+du4bvN3vww=";
-    };
-    date = "2026-05-26";
+    date = "2025-02-16";
   };
   cyrillic = {
     pname = "cyrillic";
@@ -74,25 +44,11 @@
   };
   helium = {
     pname = "helium";
-    version = "0.12.5.1";
+    version = "0.13.2.1";
     src = fetchurl {
-      url = "https://github.com/imputnet/helium-linux/releases/download/0.12.5.1/helium-0.12.5.1-x86_64_linux.tar.xz";
-      sha256 = "sha256-tfiy1MkxXq9vOjp57R3ykHjleG0Viz/C2ttwXbHnPwA=";
+      url = "https://github.com/imputnet/helium-linux/releases/download/0.13.2.1/helium-0.13.2.1-x86_64_linux.tar.xz";
+      sha256 = "sha256-OyHIbdEYBByFaENa0WD7WoUzgLryEaT47u8FkT7OY+c=";
     };
-  };
-  impermanence = {
-    pname = "impermanence";
-    version = "7b1d382faf603b6d264f58627330f9faa5cba149";
-    src = fetchgit {
-      url = "https://github.com/nix-community/impermanence";
-      rev = "7b1d382faf603b6d264f58627330f9faa5cba149";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-03+JxvzmfwRu+5JafM0DLbxgHttOQZkUtDWBmeUkN8Y=";
-    };
-    date = "2026-01-27";
   };
   neorg = {
     pname = "neorg";
@@ -141,89 +97,5 @@
       sha256 = "sha256-5qmbZbM0A5mZ5OxxeruNuS9o8FfJymIEHPnHwwxQ5FQ=";
     };
     date = "2026-03-23";
-  };
-  nix-minecraft = {
-    pname = "nix-minecraft";
-    version = "d9bd57f218cda7d6aac4b52546240da0df76a1f9";
-    src = fetchgit {
-      url = "https://github.com/Infinidoge/nix-minecraft";
-      rev = "d9bd57f218cda7d6aac4b52546240da0df76a1f9";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-AMOOt682Odr4GZwCwZ08/Q/21/Sh3DxfmOAoiQbTKhk=";
-    };
-    date = "2026-05-30";
-  };
-  nixos-hardware = {
-    pname = "nixos-hardware";
-    version = "b76b5639c0593e0aeb0b5879ad62d4b30596c144";
-    src = fetchgit {
-      url = "https://github.com/nixos/nixos-hardware";
-      rev = "b76b5639c0593e0aeb0b5879ad62d4b30596c144";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-SCSLUKBmwlSLGQ8Xbr8PjRFtiHNk0l9ktqkcmqdBkfE=";
-    };
-    date = "2026-05-29";
-  };
-  nixos-wsl = {
-    pname = "nixos-wsl";
-    version = "998b2821c30b2938637230916904ceb8757c79e8";
-    src = fetchgit {
-      url = "https://github.com/nix-community/NixOS-WSL";
-      rev = "998b2821c30b2938637230916904ceb8757c79e8";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-3HBYDfBgZ+ph52HS6Ks/bMMwuh2uONIT72sZ1CtLE/s=";
-    };
-    date = "2026-05-30";
-  };
-  noctalia-dev = {
-    pname = "noctalia-dev";
-    version = "b16dc50250af05d5048ac454dbf4e898d1adcac0";
-    src = fetchgit {
-      url = "https://github.com/noctalia-dev/noctalia-shell";
-      rev = "b16dc50250af05d5048ac454dbf4e898d1adcac0";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-zeluNQgRgTglqKnv5EaM7DzSaqmrCdqTocmaWC7dxy0=";
-    };
-    date = "2026-05-31";
-  };
-  noctalia-qs = {
-    pname = "noctalia-qs";
-    version = "07398e12b54f194e3a2d47c87e3fd10b8eeaa27d";
-    src = fetchgit {
-      url = "https://github.com/noctalia-dev/noctalia-qs";
-      rev = "07398e12b54f194e3a2d47c87e3fd10b8eeaa27d";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-M+YtjKCTkHrkplNaKVyaxfa8hAWjRF6wFOUBAZvxQ4U=";
-    };
-    date = "2026-05-31";
-  };
-  sops-nix = {
-    pname = "sops-nix";
-    version = "c591bf665727040c6cc5cb409079acb22dcce33c";
-    src = fetchgit {
-      url = "https://github.com/Mic92/sops-nix";
-      rev = "c591bf665727040c6cc5cb409079acb22dcce33c";
-      fetchSubmodules = false;
-      deepClone = false;
-      leaveDotGit = false;
-      sparseCheckout = [ ];
-      sha256 = "sha256-VfGRo1qTBKOe3s2gOv8LSoA6Fk19PvBlwQ1ECN0Evn8=";
-    };
-    date = "2026-05-05";
   };
 }

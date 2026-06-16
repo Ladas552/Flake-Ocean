@@ -18,7 +18,7 @@ order = [ "Main" ]
     position = "left"
     radius = 0
     shadow = false
-    start = [ "control-center", "launcher", "session", "media" ]
+    start = [ "control-center", "session", "launcher", "recorder", "media" ]
     thickness = 42
     widget_spacing = 12
 
@@ -38,10 +38,10 @@ type = "caffeine"
 type = "power_profile"
 
 [[control_center.shortcuts]]
-type = "screen_recorder"
+type = "mic_mute"
 
 [[control_center.shortcuts]]
-type = "mic_mute"
+type = "screen_time"
 
 [desktop_widgets]
 enabled = false
@@ -154,7 +154,7 @@ widget_order = [
 [notification]
 allowed_urgencies = [ "normal", "critical" ]
 background_opacity = 0.69999998435378075
-layer = "overlay"
+layer = "top"
 
 [osd]
 background_opacity = 0.74999998323619366
@@ -166,6 +166,27 @@ position = "top_right"
     keyboard_layout = false
     lock_keys = false
     volume_input = false
+
+[plugin_settings."noctalia/screen_recorder"]
+copy_to_clipboard = true
+frame_rate = 30
+quality = "medium"
+resolution = "1280x720"
+
+[plugins]
+enabled = [ "noctalia/screen_recorder" ]
+
+    [[plugins.source]]
+    auto_update = true
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    auto_update = true
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
 
 [shell]
 clipboard_enabled = false
@@ -186,6 +207,7 @@ telemetry_enabled = true
     borders = false
     open_near_click_control_center = true
     open_near_click_wallpaper = true
+    session_placement = "centered"
     shadow = false
 
     [shell.screenshot]
@@ -244,13 +266,13 @@ transition = [ "disc", "fade", "honeycomb", "stripes", "wipe", "zoom" ]
     enabled = true
 
     [wallpaper.default]
-    path = "/home/ladas552/Pictures/backgrounds/2girls nichesnake night polychromatic scenic silhouette stars tsurumaki_maki vocaloid voiceroid yuzuki_yukari.jpg"
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-m9y289.png"
 
     [wallpaper.last]
-    path = "/home/ladas552/Pictures/backgrounds/2girls nichesnake night polychromatic scenic silhouette stars tsurumaki_maki vocaloid voiceroid yuzuki_yukari.jpg"
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-m9y289.png"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/ladas552/Pictures/backgrounds/2girls nichesnake night polychromatic scenic silhouette stars tsurumaki_maki vocaloid voiceroid yuzuki_yukari.jpg"
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-m9y289.png"
 
 [widget.audio_visualizer]
 bands = 79
@@ -262,7 +284,7 @@ hide_when_plugged = true
 
 [widget.clock]
 color = "primary"
-format = "{:%H ---:%M}"
+format = "{:%H:%M --- :%d :%b}"
 
 [widget.control-center]
 color = "primary"
@@ -272,7 +294,8 @@ scale = 1.2
 show_icon = false
 
     [widget.keyboard_layout.custom_labels]
-    "English (Colemak-DH)" = "COL"
+    Canary = "CNR"
+    "English (Canary)" = "CNR"
     Kazakh = "KZ"
 
 [widget.launcher]
@@ -284,6 +307,10 @@ scale = 1.25
 art_size = 96.0
 hide_when_no_media = true
 scale = 1.2
+
+[widget.recorder]
+scale = 1.2
+type = "noctalia/screen_recorder:recorder"
 
 [widget.session]
 color = "error"

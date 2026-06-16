@@ -110,10 +110,10 @@
                 journals =
                   lib.generators.mkLuaInline # lua
                     ''
-                      {colemak = {
+                      {canary = {
                          start_date = os.time({ year = 2026, month = 04, day = 6 }), -- a Monday
                          period = { day = 1 },
-                         path_format_strategy = "%Y/%m/%d-colemak.norg",
+                         path_format_strategy = "%Y/%m/%d-canary.norg",
                          parse_journal_path = nil,
                        }}
                     '';

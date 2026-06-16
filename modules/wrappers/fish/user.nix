@@ -48,7 +48,7 @@
             # Nix mantainense
             clean = "nh clean all";
             yy = "nh os switch ${config.custom.meta.self}";
-            yyy = "nh os switch -u ${config.custom.meta.self}";
+            yyy = "nh os boot ${config.custom.meta.self}";
             en = "cd ${config.custom.meta.self} && nvim ./";
             enn = "cd ${config.custom.meta.self} && nvim ./modules/hosts/${config.custom.meta.hostname}/imports.nix";
             eh = "cd ${config.custom.meta.self} && nvim ./";
@@ -118,7 +118,7 @@
             # Nix mantainense
             clean = "nh clean all";
             yy = "nh os switch ${config.custom.meta.self}";
-            yyy = "nh os switch -u ${config.custom.meta.self}";
+            yyy = "nh os boot ${config.custom.meta.self}";
             en = "cd ${config.custom.meta.self} && nvim ./";
             enn = "cd ${config.custom.meta.self} && nvim ./modules/hosts/${config.custom.meta.hostname}/imports.nix";
             eh = "cd ${config.custom.meta.self} && nvim ./";
