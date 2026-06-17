@@ -199,7 +199,7 @@
   input.mod-key = "Super";
   binds = {
     # Apps
-    "Super+K".spawn = "kitty";
+    "Super+T".spawn = "kitty";
     # "Super+E" .spawn ="emacs";
     "Super+M".spawn = [
       "neovide"
@@ -227,7 +227,7 @@
       "qalc"
     ];
     # GUI apps
-    "Super+T".spawn = "thunar";
+    "Super+K".spawn = "thunar";
     "Super+L".spawn = "firefox";
     "Shift+Super+L".spawn-sh = "helium &";
     # MPD

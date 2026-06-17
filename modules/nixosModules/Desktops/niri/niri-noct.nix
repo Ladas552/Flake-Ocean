@@ -34,7 +34,7 @@
             "panel-toggle"
             "launcher"
           ];
-          "Super+X".spawn = [
+          "Super+V".spawn = [
             "noctalia"
             "msg"
             "panel-toggle"

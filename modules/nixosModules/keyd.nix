@@ -23,36 +23,38 @@
             # Nuphy AirV3
             "19f5:1028:e1045ff3"
             "19f5:1028:bb509bf1"
+            # Laptop keyboard
+            "0001:0001:093d12dc"
           ];
           settings = {
             control = {
               # change https://github.com/Apsu/Canary keys when holding Ctrl
-              j = "C-z";
-              v = "C-x";
-              d = "C-c";
-              g = "C-v";
+              ";" = "C-p";
+              a = "C-l";
+              b = "C-g";
               c = "C-a";
+              d = "C-c";
+              e = "C-k";
+              f = "C-h";
+              g = "C-v";
+              h = "C-m";
+              j = "C-z";
+              k = "C-t";
+              l = "C-w";
+              m = "C-n";
+              n = "C-j";
+              o = "C-i";
+              p = "C-r";
+              q = "C-b";
               r = "C-s";
               s = "C-d";
-              w = "C-q";
-              l = "C-w";
-              y = "C-e";
-              p = "C-r";
               t = "C-f";
-              k = "C-t";
-              b = "C-g";
-              q = "C-b";
-              z = "C-y";
-              f = "C-h";
-              m = "C-n";
-              x = "C-u";
-              n = "C-j";
-              h = "C-m";
-              o = "C-i";
-              e = "C-k";
               u = "C-o";
-              a = "C-l";
-              ";" = "C-p";
+              v = "C-x";
+              w = "C-q";
+              x = "C-u";
+              y = "C-e";
+              z = "C-y";
             };
           };
         };
