@@ -19,9 +19,9 @@
     "type": "github",
     "owner": "9001",
     "repo": "copyparty",
-    "rev": "efa43f891b18f9e0b354ce676d3050b7690f985e",
-    "narHash": "sha256-dn8GKHXb0MQWNaqBXIZIyryA6YgNZsHULHTevRfwvd4=",
-    "lastModified": 1781385969
+    "rev": "d33d11321f823f58a9109298ef886044f63b02ce",
+    "narHash": "sha256-i9ggnF31Uq3tpdp6ZMe7YAOxjTfkB7S4WjSBfXV0uMk=",
+    "lastModified": 1781648708
   },
   "flake-compat": {
     "type": "git",
@@ -68,9 +68,9 @@
     "type": "github",
     "owner": "nix-community",
     "repo": "home-manager",
-    "rev": "c03e4752899e55705dfa63979abd885c582a5c48",
-    "narHash": "sha256-QOIRYSUFSq7L5mY3dZymaVhcnne3tPgoR9riB0WocjA=",
-    "lastModified": 1781557312
+    "rev": "7664e05e2413d5e2b8c54a884eb8ea0f8a504fc2",
+    "narHash": "sha256-OxrwHpsWf+QGbos1LMDGAcv7sjBGshcw/43th6waeYI=",
+    "lastModified": 1781667738
   },
   "impermanence": {
     "type": "github",
@@ -116,9 +116,9 @@
     "type": "github",
     "owner": "nixos",
     "repo": "nixos-hardware",
-    "rev": "6358ff76821101c178e3ab4919a62799bfe3652e",
-    "narHash": "sha256-LOnLQ2tpYF9gqIDDr3+j3DbpJJr/QCH6zPRT2GzEUOE=",
-    "lastModified": 1781168557
+    "rev": "08018c72174a4df5657f8d94178ac69fb9c243e5",
+    "narHash": "sha256-JrPh4M6S7aPsEE9tOENuZrxC6o2szSLlK+t4+nLke9s=",
+    "lastModified": 1781622756
   },
   "nixos-wsl": {
     "type": "github",
@@ -130,17 +130,17 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1014179.9ae611a455b9/nixexprs.tar.xz",
-    "narHash": "sha256-d34lhgOet4IqYMnCxbIvwFBMOyTV6PT4TyNEOP0/ZhU=",
-    "lastModified": 1781223995
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1017464.567a49d1913c/nixexprs.tar.xz",
+    "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
+    "narHash": "sha256-rcUHdUtJEvMdNEl2Wq+YpHraHKfcer3KsBscpZEF2Yg="
   },
   "noctalia": {
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia",
-    "rev": "de82488dc60db736acd5bf95fb448405ea99f404",
-    "narHash": "sha256-GXzO08gNKZsEuVgMhIfuUvc5G4Xh1rNot8KWjZsKNos=",
-    "lastModified": 1781581126
+    "rev": "6b0e16179645e15693efd94f51109d22b199418c",
+    "narHash": "sha256-9mstXbgi7/FepdoaTB8QqbaME7sdELMdGLGOQHCrVlA=",
+    "lastModified": 1781666546
   },
   "nvf": {
     "type": "github",
@@ -178,8 +178,8 @@
     "type": "git",
     "url": "https://knot1.tangled.sh/did:plc:j5hmlfdrwkvtxm7cjmu7j2is/",
     "ref": "HEAD",
-    "rev": "5c97f1cc886344bb8a9eba315a39c0fc14cee51f",
-    "narHash": "sha256-WzSn3XQ2CHVv4EdQOcdNm6WRcLdewCM03LKfw4XA5oU=",
-    "lastModified": 1781533690
+    "rev": "86d1e3d3cc9482002007603216c8511b0751a236",
+    "narHash": "sha256-iWftrWsfOO+DCL9yCizXl/MogLWoCxqVMDRQeyMwhWQ=",
+    "lastModified": 1781685517
   }
 }
