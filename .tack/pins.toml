@@ -60,8 +60,7 @@ url = "cb:BANanaD3V/niri-nix"
 
 # Tanled, git hosting
 [inputs.tangled]
-# url = "td:tangled.org/core"
-url = "git+https://knot1.tangled.sh/did:plc:j5hmlfdrwkvtxm7cjmu7j2is/"
+url = "td:tangled.org/core"
 
 # Boilerplate
 [inputs.systems]
@@ -73,7 +72,7 @@ url = "gh:manic-systems/nixos-core"
 
 # Alternative pinning
 [inputs.tack]
-url = "gh:manic-systems/tack/next"
+url = "gh:manic-systems/tack"
 
 # Other NixOS modules
 [inputs.impermanence]
