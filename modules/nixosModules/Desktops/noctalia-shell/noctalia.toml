@@ -77,14 +77,19 @@ pre_action_fade_seconds = 4
 [location]
 auto_locate = true
 
+[lockscreen]
+fingerprint = false
+
 [lockscreen_widgets]
+enabled = true
 schema_version = 2
 widget_order = [
     "lockscreen-login-box@eDP-1",
     "lockscreen-widget-0000000000000001",
     "lockscreen-widget-0000000000000002",
     "lockscreen-widget-0000000000000003",
-    "lockscreen-widget-0000000000000004"
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-widget-0000000000000005"
 ]
 
     [lockscreen_widgets.grid]
@@ -93,13 +98,16 @@ widget_order = [
     visible = true
 
     [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
-    box_height = 0.0
-    box_width = 0.0
+    box_height = 70.0
+    box_width = 400.0
     cx = 960.0
-    cy = 1077.0
+    cy = 747.0
     output = "eDP-1"
     rotation = 0.0
     type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        show_login_button = true
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
     box_height = 160.0
@@ -127,29 +135,49 @@ widget_order = [
         layout = "horizontal"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
-    box_height = 416.0
-    box_width = 688.0
+    box_height = 160.0
+    box_width = 704.0
     cx = 944.0
-    cy = 456.0
+    cy = 328.0
     output = "eDP-1"
     rotation = 0.0
     type = "clock"
 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
         clock_style = "digital"
+        color = "on_surface_variant"
         format = "{:%H:%M}"
 
     [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
-    box_height = 160.0
-    box_width = 448.0
-    cx = 1484.0
-    cy = 905.0
+    box_height = 0.0
+    box_width = 0.0
+    cx = 960.0
+    cy = 661.0
     output = "eDP-1"
     rotation = 0.0
-    type = "sysmon"
+    type = "button"
 
         [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = true
+        command = "systemctl poweroff"
+        glyph = "power"
+        label = "Power Off"
         stat2 = "cpu_temp"
+        variant = "default"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    box_height = 160.0
+    box_width = 704.0
+    cx = 944.0
+    cy = 520.0
+    output = "eDP-1"
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        clock_style = "digital"
+        color = "error"
+        format = "{:%D}"
 
 [notification]
 allowed_urgencies = [ "normal", "critical" ]
@@ -207,7 +235,8 @@ telemetry_enabled = true
     borders = false
     open_near_click_control_center = true
     open_near_click_wallpaper = true
-    session_placement = "centered"
+    session_placement = "floating"
+    session_position = "center"
     shadow = false
 
     [shell.screenshot]
@@ -266,13 +295,16 @@ transition = [ "disc", "fade", "honeycomb", "stripes", "wipe", "zoom" ]
     enabled = true
 
     [wallpaper.default]
-    path = "/home/ladas552/Pictures/backgrounds/wallhaven-m9y289.png"
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-0w5d57.jpg"
 
     [wallpaper.last]
-    path = "/home/ladas552/Pictures/backgrounds/wallhaven-m9y289.png"
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-0w5d57.jpg"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/home/ladas552/Pictures/backgrounds/Sacrifice.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/ladas552/Pictures/backgrounds/wallhaven-m9y289.png"
+    path = "/home/ladas552/Pictures/backgrounds/wallhaven-0w5d57.jpg"
 
 [widget.audio_visualizer]
 bands = 79
@@ -327,6 +359,10 @@ show_active_indicator = false
 [widget.tray]
 drawer = true
 
+[widget.volume]
+show_label = false
+
 [widget.workspaces]
 capsule_radius = 0
 hide_when_empty = true
+

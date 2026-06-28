@@ -12,6 +12,7 @@
       sudo.enable = false;
       polkit = {
         enable = true;
+        settings.Polkitd.ExpirationSeconds = 60;
         extraConfig = ''
           polkit.addRule(function(action, subject) {
             if (action.id == "org.freedesktop.policykit.exec"
@@ -22,9 +23,5 @@
         '';
       };
     };
-    environment.etc."polkit-1/polkitd.conf".text = ''
-      [Polkitd]
-      ExpirationSeconds=60
-    '';
   };
 }

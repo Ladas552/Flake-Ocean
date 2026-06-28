@@ -71,11 +71,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-rt//wcAnH7n1ol/PfP37axHpIUKrWXSQN6SisGtE7hw=",
+            "sha256": "sha256-0Gbf4dKk89sKKqcaMV/EoHKDKGj2VoauBmLUoK2HaeY=",
             "type": "url",
-            "url": "https://github.com/imputnet/helium-linux/releases/download/0.13.4.1/helium-0.13.4.1-x86_64_linux.tar.xz"
+            "url": "https://github.com/imputnet/helium-linux/releases/download/0.13.6.1/helium-0.13.6.1-x86_64_linux.tar.xz"
         },
-        "version": "0.13.4.1"
+        "version": "0.13.6.1"
     },
     "neorg": {
         "cargoLock": null,
