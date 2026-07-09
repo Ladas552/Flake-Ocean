@@ -25,7 +25,6 @@ in
       tailscale
       zfs
       nixos-core-testing
-      network-manager
       fish
       bluesky-pds
       tangled
@@ -52,10 +51,8 @@ in
       {
         hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
           { inherit custom; }
-          direnv
           git
           fastfetch
-          nvf
         ];
       }
     ];

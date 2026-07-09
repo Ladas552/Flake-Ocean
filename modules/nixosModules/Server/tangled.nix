@@ -12,7 +12,7 @@
         # UI
         # inputs.tangled.nixosModules.appview
         # CI
-        # inputs.tangled.nixosModules.spindle
+        inputs.tangled.nixosModules.spindle
       ];
 
       # module
@@ -30,15 +30,19 @@
             };
           };
           # My VPS is too weak for docker containers
-          # spindle = {
-          #   enable = true;
-          #   server = {
-          #     listenAddr = "0.0.0.0:6555";
-          #     hostname = "spindle.ladas552.me";
-          #     owner = "did:plc:6ikdlkw64mrjygj6cea62kn4";
-          #   };
-          #   pipelines.workflowTimeout = "10m";
-          # };
+          spindle = {
+            enable = true;
+            server = {
+              listenAddr = "0.0.0.0:6555";
+              hostname = "spindle.ladas552.me";
+              owner = "did:plc:6ikdlkw64mrjygj6cea62kn4";
+              maxJobCount = 1;
+            };
+            pipelines = {
+              workflowTimeout = "10m";
+              microvm.defaultImage = "nixos-aarch64";
+            };
+          };
         };
       };
 
@@ -49,11 +53,11 @@
             reverse_proxy http://127.0.0.1:3050
           }
         '';
-        # "spindle.ladas552.me".extraConfig = ''
-        #   handle {
-        #     reverse_proxy http://127.0.0.1:6555
-        #   }
-        # '';
+        "spindle.ladas552.me".extraConfig = ''
+          handle {
+            reverse_proxy http://127.0.0.1:6555
+          }
+        '';
       };
 
       # persist for Impermanence
@@ -63,7 +67,8 @@
         ];
         cache.directories = [
           # "/var/lib/containers"
-          # "/var/log/spindle"
+          "/var/log/spindle"
+          "/var/lib/spindle"
         ];
       };
     };

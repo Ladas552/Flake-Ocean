@@ -31,10 +31,12 @@
           ];
         };
         # Standalone Packages
-        environment.systemPackages = with pkgs; [
+        environment.systemPackages = [
           self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
-          lshw
         ];
+
+        # it's a vps, it doesn't need wifi
+        networking.networkmanager.enable = false;
 
         # Environmental Variables
         environment.variables = {
@@ -58,7 +60,7 @@
               '';
             };
             "nix.ladas552.me" = {
-              # All of this below, is because I prebiously had another site, instead of just adding these posts to my blog site. So yeah, mistakes of the past lead to ugly present.
+              # All of this below, is because I previously had another site, instead of just adding these posts to my blog site. So yeah, mistakes of the past lead to ugly present.
               extraConfig = ''
                 @posts path_regexp posts ^/posts/(.*)$
                 redir @posts https://blog.ladas552.me/nix/{re.posts.1} permanent
