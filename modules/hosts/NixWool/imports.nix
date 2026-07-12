@@ -26,7 +26,8 @@ in
       zfs
       nixos-core-testing
       fish
-      bluesky-pds
+      # bluesky-pds
+      tranquil-pds
       tangled
       run0
       minecraft-relay

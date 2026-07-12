@@ -10,7 +10,7 @@
       # Define hostname.
       networking.hostName = "${config.custom.meta.hostname}";
       # Set kernel
-      boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_xanmod_latest;
+      boot.kernelPackages = lib.mkDefault pkgs.linuxKernel.packages.linux_xanmod;
       # boot.kernelPackages = pkgs.linuxKernel.packages.linux_zen;
 
       # I am not blind yet
