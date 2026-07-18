@@ -6,5 +6,7 @@
     mpdris2-brew
     syncthing-brew
     userDirs-brew
+    vesktop-brew
+    arrpc-brew
   ];
 }
