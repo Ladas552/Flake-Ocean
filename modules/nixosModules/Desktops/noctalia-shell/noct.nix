@@ -4,11 +4,7 @@
     nixos.noct =
       { pkgs, ... }:
       let
-        noct = (
-          inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default.override {
-            cudaSupport = false;
-          }
-        );
+        noct = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
       in
       {
         environment.systemPackages = [
@@ -20,9 +16,7 @@
 
         # I don't want to build c++
         nix.settings = {
-          extra-substituters = [
-            "https://noctalia.cachix.org"
-          ];
+          extra-substituters = [ "https://noctalia.cachix.org" ];
           extra-trusted-public-keys = [
             "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4="
           ];

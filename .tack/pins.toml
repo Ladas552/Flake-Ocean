@@ -80,7 +80,7 @@ url = "gh:Mic92/sops-nix"
 url = "gh:nix-community/NixOS-WSL"
 
 [inputs.noctalia]
-url = "gh:noctalia-dev/noctalia/cachix"
+url = "gh:noctalia-dev/noctalia"
 
 [inputs.nixos-hardware]
 url = "gh:nixos/nixos-hardware"
