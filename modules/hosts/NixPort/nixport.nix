@@ -19,6 +19,7 @@
           keepassxc
           self.packages.${pkgs.stdenv.hostPlatform.system}.libqalculate
           lshw
+          zathura
           pamixer
           pwvucontrol
           qbittorrent
