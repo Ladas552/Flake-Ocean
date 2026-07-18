@@ -235,6 +235,9 @@ telemetry_enabled = true
     [shell.animation]
     speed = 1.5000000223517418
 
+    [shell.mpris]
+    blacklist = [ "Mozilla firefox" ]
+
     [shell.panel]
     borders = false
     open_near_click_control_center = true
@@ -286,6 +289,10 @@ enabled = false
 
 [theme]
 builtin = "Catppuccin"
+community_palette = "Catppuccin Lavender"
+mode = "dark"
+source = "builtin"
+wallpaper_scheme = "faithful"
 
     [theme.templates]
     enable_builtin_templates = false
@@ -299,16 +306,16 @@ transition = [ "disc", "fade", "honeycomb", "stripes", "wipe", "zoom" ]
     enabled = true
 
     [wallpaper.default]
-    path = "/home/ladas552/Pictures/backgrounds/pacman.jpg"
+    path = "/home/ladas552/Pictures/backgrounds/blackhole-dots-banana.png"
 
     [wallpaper.last]
-    path = "/home/ladas552/Pictures/backgrounds/pacman.jpg"
+    path = "/home/ladas552/Pictures/backgrounds/blackhole-dots-banana.png"
 
     [wallpaper.monitors.HDMI-A-1]
     path = "/home/ladas552/Pictures/backgrounds/Sacrifice.jpg"
 
     [wallpaper.monitors.eDP-1]
-    path = "/home/ladas552/Pictures/backgrounds/pacman.jpg"
+    path = "/home/ladas552/Pictures/backgrounds/blackhole-dots-banana.png"
 
 [widget.audio_visualizer]
 bands = 79

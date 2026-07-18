@@ -39,7 +39,8 @@ in
       systemd-boot
       tailscale
       thunar
-      tlp
+      watt
+      # tlp
       # lact
       # niri-classic
       niri-noct
