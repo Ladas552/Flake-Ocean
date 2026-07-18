@@ -5,7 +5,6 @@ This is my multi host, modular Nix config. It declares configs for different pro
 - [Noctalia shell](https://github.com/noctalia-dev/noctalia-shell) - desktop components with generous customizability
 - [Niri](https://github.com/YaLTeR/niri) - Scrollable Tilling Wayland Compositor via Community [Niri-nix](https://codeberg.org/BANanaD3V/niri-nix) module
 - Firefox and Thunderbird wrapped with [adifox](https://github.com/NotAShelf/adifox) that uses a truly lazy loaded Nix module system - [adios](https://github.com/adisbladis/adios)
-- And many more with [Home-manager](https://github.com/nix-community/home-manager), that allows to declare configuration of user programs in Nix language
 - Excellent [Hjem](https://github.com/feel-co/hjem) linker with set of modules of [Hjem-rum](https://github.com/snugnug/hjem-rum)
 
 I also declare configuration as packages/wrappers that you can try with `nix run

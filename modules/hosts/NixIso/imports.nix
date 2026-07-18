@@ -29,21 +29,6 @@ in
       root
       ladas552
     ]
-    # Specific Home-Manager modules
-    ++ [
-      {
-        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
-          { inherit custom; }
-          NixIso
-          lf
-          lf-kitty
-          vesktop
-          zathura
-          manual
-          cat-mocha
-        ];
-      }
-    ]
     ++ [
       {
         hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
@@ -51,6 +36,7 @@ in
           direnv
           git
           nvf
+          vesktop
           mpv
           kitty
           cat-mocha

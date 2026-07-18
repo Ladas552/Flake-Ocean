@@ -14,7 +14,16 @@
         };
       };
       gtk = {
-
+        cursor = {
+          name = lib.mkOption {
+            type = lib.types.str;
+            description = "Name of the cursor to use";
+          };
+          size = lib.mkOption {
+            type = lib.types.int;
+            description = "Size of the cursor";
+          };
+        };
       };
       colors = {
         # single line helix theme to use
@@ -33,7 +42,7 @@
     in
     {
       generic.options = {
-        options.custom.style = { inherit font colors; };
+        options.custom.style = { inherit font colors gtk; };
         imports = [ alias ];
       };
     };

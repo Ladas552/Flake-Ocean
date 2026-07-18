@@ -134,11 +134,11 @@
             # Neorg
             j = ''nvim -c "Neorg journal today"'';
             # directories
-            mc = "lf";
-            mcv = "lf ~/Videos";
-            mcm = "lf ~/Music";
-            mcc = "lf ~/.config/";
-            mcp = "lf ~/Pictures";
+            mc = "yazi";
+            mcv = "yazi ~/Videos";
+            mcm = "yazi ~/Music";
+            mcc = "yazi ~/.config/";
+            mcp = "yazi ~/Pictures";
           };
         };
         programs.fish = {

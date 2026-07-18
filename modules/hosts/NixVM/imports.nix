@@ -7,36 +7,24 @@ let
   };
 in
 {
-  flake.modules.nixos."hosts/NixVm".imports =
-    with config.flake.modules.nixos;
-    [
-      { inherit custom; }
-      NixVm
-      NixVm-hardware
-      # Modules
-      niri-flake
-      noct
-      openssh
-      fonts
-      sops
-      zerotier
-      systemd-boot
-      cat-mocha
-      nix
-      general
-      fish
-      # Users
-      root
-      ladas552
-    ]
-    # Specific Home-Manager modules
-    ++ [
-      {
-        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
-          { inherit custom; }
-          NixVm
-          cat-mocha
-        ];
-      }
-    ];
+  flake.modules.nixos."hosts/NixVm".imports = with config.flake.modules.nixos; [
+    { inherit custom; }
+    NixVm
+    NixVm-hardware
+    # Modules
+    niri-flake
+    noct
+    openssh
+    fonts
+    sops
+    zerotier
+    systemd-boot
+    cat-mocha
+    nix
+    general
+    fish
+    # Users
+    root
+    ladas552
+  ];
 }

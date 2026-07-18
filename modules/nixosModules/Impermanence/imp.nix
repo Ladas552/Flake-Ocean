@@ -8,7 +8,6 @@
     }:
     let
       cfg = config.custom.imp;
-      cfghm = config.home-manager.users."${config.custom.meta.user}".custom.imp;
       cfghj = config.hjem.users."${config.custom.meta.user}".custom.imp;
     in
 
@@ -64,8 +63,8 @@
             ++ cfg.root.directories
           );
           users."${config.custom.meta.user}" = {
-            files = lib.unique (cfghm.home.files ++ cfghj.home.files);
-            directories = lib.unique (cfg.home.directories ++ cfghm.home.directories ++ cfghj.home.directories);
+            files = lib.unique (cfghj.home.files);
+            directories = lib.unique (cfg.home.directories ++ cfghj.home.directories);
           };
         };
         "/cache" = {
@@ -73,10 +72,8 @@
           files = lib.unique cfg.root.cache.files;
           directories = lib.unique cfg.root.cache.directories;
           users."${config.custom.meta.user}" = {
-            files = lib.unique (cfg.home.cache.files ++ cfghm.home.cache.files ++ cfghj.home.cache.files);
-            directories = lib.unique (
-              cfg.home.cache.directories ++ cfghm.home.cache.directories ++ cfghj.home.cache.directories
-            );
+            files = lib.unique (cfg.home.cache.files ++ cfghj.home.cache.files);
+            directories = lib.unique (cfg.home.cache.directories ++ cfghj.home.cache.directories);
           };
         };
       };

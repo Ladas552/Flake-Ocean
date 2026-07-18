@@ -36,7 +36,7 @@
           source = json.generate "vesktop-settings" cfg.settings;
         };
 
-        xdg.config.files."vesktop/settings/settings.json" = mkIf (cfg.vencord.settings) {
+        xdg.config.files."vesktop/settings/settings.json" = mkIf (cfg.vencord.settings != { }) {
           source = json.generate "vencord-settings" cfg.vencord.settings;
         };
       };

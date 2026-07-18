@@ -8,5 +8,6 @@
     userDirs-brew
     vesktop-brew
     arrpc-brew
+    mpd-discord-rpc-brew
   ];
 }

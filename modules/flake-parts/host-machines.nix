@@ -19,17 +19,12 @@
               modules = [
                 module
                 config.flake.modules.nixos.hjem
-                config.flake.modules.nixos.homeManager
                 config.flake.modules.generic.options
                 {
                   hjem.extraModules = [
                     inputs.hjem-rum.hjemModules.default
                     config.flake.modules.generic.options
                     config.flake.modules.hjem.homebrewModules
-                  ];
-                  home-manager.sharedModules = [
-                    config.flake.modules.generic.options
-                    config.flake.modules.homeManager.base
                   ];
                 }
               ];

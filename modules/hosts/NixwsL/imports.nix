@@ -26,18 +26,6 @@ in
       root
       ladas552
     ]
-    # Specific Home-Manager modules
-    ++ [
-      {
-        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
-          { inherit custom; }
-          NixwsL
-          lf
-          lf-ctpv
-          manual
-        ];
-      }
-    ]
     ++ [
       {
         hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [

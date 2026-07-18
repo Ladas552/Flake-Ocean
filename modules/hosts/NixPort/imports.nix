@@ -57,22 +57,6 @@ in
       root
       ladas552
     ]
-    # Specific Home-Manager modules
-    ++ [
-      {
-        home-manager.users."${config.custom.meta.user}".imports = with config.flake.modules.homeManager; [
-          { inherit custom; }
-          NixPort
-          cat-mocha
-          lf
-          lf-kitty
-          manual
-          vesktop
-          zathura
-          # niri-classic
-        ];
-      }
-    ]
     ++ [
       {
         hjem.users."${config.custom.meta.user}".imports = with config.flake.modules.hjem; [
@@ -95,6 +79,7 @@ in
           niri-nvim-colors
           bluetooth
           mpd
+          vesktop
           syncthing
           fastfetch
         ];

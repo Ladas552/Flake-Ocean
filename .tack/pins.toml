@@ -16,7 +16,6 @@ nixpkgs = ["nixpkgs", "nixpkgs-lib"]
 systems = "systems"
 hjem = "hjem"
 flake-parts = "flake-parts"
-home-manager = "home-manager"
 
 flake-compat = "flake-compat"
 flake-utils  = "flake-utils"
@@ -34,10 +33,6 @@ nix-darwin   = "nix-darwin"
 [inputs.nixpkgs]
 url = "nixpkgs:nixos-unstable"
 # url = "gh:Nixos/nixpkgs/nixos-unstable"
-
-# Home manager
-[inputs.home-manager]
-url = "gh:nix-community/home-manager"
 
 # Hjem, another home-manager
 [inputs.hjem]
