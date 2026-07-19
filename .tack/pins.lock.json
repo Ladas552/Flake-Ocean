@@ -19,9 +19,9 @@
     "type": "github",
     "owner": "9001",
     "repo": "copyparty",
-    "rev": "4543ab31d354c739bf7a82ca30c069ed19ed1a47",
-    "narHash": "sha256-Oq0y7f+qO7y4RCd8HJukIQr76PivZJibyKXDpyFjKoM=",
-    "lastModified": 1784326856
+    "rev": "b2e4b1c46cafbfbe40bfb570ac4f938e8827d56f",
+    "narHash": "sha256-R6Omyx6lZOlzee7qFheo1fEGiy9JbjWwK8meZHJCUFg=",
+    "lastModified": 1784407001
   },
   "flake-compat": {
     "type": "git",
@@ -52,9 +52,9 @@
     "type": "github",
     "owner": "feel-co",
     "repo": "hjem",
-    "rev": "57f1dacffe7a2d7ad803ad224a0efa1817aa4d07",
-    "narHash": "sha256-EyBAHpQYuXAdQlIx/sja+Auw9IpHJGjE4PZ9g39I7sQ=",
-    "lastModified": 1784171173
+    "rev": "3289cc5d2e62a2c0ba4e3e4f5565c9752fb39fb9",
+    "narHash": "sha256-rf8FWDqTlBF2MdKlmlrfYbgNZxQs7OPWl2xI1Y3Bua0=",
+    "lastModified": 1784423689
   },
   "hjem-rum": {
     "type": "github",
@@ -76,9 +76,9 @@
     "type": "git",
     "url": "https://codeberg.org/BANanaD3V/niri-nix",
     "ref": "HEAD",
-    "rev": "e931c61ea715fec54e2343e850b4811cc6296fbb",
-    "narHash": "sha256-LEwF60zKoIAHmM12ryTQ17+/e73+fs2IHyxcj9J3gu4=",
-    "lastModified": 1784320426
+    "rev": "fedf5d937fc4a7c3008a1419d32fd0c537f829a8",
+    "narHash": "sha256-UQjrOfWx73M3xe+2xevAZz61K0llZN+qtV8wAdXmnQE=",
+    "lastModified": 1784429437
   },
   "nix-darwin": {
     "type": "github",
@@ -92,9 +92,9 @@
     "type": "github",
     "owner": "Infinidoge",
     "repo": "nix-minecraft",
-    "rev": "7297d14c52ec8ef39c6aeff2c1818541fd030473",
-    "narHash": "sha256-yAo2ZzSIdeBZg7cOKUpQxwflL+DRYN+1DMObZk2lP2Q=",
-    "lastModified": 1784344393
+    "rev": "27873ee8304091333c9efc18b2cd495e8ff41fc3",
+    "narHash": "sha256-zzjoPqwZDlW/nrNu7zwMUdWm4vdo7V1uhAiC6ucx4nY=",
+    "lastModified": 1784432001
   },
   "nixos-core": {
     "type": "github",
@@ -122,25 +122,25 @@
   },
   "nixpkgs": {
     "type": "tarball",
-    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1034379.18b9261cb329/nixexprs.tar.xz",
-    "rev": "18b9261cb3294b6d2a06d03f96872827b8fe2698",
-    "narHash": "sha256-G9I5EeMhwLckqD5QLgowA6hNBaOjG9CeYIzfSz4gZ6k="
+    "url": "https://releases.nixos.org/nixos/unstable/nixos-26.11pre1036777.61b7c44c4073/nixexprs.tar.xz",
+    "rev": "61b7c44c4073f0b827768aff0049561b5110ea5a",
+    "narHash": "sha256-zupdTm41be2fY8cexroEOGjopl3F2Gqs3gk7ieqaM3s="
   },
   "noctalia": {
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia",
-    "rev": "5a20c9cf0ecc398c9391aa52ac075a0401f720c9",
-    "narHash": "sha256-d6YSbdMQM3A3+X0BU7NFX506U/CaRgyh2Jwe9WhiBg0=",
-    "lastModified": 1784390676
+    "rev": "1b0d7ae454a6d09a5f2cc2097274173424139b41",
+    "narHash": "sha256-N7cwX7wpUA4k2rpNkkEKrhr2DUhFWvGxTgz9Q+8rOLY=",
+    "lastModified": 1784430650
   },
   "nvf": {
     "type": "github",
     "owner": "notashelf",
     "repo": "nvf",
-    "rev": "43fdcbf2e00290479d3f9b97b7f61edd08c4e584",
-    "narHash": "sha256-sPUghbl8wMmESus7KvsmHIUEyD2mi13/xu7/u2H5SZU=",
-    "lastModified": 1784320861
+    "rev": "46fb444c033b0a943ddb75f3c2e3a51ff8294d25",
+    "narHash": "sha256-ma610/SKRXe/0EwUr5WHQ2diCmGwPIYUWfTOkzKHX90=",
+    "lastModified": 1784418497
   },
   "sops-nix": {
     "type": "github",
@@ -162,9 +162,9 @@
     "type": "github",
     "owner": "manic-systems",
     "repo": "tack",
-    "rev": "1b35dea7e2f90863cce2099eafdf318d4c96f2e6",
-    "narHash": "sha256-5peItmNvgVHeLDf/T7JxA/By0r8JsQx75MuMni1Q9ns=",
-    "lastModified": 1783834540
+    "rev": "e177aaa81375394be33ebc383c15773c47941980",
+    "narHash": "sha256-eUzdato8njCzt5TqvFaUePkUOtOkM1Lu5JfbzoT0NiU=",
+    "lastModified": 1784415866
   },
   "tangled": {
     "type": "git",
