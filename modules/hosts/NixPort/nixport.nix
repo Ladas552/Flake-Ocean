@@ -32,7 +32,7 @@
       ];
 
       environment.shellAliases = {
-        ssh = "kitten ssh"; # for kitty terminal
+        kssh = "kitten ssh"; # for kitty terminal
         scan = "scanimage -d pixma:04A92759_0149U0000342 --resolution 600 --format=pdf -o";
       };
 

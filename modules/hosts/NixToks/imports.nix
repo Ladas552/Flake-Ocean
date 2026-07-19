@@ -48,7 +48,8 @@ in
       # plymouth
       # matrix-conduit
       # qemu
-      tlp
+      # tlp
+      watt
       xkb
       fish
       yt-dlp-NixToks

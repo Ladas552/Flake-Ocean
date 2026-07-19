@@ -130,17 +130,17 @@
     "type": "github",
     "owner": "noctalia-dev",
     "repo": "noctalia",
-    "rev": "1b0d7ae454a6d09a5f2cc2097274173424139b41",
-    "narHash": "sha256-N7cwX7wpUA4k2rpNkkEKrhr2DUhFWvGxTgz9Q+8rOLY=",
-    "lastModified": 1784430650
+    "rev": "5b2dd916f82fda01dca0721b023bd89a37f2297a",
+    "narHash": "sha256-txmF897/Z7U7UCyp2+9ZM094hl960+5HBijBEA2f4pE=",
+    "lastModified": 1784467111
   },
   "nvf": {
     "type": "github",
     "owner": "notashelf",
     "repo": "nvf",
-    "rev": "46fb444c033b0a943ddb75f3c2e3a51ff8294d25",
-    "narHash": "sha256-ma610/SKRXe/0EwUr5WHQ2diCmGwPIYUWfTOkzKHX90=",
-    "lastModified": 1784418497
+    "rev": "15802947967d6318f14029f311643e197a726a61",
+    "narHash": "sha256-osTcEvAKdB30rUSNN0ql6I+OvKKFrzyFy/LQ+pmfZn4=",
+    "lastModified": 1784452318
   },
   "sops-nix": {
     "type": "github",
@@ -170,8 +170,8 @@
     "type": "git",
     "url": "https://tangled.org/tangled.org/core",
     "ref": "HEAD",
-    "rev": "73a0049389ca944f645e893215e082460af67192",
-    "narHash": "sha256-1uj3H0rddWFFS+Da0yZm2IHDVlq/2OOmZnQWpQN7gZo=",
-    "lastModified": 1784306741
+    "rev": "da1953b92c920d3beb2cbd4914387ec3189728ae",
+    "narHash": "sha256-zO/SLXWaHh9p8YZMz6ojUFAi6g4RKH53HlFr/SaZlYI=",
+    "lastModified": 1784455514
   }
 }
